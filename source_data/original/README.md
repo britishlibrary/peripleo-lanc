@@ -14,7 +14,7 @@
   We can brainstorm what to do about it, and see if there's leftover time in the end, perhaps. I would caution, however, against
   aiming to develop a tool that aims to be both a geo-analytics tool, as well as a collection exploration tool!_
   
-- __PAS__. A sample of Portable Antiquities Scheme data, comprising all 11,733 records for Warwickshire, converted to extended Linked Places format. In the interests of find site security, coordinates have been obfuscated by up to 0.7km.
+- __PAS__. A sample of Portable Antiquities Scheme data, comprising all 11,733 records for Warwickshire, converted to extended Linked Places format. In the interests of find site security, coordinates have been obfuscated by up to 0.7km. *Includes some records with null geometry.*
 
 - __Heritage for All__. A GeoJSON feature collection of ~2.800 records from two collections, with point coordinates 
   and _title_, _organization_, _url_ and (sometimes) _description_ properties. IDs are permalinks using w3id.org (But 
