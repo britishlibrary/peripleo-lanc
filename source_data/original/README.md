@@ -11,7 +11,7 @@
   Sometimes nested comments. Links and depictions. Seems to be an LP gazetteer (PastPlace?) with names and links.
   Aims to use standard [Linked Places Format](https://github.com/LinkedPasts/linked-places-format), extended by the addition of two properties which each has its own scoped context:
   * {citation} uses [CSL_JSON](https://citationstyles.org/) to embed a dataset description, citations, licensing and other details.
-  * {indexing} uses schema.org to facilitate indexing of the dataset by search engines. 
+  * {indexing} uses schema.org to facilitate indexing of the dataset by search engines (see [Google Rich Results](https://search.google.com/test/rich-results/result?id=iBSG1FT2zxMeArtNnZrupw)). 
 
 - __SW_Coins-Monasteries__. A collection of GeoJSON files, bundled with a GeoTIFF and two .KML files. The intent is visually 
   to suggest some correlation between monastic sites and archaeological coin finds - quite how this might be done requires 
