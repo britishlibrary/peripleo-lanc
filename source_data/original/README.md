@@ -7,10 +7,11 @@
   from the _url_ parameter. (I had trouble accessing some samples though, with a permission error message.)
 
 - __Hollar__. A wrapped GeoJSON feature collection of 94 records. Point coordinates. Has _title_ and _transcription_ properties.
-  Sometimes nested comments. Links and depictions. Seems to be an LP gazetteer (PastPlace?) with names and links. __Caution:__ 
-  the links sometimes point to media. Custom format with a bunch of custom properties. There are null values sometimes.
+  Sometimes nested comments. Links and depictions. Seems to be an LP gazetteer (PastPlace?) with names and links.
 
-- __VisitPlus__. [...10-15000? 7 partner collections plus 2 non-partner...]
+- __VisitPlus__. Two sub-sets:
+  - ~1.000 places as GeoJSON/LP. Looks similar in structure to HfA (properties: title, organization, url, description). 
+  - Linked Traces-style list of 100 annotations.
 
 - __SW_Coins-Monasteries__. A collection of GeoJSON files, bundled with a GeoTIFF and two .KML files. The intent is visually to suggest some correlation between monastic sites and archaeological coin finds - quite how this might be done requires discussion.
 
@@ -32,3 +33,15 @@ What are the expectations concerning the (sometime __many__ links)?
 
 - [ ] the custom format where the actual content is inside the link is slightly weird. We should crosswalk to LP + LT!
 - [ ] sometimes, place depictions seem to be IIIF annotations. What are the expectations concerning UI?
+- [ ] the links sometimes point to media. Custom format with a bunch of custom properties. 
+- [ ] there are null values sometimes (broken export?)
+
+### VisitPlus
+
+- [ ] links to LP records via their __url__ property, not __id__!
+- [ ] it's not clear to me what the purpose of the annotations is. They seem to have redundant info, repeating the gazetteer data.
+- [ ] __Warning:__ might be misunderstanding of LT file format. Looks "inverted", where the target (and not body!) is the place.
+  (Example: for a sound file collection with 100 items, located at the same place, there should be 100 annotations - not 1 with 100 
+  bodies.)
+- [ ] annotation bodies are not according to W3C 
+- [ ] "bodies" often lack even basic metadata for the item (not even proper title)
