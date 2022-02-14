@@ -31,7 +31,7 @@
     }
   },
   "citation": {
-    
+    "@context": "https://raw.githubusercontent.com/citation-style-language/schema/master/schemas/input/csl-citation.json"
   },
   "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff",
   "type": "FeatureCollection",
