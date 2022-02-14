@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+<Document>
+    <name><![CDATA[List of monastic houses in Cornwall]]></name>
+    <open>1</open>
+    <Folder>
+        <name><![CDATA[Key to listing]]></name>
+        <open>1</open>
+        <Placemark>
+            <name><![CDATA[Altarnon Monastery]]></name>
+            <Point>
+                <coordinates>-4.5125914,50.60482,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-2">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[St Mary and St Petrock Abbey, Bodmin]]></name>
+            <Point>
+                <coordinates>-4.73364,50.46931,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-4">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Bodmin Friary (site)]]></name>
+            <Point>
+                <coordinates>-4.7196311,50.4797424,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-6">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Bodmin Priory]]></name>
+            <Point>
+                <coordinates>-4.7156829,50.4706783,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-7">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Cardinham Grange (possible site)]]></name>
+            <Point>
+                <coordinates>-4.651401,50.4714772,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-8">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Crantock Monastery]]></name>
+            <Point>
+                <coordinates>-5.1119927,50.403148,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-10">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Kea Monastery (supposed site)]]></name>
+            <Point>
+                <coordinates>-5.0242536,50.2360144,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-14">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Lammana Priory]]></name>
+            <Point>
+                <coordinates>-4.449143,50.336931,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-15">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Lannachebran Cell]]></name>
+            <Point>
+                <coordinates>-5.0868201,50.0507186,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-18">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Launceston Priory]]></name>
+            <Point>
+                <coordinates>-4.3661374,50.6412046,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-21">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Lanwethinoc Priory (possible site)]]></name>
+            <Point>
+                <coordinates>-4.9429464,50.5412334,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-22">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Madron Monastery (approx.)]]></name>
+            <Point>
+                <coordinates>-5.5646825,50.1315902,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-23">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Manaccan Monastery (approx.)]]></name>
+            <Point>
+                <coordinates>-5.1264954,50.0824805,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-24">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Minster Priory]]></name>
+            <Point>
+                <coordinates>-4.6757019,50.6831697,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-26">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Probabus Monastery (site)]]></name>
+            <Point>
+                <coordinates>-4.9442554,50.2957206,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-28">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Rialton Grange (approx.)]]></name>
+            <Point>
+                <coordinates>-5.0319099,50.4203929,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-29">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[St Anthony's Monastery (approx.)]]></name>
+            <Point>
+                <coordinates>-5.1089859,50.0827008,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-31">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[St Anthony-in-Roseland Priory (approx.)]]></name>
+            <Point>
+                <coordinates>-5.0135422,50.1480864,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-32">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[St Buryan's Monastery (approx.)]]></name>
+            <Point>
+                <coordinates>-5.6483459,50.0619878,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-33">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[St Carrok's Monastery (approx.)]]></name>
+            <Point>
+                <coordinates>-4.652753,50.382911,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-StCarrok_34-0">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[St German's Priory]]></name>
+            <Point>
+                <coordinates>-4.309699,50.396686,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-35">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[St Goran's Monastery]]></name>
+            <Point>
+                <coordinates>-4.8010254,50.2430333,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-37">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[St Kew Monastery]]></name>
+            <Point>
+                <coordinates>-4.794374,50.558147,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-StKew_38-0">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[St Mawgan Monastery (approx.)]]></name>
+            <Point>
+                <coordinates>-5.0253868,50.4625583,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-40">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[St Michael's Mount Priory]]></name>
+            <Point>
+                <coordinates>-5.478329,50.116387,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-41">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[St Neot's Monastery]]></name>
+            <Point>
+                <coordinates>-4.566211,50.474442,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-StNeot_42-0">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[St Piran's Monastery (approx.)]]></name>
+            <Point>
+                <coordinates>-5.1469231,50.3650105,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-43">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Scilly Priory]]></name>
+            <Point>
+                <coordinates>-6.328758,49.9474643,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-44">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Sclerder Abbey]]></name>
+            <Point>
+                <coordinates>-4.505089,50.347987,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-47">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Temple property (approx.)]]></name>
+            <Point>
+                <coordinates>-4.618571,50.530166,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-47">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Temple Templars Preceptory (approx.)]]></name>
+            <Point>
+                <coordinates>-4.3971598,50.4780253,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-49">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Tintagel Monastery]]></name>
+            <Point>
+                <coordinates>-4.7608405,50.6685911,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-53">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Trebeigh Preceptory (site)]]></name>
+            <Point>
+                <coordinates>-4.3917525,50.4793361,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-54">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Tregonan Cell]]></name>
+            <Point>
+                <coordinates>-5.0890732,50.0551549,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-56">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Tregonan Grange (site)]]></name>
+            <Point>
+                <coordinates>-5.0901407,50.0521825,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-57">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Tregony Priory (approx.)]]></name>
+            <Point>
+                <coordinates>-4.9174118,50.2663016,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-58">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Convent of the Epiphany, Truro]]></name>
+            <Point>
+                <coordinates>-5.059001,50.272468,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-59">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Truro Dominican Friary (site)]]></name>
+            <Point>
+                <coordinates>-5.0550118,50.263296,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-60">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+        <Placemark>
+            <name><![CDATA[Tywardreath Priory]]></name>
+            <Point>
+                <coordinates>-4.6939087,50.3565371,0</coordinates>
+            </Point>
+            <Snippet></Snippet>
+            <description><![CDATA[<br>Source: Wikipedia article <a href="https://en.wikipedia.org/wiki/List_of_monastic_houses_in_Cornwall#cite_ref-62">List of monastic houses in Cornwall</a>]]></description>
+        </Placemark>
+    </Folder>
+</Document>
+</kml>
