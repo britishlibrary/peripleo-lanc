@@ -13,7 +13,8 @@
   to suggest some correlation between monastic sites and archaeological coin finds - quite how this might be done requires 
   discussion. _Comment RSi: correlation between monastic sites and coin finds is definitely in the scope of the prototype. 
   Adding GeoTIFF, KML layers etc. would require a different design approach. It's definitely not factored into the current plan.
-  We can brainstorm what to do about it, and see if there's leftover time in the end, perhaps._
+  We can brainstorm what to do about it, and see if there's leftover time in the end, perhaps. I would caution, however, against
+  aiming to develop a tool that aims to be both a geo-analytics tool, as well as a collection exploration tool!_
 
 - __VisitPlus__. Two sub-sets:
   - ~1.000 places as GeoJSON/LP. Looks similar in structure to HfA (properties: title, organization, url, description). 
@@ -39,6 +40,13 @@ What are the expectations concerning the (sometime __many__ links)?
 - [ ] sometimes, place depictions seem to be IIIF annotations. What are the expectations concerning UI?
 - [ ] the links sometimes point to media. Custom format with a bunch of custom properties. 
 - [ ] there are null values sometimes (broken export?)
+
+### SW_Coins-Monasteries
+
+- [ ] Data definitely need normalization, and reduction of properties to what we want to show in the map. It will exceed the scope
+  to build an extra viewer for coin metadata specifically. I.e. question is whether we can generate useful comment text from the 
+  structured fields. Alternative: keep only description.
+- [ ] Description text seems redundant for (some?) monastaries, e.g. same for every record in a dataset. (Probably less of an issue though.)
 
 ### VisitPlus
 
