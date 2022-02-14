@@ -9,11 +9,15 @@
 - __Hollar__. A wrapped GeoJSON feature collection of 94 records. Point coordinates. Has _title_ and _transcription_ properties.
   Sometimes nested comments. Links and depictions. Seems to be an LP gazetteer (PastPlace?) with names and links.
 
+- __SW_Coins-Monasteries__. A collection of GeoJSON files, bundled with a GeoTIFF and two .KML files. The intent is visually 
+  to suggest some correlation between monastic sites and archaeological coin finds - quite how this might be done requires 
+  discussion. _Comment RSi: correlation between monastic sites and coin finds is definitely in the scope of the prototype. 
+  Adding GeoTIFF, KML layers etc. would require a different design approach. It's definitely not factored into the current plan.
+  We can brainstorm what to do about it, and see if there's leftover time in the end, perhaps._
+
 - __VisitPlus__. Two sub-sets:
   - ~1.000 places as GeoJSON/LP. Looks similar in structure to HfA (properties: title, organization, url, description). 
   - Linked Traces-style list of 100 annotations.
-
-- __SW_Coins-Monasteries__. A collection of GeoJSON files, bundled with a GeoTIFF and two .KML files. The intent is visually to suggest some correlation between monastic sites and archaeological coin finds - quite how this might be done requires discussion.
 
 ## Problems/Questions
 
