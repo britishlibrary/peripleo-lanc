@@ -16,3 +16,10 @@ Thanks to various project partners and others, who may retain copyright in their
 - [The Portable Antiquities Scheme](https://finds.org.uk/) - linked images Courtesy of the Portable Antiquities Scheme - © The British Museum.
 - [The National Trust](https://www.nationaltrust.org.uk/) - Registered Charity in England & Wales No. 205846
 - [Viae Regiae](https://viaeregiae.org/) - a volunteer-driven member project of the Pelagios Network
+
+## Development
+
+To run Peripleo in development mode:
+
+- `npm install` once, to download project dependencies
+- `npm start`
