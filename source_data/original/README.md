@@ -12,6 +12,8 @@
 
 - __VisitPlus__. [...10-15000? 7 partner collections plus 2 non-partner...]
 
+- __SW_Coins-Monasteries__. A collection of GeoJSON files, bundled with a GeoTIFF and two .KML files. The intent is visually to suggest some correlation between monastic sites and archaeological coin finds - quite how this might be done requires discussion.
+
 ## Problems/Questions
 
 ### General
