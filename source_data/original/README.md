@@ -6,8 +6,12 @@
   to be on different content types. (__C) Content seems to be IIIF manifests, manifest URL seems to be constructable 
   from the _url_ parameter. (I had trouble accessing some samples though, with a permission error message.)
 
-- __Hollar__. A wrapped GeoJSON feature collection of 94 records. Point coordinates. Has _title_ and _transcription_ properties.
+- __Hollar__. A wrapped GeoJSON feature collection of 94 records, based on annotation of the BL Collection item [visible here](https://www.flickr.com/photos/britishlibrary/50263236958). 
+ Point coordinates. Has _title_ and _transcription_ properties.
   Sometimes nested comments. Links and depictions. Seems to be an LP gazetteer (PastPlace?) with names and links.
+  Aims to use standard [Linked Places Format](https://github.com/LinkedPasts/linked-places-format), extended by the addition of two properties which each has its own scoped context:
+  * {citation} uses [CSL_JSON](https://citationstyles.org/) to embed a dataset description, citations, licensing and other details.
+  * {indexing} uses schema.org to facilitate indexing of the dataset by search engines. 
 
 - __SW_Coins-Monasteries__. A collection of GeoJSON files, bundled with a GeoTIFF and two .KML files. The intent is visually 
   to suggest some correlation between monastic sites and archaeological coin finds - quite how this might be done requires 
