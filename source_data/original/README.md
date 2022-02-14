@@ -39,7 +39,7 @@ What are the expectations concerning the (sometime __many__ links)?
 - [ ] the custom format where the actual content is inside the link is slightly weird. We should crosswalk to LP + LT!
 - [ ] sometimes, place depictions seem to be IIIF annotations. What are the expectations concerning UI?
 - [ ] the links sometimes point to media. Custom format with a bunch of custom properties. 
-- [ ] there are null values sometimes (broken export?)
+- [x] ~~there are null values sometimes (broken export?)~~
 
 ### SW_Coins-Monasteries
 
