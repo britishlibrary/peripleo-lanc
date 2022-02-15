@@ -3,7 +3,7 @@
 - __Hollar__. A wrapped GeoJSON feature collection of 94 records, based on annotation of the BL Collection item [visible here](https://www.flickr.com/photos/britishlibrary/50263236958). 
  Point coordinates. Has _title_ and _transcription_ properties.
   Sometimes nested comments. Links and depictions. Seems to be an LP gazetteer (PastPlace?) with names and links.
-  Aims to use standard [Linked Places Format](https://github.com/LinkedPasts/linked-places-format), extended by the addition of two properties which each has its own scoped context:
+  Aims to use standard [Linked Places Format](https://github.com/LinkedPasts/linked-places-format), extended by the addition of two properties which have their own scoped contexts:
   * {citation} uses [CSL_JSON](https://citationstyles.org/) to embed a dataset description, citations, licensing and other details.
   * {indexing} uses schema.org to facilitate indexing of the dataset by search engines (see [Google Rich Results](https://search.google.com/test/rich-results/result?id=iBSG1FT2zxMeArtNnZrupw)). 
   
@@ -22,9 +22,7 @@
   to be on different content types. (__C) Content seems to be IIIF manifests, manifest URL seems to be constructable 
   from the _url_ parameter. (I had trouble accessing some samples though, with a permission error message.)
 
-- __VisitPlus__. Two sub-sets:
-  - ~1.000 places as GeoJSON/LP. Looks similar in structure to HfA (properties: title, organization, url, description). 
-  - Linked Traces-style list of 100 annotations.
+- __VisitPlus__. An extended Linked Places GeoJSON feature collection of 1,630 Visitor Sites in the UK, not yet linked to other data. All have a title and coordinates; those in Wales have a thumbnail URL. All but 23 have a URL, although a few point only to Wikidata. 742 have a description, 551 are assigned a type (though this is simply the county name for Northern Ireland). Discussion needed of what linkage might be desirable.
 
 ## Problems/Questions
 
