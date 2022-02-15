@@ -1,30 +1,24 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import ReactMapGL from 'react-map-gl';
 
 // import { StoreContext } from '../store/StoreContext';
+
+const GB_BOUNDS = [-7.9, 49.5, 2.2, 59.4];
 
 const Map = props => {
 
   // const { store } = useContext(StoreContext);
 
-  const [ viewport, setViewport ] = useState({
-    latitude: 46.2,
-    longitude: 16.4,
-    zoom: 4,
-    width: window.innerWidth,
-    height: window.innerHeight
-  });
-
-  const style = 'https://api.maptiler.com/maps/outdoor/style.json?key=FZebSVZUiIemGD0m8ayh'
+  const style = `https://api.maptiler.com/maps/outdoor/style.json?key=${props.config.api_key}`
 
   return (  
-    <div className="p6o-container">
+    <div className="p6o-map-container">
       <ReactMapGL
-        {...viewport}
-        width="100vw"
+        initialViewState={{
+          bounds: GB_BOUNDS
+        }}
         height="100vh"
-        mapStyle={style}
-        onViewportChange={setViewport}>
+        mapStyle={style}>
 
       </ReactMapGL>
     </div>
