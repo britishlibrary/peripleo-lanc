@@ -23,3 +23,7 @@ To run Peripleo in development mode:
 
 - `npm install` once, to download project dependencies
 - `npm start`
+
+## Site Preview
+
+Site preview is available at <https://britishlibrary.github.io/peripleo-lanc/>
