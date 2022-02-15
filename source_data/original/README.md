@@ -54,10 +54,4 @@ What are the expectations concerning the (sometime __many__ links)?
 
 ### VisitPlus
 
-~~- [ ] links to LP records via their __url__ property, not __id__!
-~~- [ ] it's not clear to me what the purpose of the annotations is. They seem to have redundant info, repeating the gazetteer data.
-~~- [ ] __Warning:__ might be misunderstanding of LT file format. Looks "inverted", where the target (and not body!) is the place.
-  (Example: for a sound file collection with 100 items, located at the same place, there should be 100 annotations - not 1 with 100 
-  bodies.)
-~~- [ ] annotation bodies are not according to W3C 
-~~- [ ] "bodies" often lack even basic metadata for the item (not even proper title)
+
