@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import ReactMapGL, {Source, Layer} from 'react-map-gl';
 import WebMercatorViewport from '@math.gl/web-mercator';
 import { useDebounce } from 'use-debounce';
@@ -12,6 +12,8 @@ const toFeatureCollection = features =>
   ({ type: 'FeatureCollection', features: features || [] });
 
 const Map = props => {
+
+  const el = useRef();
 
   const { store } = useContext(StoreContext);
 
@@ -44,6 +46,18 @@ const Map = props => {
     setSearchResults(toFeatureCollection(nodes));
   }, [ debouncedViewState ]);
 
+  useEffect(() => {
+    if (hover)
+      el.current.classList.add('hover');
+    else
+      el.current.classList.remove('hover');
+  }, [ hover ]);
+
+  const onClick = () => {
+    if (hover)
+      console.log('clicked', hover); // TODO
+  }
+
   const onMove = useCallback(evt =>
     setViewState(evt.viewState), []);
 
@@ -64,7 +78,7 @@ const Map = props => {
   const onMouseLeave = () => setHover(null);
 
   return (  
-    <div className="p6o-map-container">
+    <div className="p6o-map-container" ref={el}>
       <ReactMapGL
         initialViewState={{
           bounds: config.initial_bounds
@@ -72,8 +86,9 @@ const Map = props => {
         mapStyle={style}
         interactiveLayerIds={['search-results']}
         onMove={onMove}
-        onMouseLeave={onMouseLeave}
-        onMouseMove={onMouseMove}>
+        onClick={onClick}
+        onMouseMove={onMouseMove}
+        onMouseLeave={onMouseLeave} >
 
         <Source type="geojson" data={searchResults}>
           <Layer 
