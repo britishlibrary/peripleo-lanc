@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
+import { StoreContext } from './store/StoreContext';
 import Map from './map/Map';
 
 const Peripleo = () => {
+
+  const { store } = useContext(StoreContext);
 
   const [ config, setConfig ] = useState();
 
@@ -15,6 +18,11 @@ const Peripleo = () => {
         console.error('Error loading Peripleo config. Please add a valid `peripleo.config.json` to your application root.');
       });
   }, []);
+
+  useEffect(() => {
+    if (config)
+      store.init(config);
+  }, [config]);
 
   // TODO LOADING screen
   return (

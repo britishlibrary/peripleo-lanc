@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Peripleo from './Peripleo';
-import { StoreContextProvider } from './store/StoreContext';
+import { StoreContextProvider } from './store';
 
 import './index.scss';
 
