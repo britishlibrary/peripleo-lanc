@@ -33,12 +33,12 @@
   "citation": {
     
   },
-  "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff",
+  "@id": "https://w3id.org/locolligo/Hollar-1660",
   "type": "FeatureCollection",
   "@context": "https://w3id.org/locolligo/contexts/linkedplaces.jsonld",
   "features": [
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/d54e04cd-c73e-4f21-8b71-8d69aaada6fe",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/d54e04cd-c73e-4f21-8b71-8d69aaada6fe",
       "type": "Feature",
       "name": "Old Shoreham",
       "geometry": {
@@ -124,7 +124,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/3b3bba96-c01d-4301-8834-d92c7827a53a",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/3b3bba96-c01d-4301-8834-d92c7827a53a",
       "type": "Feature",
       "name": "Exeter Bridge, Cornwall",
       "geometry": {
@@ -211,7 +211,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/a37cdb3d-a8b6-467a-91f5-8118ed9f3edb",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/a37cdb3d-a8b6-467a-91f5-8118ed9f3edb",
       "type": "Feature",
       "name": "Outwell, Norfolk",
       "geometry": {
@@ -294,7 +294,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/8d6e0aa7-0b2c-403c-b27c-10c10dd7f10e",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/8d6e0aa7-0b2c-403c-b27c-10c10dd7f10e",
       "type": "Feature",
       "name": "Topcliffe Bridge, Yorkshire",
       "geometry": {
@@ -379,7 +379,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/dd03d6a7-82b0-4138-8a3e-23b15493ef93",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/dd03d6a7-82b0-4138-8a3e-23b15493ef93",
       "type": "Feature",
       "name": "Darlington, Co. Durham",
       "geometry": {
@@ -404,9 +404,6 @@
         }
       ],
       "links": [
-        {
-          "type": "exactMatch"
-        },
         {
           "type": "primaryTopicOf",
           "identifier": "https://en.wikipedia.org/wiki/Darlington"
@@ -463,7 +460,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/9f3771dd-bb40-4b26-9010-b7fb78c357bb",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/9f3771dd-bb40-4b26-9010-b7fb78c357bb",
       "type": "Feature",
       "name": "Boroughbridge, Yorkshire",
       "geometry": {
@@ -555,7 +552,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/1f0a8231-c2f5-4e05-99e8-6ab8a246110a",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/1f0a8231-c2f5-4e05-99e8-6ab8a246110a",
       "type": "Feature",
       "name": "Ferrybridge, Yorkshire",
       "geometry": {
@@ -580,9 +577,6 @@
         }
       ],
       "links": [
-        {
-          "type": "exactMatch"
-        },
         {
           "type": "seeAlso",
           "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1167483",
@@ -654,7 +648,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/f4fe6df0-7abc-448c-bfd2-a9c793d0de46",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/f4fe6df0-7abc-448c-bfd2-a9c793d0de46",
       "type": "Feature",
       "name": "Newark Castle, Northumberland",
       "geometry": {
@@ -758,7 +752,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/5406937d-13c9-420b-94e6-52ae43d4bb80",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/5406937d-13c9-420b-94e6-52ae43d4bb80",
       "type": "Feature",
       "name": "Tadcaster Bridge",
       "geometry": {
@@ -839,7 +833,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/d5cd035c-64fd-4b87-94b2-eab17c98c92a",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/d5cd035c-64fd-4b87-94b2-eab17c98c92a",
       "type": "Feature",
       "name": "High Wycombe",
       "geometry": {
@@ -952,7 +946,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/a088cc0b-44ee-47e1-a160-aa3fa5df1313",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/a088cc0b-44ee-47e1-a160-aa3fa5df1313",
       "type": "Feature",
       "name": "Colchester Castle",
       "geometry": {
@@ -1067,7 +1061,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/6f9a9123-ac81-466c-a8ea-359e1d15ce4d",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/6f9a9123-ac81-466c-a8ea-359e1d15ce4d",
       "type": "Feature",
       "name": "Cawood, Yorkshire",
       "geometry": {
@@ -1171,7 +1165,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/0be7c747-a873-4337-96ff-e70797c84091",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/0be7c747-a873-4337-96ff-e70797c84091",
       "type": "Feature",
       "name": "Tadcaster Church, Yorkshire",
       "geometry": {
@@ -1201,9 +1195,6 @@
         }
       ],
       "links": [
-        {
-          "type": "exactMatch"
-        },
         {
           "type": "closeMatch",
           "identifier": "http://www.wikidata.org/entity/Q784467"
@@ -1261,7 +1252,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/5ae12eb5-ca5e-427d-9599-dcea84534082",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/5ae12eb5-ca5e-427d-9599-dcea84534082",
       "type": "Feature",
       "name": "Lambton Colliery, Co. Durham",
       "geometry": {
@@ -1315,7 +1306,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/4be35e16-afc8-45a2-8e86-b599bcfcab7d",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/4be35e16-afc8-45a2-8e86-b599bcfcab7d",
       "type": "Feature",
       "name": "Warwick Castle",
       "geometry": {
@@ -1424,7 +1415,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/71c59551-207a-46ed-812c-a7afb7a6a622",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/71c59551-207a-46ed-812c-a7afb7a6a622",
       "type": "Feature",
       "name": "Bramber Castle (Remains of)",
       "geometry": {
@@ -1529,7 +1520,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/55638163-1f35-4626-8818-894f42faf3b2",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/55638163-1f35-4626-8818-894f42faf3b2",
       "type": "Feature",
       "name": "Bolton Percy Church",
       "geometry": {
@@ -1611,7 +1602,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/290c2323-0bcc-42c8-a649-d4fe56ea0802",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/290c2323-0bcc-42c8-a649-d4fe56ea0802",
       "type": "Feature",
       "name": "Greenhalgh Castle",
       "geometry": {
@@ -1689,7 +1680,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/299926ac-0676-48e1-94f5-e0dae0f11782",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/299926ac-0676-48e1-94f5-e0dae0f11782",
       "type": "Feature",
       "name": "Rochester Bridge",
       "geometry": {
@@ -1774,7 +1765,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/716e9be7-9147-43a1-8bcc-f14f379a2900",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/716e9be7-9147-43a1-8bcc-f14f379a2900",
       "type": "Feature",
       "name": "Knaresborough Church, Yorkshire",
       "geometry": {
@@ -1851,7 +1842,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/a9ae464e-5a9b-4099-85f9-ed4a5aa3273c",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/a9ae464e-5a9b-4099-85f9-ed4a5aa3273c",
       "type": "Feature",
       "name": "Durham Bridge",
       "geometry": {
@@ -1937,7 +1928,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/28882feb-3e1d-4dbb-b4b5-779ea63336dc",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/28882feb-3e1d-4dbb-b4b5-779ea63336dc",
       "type": "Feature",
       "name": "Stony Stratford",
       "geometry": {
@@ -2040,7 +2031,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/754f0f70-bf76-4cb7-b362-150436299829",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/754f0f70-bf76-4cb7-b362-150436299829",
       "type": "Feature",
       "name": "Kingston, Surrey",
       "geometry": {
@@ -2132,7 +2123,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/8309be91-fd0f-4669-bfa9-1b47e3afdc18",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/8309be91-fd0f-4669-bfa9-1b47e3afdc18",
       "type": "Feature",
       "name": "Killinghall Bridge",
       "geometry": {
@@ -2210,7 +2201,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/3fa63489-32d1-4407-ad96-6234851d5c22",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/3fa63489-32d1-4407-ad96-6234851d5c22",
       "type": "Feature",
       "name": "Darlington, Co. Durham",
       "geometry": {
@@ -2303,7 +2294,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/f3c1f5b4-3175-4020-aede-50e4cf07465f",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/f3c1f5b4-3175-4020-aede-50e4cf07465f",
       "type": "Feature",
       "name": "Biddick Hall, Co. Durham",
       "geometry": {
@@ -2367,7 +2358,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/40b0a0bb-8437-4bde-ac36-d3511e8d41a7",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/40b0a0bb-8437-4bde-ac36-d3511e8d41a7",
       "type": "Feature",
       "name": "Preston Lodge (Baconsthorpe Castle Gatehouse)",
       "geometry": {
@@ -2481,7 +2472,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/954b19c6-3ef3-4093-bb4f-c85309932154",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/954b19c6-3ef3-4093-bb4f-c85309932154",
       "type": "Feature",
       "name": "Holt Castle, Flintshire",
       "geometry": {
@@ -2601,7 +2592,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/03727716-66e7-4725-b019-8caa69950e40",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/03727716-66e7-4725-b019-8caa69950e40",
       "type": "Feature",
       "name": "Pevensey Castle",
       "geometry": {
@@ -2701,7 +2692,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/180f7249-7af5-4db4-8616-f2b90cbe3f7c",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/180f7249-7af5-4db4-8616-f2b90cbe3f7c",
       "type": "Feature",
       "name": "St. Alban's",
       "geometry": {
@@ -2816,7 +2807,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/885f7084-42d4-4951-935e-d5c06354203a",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/885f7084-42d4-4951-935e-d5c06354203a",
       "type": "Feature",
       "name": "London Bridge",
       "geometry": {
@@ -2921,7 +2912,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/6626d56e-d64a-4705-b840-3aa25ee156ea",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/6626d56e-d64a-4705-b840-3aa25ee156ea",
       "type": "Feature",
       "name": "Bolton Percy Castle",
       "geometry": {
@@ -3003,7 +2994,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/9384ff28-d421-4cd6-8f7c-7b5d5969af58",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/9384ff28-d421-4cd6-8f7c-7b5d5969af58",
       "type": "Feature",
       "name": "Grimbald Bridge",
       "geometry": {
@@ -3069,7 +3060,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/3da6932a-077b-45df-ae24-1182cc18d725",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/3da6932a-077b-45df-ae24-1182cc18d725",
       "type": "Feature",
       "name": "Castle Acre, Norfolk",
       "geometry": {
@@ -3182,7 +3173,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/5bf48551-404e-4947-bf6f-d5bce6933a1f",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/5bf48551-404e-4947-bf6f-d5bce6933a1f",
       "type": "Feature",
       "name": "Theobalds",
       "geometry": {
@@ -3272,7 +3263,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/c8aa9ac8-c4fa-4ed4-bcf5-db62c624359a",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/c8aa9ac8-c4fa-4ed4-bcf5-db62c624359a",
       "type": "Feature",
       "name": "Ripon, Yorkshire",
       "geometry": {
@@ -3356,7 +3347,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/47c4173b-0281-45b8-830f-4fb7df96d740",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/47c4173b-0281-45b8-830f-4fb7df96d740",
       "type": "Feature",
       "name": "Lancaster Castle",
       "geometry": {
@@ -3442,7 +3433,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/4808d4eb-2dee-4b1d-948c-817fe38829cc",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/4808d4eb-2dee-4b1d-948c-817fe38829cc",
       "type": "Feature",
       "name": "Tynemouth Castle",
       "geometry": {
@@ -3554,7 +3545,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/f4ad6445-edb4-4cf8-b814-0b157af3cd8e",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/f4ad6445-edb4-4cf8-b814-0b157af3cd8e",
       "type": "Feature",
       "name": "Hillingdon, Middlesex",
       "geometry": {
@@ -3626,7 +3617,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/3b852f70-4726-4cb0-84f4-f8a9e35a3e1d",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/3b852f70-4726-4cb0-84f4-f8a9e35a3e1d",
       "type": "Feature",
       "name": "Queenborough Castle",
       "geometry": {
@@ -3712,7 +3703,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/9250bde0-2b09-44cd-bb77-c2020b199352",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/9250bde0-2b09-44cd-bb77-c2020b199352",
       "type": "Feature",
       "name": "Knaresborough Low Bridge, Yorkshire",
       "geometry": {
@@ -3783,7 +3774,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/92c4271a-b451-456f-a49f-417667e597fb",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/92c4271a-b451-456f-a49f-417667e597fb",
       "type": "Feature",
       "name": "Chester Bridge",
       "geometry": {
@@ -3901,7 +3892,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/8dfaba7b-76c6-4bec-85fb-bf837d3e7aa6",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/8dfaba7b-76c6-4bec-85fb-bf837d3e7aa6",
       "type": "Feature",
       "name": "Hornby Castle, Lancashire",
       "geometry": {
@@ -3969,7 +3960,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/a53ba4e0-4daf-498d-832d-afeb02e00237",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/a53ba4e0-4daf-498d-832d-afeb02e00237",
       "type": "Feature",
       "name": "Uxbridge, Middlesex",
       "geometry": {
@@ -4025,7 +4016,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/022126df-d5a6-4ec8-97f6-78e2da675915",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/022126df-d5a6-4ec8-97f6-78e2da675915",
       "type": "Feature",
       "name": "Grantham Church",
       "geometry": {
@@ -4111,7 +4102,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/4c701069-9289-4293-9aeb-5ab1666ad54b",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/4c701069-9289-4293-9aeb-5ab1666ad54b",
       "type": "Feature",
       "name": "Chester-le-Street, Co. Durham",
       "geometry": {
@@ -4165,7 +4156,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/a27bcaf8-97c2-4a30-a280-0afb90f5dd72",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/a27bcaf8-97c2-4a30-a280-0afb90f5dd72",
       "type": "Feature",
       "name": "Fenny Stratford Bridge",
       "geometry": {
@@ -4219,7 +4210,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/54a8a1a0-8a81-426f-9c66-5e2519621928",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/54a8a1a0-8a81-426f-9c66-5e2519621928",
       "type": "Feature",
       "name": "Bransford Bridge",
       "geometry": {
@@ -4268,7 +4259,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/5e88cd61-a223-448b-80d1-99ae1ff2acbf",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/5e88cd61-a223-448b-80d1-99ae1ff2acbf",
       "type": "Feature",
       "name": "Nun Appleton",
       "geometry": {
@@ -4342,7 +4333,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/dc630fda-c6be-4cc3-a402-faaf833d9500",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/dc630fda-c6be-4cc3-a402-faaf833d9500",
       "type": "Feature",
       "name": "Nun Appleton House & Garden",
       "geometry": {
@@ -4420,7 +4411,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/a9d8add4-4204-45af-a0b5-d7f33db8a82b",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/a9d8add4-4204-45af-a0b5-d7f33db8a82b",
       "type": "Feature",
       "name": "Highbridge",
       "geometry": {
@@ -4491,7 +4482,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/a03d70be-8e2d-4980-ba6f-abd6293c9ed9",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/a03d70be-8e2d-4980-ba6f-abd6293c9ed9",
       "type": "Feature",
       "name": "Greenwich Castle",
       "geometry": {
@@ -4566,7 +4557,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/02c91c20-ace8-4b5c-9909-37deb2b5c3c9",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/02c91c20-ace8-4b5c-9909-37deb2b5c3c9",
       "type": "Feature",
       "name": "Kenilworth Castle",
       "geometry": {
@@ -4683,7 +4674,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/dc263442-b580-4394-8607-212c4260f5fe",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/dc263442-b580-4394-8607-212c4260f5fe",
       "type": "Feature",
       "name": "Dover Castle",
       "geometry": {
@@ -4783,7 +4774,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/31083f4b-44d9-4cc2-93d4-5b2b30d873d8",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/31083f4b-44d9-4cc2-93d4-5b2b30d873d8",
       "type": "Feature",
       "name": "Stratford",
       "geometry": {
@@ -4877,7 +4868,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/ba987651-c0e7-4651-b89b-a9e44e28b137",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/ba987651-c0e7-4651-b89b-a9e44e28b137",
       "type": "Feature",
       "name": "Oxford Castle",
       "geometry": {
@@ -5018,7 +5009,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/1e6a3ef2-3816-4af7-9046-118acac3533a",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/1e6a3ef2-3816-4af7-9046-118acac3533a",
       "type": "Feature",
       "name": "Perry Bridge",
       "geometry": {
@@ -5081,7 +5072,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/023edf77-23dc-4714-8d34-67889e494b5c",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/023edf77-23dc-4714-8d34-67889e494b5c",
       "type": "Feature",
       "name": "Wetherby Bridge",
       "geometry": {
@@ -5163,7 +5154,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/df37aab0-9804-48f1-9ed2-43781117d337",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/df37aab0-9804-48f1-9ed2-43781117d337",
       "type": "Feature",
       "name": "Nottingham Castle",
       "geometry": {
@@ -5276,7 +5267,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/82fe6798-ec4b-4fea-ae66-64a6a592e892",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/82fe6798-ec4b-4fea-ae66-64a6a592e892",
       "type": "Feature",
       "name": "Bishophill, York",
       "geometry": {
@@ -5354,7 +5345,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/b820584b-1452-4bff-bc1b-1317d564dd10",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/b820584b-1452-4bff-bc1b-1317d564dd10",
       "type": "Feature",
       "name": "Northallerton Church",
       "geometry": {
@@ -5426,7 +5417,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/c406f3f9-6a7d-47a7-9e36-28026492cd94",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/c406f3f9-6a7d-47a7-9e36-28026492cd94",
       "type": "Feature",
       "name": "Watford",
       "geometry": {
@@ -5507,7 +5498,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/e9738ed5-1b46-4990-87e4-b6be598b4642",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/e9738ed5-1b46-4990-87e4-b6be598b4642",
       "type": "Feature",
       "name": "Liverpool, Lancashire",
       "geometry": {
@@ -5570,7 +5561,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/e1e69479-f07e-4243-9678-1438cd57962c",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/e1e69479-f07e-4243-9678-1438cd57962c",
       "type": "Feature",
       "name": "Devil's Arrows",
       "geometry": {
@@ -5656,7 +5647,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/db938400-2f10-45f0-8df3-4e755370757e",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/db938400-2f10-45f0-8df3-4e755370757e",
       "type": "Feature",
       "name": "Newgate",
       "geometry": {
@@ -5739,7 +5730,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/b943b3ac-7724-4918-aa93-47c1f464ba52",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/b943b3ac-7724-4918-aa93-47c1f464ba52",
       "type": "Feature",
       "name": "St Oswald's Church, Durham",
       "geometry": {
@@ -5818,7 +5809,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/3e995f0d-2b1a-43c5-aef8-16e0bc8dab92",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/3e995f0d-2b1a-43c5-aef8-16e0bc8dab92",
       "type": "Feature",
       "name": "The Spa near Knaresborough",
       "geometry": {
@@ -5904,7 +5895,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/662373c5-df88-4742-bcab-6d83726a539b",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/662373c5-df88-4742-bcab-6d83726a539b",
       "type": "Feature",
       "name": "Newcastle Bridge",
       "geometry": {
@@ -5984,7 +5975,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/2336d1e4-6c4b-4370-a992-ced306ec1180",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/2336d1e4-6c4b-4370-a992-ced306ec1180",
       "type": "Feature",
       "name": "Beeston Castle",
       "geometry": {
@@ -6116,7 +6107,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/53e05f74-546f-4a91-9acb-16a810b6849e",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/53e05f74-546f-4a91-9acb-16a810b6849e",
       "type": "Feature",
       "name": "Beaconsfield, Buckinghamshire",
       "geometry": {
@@ -6180,7 +6171,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/86d9f072-8f25-4ae1-ba31-de7b87e9471d",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/86d9f072-8f25-4ae1-ba31-de7b87e9471d",
       "type": "Feature",
       "name": "STAMFORD",
       "geometry": {
@@ -6236,7 +6227,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/1e019554-9403-41a4-8fd6-c0f9057ef7bf",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/1e019554-9403-41a4-8fd6-c0f9057ef7bf",
       "type": "Feature",
       "name": "Knaresbrough Castle, Yorkshire",
       "geometry": {
@@ -6308,7 +6299,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/ae1b815c-dff2-477b-a78e-763f7a2d26d0",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/ae1b815c-dff2-477b-a78e-763f7a2d26d0",
       "type": "Feature",
       "name": "Chester-le-Street, Co. Durham",
       "geometry": {
@@ -6389,7 +6380,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/b42f123e-16d8-448b-85ae-db49d9006fd5",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/b42f123e-16d8-448b-85ae-db49d9006fd5",
       "type": "Feature",
       "name": "Windsor Bridge",
       "geometry": {
@@ -6461,7 +6452,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/2b0347f9-214a-4dfb-a1b7-9b748fee123d",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/2b0347f9-214a-4dfb-a1b7-9b748fee123d",
       "type": "Feature",
       "name": "Ripon Bridge, Yorkshire",
       "geometry": {
@@ -6526,7 +6517,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/f81a7fae-4f12-44cc-885f-c2612e7f8406",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/f81a7fae-4f12-44cc-885f-c2612e7f8406",
       "type": "Feature",
       "name": "Catterick Bridge",
       "geometry": {
@@ -6593,7 +6584,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/a6d1ef5d-6cb1-4b16-80a8-3836bb91a418",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/a6d1ef5d-6cb1-4b16-80a8-3836bb91a418",
       "type": "Feature",
       "name": "Windsor Castle",
       "geometry": {
@@ -6679,7 +6670,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/0554f055-2937-4dd6-bbbc-7e72788c4a27",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/0554f055-2937-4dd6-bbbc-7e72788c4a27",
       "type": "Feature",
       "name": "High Cross",
       "geometry": {
@@ -6757,7 +6748,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/c70e6c6a-6157-43e7-91a2-ce7fd7687ab7",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/c70e6c6a-6157-43e7-91a2-ce7fd7687ab7",
       "type": "Feature",
       "name": "Northampton Bridge",
       "geometry": {
@@ -6800,7 +6791,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/b339c5c5-eb7f-4f5a-92c2-651f03209dd0",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/b339c5c5-eb7f-4f5a-92c2-651f03209dd0",
       "type": "Feature",
       "name": "Holdenby",
       "geometry": {
@@ -6913,7 +6904,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/416f5d19-f8bb-4f09-969c-fd4b517ec62d",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/416f5d19-f8bb-4f09-969c-fd4b517ec62d",
       "type": "Feature",
       "name": "Tadcaster Bridge, Yorkshire",
       "geometry": {
@@ -6985,7 +6976,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/05288cee-ba1d-4571-9ec2-9df9e03a2d54",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/05288cee-ba1d-4571-9ec2-9df9e03a2d54",
       "type": "Feature",
       "name": "Sherburn in Elmet",
       "geometry": {
@@ -7056,7 +7047,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/96f0f397-5dca-45d8-94bd-860a936cbe31",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/96f0f397-5dca-45d8-94bd-860a936cbe31",
       "type": "Feature",
       "name": "Northallerton Castle",
       "geometry": {
@@ -7109,7 +7100,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/1aa3845c-fec0-4715-a788-bbf2b62524dc",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/1aa3845c-fec0-4715-a788-bbf2b62524dc",
       "type": "Feature",
       "name": "Hampton Court",
       "geometry": {
@@ -7215,7 +7206,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/582738dd-446e-4e92-9f7a-07b999b8178f",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/582738dd-446e-4e92-9f7a-07b999b8178f",
       "type": "Feature",
       "name": "Ruthin Castle",
       "geometry": {
@@ -7327,7 +7318,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/7a0edc6e-4a6c-4dc0-97c1-deccb547b657",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/7a0edc6e-4a6c-4dc0-97c1-deccb547b657",
       "type": "Feature",
       "name": "St. Robert's Chapel",
       "geometry": {
@@ -7374,7 +7365,6 @@
           "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1149914",
           "label": "SAINT ROBERTS CAVE, ALSO CALLED SAINT ROBERTS CHAPEL, APPROXIMATELY 120 METRES SOUTH WEST OF GRIMBALD BRIDGE"
         },
-        null,
         {
           "type": "primaryTopicOf",
           "identifier": "https://en.wikipedia.org/wiki/Robert_of_Knaresborough"
@@ -7406,7 +7396,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/957cf2a1-c1dc-416a-bb8c-0eae5205f9b1",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/957cf2a1-c1dc-416a-bb8c-0eae5205f9b1",
       "type": "Feature",
       "name": "Hawarden Castle",
       "geometry": {
@@ -7529,7 +7519,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/9c85bdbe-c576-456e-a156-05ecdd5f1ced",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/9c85bdbe-c576-456e-a156-05ecdd5f1ced",
       "type": "Feature",
       "name": "Sunderland Bridge",
       "geometry": {
@@ -7601,7 +7591,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/a8dc6091-848a-42e2-8e42-b17e3812c5e0",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/a8dc6091-848a-42e2-8e42-b17e3812c5e0",
       "type": "Feature",
       "name": "Woodstock",
       "geometry": {
@@ -7659,7 +7649,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/2f4c9d98-eaf9-4e2d-afa1-860ba219968f",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/2f4c9d98-eaf9-4e2d-afa1-860ba219968f",
       "type": "Feature",
       "name": "Boroughbridge Church",
       "geometry": {
@@ -7726,7 +7716,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/62845007-1f05-4eef-9836-a26f834445e5",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/62845007-1f05-4eef-9836-a26f834445e5",
       "type": "Feature",
       "name": "LOUGHBOROUGH",
       "geometry": {
@@ -7775,7 +7765,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/8e07d9c8-23d4-40bc-8712-ae01595fcb69",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/8e07d9c8-23d4-40bc-8712-ae01595fcb69",
       "type": "Feature",
       "name": "Stony Stratford Bridge",
       "geometry": {
@@ -7847,7 +7837,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/63ee3069-ea9a-44ae-a1f8-cfb4538e0eb2",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/63ee3069-ea9a-44ae-a1f8-cfb4538e0eb2",
       "type": "Feature",
       "name": "Gravestones at Nun Appleton",
       "geometry": {
@@ -7920,7 +7910,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/db75c08f-975f-4663-9947-f8f7c864cc52",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/db75c08f-975f-4663-9947-f8f7c864cc52",
       "type": "Feature",
       "name": "West Wycombe Church",
       "geometry": {
