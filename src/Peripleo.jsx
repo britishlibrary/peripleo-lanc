@@ -1,9 +1,13 @@
 import React from 'react';
 
+import Map from './map/Map';
+
 const Peripleo = () => {
 
   return (
-    <div>Peripleo.</div>
+    <>
+     <Map />
+    </>
   )
 
 }
