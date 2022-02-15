@@ -3,7 +3,7 @@
 - __Hollar__. A wrapped GeoJSON feature collection of 94 records, based on annotation of the BL Collection item [visible here](https://www.flickr.com/photos/britishlibrary/50263236958). 
  Point coordinates. Has _title_ and _transcription_ properties.
   Sometimes nested comments. Links and depictions. Seems to be an LP gazetteer (PastPlace?) with names and links.
-  Aims to use standard [Linked Places Format](https://github.com/LinkedPasts/linked-places-format), extended by the addition of two properties which have their own scoped contexts:
+  Aims to use standard [Linked Places format](https://github.com/LinkedPasts/linked-places-format), *extended* by the addition of two properties which have their own scoped contexts:
   * {citation} uses [CSL_JSON](https://citationstyles.org/) to embed a dataset description, citations, licensing and other details.
   * {indexing} uses schema.org to facilitate indexing of the dataset by search engines (see [Google Rich Results](https://search.google.com/test/rich-results/result?id=iBSG1FT2zxMeArtNnZrupw)). 
   
@@ -14,7 +14,7 @@
   We can brainstorm what to do about it, and see if there's leftover time in the end, perhaps. I would caution, however, against
   aiming to develop a tool that aims to be both a geo-analytics tool, as well as a collection exploration tool!_
   
-- __PAS__. A sample of Portable Antiquities Scheme data, comprising all 11,733 records for Warwickshire, converted to extended Linked Places format. In the interests of find site security, coordinates have been obfuscated by up to 0.7km. *Includes some records with null geometry.*
+- __PAS__. A sample of Portable Antiquities Scheme data, comprising all 11,733 records for Warwickshire, converted to extended Linked Places (**xLP**) format. In the interests of find site security, coordinates have been obfuscated by up to 0.7km. *Includes some records with null geometry.*
 
 - __Heritage for All__. A GeoJSON feature collection of ~2.800 records from two collections, with point coordinates 
   and _title_, _organization_, _url_ and (sometimes) _description_ properties. IDs are permalinks using w3id.org (But 
@@ -22,7 +22,7 @@
   to be on different content types. (__C) Content seems to be IIIF manifests, manifest URL seems to be constructable 
   from the _url_ parameter. (I had trouble accessing some samples though, with a permission error message.)
 
-- __VisitPlus__. An extended Linked Places GeoJSON feature collection of 1,630 Visitor Sites in the UK, not yet linked to other data. All have a title and coordinates; those in Wales have a thumbnail URL. All but 23 have a URL, although a few point only to Wikidata. 742 have a description, 551 are assigned a type (though this is simply the county name for Northern Ireland). Discussion needed of what linkage might be desirable.
+- __VisitPlus__. An extended Linked Places (**xLP**) GeoJSON feature collection of 1,630 Visitor Sites in the UK, not yet linked to other data. All have a title and coordinates; those in Wales have a thumbnail URL. All but 23 have a URL, although a few point only to Wikidata. 742 have a description, 551 are assigned a type (though this is simply the county name for Northern Ireland). Discussion needed of what linkage might be desirable, perhaps Wikipedia and/or Geograph images.
 
 ## Problems/Questions
 
