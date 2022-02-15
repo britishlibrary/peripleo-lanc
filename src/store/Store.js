@@ -45,6 +45,9 @@ export default class Store {
     }));
   }
 
+  getNode = id =>
+    this.graph.getNode(id)?.data;
+
   getNodesInBounds = (bounds, optDataset) => {
     let minX, minY, maxX, maxY;
 

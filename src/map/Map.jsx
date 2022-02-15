@@ -1,10 +1,12 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import ReactMapGL, {Source, Layer} from 'react-map-gl';
 import WebMercatorViewport from '@math.gl/web-mercator';
 import { useDebounce } from 'use-debounce';
 
 import { StoreContext } from '../store';
 import { pointStyle } from './Styles';
+
+import Hover from './components/Hover';
 
 const toFeatureCollection = features => 
   ({ type: 'FeatureCollection', features: features || [] });
@@ -21,10 +23,9 @@ const Map = props => {
 
   const [ searchResults, setSearchResults ] = useState(toFeatureCollection());
 
-  const style = `https://api.maptiler.com/maps/outdoor/style.json?key=${config.api_key}`;
+  const [ hover, setHover ] = useState();
 
-  const onMove = evt =>
-    setViewState(evt.viewState);
+  const style = `https://api.maptiler.com/maps/outdoor/style.json?key=${config.api_key}`;
 
   // For testing: start with all data
   useEffect(() => {
@@ -43,22 +44,46 @@ const Map = props => {
     setSearchResults(toFeatureCollection(nodes));
   }, [ debouncedViewState ]);
 
+  const onMove = useCallback(evt =>
+    setViewState(evt.viewState), []);
+
+  const onMouseMove = useCallback(evt => {
+    const { features, point } = evt;
+    const { id } = features[0].properties;
+    
+    const updated = id === hover?.id ? {
+      ...hover, ...point
+    } : { 
+      node: store.getNode(id),
+      ...point
+    };
+
+    setHover(updated);
+  }, []);
+
+  const onMouseLeave = () => setHover(null);
+
   return (  
     <div className="p6o-map-container">
       <ReactMapGL
         initialViewState={{
           bounds: config.initial_bounds
         }}
-        height="100vh"
         mapStyle={style}
-        onMove={onMove}>
+        interactiveLayerIds={['search-results']}
+        onMove={onMove}
+        onMouseLeave={onMouseLeave}
+        onMouseMove={onMouseMove}>
 
-        <Source id="search-results" type="geojson" data={searchResults}>
+        <Source type="geojson" data={searchResults}>
           <Layer 
+            id="search-results"
             {...pointStyle({ fill: 'red', radius: 5 })} />
         </Source>
 
       </ReactMapGL>
+
+      {hover && <Hover {...hover} />}
     </div>
   )
 

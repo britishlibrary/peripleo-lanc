@@ -1,4 +1,13 @@
 .p6o-map-container {
   position:relative;
   height:100vh;
+
+  .p6o-map-hover {
+    position:absolute;
+    background-color:#fff;
+    padding:10px 15px;
+    @include rounded-corners(2px);
+    @include box-shadow(2px, 2px, 14px, 0.4);
+  }
+
 }

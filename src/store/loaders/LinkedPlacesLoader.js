@@ -17,6 +17,7 @@ const featureToNode = (feature, name) => {
   const id = normalizeURI(feature['@id']);
   delete node['@id'];
   node.id = id;
+  node.title = node.properties.title;
   node.dataset = name;
 
   // For convenience when mapping
