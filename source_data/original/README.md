@@ -50,14 +50,14 @@ What are the expectations concerning the (sometime __many__ links)?
 - [ ] Data definitely need normalization, and reduction of properties to what we want to show in the map. It will exceed the scope
   to build an extra viewer for coin metadata specifically. I.e. question is whether we can generate useful comment text from the 
   structured fields. Alternative: keep only description.
-- [ ] Description text seems redundant for (some?) monastaries, e.g. same for every record in a dataset. (Probably less of an issue though.)
+~~- [ ] Description text seems redundant for (some?) monastaries, e.g. same for every record in a dataset. (Probably less of an issue though.)
 
 ### VisitPlus
 
-- [ ] links to LP records via their __url__ property, not __id__!
-- [ ] it's not clear to me what the purpose of the annotations is. They seem to have redundant info, repeating the gazetteer data.
-- [ ] __Warning:__ might be misunderstanding of LT file format. Looks "inverted", where the target (and not body!) is the place.
+~~- [ ] links to LP records via their __url__ property, not __id__!
+~~- [ ] it's not clear to me what the purpose of the annotations is. They seem to have redundant info, repeating the gazetteer data.
+~~- [ ] __Warning:__ might be misunderstanding of LT file format. Looks "inverted", where the target (and not body!) is the place.
   (Example: for a sound file collection with 100 items, located at the same place, there should be 100 annotations - not 1 with 100 
   bodies.)
-- [ ] annotation bodies are not according to W3C 
-- [ ] "bodies" often lack even basic metadata for the item (not even proper title)
+~~- [ ] annotation bodies are not according to W3C 
+~~- [ ] "bodies" often lack even basic metadata for the item (not even proper title)
