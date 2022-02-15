@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import { StoreContext } from './store/StoreContext';
+import { StoreContext } from './store';
 import Map from './map/Map';
 
 const Peripleo = () => {
@@ -8,6 +8,8 @@ const Peripleo = () => {
   const { store } = useContext(StoreContext);
 
   const [ config, setConfig ] = useState();
+
+  const [ isDataLoaded, setIsDataLoaded ] = useState(false);
 
   useEffect(() => {
     fetch('peripleo.config.json')
@@ -21,13 +23,13 @@ const Peripleo = () => {
 
   useEffect(() => {
     if (config)
-      store.init(config);
+      store.init(config).then(() => setIsDataLoaded(true));
   }, [config]);
 
   // TODO LOADING screen
   return (
     <>
-      {config && <Map config={config} /> }
+      {config && <Map config={config} loaded={isDataLoaded} /> }
     </>
   )
 

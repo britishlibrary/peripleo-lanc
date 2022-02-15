@@ -34,7 +34,7 @@ export default class Store {
     if (!config.data?.length > 0)
       throw "No data";
       
-    config.data.forEach(conf => {
+    return Promise.all(config.data.map(conf => {
       const { name, format, src } = conf;
 
       if (format === 'LINKED_PLACES') {
@@ -42,7 +42,30 @@ export default class Store {
       } else {
         throw 'Unsupported format: ' + format
       }  
-    });
+    }));
+  }
+
+  getNodesInBounds = (bounds, optDataset) => {
+    let minX, minY, maxX, maxY;
+
+    if (bounds.length === 4)
+      [ minX, minY, maxX, maxY ] = bounds;
+    else
+      [[ minX, minY ], [ maxX, maxY ]] = bounds;
+    
+    const results = this.spatialIndex.search({ minX, minY, maxX, maxY });
+
+    const filtered = optDataset ?
+      results.filter(r => r.node.dataset === optDataset) : results;
+
+    // We'll exclude nodes that are larger than the viewport!
+    const isInsideBounds = r =>
+      r.minX > minX && r.maxX < maxX && r.minY > minY && r.maxY < maxY;
+
+    return filtered
+      .filter(result =>
+        result.node.geometry.type === 'Point' || isInsideBounds(result))
+      .map(result => result.node);
   }
 
 }

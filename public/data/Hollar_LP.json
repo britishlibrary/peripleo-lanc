@@ -31,14 +31,14 @@
     }
   },
   "citation": {
-    "@context": "https://raw.githubusercontent.com/citation-style-language/schema/master/schemas/input/csl-citation.json"
+    
   },
-  "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff",
+  "@id": "https://w3id.org/locolligo/Hollar-1660",
   "type": "FeatureCollection",
   "@context": "https://w3id.org/locolligo/contexts/linkedplaces.jsonld",
   "features": [
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/d54e04cd-c73e-4f21-8b71-8d69aaada6fe",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/d54e04cd-c73e-4f21-8b71-8d69aaada6fe",
       "type": "Feature",
       "name": "Old Shoreham",
       "geometry": {
@@ -69,23 +69,23 @@
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/St_Nicolas%27_Church%2C_Shoreham-by-Sea"
+          "identifier": "https://en.wikipedia.org/wiki/St_Nicolas%27_Church%2C_Shoreham-by-Sea"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://www.geograph.org.uk/photo/6301692"
+          "identifier": "https://www.geograph.org.uk/photo/6301692"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q7594968"
+          "identifier": "http://www.wikidata.org/entity/Q7594968"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26278842"
+          "identifier": "http://www.wikidata.org/entity/Q26278842"
         },
         {
           "type": "seeAlso",
-          "id": "https://openplaques.org/plaques/10586",
+          "identifier": "https://openplaques.org/plaques/10586",
           "label": "Andrew bronze plaque"
         }
       ],
@@ -124,7 +124,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/3b3bba96-c01d-4301-8834-d92c7827a53a",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/3b3bba96-c01d-4301-8834-d92c7827a53a",
       "type": "Feature",
       "name": "Exeter Bridge, Cornwall",
       "geometry": {
@@ -163,24 +163,24 @@
         },
         {
           "type": "closeMatch",
-          "id": "https://whgazetteer.org/api/place/83932"
+          "identifier": "https://whgazetteer.org/api/place/83932"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26517008"
+          "identifier": "http://www.wikidata.org/entity/Q26517008"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17665247"
+          "identifier": "http://www.wikidata.org/entity/Q17665247"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1222693",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1222693",
           "label": "EXE BRIDGE BALUSTRADES AND ARCH"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1020671",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1020671",
           "label": "The medieval Exe Bridge, St Edmund's Church, and medieval tenement remains, lying between the River Exe and Frog Street"
         }
       ],
@@ -211,7 +211,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/a37cdb3d-a8b6-467a-91f5-8118ed9f3edb",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/a37cdb3d-a8b6-467a-91f5-8118ed9f3edb",
       "type": "Feature",
       "name": "Outwell, Norfolk",
       "geometry": {
@@ -243,20 +243,20 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1171520",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1171520",
           "label": "CHURCH OF ST CLEMENT"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17536374"
+          "identifier": "http://www.wikidata.org/entity/Q17536374"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Outwell"
+          "identifier": "https://en.wikipedia.org/wiki/Outwell"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://www.geograph.org.uk/photo/1821105"
+          "identifier": "https://www.geograph.org.uk/photo/1821105"
         }
       ],
       "depictions": [
@@ -294,7 +294,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/8d6e0aa7-0b2c-403c-b27c-10c10dd7f10e",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/8d6e0aa7-0b2c-403c-b27c-10c10dd7f10e",
       "type": "Feature",
       "name": "Topcliffe Bridge, Yorkshire",
       "geometry": {
@@ -333,20 +333,20 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1004068",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1004068",
           "label": "Topcliffe Bridge"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17649161"
+          "identifier": "http://www.wikidata.org/entity/Q17649161"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q2732640"
+          "identifier": "http://www.wikidata.org/entity/Q2732640"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Topcliffe%2C_North_Yorkshire"
+          "identifier": "https://en.wikipedia.org/wiki/Topcliffe%2C_North_Yorkshire"
         }
       ],
       "depictions": [
@@ -379,7 +379,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/dd03d6a7-82b0-4138-8a3e-23b15493ef93",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/dd03d6a7-82b0-4138-8a3e-23b15493ef93",
       "type": "Feature",
       "name": "Darlington, Co. Durham",
       "geometry": {
@@ -405,19 +405,16 @@
       ],
       "links": [
         {
-          "type": "exactMatch"
-        },
-        {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Darlington"
+          "identifier": "https://en.wikipedia.org/wiki/Darlington"
         },
         {
           "type": "seeAlso",
-          "id": "https://sounds.bl.uk/Accents-and-dialects/Evolving-English-VoiceBank/021M-C1442X06173X-0101V0",
+          "identifier": "https://sounds.bl.uk/Accents-and-dialects/Evolving-English-VoiceBank/021M-C1442X06173X-0101V0",
           "label": "Mr Tickle in a Darlington accent",
           "properties": {
             "type": "sound",
-            "id": "C1442X06173X-0101",
+            "identifier": "C1442X06173X-0101",
             "collection": "Evolving English VoiceBank",
             "title": "Mr Tickle in a Darlington accent",
             "description": "A recording of 'Mr Tickle', by Roger Hargreaves. Speaker born 1975; female. \n Self-defined linguistic identity: Darlington.",
@@ -430,11 +427,11 @@
         },
         {
           "type": "closeMatch",
-          "id": "https://whgazetteer.org/api/place/83430"
+          "identifier": "https://whgazetteer.org/api/place/83430"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2651513/"
+          "identifier": "https://www.geonames.org/2651513/"
         }
       ],
       "depictions": [
@@ -463,7 +460,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/9f3771dd-bb40-4b26-9010-b7fb78c357bb",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/9f3771dd-bb40-4b26-9010-b7fb78c357bb",
       "type": "Feature",
       "name": "Boroughbridge, Yorkshire",
       "geometry": {
@@ -490,39 +487,39 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1000003",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1000003",
           "label": "Battle of Boroughbridge 1322"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1293851",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1293851",
           "label": "BOROUGH BRIDGE"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1014705",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1014705",
           "label": "Stone alignment west of Boroughbridge known as the Devil's Arrows, including three standing stones and the setting for a fourth"
         },
         {
           "type": "seeAlso",
-          "id": "https://www.english-heritage.org.uk/visit/places/aldborough-roman-site/",
+          "identifier": "https://www.english-heritage.org.uk/visit/places/aldborough-roman-site/",
           "label": "Aldborough Roman Site"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26442947"
+          "identifier": "http://www.wikidata.org/entity/Q26442947"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q2569056"
+          "identifier": "http://www.wikidata.org/entity/Q2569056"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Boroughbridge"
+          "identifier": "https://en.wikipedia.org/wiki/Boroughbridge"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2655173/"
+          "identifier": "https://www.geonames.org/2655173/"
         }
       ],
       "depictions": [
@@ -555,7 +552,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/1f0a8231-c2f5-4e05-99e8-6ab8a246110a",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/1f0a8231-c2f5-4e05-99e8-6ab8a246110a",
       "type": "Feature",
       "name": "Ferrybridge, Yorkshire",
       "geometry": {
@@ -581,42 +578,39 @@
       ],
       "links": [
         {
-          "type": "exactMatch"
-        },
-        {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1167483",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1167483",
           "label": "FERRY BRIDGE"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1005799",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1005799",
           "label": "Ferrybridge near Knottingley"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1005789",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1005789",
           "label": "Ferrybridge Henge, a prehistoric enclosure, and two round barrows"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17526305"
+          "identifier": "http://www.wikidata.org/entity/Q17526305"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q1408162"
+          "identifier": "http://www.wikidata.org/entity/Q1408162"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Ferrybridge"
+          "identifier": "https://en.wikipedia.org/wiki/Ferrybridge"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Battle_of_Ferrybridge"
+          "identifier": "https://en.wikipedia.org/wiki/Battle_of_Ferrybridge"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2649518/"
+          "identifier": "https://www.geonames.org/2649518/"
         }
       ],
       "depictions": [
@@ -654,7 +648,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/f4fe6df0-7abc-448c-bfd2-a9c793d0de46",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/f4fe6df0-7abc-448c-bfd2-a9c793d0de46",
       "type": "Feature",
       "name": "Newark Castle, Northumberland",
       "geometry": {
@@ -707,11 +701,11 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "http://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Harley_Roll_Z_17",
+          "identifier": "http://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Harley_Roll_Z_17",
           "label": "Confirmation and grant of King Wulfhere of the Mercians (d. 675) to St Peter's Minster, Medeshamstede; Grant of King Edgar of England (d. 975) to Peterborough Abbey",
           "properties": {
             "type": "manuscript",
-            "id": "040-003345875",
+            "identifier": "040-003345875",
             "collection": "Anglo-Saxon Charters",
             "title": "Confirmation and grant of King Wulfhere of the Mercians (d. 675) to St Peter's Minster, Medeshamstede; Grant of King Edgar of England (d. 975) to Peterborough Abbey",
             "description": "King Wulfhere of the Mercians (d. 675) confirms and grants to St Peter's Minster, Medeshamstede, land at Peterborough (Medeshamstede), Thorpe Hall, Dogsthorpe, Eastfield near Peterborough, Newark, Garton End, Eye, Werrington, Gunthorpe, Peakirk, Glinton, Deeping Gate, Peakirk Marsh, Eye Marsh, the hermitage of Singleshole, Castor, Ailsworth, Sutton near Peterborough, Upton near Ailsworth, Milton Park, Barnack, Southorpe, Walcot Hall in Southorpe, Pilsgate, Ufford, Bainton, Ashton in Bainton, Torpel (lost) in Ufford, Thornhaugh, Sibberton Lodge in Thornhaugh, Wansford, Wittering, Wothrope, Burghley near Stamford, Maxey, Lolham Hall in Maxey, Nunton in Maxey, Helpston, Northborough, Etton, Woodcroft Castle in Etton, Paston, Walton, Marholm, Warmington, Oundle, Ashton Wold, Churchfield, Stoke, Benefield, Glapthorn, Cotterstock, Stanwick, Irthlingborough Kettering, Cottingham, East Carleton, Pytchley, Northampton, Northamptonshire; Olney, Buckinghamshire; Hoo and Avery Farm, Kent; Howden, Yorks. ER; Breedon on the Hill, Leicestershire; Hrepingas (? Repton, Derbyshire); Cedenac; Swineshead, Linconshire; Heanbirig; Lodeshale; Shifnal, Shropshire; Costesford (? Shropshire), Stretteforde (? Stretford, Shropshire), Wecelleburne, Lusgerde (Lizard Hill, Shropshire); Ethelhuniglonde (? in Kent); Barchanig (Bardney, Linconshire); Langeledenham; Washingborough, Linconshire; Binnington, Yorkshire E.R; Conisbrough, Yorkshire W.R; Barnwell, Northamptonshire; Great Easton, Bringhurst, Prestgrave, Leicestershire; Drayton, Northamptonshire; Glaston, Rutland; Langton, Leicestershire; Tinwell, Ingthorpe, Rutland; Collingham, Nottinghamshire; Fiskerton, Reepham, Scotter, Scotterthorpe, Scotton, Northorpe, Yawthorpe, Riseholme, Messingham, Manton, Cleatham, Hibaldstowe, Ravensthorpe, Holme in Bottesford, Risby near Market Rasen, Walcot in Alkborough, Alkborough, Normanby, Althorpe, Lincolnshire; Muskham, Nottinghamshire; Thurlby, Osgodby in Lavington, Walcot near Folkingham, Breidesthorpe (? Bowthorpe), Lincolnshire; Ryhall, Belmesthorpe, Rutland; Manthorpe, Carlton Scroop, Quadring in Holland, Lincolnshire; Fletton, Orton and Alwalton, Huntingdonshire. Dated 664; spurious (Sawyer, no. 68). King Edgar of England (d. 975) grants, with later confirmations, privileges for Peterborough Abbey and its land at Dogsthorpe, Eye, Paston and Oundle, Northamptonshire; and confirmation of land at Barrow-upon-Humber, Lincolnshire; Warmington, Ashton, Kettering, Castor, Ailsworth, Walton, Werrington, Eye, and Thorp, Northamptonshire; a mint at Stamford, Lincolnshire; and half of Whittlesey Mere; dated 972, spurious (Sawyer, no. 787).",
@@ -724,29 +718,29 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1001318",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1001318",
           "label": "NEWARK CASTLE GARDENS"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1003474",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1003474",
           "label": "Newark Castle"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q2970132"
+          "identifier": "http://www.wikidata.org/entity/Q2970132"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q49940"
+          "identifier": "http://www.wikidata.org/entity/Q49940"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Newark_Castle%2C_Nottinghamshire"
+          "identifier": "https://en.wikipedia.org/wiki/Newark_Castle%2C_Nottinghamshire"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/12122402/"
+          "identifier": "https://www.geonames.org/12122402/"
         }
       ],
       "descriptions": [
@@ -758,7 +752,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/5406937d-13c9-420b-94e6-52ae43d4bb80",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/5406937d-13c9-420b-94e6-52ae43d4bb80",
       "type": "Feature",
       "name": "Tadcaster Bridge",
       "geometry": {
@@ -784,29 +778,29 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1132471",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1132471",
           "label": "WHARFE BRIDGE"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1017407",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1017407",
           "label": "Tadcaster motte and bailey castle"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q21877533"
+          "identifier": "http://www.wikidata.org/entity/Q21877533"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q784467"
+          "identifier": "http://www.wikidata.org/entity/Q784467"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Tadcaster_Bridge"
+          "identifier": "https://en.wikipedia.org/wiki/Tadcaster_Bridge"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2636335/"
+          "identifier": "https://www.geonames.org/2636335/"
         }
       ],
       "depictions": [
@@ -839,7 +833,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/d5cd035c-64fd-4b87-94b2-eab17c98c92a",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/d5cd035c-64fd-4b87-94b2-eab17c98c92a",
       "type": "Feature",
       "name": "High Wycombe",
       "geometry": {
@@ -871,15 +865,15 @@
       "links": [
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2646914/"
+          "identifier": "https://www.geonames.org/2646914/"
         },
         {
           "type": "seeAlso",
-          "id": "http://access.bl.uk/item/viewer/ark:/81055/vdc_100024643666.0x000001",
+          "identifier": "http://access.bl.uk/item/viewer/ark:/81055/vdc_100024643666.0x000001",
           "label": "Bibliotheca Manuscripta Lansdowniana, etc. A Catalogue of the Collection of Manuscripts ... of the late William Petty ... Marquess of Lansdowne",
           "properties": {
             "type": "book",
-            "id": "BL:A0019146526",
+            "identifier": "BL:A0019146526",
             "collection": "British Library books digitised by Google",
             "title": "Bibliotheca Manuscripta Lansdowniana, etc. A Catalogue of the Collection of Manuscripts ... of the late William Petty ... Marquess of Lansdowne",
             "private_note": "http://books.google.co.uk/books?vid=BL:A0019146526",
@@ -892,34 +886,34 @@
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17524678"
+          "identifier": "http://www.wikidata.org/entity/Q17524678"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1125180",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1125180",
           "label": "CHURCH OF ALL SAINTS"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1009537",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1009537",
           "label": "Castle Hill, a motte and bailey castle and Saxon burial 50m west of Castle Hill House"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q64116"
+          "identifier": "http://www.wikidata.org/entity/Q64116"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1310649",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1310649",
           "label": "WYCOMBE ABBEY (PARTS OF WYCOMBE ABBEY SCHOOL)"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/High_Wycombe"
+          "identifier": "https://en.wikipedia.org/wiki/High_Wycombe"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2646914/"
+          "identifier": "https://www.geonames.org/2646914/"
         }
       ],
       "depictions": [
@@ -952,7 +946,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/a088cc0b-44ee-47e1-a160-aa3fa5df1313",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/a088cc0b-44ee-47e1-a160-aa3fa5df1313",
       "type": "Feature",
       "name": "Colchester Castle",
       "geometry": {
@@ -984,23 +978,23 @@
       "links": [
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6286842/"
+          "identifier": "https://www.geonames.org/6286842/"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Colchester_Castle"
+          "identifier": "https://en.wikipedia.org/wiki/Colchester_Castle"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q198287"
+          "identifier": "http://www.wikidata.org/entity/Q198287"
         },
         {
           "type": "seeAlso",
-          "id": "https://sounds.bl.uk/Accents-and-dialects/Millenium-memory-bank/021M-C0900X04083X-0300V1",
+          "identifier": "https://sounds.bl.uk/Accents-and-dialects/Millenium-memory-bank/021M-C0900X04083X-0300V1",
           "label": "Colchester, Essex (cf. SED West Bergholt)",
           "properties": {
             "type": "sound",
-            "id": "C0900X04083X-0300",
+            "identifier": "C0900X04083X-0300",
             "collection": "Millennium Memory Bank",
             "title": "Colchester, Essex (cf. SED West Bergholt)",
             "description": "Will talks about his musical influences and recalls the proliferation of personal stereos in the 1980s. Producer: BBC. Recorded by: Jarvis, Anton (male, interviewer). Speaker: Will Wright (b.1972/02/08, male, DJ & promoter).",
@@ -1013,11 +1007,11 @@
         },
         {
           "type": "seeAlso",
-          "id": "http://britishlibrary.georeferencer.com/id/11106561094",
+          "identifier": "http://britishlibrary.georeferencer.com/id/11106561094",
           "label": "[Map of Colchester, England]",
           "properties": {
             "type": "map",
-            "id": "BLL01:018226356",
+            "identifier": "BLL01:018226356",
             "collection": "British Library georeferencer",
             "title": "[Map of Colchester, England]",
             "bl_record_id": 18226356,
@@ -1028,12 +1022,12 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1002217",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1002217",
           "label": "Colchester Castle and the Temple of Claudius"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1123674",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1123674",
           "label": "THE CASTLE KEEP (INCLUDING EXCAVATED REMAINS OF FOREBUILDING IN MOAT)"
         }
       ],
@@ -1067,7 +1061,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/6f9a9123-ac81-466c-a8ea-359e1d15ce4d",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/6f9a9123-ac81-466c-a8ea-359e1d15ce4d",
       "type": "Feature",
       "name": "Cawood, Yorkshire",
       "geometry": {
@@ -1099,27 +1093,27 @@
       "links": [
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2653468/"
+          "identifier": "https://www.geonames.org/2653468/"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Cawood_Castle"
+          "identifier": "https://en.wikipedia.org/wiki/Cawood_Castle"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q1815597"
+          "identifier": "http://www.wikidata.org/entity/Q1815597"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q5055225"
+          "identifier": "http://www.wikidata.org/entity/Q5055225"
         },
         {
           "type": "seeAlso",
-          "id": "https://sounds.bl.uk/Accents-and-dialects/Survey-of-English-dialects/021M-C0908X0047XX-0300V1",
+          "identifier": "https://sounds.bl.uk/Accents-and-dialects/Survey-of-English-dialects/021M-C0908X0047XX-0300V1",
           "label": "Cawood, Yorkshire",
           "properties": {
             "type": "sound",
-            "id": "C0908X0047XX-0300",
+            "identifier": "C0908X0047XX-0300",
             "collection": "Survey of English dialects",
             "title": "Cawood, Yorkshire",
             "description": "William describes the use of horse-drawn ploughs. Producer: University of Leeds. Recorded by: Wright, Peter (male, SED fieldworker). Speaker: William Farrar (b.1882, male retired farm manager).",
@@ -1132,12 +1126,12 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1011518",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1011518",
           "label": "Cawood Castle and Castle Garth: residence of the medieval Archbishops of York and associated enclosure containing gardens, five fishponds and a quarry pit"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1132508",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1132508",
           "label": "GATEHOUSE"
         }
       ],
@@ -1171,7 +1165,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/0be7c747-a873-4337-96ff-e70797c84091",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/0be7c747-a873-4337-96ff-e70797c84091",
       "type": "Feature",
       "name": "Tadcaster Church, Yorkshire",
       "geometry": {
@@ -1202,32 +1196,29 @@
       ],
       "links": [
         {
-          "type": "exactMatch"
+          "type": "closeMatch",
+          "identifier": "http://www.wikidata.org/entity/Q784467"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q784467"
+          "identifier": "https://www.geonames.org/2636335/"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2636335/"
-        },
-        {
-          "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17542292"
+          "identifier": "http://www.wikidata.org/entity/Q17542292"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/St_Mary%27s_Church%2C_Tadcaster"
+          "identifier": "https://en.wikipedia.org/wiki/St_Mary%27s_Church%2C_Tadcaster"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1167462",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1167462",
           "label": "CHURCH OF ST MARY"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1017407",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1017407",
           "label": "Tadcaster motte and bailey castle"
         }
       ],
@@ -1261,7 +1252,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/5ae12eb5-ca5e-427d-9599-dcea84534082",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/5ae12eb5-ca5e-427d-9599-dcea84534082",
       "type": "Feature",
       "name": "Lambton Colliery, Co. Durham",
       "geometry": {
@@ -1315,7 +1306,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/4be35e16-afc8-45a2-8e86-b599bcfcab7d",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/4be35e16-afc8-45a2-8e86-b599bcfcab7d",
       "type": "Feature",
       "name": "Warwick Castle",
       "geometry": {
@@ -1346,11 +1337,11 @@
         },
         {
           "type": "seeAlso",
-          "id": "http://britishlibrary.georeferencer.com/id/11009340315",
+          "identifier": "http://britishlibrary.georeferencer.com/id/11009340315",
           "label": "[Map of Warwick, England]",
           "properties": {
             "type": "map",
-            "id": "BLL01:018227633",
+            "identifier": "BLL01:018227633",
             "collection": "British Library georeferencer",
             "title": "[Map of Warwick, England]",
             "bl_record_id": 18227633,
@@ -1361,33 +1352,33 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1364805",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1364805",
           "label": "WARWICK CASTLE"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1005757",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1005757",
           "label": "Warwick Castle (uninhabited parts)"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17643800"
+          "identifier": "http://www.wikidata.org/entity/Q17643800"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q941276"
+          "identifier": "http://www.wikidata.org/entity/Q941276"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q549761"
+          "identifier": "http://www.wikidata.org/entity/Q549761"
         },
         {
           "type": "closeMatch",
-          "id": "https://whgazetteer.org/api/place/91069"
+          "identifier": "https://whgazetteer.org/api/place/91069"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Warwick_Castle"
+          "identifier": "https://en.wikipedia.org/wiki/Warwick_Castle"
         }
       ],
       "depictions": [
@@ -1424,7 +1415,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/71c59551-207a-46ed-812c-a7afb7a6a622",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/71c59551-207a-46ed-812c-a7afb7a6a622",
       "type": "Feature",
       "name": "Bramber Castle (Remains of)",
       "geometry": {
@@ -1451,11 +1442,11 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "http://access.bl.uk/item/viewer/ark:/81055/vdc_100036702015.0x000001",
+          "identifier": "http://access.bl.uk/item/viewer/ark:/81055/vdc_100036702015.0x000001",
           "label": "History of Bramber Castle",
           "properties": {
             "type": "book",
-            "id": "BL:A0021801138",
+            "identifier": "BL:A0021801138",
             "collection": "British Library books digitised by Google",
             "title": "History of Bramber Castle",
             "public_note": "Visitor site maintained by English Heritage. For more information see https://www.english-heritage.org.uk/visit/places/Bramber-Castle",
@@ -1469,34 +1460,34 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1286805",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1286805",
           "label": "BRAMBER CASTLE RUINS"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1012174",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1012174",
           "label": "Bramber Castle"
         },
         {
           "type": "seeAlso",
-          "id": "https://www.english-heritage.org.uk/visit/places/Bramber-Castle",
+          "identifier": "https://www.english-heritage.org.uk/visit/places/Bramber-Castle",
           "label": "Bramber Castle"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q897538"
+          "identifier": "http://www.wikidata.org/entity/Q897538"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q897542"
+          "identifier": "http://www.wikidata.org/entity/Q897542"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Bramber_Castle"
+          "identifier": "https://en.wikipedia.org/wiki/Bramber_Castle"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6287200/"
+          "identifier": "https://www.geonames.org/6287200/"
         }
       ],
       "depictions": [
@@ -1529,7 +1520,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/55638163-1f35-4626-8818-894f42faf3b2",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/55638163-1f35-4626-8818-894f42faf3b2",
       "type": "Feature",
       "name": "Bolton Percy Church",
       "geometry": {
@@ -1565,20 +1556,20 @@
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17526339"
+          "identifier": "http://www.wikidata.org/entity/Q17526339"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1296630",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1296630",
           "label": "CHURCH OF ALL SAINTS"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Bolton_Percy"
+          "identifier": "https://en.wikipedia.org/wiki/Bolton_Percy"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2655231/"
+          "identifier": "https://www.geonames.org/2655231/"
         }
       ],
       "depictions": [
@@ -1611,7 +1602,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/290c2323-0bcc-42c8-a649-d4fe56ea0802",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/290c2323-0bcc-42c8-a649-d4fe56ea0802",
       "type": "Feature",
       "name": "Greenhalgh Castle",
       "geometry": {
@@ -1647,20 +1638,20 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1013815",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1013815",
           "label": "Greenhalgh Castle, cultivation terraces south east of the castle, and site of Greenhalgh manor house"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17662022"
+          "identifier": "http://www.wikidata.org/entity/Q17662022"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Greenhalgh_Castle"
+          "identifier": "https://en.wikipedia.org/wiki/Greenhalgh_Castle"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6286912/"
+          "identifier": "https://www.geonames.org/6286912/"
         }
       ],
       "depictions": [
@@ -1689,7 +1680,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/299926ac-0676-48e1-94f5-e0dae0f11782",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/299926ac-0676-48e1-94f5-e0dae0f11782",
       "type": "Feature",
       "name": "Rochester Bridge",
       "geometry": {
@@ -1715,33 +1706,33 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1086431",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1086431",
           "label": "ROCHESTER BRIDGE"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1003360",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1003360",
           "label": "Bridge Chapel"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q13528098"
+          "identifier": "http://www.wikidata.org/entity/Q13528098"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q507517"
+          "identifier": "http://www.wikidata.org/entity/Q507517"
         },
         {
           "type": "closeMatch",
-          "id": "https://whgazetteer.org/api/place/6373698"
+          "identifier": "https://whgazetteer.org/api/place/6373698"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Rochester_Bridge"
+          "identifier": "https://en.wikipedia.org/wiki/Rochester_Bridge"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2639268/"
+          "identifier": "https://www.geonames.org/2639268/"
         }
       ],
       "depictions": [
@@ -1774,7 +1765,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/716e9be7-9147-43a1-8bcc-f14f379a2900",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/716e9be7-9147-43a1-8bcc-f14f379a2900",
       "type": "Feature",
       "name": "Knaresborough Church, Yorkshire",
       "geometry": {
@@ -1801,24 +1792,24 @@
       "links": [
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/St._John_the_Baptist_Church%2C_Knaresborough"
+          "identifier": "https://en.wikipedia.org/wiki/St._John_the_Baptist_Church%2C_Knaresborough"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1293930",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1293930",
           "label": "CHURCH OF SAINT JOHN THE BAPTIST"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17538227"
+          "identifier": "http://www.wikidata.org/entity/Q17538227"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q535902"
+          "identifier": "http://www.wikidata.org/entity/Q535902"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2645163/"
+          "identifier": "https://www.geonames.org/2645163/"
         }
       ],
       "depictions": [
@@ -1851,7 +1842,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/a9ae464e-5a9b-4099-85f9-ed4a5aa3273c",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/a9ae464e-5a9b-4099-85f9-ed4a5aa3273c",
       "type": "Feature",
       "name": "Durham Bridge",
       "geometry": {
@@ -1882,29 +1873,29 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1002351",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1002351",
           "label": "Framwellgate Bridge"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1322872",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1322872",
           "label": "FRAMWELLGATE BRIDGE"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q5478079"
+          "identifier": "http://www.wikidata.org/entity/Q5478079"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q179815"
+          "identifier": "http://www.wikidata.org/entity/Q179815"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Framwellgate_Bridge"
+          "identifier": "https://en.wikipedia.org/wiki/Framwellgate_Bridge"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2650628/"
+          "identifier": "https://www.geonames.org/2650628/"
         }
       ],
       "depictions": [
@@ -1937,7 +1928,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/28882feb-3e1d-4dbb-b4b5-779ea63336dc",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/28882feb-3e1d-4dbb-b4b5-779ea63336dc",
       "type": "Feature",
       "name": "Stony Stratford",
       "geometry": {
@@ -1968,42 +1959,42 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1310932",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1310932",
           "label": "TOWER OF CHURCH OF ST MARY MAGDALENE"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1021371",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1021371",
           "label": "Remains of the church and churchyard of St Mary Magdalen"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1125375",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1125375",
           "label": "PARISH CHURCH OF ST MARY AND ST GILES"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17551967"
+          "identifier": "http://www.wikidata.org/entity/Q17551967"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17552168"
+          "identifier": "http://www.wikidata.org/entity/Q17552168"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17663622"
+          "identifier": "http://www.wikidata.org/entity/Q17663622"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q787279"
+          "identifier": "http://www.wikidata.org/entity/Q787279"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/St_Mary_%26_St_Giles_Church%2C_Stony_Stratford"
+          "identifier": "https://en.wikipedia.org/wiki/St_Mary_%26_St_Giles_Church%2C_Stony_Stratford"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2636795/"
+          "identifier": "https://www.geonames.org/2636795/"
         }
       ],
       "depictions": [
@@ -2040,7 +2031,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/754f0f70-bf76-4cb7-b362-150436299829",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/754f0f70-bf76-4cb7-b362-150436299829",
       "type": "Feature",
       "name": "Kingston, Surrey",
       "geometry": {
@@ -2076,24 +2067,24 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1358437",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1358437",
           "label": "Church of All Saints"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Grade_I_and_II*_listed_buildings_in_the_Royal_Borough_of_Kingston_upon_Thames"
+          "identifier": "https://en.wikipedia.org/wiki/Grade_I_and_II*_listed_buildings_in_the_Royal_Borough_of_Kingston_upon_Thames"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://www.geograph.org.uk/photo/3442583"
+          "identifier": "https://www.geograph.org.uk/photo/3442583"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://www.geograph.org.uk/photo/3227500"
+          "identifier": "https://www.geograph.org.uk/photo/3227500"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6690829/"
+          "identifier": "https://www.geonames.org/6690829/"
         }
       ],
       "depictions": [
@@ -2132,7 +2123,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/8309be91-fd0f-4669-bfa9-1b47e3afdc18",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/8309be91-fd0f-4669-bfa9-1b47e3afdc18",
       "type": "Feature",
       "name": "Killinghall Bridge",
       "geometry": {
@@ -2171,20 +2162,20 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1150422",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1150422",
           "label": "KILLINGHALL BRIDGE"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26443260"
+          "identifier": "http://www.wikidata.org/entity/Q26443260"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q6407815"
+          "identifier": "http://www.wikidata.org/entity/Q6407815"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/11593315/"
+          "identifier": "https://www.geonames.org/11593315/"
         }
       ],
       "depictions": [
@@ -2210,7 +2201,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/3fa63489-32d1-4407-ad96-6234851d5c22",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/3fa63489-32d1-4407-ad96-6234851d5c22",
       "type": "Feature",
       "name": "Darlington, Co. Durham",
       "geometry": {
@@ -2249,28 +2240,28 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1121280",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1121280",
           "label": "CHURCH OF ST CUTHBERT"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17530681"
+          "identifier": "http://www.wikidata.org/entity/Q17530681"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q213181"
+          "identifier": "http://www.wikidata.org/entity/Q213181"
         },
         {
           "type": "closeMatch",
-          "id": "https://whgazetteer.org/api/place/83430"
+          "identifier": "https://whgazetteer.org/api/place/83430"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Darlington"
+          "identifier": "https://en.wikipedia.org/wiki/Darlington"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2651513/"
+          "identifier": "https://www.geonames.org/2651513/"
         }
       ],
       "depictions": [
@@ -2303,7 +2294,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/f3c1f5b4-3175-4020-aede-50e4cf07465f",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/f3c1f5b4-3175-4020-aede-50e4cf07465f",
       "type": "Feature",
       "name": "Biddick Hall, Co. Durham",
       "geometry": {
@@ -2325,16 +2316,16 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1120989",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1120989",
           "label": "BIDDICK HALL"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q4904048"
+          "identifier": "http://www.wikidata.org/entity/Q4904048"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Biddick_Hall_%28house%29"
+          "identifier": "https://en.wikipedia.org/wiki/Biddick_Hall_%28house%29"
         }
       ],
       "depictions": [
@@ -2367,7 +2358,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/40b0a0bb-8437-4bde-ac36-d3511e8d41a7",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/40b0a0bb-8437-4bde-ac36-d3511e8d41a7",
       "type": "Feature",
       "name": "Preston Lodge (Baconsthorpe Castle Gatehouse)",
       "geometry": {
@@ -2403,47 +2394,47 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1049845",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1049845",
           "label": "REMAINS OF BACONSTHORPE CASTLE"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1013093",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1013093",
           "label": "Baconsthorpe Castle moated site with fortified house, gatehouse, courtyards and formal gardens"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1049846",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1049846",
           "label": "REMAINS OF BACONSTHORPE HALL C80M SOUTH OF BACONSTHORPE CASTLE"
         },
         {
           "type": "seeAlso",
-          "id": "https://www.english-heritage.org.uk/visit/places/Baconsthorpe-Castle",
+          "identifier": "https://www.english-heritage.org.uk/visit/places/Baconsthorpe-Castle",
           "label": "Baconsthorpe Castle"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q4839962"
+          "identifier": "http://www.wikidata.org/entity/Q4839962"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26301854"
+          "identifier": "http://www.wikidata.org/entity/Q26301854"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q2343935"
+          "identifier": "http://www.wikidata.org/entity/Q2343935"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Baconsthorpe_Castle"
+          "identifier": "https://en.wikipedia.org/wiki/Baconsthorpe_Castle"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6286982/"
+          "identifier": "https://www.geonames.org/6286982/"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://www.geograph.org.uk/photo/5134717"
+          "identifier": "https://www.geograph.org.uk/photo/5134717"
         }
       ],
       "depictions": [
@@ -2481,7 +2472,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/954b19c6-3ef3-4093-bb4f-c85309932154",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/954b19c6-3ef3-4093-bb4f-c85309932154",
       "type": "Feature",
       "name": "Holt Castle, Flintshire",
       "geometry": {
@@ -2512,11 +2503,11 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://sounds.bl.uk/Accents-and-dialects/Survey-of-English-dialects/021M-C0908X0051XX-0300V1",
+          "identifier": "https://sounds.bl.uk/Accents-and-dialects/Survey-of-English-dialects/021M-C0908X0051XX-0300V1",
           "label": "Farndon, Cheshire",
           "properties": {
             "type": "sound",
-            "id": "C0908X0051XX-0300",
+            "identifier": "C0908X0051XX-0300",
             "collection": "Survey of English dialects",
             "title": "Farndon, Cheshire",
             "description": "Walter talks about calving - he describes the normal procedure for a straightforward birth and outlines a number of potential complications and solutions to problem births. Rossett is a village just to the northwest of Farndon. Producer: University of Leeds. Recorded by: Ellis, Stanley (b.1926. Recorded by: male, SED fieldworker). Speaker: Walter Davies (b.1889, male, farmer).",
@@ -2529,29 +2520,29 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://w3id.org/locolligo/eddd181d-bc2b-4767-8c3d-eb4c99395603/643b6242-be3b-4590-9fa5-03db9b5b2f45",
+          "identifier": "https://w3id.org/locolligo/eddd181d-bc2b-4767-8c3d-eb4c99395603/643b6242-be3b-4590-9fa5-03db9b5b2f45",
           "label": "Holt Castle"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q5884534"
+          "identifier": "http://www.wikidata.org/entity/Q5884534"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q5884520"
+          "identifier": "http://www.wikidata.org/entity/Q5884520"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Holt_Castle"
+          "identifier": "https://en.wikipedia.org/wiki/Holt_Castle"
         },
         {
           "type": "seeAlso",
-          "id": "http://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=1595",
+          "identifier": "http://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=1595",
           "label": "Holt Castle"
         },
         {
           "type": "seeAlso",
-          "id": "http://cadwpublic-api.azurewebsites.net/reports/sam/FullReport?lang=en&id=2940",
+          "identifier": "http://cadwpublic-api.azurewebsites.net/reports/sam/FullReport?lang=en&id=2940",
           "label": "Holt Castle"
         }
       ],
@@ -2601,7 +2592,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/03727716-66e7-4725-b019-8caa69950e40",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/03727716-66e7-4725-b019-8caa69950e40",
       "type": "Feature",
       "name": "Pevensey Castle",
       "geometry": {
@@ -2637,33 +2628,33 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1013379",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1013379",
           "label": "Pevensey Castle: a Saxon Shore fort, Norman defences, a medieval enclosure castle, and later associated remains"
         },
         {
           "type": "seeAlso",
-          "id": "https://www.english-heritage.org.uk/visit/places/Pevensey-Castle",
+          "identifier": "https://www.english-heritage.org.uk/visit/places/Pevensey-Castle",
           "label": "Pevensey Castle"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q2970215"
+          "identifier": "http://www.wikidata.org/entity/Q2970215"
         },
         {
           "type": "closeMatch",
-          "id": "https://whgazetteer.org/api/place/88256"
+          "identifier": "https://whgazetteer.org/api/place/88256"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://www.geograph.org.uk/photo/256421"
+          "identifier": "https://www.geograph.org.uk/photo/256421"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Pevensey_Castle"
+          "identifier": "https://en.wikipedia.org/wiki/Pevensey_Castle"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6286762/"
+          "identifier": "https://www.geonames.org/6286762/"
         }
       ],
       "depictions": [
@@ -2701,7 +2692,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/180f7249-7af5-4db4-8616-f2b90cbe3f7c",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/180f7249-7af5-4db4-8616-f2b90cbe3f7c",
       "type": "Feature",
       "name": "St. Alban's",
       "geometry": {
@@ -2718,11 +2709,11 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "http://britishlibrary.georeferencer.com/id/11223729954",
+          "identifier": "http://britishlibrary.georeferencer.com/id/11223729954",
           "label": "[Map of St. Albans, England]",
           "properties": {
             "type": "map",
-            "id": "BLL01:018225559",
+            "identifier": "BLL01:018225559",
             "collection": "British Library georeferencer",
             "title": "[Map of St. Albans, England]",
             "bl_record_id": 18225559,
@@ -2732,38 +2723,38 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1003523",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1003523",
           "label": "St Albans Abbey Gatehouse"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1003526",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1003526",
           "label": "St Albans Abbey, site of conventual buildings"
         },
         {
           "type": "seeAlso",
-          "id": "https://w3id.org/locolligo/eddd181d-bc2b-4767-8c3d-eb4c99395603/b37d85d1-2039-43cd-b5af-c427b35ad167",
+          "identifier": "https://w3id.org/locolligo/eddd181d-bc2b-4767-8c3d-eb4c99395603/b37d85d1-2039-43cd-b5af-c427b35ad167",
           "label": "St Albans"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17645367"
+          "identifier": "http://www.wikidata.org/entity/Q17645367"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17645341"
+          "identifier": "http://www.wikidata.org/entity/Q17645341"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q6226"
+          "identifier": "http://www.wikidata.org/entity/Q6226"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/St_Albans_Cathedral"
+          "identifier": "https://en.wikipedia.org/wiki/St_Albans_Cathedral"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2638867/"
+          "identifier": "https://www.geonames.org/2638867/"
         }
       ],
       "depictions": [
@@ -2816,7 +2807,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/885f7084-42d4-4951-935e-d5c06354203a",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/885f7084-42d4-4951-935e-d5c06354203a",
       "type": "Feature",
       "name": "London Bridge",
       "geometry": {
@@ -2847,11 +2838,11 @@
         },
         {
           "type": "seeAlso",
-          "id": "http://access.bl.uk/item/viewer/ark:/81055/vdc_100024200573.0x000001",
+          "identifier": "http://access.bl.uk/item/viewer/ark:/81055/vdc_100024200573.0x000001",
           "label": "Old London Bridge, etc",
           "properties": {
             "type": "book",
-            "id": "BL:A0018783056",
+            "identifier": "BL:A0018783056",
             "collection": "British Library books digitised by Google",
             "title": "Old London Bridge, etc",
             "private_note": "http://books.google.co.uk/books?vid=BL:A0018783056",
@@ -2865,11 +2856,11 @@
         },
         {
           "type": "seeAlso",
-          "id": "http://www.bl.uk/onlinegallery/onlineex/crace/a/007000000000017u00028000.html",
+          "identifier": "http://www.bl.uk/onlinegallery/onlineex/crace/a/007000000000017u00028000.html",
           "label": "A Sketch Shewing the Depth of the RIVER THAMES, between LONDON BRIDGE, and BILLINGSGATE",
           "properties": {
             "type": "map",
-            "id": "BLL01:016417148",
+            "identifier": "BLL01:016417148",
             "collection": "Crace Collection of Maps of London",
             "title": "A Sketch Shewing the Depth of the RIVER THAMES, between LONDON BRIDGE, and BILLINGSGATE",
             "bl_shelfmark": "Maps Crace Port. 17.28",
@@ -2879,15 +2870,15 @@
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Chapel_of_St_Thomas_on_the_Bridge"
+          "identifier": "https://en.wikipedia.org/wiki/Chapel_of_St_Thomas_on_the_Bridge"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/London_Bridge"
+          "identifier": "https://en.wikipedia.org/wiki/London_Bridge"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6619889/"
+          "identifier": "https://www.geonames.org/6619889/"
         }
       ],
       "depictions": [
@@ -2921,7 +2912,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/6626d56e-d64a-4705-b840-3aa25ee156ea",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/6626d56e-d64a-4705-b840-3aa25ee156ea",
       "type": "Feature",
       "name": "Bolton Percy Castle",
       "geometry": {
@@ -2952,24 +2943,24 @@
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2655231/"
+          "identifier": "https://www.geonames.org/2655231/"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1148416",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1148416",
           "label": "GATEHOUSE"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Bolton_Percy"
+          "identifier": "https://en.wikipedia.org/wiki/Bolton_Percy"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2655231/"
+          "identifier": "https://www.geonames.org/2655231/"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://www.geograph.org.uk/photo/1933241"
+          "identifier": "https://www.geograph.org.uk/photo/1933241"
         }
       ],
       "depictions": [
@@ -3003,7 +2994,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/9384ff28-d421-4cd6-8f7c-7b5d5969af58",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/9384ff28-d421-4cd6-8f7c-7b5d5969af58",
       "type": "Feature",
       "name": "Grimbald Bridge",
       "geometry": {
@@ -3042,12 +3033,12 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1315622",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1315622",
           "label": "GRIMBALD BRIDGE OVER RIVER NIDD"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26601984"
+          "identifier": "http://www.wikidata.org/entity/Q26601984"
         }
       ],
       "depictions": [
@@ -3069,7 +3060,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/3da6932a-077b-45df-ae24-1182cc18d725",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/3da6932a-077b-45df-ae24-1182cc18d725",
       "type": "Feature",
       "name": "Castle Acre, Norfolk",
       "geometry": {
@@ -3100,46 +3091,46 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1171480",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1171480",
           "label": "CASTLE ACRE CASTLE"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1017909",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1017909",
           "label": "Castle Acre Castle, town defences and Bailey Gate"
         },
         {
           "type": "seeAlso",
-          "id": "https://www.english-heritage.org.uk/visit/places/Castle-Acre-Castle-and-Bailey-Gate",
+          "identifier": "https://www.english-heritage.org.uk/visit/places/Castle-Acre-Castle-and-Bailey-Gate",
           "label": "Castle Acre Castle and Bailey Gate"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q5049976"
+          "identifier": "http://www.wikidata.org/entity/Q5049976"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17677383"
+          "identifier": "http://www.wikidata.org/entity/Q17677383"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q2251448"
+          "identifier": "http://www.wikidata.org/entity/Q2251448"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Castle_Acre_Castle_and_town_walls"
+          "identifier": "https://en.wikipedia.org/wiki/Castle_Acre_Castle_and_town_walls"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Castle_Acre"
+          "identifier": "https://en.wikipedia.org/wiki/Castle_Acre"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Castle_Acre_Priory"
+          "identifier": "https://en.wikipedia.org/wiki/Castle_Acre_Priory"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6287325/"
+          "identifier": "https://www.geonames.org/6287325/"
         }
       ],
       "depictions": [
@@ -3182,7 +3173,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/5bf48551-404e-4947-bf6f-d5bce6933a1f",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/5bf48551-404e-4947-bf6f-d5bce6933a1f",
       "type": "Feature",
       "name": "Theobalds",
       "geometry": {
@@ -3204,42 +3195,42 @@
       "links": [
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/9951799/"
+          "identifier": "https://www.geonames.org/9951799/"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1005250",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1005250",
           "label": "Theobalds Palace, Waltham Cross"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1100573",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1100573",
           "label": "THE CEDARS PARK WALL AND FRAGMENT OF THEOBALDS PALACE NORTH OF THE CEDARS LODGE"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1173355",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1173355",
           "label": "THE CEDARS PARK FRAGMENT OF THEOBALDS PALACE 80 METRES NORTH WEST OF THE CEDARS LODGE"
         },
         {
           "type": "seeAlso",
-          "id": "https://finds.org.uk/database/artefacts/record/id/883654"
+          "identifier": "https://finds.org.uk/database/artefacts/record/id/883654"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26468125"
+          "identifier": "http://www.wikidata.org/entity/Q26468125"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17641705"
+          "identifier": "http://www.wikidata.org/entity/Q17641705"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26393016"
+          "identifier": "http://www.wikidata.org/entity/Q26393016"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Theobalds_House"
+          "identifier": "https://en.wikipedia.org/wiki/Theobalds_House"
         }
       ],
       "depictions": [
@@ -3272,7 +3263,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/c8aa9ac8-c4fa-4ed4-bcf5-db62c624359a",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/c8aa9ac8-c4fa-4ed4-bcf5-db62c624359a",
       "type": "Feature",
       "name": "Ripon, Yorkshire",
       "geometry": {
@@ -3289,11 +3280,11 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://sounds.bl.uk/World-and-traditional-music/Reg-Hall-Archive/025M-C0903X0105XX-0200V0",
+          "identifier": "https://sounds.bl.uk/World-and-traditional-music/Reg-Hall-Archive/025M-C0903X0105XX-0200V0",
           "label": "Ripon sword-dance mummers play",
           "properties": {
             "type": "sound",
-            "id": "C0903X0105XX-0200",
+            "identifier": "C0903X0105XX-0200",
             "collection": "Reg Hall English, Irish & Scottish folk music collection",
             "title": "Ripon sword-dance mummers play",
             "description": "Item note: Christmas mummers play partly sung and partly spoken, incorporated into the Ripon Sword Dance. \n Performed by unidentified singers",
@@ -3306,24 +3297,24 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1150164",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1150164",
           "label": "RIPON MINSTER (CATHEDRAL CHURCH OF ST PETER AND WILFRID)"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q638466"
+          "identifier": "http://www.wikidata.org/entity/Q638466"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q661529"
+          "identifier": "http://www.wikidata.org/entity/Q661529"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Ripon_Cathedral"
+          "identifier": "https://en.wikipedia.org/wiki/Ripon_Cathedral"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2639323/"
+          "identifier": "https://www.geonames.org/2639323/"
         }
       ],
       "depictions": [
@@ -3356,7 +3347,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/47c4173b-0281-45b8-830f-4fb7df96d740",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/47c4173b-0281-45b8-830f-4fb7df96d740",
       "type": "Feature",
       "name": "Lancaster Castle",
       "geometry": {
@@ -3388,28 +3379,28 @@
       "links": [
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6287284/"
+          "identifier": "https://www.geonames.org/6287284/"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1020668",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1020668",
           "label": "Part of a Roman fort and its associated vicus and remains of a pre-Conquest monastery and a Benedictine priory on Castle Hill"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q2969640"
+          "identifier": "http://www.wikidata.org/entity/Q2969640"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q168052"
+          "identifier": "http://www.wikidata.org/entity/Q168052"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Lancaster_Castle"
+          "identifier": "https://en.wikipedia.org/wiki/Lancaster_Castle"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6287284/"
+          "identifier": "https://www.geonames.org/6287284/"
         }
       ],
       "depictions": [
@@ -3442,7 +3433,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/4808d4eb-2dee-4b1d-948c-817fe38829cc",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/4808d4eb-2dee-4b1d-948c-817fe38829cc",
       "type": "Feature",
       "name": "Tynemouth Castle",
       "geometry": {
@@ -3478,25 +3469,25 @@
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6287355/"
+          "identifier": "https://www.geonames.org/6287355/"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1015519",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1015519",
           "label": "Tynemouth Iron Age and Romano-British settlements, monasteries, site of lighthouse, cross, motte, enclosure and artillery castles and later coastal defences"
         },
         {
           "type": "seeAlso",
-          "id": "https://www.english-heritage.org.uk/visit/places/Tynemouth-Priory-and-Castle",
+          "identifier": "https://www.english-heritage.org.uk/visit/places/Tynemouth-Priory-and-Castle",
           "label": "Tynemouth Priory and Castle"
         },
         {
           "type": "seeAlso",
-          "id": "http://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Cotton_MS_Faustina_B_IX",
+          "identifier": "http://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Cotton_MS_Faustina_B_IX",
           "label": "Chronicle of Melrose Abbey; Chronicles of Tynemouth Priory.",
           "properties": {
             "type": "manuscript",
-            "id": "040-001103909",
+            "identifier": "040-001103909",
             "collection": "Western Manuscripts",
             "title": "Chronicle of Melrose Abbey; Chronicles of Tynemouth Priory.",
             "description": "Both portions of this manuscript were owned by John Leland (d. 1552), who was probably responsible for removing the remainder of the Melrose codex, now Cotton MS Julius B. XIII, ff. 2-47 (see: Tite, The Early Records (2003), p. 95; Harrison, 'From Melrose Abbey' (2007)). Acquired by Sir Robert Cotton (d. 1631) by 1621, in which year he loaned it to Patrick Young (d. 1652) and Sir Henry Montagu, Lord Treasurer (d. 1642) (see: Tite, The Early Records (2003), no. 2.30). Bequeathed to the nation by Sir John Cotton (d. 1702), entering the collections of the British Museum in 1753, incorporated as the British Library in 1973. (See the catalogue of Cotton manuscripts: Add MS 36682). f. i: early modern parchment pastedown (lifted). f. i recto: erased Cottonian binding instructions (upper margin). f. i verso: pressmarks 'Faustina B. 9.' in the hand of William Dugdale (d. 1686), 'XV A' & 'XVI B'; early modern memoranda (upper margin) referring to popes & emperors, and to Nicholas Trevet (d. in or after 1334) (lower left-hand corner parallel to outer margin). f. 1: early modern parchment endleaf. f. 1r: Cottonian list of contents (4 items) in the hand of Richard James (d. 1638), with §§1-2 corrected in a later hand; f. 1v blank. Quire-signature: Cottonian A (f. i recto). Foliation: 'i, 1' 1884 pencil.",
@@ -3509,19 +3500,19 @@
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q7860523"
+          "identifier": "http://www.wikidata.org/entity/Q7860523"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q1755020"
+          "identifier": "http://www.wikidata.org/entity/Q1755020"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Tynemouth_Castle_and_Priory"
+          "identifier": "https://en.wikipedia.org/wiki/Tynemouth_Castle_and_Priory"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6287355/"
+          "identifier": "https://www.geonames.org/6287355/"
         }
       ],
       "depictions": [
@@ -3554,7 +3545,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/f4ad6445-edb4-4cf8-b814-0b157af3cd8e",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/f4ad6445-edb4-4cf8-b814-0b157af3cd8e",
       "type": "Feature",
       "name": "Hillingdon, Middlesex",
       "geometry": {
@@ -3576,24 +3567,24 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1080160",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1080160",
           "label": "Church of St John"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17551748"
+          "identifier": "http://www.wikidata.org/entity/Q17551748"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q1064180"
+          "identifier": "http://www.wikidata.org/entity/Q1064180"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Hillingdon"
+          "identifier": "https://en.wikipedia.org/wiki/Hillingdon"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2646895/"
+          "identifier": "https://www.geonames.org/2646895/"
         }
       ],
       "depictions": [
@@ -3626,7 +3617,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/3b852f70-4726-4cb0-84f4-f8a9e35a3e1d",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/3b852f70-4726-4cb0-84f4-f8a9e35a3e1d",
       "type": "Feature",
       "name": "Queenborough Castle",
       "geometry": {
@@ -3662,24 +3653,24 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1007465",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1007465",
           "label": "Queenborough Castle"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17643879"
+          "identifier": "http://www.wikidata.org/entity/Q17643879"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q587299"
+          "identifier": "http://www.wikidata.org/entity/Q587299"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Queenborough_Castle"
+          "identifier": "https://en.wikipedia.org/wiki/Queenborough_Castle"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6286796/"
+          "identifier": "https://www.geonames.org/6286796/"
         }
       ],
       "depictions": [
@@ -3712,7 +3703,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/9250bde0-2b09-44cd-bb77-c2020b199352",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/9250bde0-2b09-44cd-bb77-c2020b199352",
       "type": "Feature",
       "name": "Knaresborough Low Bridge, Yorkshire",
       "geometry": {
@@ -3748,20 +3739,20 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1315633",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1315633",
           "label": "LOW BRIDGE OVER RIVER NIDD"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26601995"
+          "identifier": "http://www.wikidata.org/entity/Q26601995"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q535902"
+          "identifier": "http://www.wikidata.org/entity/Q535902"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2645163/"
+          "identifier": "https://www.geonames.org/2645163/"
         }
       ],
       "depictions": [
@@ -3783,7 +3774,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/92c4271a-b451-456f-a49f-417667e597fb",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/92c4271a-b451-456f-a49f-417667e597fb",
       "type": "Feature",
       "name": "Chester Bridge",
       "geometry": {
@@ -3825,34 +3816,34 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1375850",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1375850",
           "label": "OLD DEE BRIDGE"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1006771",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1006771",
           "label": "Dee Bridge"
         },
         {
           "type": "seeAlso",
-          "id": "https://w3id.org/locolligo/eddd181d-bc2b-4767-8c3d-eb4c99395603/a3f42480-edab-4ef9-a4ff-88105e73a8bf",
+          "identifier": "https://w3id.org/locolligo/eddd181d-bc2b-4767-8c3d-eb4c99395603/a3f42480-edab-4ef9-a4ff-88105e73a8bf",
           "label": "Dee Bridge"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q7083836"
+          "identifier": "http://www.wikidata.org/entity/Q7083836"
         },
         {
           "type": "closeMatch",
-          "id": "https://whgazetteer.org/api/place/6369156"
+          "identifier": "https://whgazetteer.org/api/place/6369156"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q170263"
+          "identifier": "http://www.wikidata.org/entity/Q170263"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Old_Dee_Bridge"
+          "identifier": "https://en.wikipedia.org/wiki/Old_Dee_Bridge"
         }
       ],
       "depictions": [
@@ -3901,7 +3892,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/8dfaba7b-76c6-4bec-85fb-bf837d3e7aa6",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/8dfaba7b-76c6-4bec-85fb-bf837d3e7aa6",
       "type": "Feature",
       "name": "Hornby Castle, Lancashire",
       "geometry": {
@@ -3918,28 +3909,28 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1017689",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1017689",
           "label": "Castle Stede motte and bailey, Hornby"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17674618"
+          "identifier": "http://www.wikidata.org/entity/Q17674618"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q23897904"
+          "identifier": "http://www.wikidata.org/entity/Q23897904"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Hornby_Castle%2C_Lancashire"
+          "identifier": "https://en.wikipedia.org/wiki/Hornby_Castle%2C_Lancashire"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6286913/"
+          "identifier": "https://www.geonames.org/6286913/"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1317655",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1317655",
           "label": "HORNBY CASTLE"
         }
       ],
@@ -3969,7 +3960,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/a53ba4e0-4daf-498d-832d-afeb02e00237",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/a53ba4e0-4daf-498d-832d-afeb02e00237",
       "type": "Feature",
       "name": "Uxbridge, Middlesex",
       "geometry": {
@@ -3986,20 +3977,20 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1180516",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1180516",
           "label": "CHURCH OF ST MARGARET"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17551789"
+          "identifier": "http://www.wikidata.org/entity/Q17551789"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q3552816"
+          "identifier": "http://www.wikidata.org/entity/Q3552816"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2635042/"
+          "identifier": "https://www.geonames.org/2635042/"
         }
       ],
       "depictions": [
@@ -4025,7 +4016,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/022126df-d5a6-4ec8-97f6-78e2da675915",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/022126df-d5a6-4ec8-97f6-78e2da675915",
       "type": "Feature",
       "name": "Grantham Church",
       "geometry": {
@@ -4061,24 +4052,24 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1062501",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1062501",
           "label": "CHURCH OF ST WULFRAM"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q7595664"
+          "identifier": "http://www.wikidata.org/entity/Q7595664"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q846683"
+          "identifier": "http://www.wikidata.org/entity/Q846683"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/St_Wulfram%27s_Church%2C_Grantham"
+          "identifier": "https://en.wikipedia.org/wiki/St_Wulfram%27s_Church%2C_Grantham"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2648208/"
+          "identifier": "https://www.geonames.org/2648208/"
         }
       ],
       "depictions": [
@@ -4111,7 +4102,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/4c701069-9289-4293-9aeb-5ab1666ad54b",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/4c701069-9289-4293-9aeb-5ab1666ad54b",
       "type": "Feature",
       "name": "Chester-le-Street, Co. Durham",
       "geometry": {
@@ -4128,15 +4119,15 @@
       "links": [
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Chester-le-Street"
+          "identifier": "https://en.wikipedia.org/wiki/Chester-le-Street"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2653224/"
+          "identifier": "https://www.geonames.org/2653224/"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q2570025"
+          "identifier": "http://www.wikidata.org/entity/Q2570025"
         }
       ],
       "depictions": [
@@ -4165,7 +4156,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/a27bcaf8-97c2-4a30-a280-0afb90f5dd72",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/a27bcaf8-97c2-4a30-a280-0afb90f5dd72",
       "type": "Feature",
       "name": "Fenny Stratford Bridge",
       "geometry": {
@@ -4182,15 +4173,15 @@
       "links": [
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q2569319"
+          "identifier": "http://www.wikidata.org/entity/Q2569319"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Fenny_Stratford"
+          "identifier": "https://en.wikipedia.org/wiki/Fenny_Stratford"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2649552/"
+          "identifier": "https://www.geonames.org/2649552/"
         }
       ],
       "depictions": [
@@ -4219,7 +4210,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/54a8a1a0-8a81-426f-9c66-5e2519621928",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/54a8a1a0-8a81-426f-9c66-5e2519621928",
       "type": "Feature",
       "name": "Bransford Bridge",
       "geometry": {
@@ -4241,7 +4232,7 @@
       "links": [
         {
           "type": "primaryTopicOf",
-          "id": "https://www.geograph.org.uk/photo/144316"
+          "identifier": "https://www.geograph.org.uk/photo/144316"
         }
       ],
       "depictions": [
@@ -4268,7 +4259,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/5e88cd61-a223-448b-80d1-99ae1ff2acbf",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/5e88cd61-a223-448b-80d1-99ae1ff2acbf",
       "type": "Feature",
       "name": "Nun Appleton",
       "geometry": {
@@ -4300,20 +4291,20 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1167924",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1167924",
           "label": "NUN APPLETON HALL"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26461344"
+          "identifier": "http://www.wikidata.org/entity/Q26461344"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Nun_Appleton_Priory"
+          "identifier": "https://en.wikipedia.org/wiki/Nun_Appleton_Priory"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2641160/"
+          "identifier": "https://www.geonames.org/2641160/"
         }
       ],
       "depictions": [
@@ -4342,7 +4333,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/dc630fda-c6be-4cc3-a402-faaf833d9500",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/dc630fda-c6be-4cc3-a402-faaf833d9500",
       "type": "Feature",
       "name": "Nun Appleton House & Garden",
       "geometry": {
@@ -4374,24 +4365,24 @@
       "links": [
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2641160/"
+          "identifier": "https://www.geonames.org/2641160/"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1167924",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1167924",
           "label": "NUN APPLETON HALL"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26461344"
+          "identifier": "http://www.wikidata.org/entity/Q26461344"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Nun_Appleton_Priory"
+          "identifier": "https://en.wikipedia.org/wiki/Nun_Appleton_Priory"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2641160/"
+          "identifier": "https://www.geonames.org/2641160/"
         }
       ],
       "depictions": [
@@ -4420,7 +4411,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/a9d8add4-4204-45af-a0b5-d7f33db8a82b",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/a9d8add4-4204-45af-a0b5-d7f33db8a82b",
       "type": "Feature",
       "name": "Highbridge",
       "geometry": {
@@ -4445,19 +4436,19 @@
       "links": [
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q684317"
+          "identifier": "http://www.wikidata.org/entity/Q684317"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Highbridge%2C_Somerset"
+          "identifier": "https://en.wikipedia.org/wiki/Highbridge%2C_Somerset"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2646977/"
+          "identifier": "https://www.geonames.org/2646977/"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://www.geograph.org.uk/photo/1320481"
+          "identifier": "https://www.geograph.org.uk/photo/1320481"
         }
       ],
       "depictions": [
@@ -4491,7 +4482,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/a03d70be-8e2d-4980-ba6f-abd6293c9ed9",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/a03d70be-8e2d-4980-ba6f-abd6293c9ed9",
       "type": "Feature",
       "name": "Greenwich Castle",
       "geometry": {
@@ -4522,11 +4513,11 @@
         },
         {
           "type": "seeAlso",
-          "id": "http://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Sloane_MS_1047",
+          "identifier": "http://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Sloane_MS_1047",
           "label": "Medical recipes devised by King Henry VIII and his royal physicians",
           "properties": {
             "type": "manuscript",
-            "id": "040-002113399",
+            "identifier": "040-002113399",
             "collection": "Western Manuscripts",
             "title": "Medical recipes devised by King Henry VIII and his royal physicians",
             "description": "1 volume. An important witness to the amateur interest in and practice of pharmaceutical medicine by King Henry VIII (b. 1491, d. 1547). Contains a collection of more than 100 medical recipes that have been organised into six sections: plasters; spasmadraps (dipped plasters); ointments; balms; waters, lotions, and decoctions; and cataplasms (poultices). As a number of the recipes indicate, the collection was designed for Henry VIII. This is also suggested by the fact that many recipes provide treatments for easing pain and swelling and cooling inflammation in the legs, and healing leg ulcers, conditions from which Henry VIII suffered following jousting accidents in 1527 and 1536. Over 30 recipes are attributed to the king himself, including one that he apparently devised for Anne of Cleves ('my ladye Anne of Cleve'), queen consort from 6 January to 9 July 1540. Many of the other recipes are attributed to his four royal physicians: William Butts (b. c. 1486, d. 1545) and John Chambre (b. 1470, d. 1549), who are famously depicted with the king on Hans Holbein the Younger's painting Henry VIII and the Barber Surgeons, and Walter Cromer (d. c. 1547), and Augustin de Angustinius (n. d.), a Venetian who was also physician to Cardinal Wolsey. They apparently devised their medical treatments both separately from and collaboratively with one another. The collection suggests that Henry VIII and his physicians predominantly relied on a medieval tradition of herbal, lapidary and chemical remedies. They evidently also subscribed to the medicinal properties of what they believed to be unicorn horn (alicorn). Various recipes, e.g. the Rochestre plastre, Emplastrum de cornubus, Swete Oyntement, Russett Oyntement, Gray plaster, and Unguentum de cornubus, require the use of powdered 'cornu unicornu' or 'unicornis horne'. William Butts also had access to learned medical works since the Italian surgeon Giovanni da Vigo (b. 1450, d. 1525), who published his Practica Copiosa in Arte Chirurgia in 1514, and the Greek physician Galen (129–199) are cited as his sources. The collection mentions the locations where a number of recipes were devised and put into practice. Henry VIII worked on treatments at Ampthill, Cawood, Fotheringhay, Greenwich, Hampton Court, St James, and Westminster; and the royal physicians worked on theirs at Farnham Castle, Greenwich, St James, the Manor of the More at Ricksmansworth, and Westminster. A number of anonymous recipes are located to still other places: Canterbury, Dover, Knolles, Petworth, and Rochester. These references suggest that Henry VIII and his physicians brought their apothecary equipment with them to the various royal palaces and other residencies they visited. The collection's medical treatments may have been designed over a long period of time: probably between 1536, when Henry VIII's leg condition is thought to have significantly worsened, and 1545, when William Butts died. The fact that the collection is neatly organised into sections with their own tables of contents suggests that it was copied in a single and preplanned undertaking. The reference to Anne of Cleves provides a terminus post quem. This indicates that the manuscript was written between c. 1540 and c. 1545, perhaps for Henry VIII or one of his physicians. Contents: ff. 1r-2v: 'The Table of plasters'; imperfect due to damage to f. 1. ff. 3r-4r: 'The kinges majesties own plastre'. ff. 4r-5r: 'A plaster devysed by the kinges majestie to heale ulcers without payne, made with perle and the wood of ligni Guaiaci' [Lignum vitae]. ff. 5r-5v: 'A blacke plastre devised by the kinges hieghnes'. ff. 5v-6v: 'A plastre devised by the kinges hieghnes to resolve, and heale ulcers, and to slake the heate'. ff. 6v-7r: 'A plaster devised by the kinges maiestie to resolve, and cease payne and to mollifie being made without oyle with the fatte of capons fat and the marie of a calf'. ff. 7r-7v: 'A goode healing plaster devised by the kinges maiestie'. ff. 7v-8v: 'A plaster to restrayn humours devised by the kinges hieghnes'. ff. 8v-9r: 'A plastre devised by the kinges maiestie at G[r]enewich and made at Westminster to ta[ke] awaye inflammacions and cease pay[n]e, and heale excoriacions'. ff. 9r-10r: 'The kinges maiesties plaster made at Westminster to mitigate payne'. ff. 10r-10v: 'A plaster of the kinges to heale and drye made at St James'. ff. 10v-11r: 'A plastre devised by the kinges grace at Westminster, to cease the payne and swelling abowt the ancles'. ff. 11r-12r: 'A plastre that healeth devised by the kinges maiestie and made at Westminster'. ff. 12r-12v: 'The calice plaster'. ff. 12v-13v: 'Emplastrum flos unguentorum'. ff. 13v-14r: 'The blacke plaster of John de Vigo secundum D. Buttes'. ff. 14r-15r: 'Emplastrum de Calce secundum D. Buttes'. ff. 15r-15v: 'Emplastrum Galeni secundum D. Buttes'. ff. 15v-16r: 'Jacobbes plaster'. ff. 16r-16v: 'A goode dryeng plaster secundum D. Buttes'. f. 16v: 'A blacke plaster made with waxe'. ff. 16v-17r: 'A blacke plaster without waxe'. ff. 17r-17v: 'Rochestre plastre'. ff. 17v-18r: 'A redde plaster to heale olde ulcers'. ff. 18v-19v: 'A speciall goode healing plaster for ulcers in the legges'. ff. 19v-20r: 'Emplastrum triapharmacon'. f. 20r: 'Emplastrum de minio'. f. 20v: 'Emplastrum de cornubus'. ff. 21r-21v: 'Emplastrum restrictivum'. ff. 22r-23r: 'A healing plaster'. ff. 23r-24r: 'A plaster devised by Mr Cromer to cease payne, and to delay heate, and to comforte the membre'. ff. 24r-25r: 'A plaster of doctour Cromers to coole and drye, and comforte'. ff. 25r-26v: 'A plastre made by D. Chambre, D. Buttes, D. Angustinius and D. Cromer, to resolve humours and to cease payn and comforte the membre[s]'. ff. 26v-27v: 'An other plaster devised by Mr Chambre, D. Butters, D. Angustinius and D. Cromer the which doith both consolidate and comforte the membre, and temperateth heate, and healeth the ulcer'. ff. 27v-29r: 'A plastre devised by Mr Chambre and Doctour Buttes to be made in Somer, to cease payne, and mollifie the humours resolving the same with conforting of the membre'. ff. 29r-29v: 'The same plaster to be made in wynter no thing altering but these thinges folowing'. f. 29v: 'A white plaster for ulcers in the legges'. f. 30r: 'A plaster to cease payne and to resolve humours, and take awaye heate' [Latin recipe]. f. 30v: 'A plaster for my ladye Anne of Cleve to mollifie, and resolve, conforte and cease payne of colde and wyndie causses' [Latin recipe]. f. 31r: 'A plastre devised by Mr D. Buttes, and made at St James that healeth'. f. 32r: 'The Table of Spasmadraps or dipped plasters'. ff. 33r-33v: 'Spasmadraps or dipped plasters devised by D. Buttes'. ff. 33v-34r: 'A nother Spasmadrappe or dypped plaster for to heale ulcers and brusys in the legges devised by D. Buttes'. ff. 34r-35r: 'A Spasmadrappe to drye and heale ulcers called Mansfelde plaster devised at Foderingaye and made at Hampthill'. ff. 35r-35v: 'A blacke Spasmadrap to reyse fleshe and heale ulcers made at ffoderingaye'. ff. 36r-39r: 'Tabula unguentorum' ['The table of Oyntementes']. f. 40r: 'An Oyntement devised by the kinges maiestie at Cawoode to drye excoriations and comforte the membre called the swete Oyntement'. f. 40v: 'The kinges maiesties Oyntement to incarnate fleshe devised and made at Cawoode'. ff. 41r-41v: 'The kinges Oyntement to restrayne devised at ffoderingaye, and made at Hampthill'. ff. 41v-42r: 'The kinges maiestie oyntement to drye excoriations devised at ffoderingaye, and made at Hampthill'. ff. 42r-42v: 'The kinges graces Oyntement made at St James to coole, and drye, and conforte the membre'. ff. 42v-43v: 'An Oyntement devised by the kinges hieghnes to resolve made at Westminster'. ff. 43v-44r: 'A russett Oyntement devised by the kinges maiestie at Hamptoncourte to heale excoriacions'. ff. 44r-45r: 'An Oyntement devised by the kinges maiestie made at Westminster and devised at Grenewich to take awaye Inflammations, and to cease payne, and heale ulcers, called the gray plaster'. ff. 45r-45v: 'A grene oyntement devised by the kinges hieghnes to take awaye heate, and Indurations, and to resolve and ease payne'. ff. 45v-46v: 'An oyntement devised by the kinges maiestie at Grenewiche to coole, and lett inflammations, and to take awaye ytche'. ff. 46v-47v: 'The white oyntement of the kinges graces to coole, and conforte [the membre] made with decoction, and dyvers other thinges augmented by the kinges maiestie as foloweth'. ff. 47v-48r: 'An Oyntement devised by the kinges grace, to resolve, coole, and drie excoriations'. ff. 48r-48v: 'An Oyntement devised by the kinges maiestie to Incarnate'. ff. 48v-49r: 'The Kinges maiesties oyntement to restrayn'. ff. 49v-50r: 'An Oyntement for Inflammations'. ff. 50r-50v: 'Unguentum pomphilogos'. ff. 50v-51v: 'Unguentum populeon'. f. 52r: 'Unguentum infrigidans Saleni'. ff. 52v-53r: 'Unguentum Rosatum'. ff. 53r-53v: 'Unguentum triapharmacon'. ff. 54r-54v: 'Unguentum de cerusa'. ff. 54v-55r: 'Unguentum de cornubus'. f. 55v: 'A white Oyntement made with vineacre for the king'. ff. 56r-56v: 'A white Oyntement of the kinges made with the decoction'. f. 56v: 'Certayn Oyntementes taken owt of Salven – A Cicatrising Oyntement'. f. 57r: 'A nother lyke Oyntement'. ff. 57r-57v: 'An other Oyntement'. ff. 57v-58r: 'An other lyke Oyntement'. ff. 58r-58v: 'A nother'. f. 58v: 'Another Oyntement'. ff. 59r-59v: 'An Oyntement against heates'. ff. 59v-60r: 'An Oyntement to heale ulcers corrosive'. ff. 60r-60v: 'A nother lyke Oyntement'. ff. 60v-61r: 'An Oyntement desiccative'. f. 61r: 'An oother [sic]'. f. 61v: 'Unguentum cum pice liquida'. ff. 62r-62v: 'An Oyntement against ytche'. ff. 62v-63r: 'A drying Oyntement'. ff. 63r-63v: 'An Oyntement to consolide ulcers and make goode digestion'. ff. 64r-64v: 'An Oyntement devised by D. Chambre, D. Buttes, D. Cromer, and D. Angustinius against the evill complexion of hoote cawses of ulcers in the legges, and partes that be soore'. ff. 64v-65r: 'An Oyntement devised [made] by the same men and made at ffarneham Castell'. ff. 65r-65v: 'An Oyntement made at petwourthe'. ff. 65v-66r: 'An Oyntement made at Dover'. ff. 66r-66v: 'An Oyntement made at Cantorburye'. ff. 66v-67r: 'An Oyntement made at Knolles'. ff. 67r-67v: 'An Oyntement made at Moore devised by Mr Buttes, and Doctour Chambre'. ff. 67v-68r: 'An Oyntement devised by the same men made at Westminster'. ff. 68r-68v: 'An Oyntement to cease payne, and to resolve humours and to take awaye heate' [Latin recipe]. ff. 68v-69r: ['Thre Recipe Oyntementes to dilaye heates'] 'Thre unguentes to delaye heates' [Latin recipes]. ff. 69v-70r: 'An Oyntement devised by Mr Buttes and Mr Chambre, to Incarnate and drye upp ulcers corrosyve, ceasing thair evyll complexion'. f. 71r: 'The Table of Balmes'. ff. 72r-73v: 'A balme to heale woundes'. ff. 73v-77v: 'Aqua mirabilis [or] vel water Balsanni' [Latin recipe]. ff. 78r-78v: 'A balme for woundes'. ff. 78v-79r: 'A balme for palseys and aches'. ff. 79r-80v: 'An other Balme for woundes'. ff. 81r-81v: 'The Table of waters, lotions, and decoctions'. ff. 82r-82v: 'A decoction devised byt the kinges maiestie'. ff. 82v-83r: 'A decoction to washe a membre that is sore, and to comforte it devised by the kinges hieghnes'. ff. 83r-83v: 'A water made and devised by the kinges maiestie'. f. 84r: 'A decoction devised by the kinges maiestie to restraigne humours'. ff. 84r-84v: 'A Lotion devised by Mr Cromer'. f. 84v: 'Certayn lotions devised by Mr Chambre and Mr Buttes'. ff. 84v-85r: 'An other'. ff. 85r-85v: 'An oother [sic]'. ff. 85v-86r: 'A Lotion to drie upp all waterish humours in the legges'. ff. 86r-86v: 'A nother Lotion'. ff. 86v-87r: 'A water restrictyve to restraigne humours falling down to the legges'. ff. 87r-87v: 'A nother for the same cawse'. f. 88r: 'The Table of Cataplasmes or pulthes'. f. 89r: 'A cataplasme made ungtment [sic: 'unguent'] lyke of the kinges maiesties devise made at westminster'. ff. 89v-90r: 'A pulthes devised by the kinges maiestie at Hampton courte'. ff. 90r-90v: 'A pulthes devised by the kinges hieghnes at St James'. ff. 91r-91v: 'A pulthes to cease payne devised by doctour Buttes'. ff. 91v-92r: 'A nother more confortable pulthes devised by Mr Buttes'. ff. 92r-92v: 'A nother pulthes'. ff. 93r-93v: 'A nother'. ff. 93v-94v: 'An other pulthes devised by Mr Chambre, D. Buttes, D. Cromer, and D. Angustinius'.",
@@ -4539,12 +4530,12 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1410710",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1410710",
           "label": "Greenwich Palace"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q693450"
+          "identifier": "http://www.wikidata.org/entity/Q693450"
         }
       ],
       "depictions": [
@@ -4566,7 +4557,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/02c91c20-ace8-4b5c-9909-37deb2b5c3c9",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/02c91c20-ace8-4b5c-9909-37deb2b5c3c9",
       "type": "Feature",
       "name": "Kenilworth Castle",
       "geometry": {
@@ -4597,11 +4588,11 @@
         },
         {
           "type": "seeAlso",
-          "id": "http://access.bl.uk/item/viewer/ark:/81055/vdc_100024140603.0x000001",
+          "identifier": "http://access.bl.uk/item/viewer/ark:/81055/vdc_100024140603.0x000001",
           "label": "Amye Robsart and the Earl of Leycester; a critical inquiry into the authenticity of the various statements in relation to the death of A. Robsart, and of the libels on the Earl of Leycester, with a vindication of the Earl by ... Sir Philip Sydney. And a history of Kenilworth Castle, including an account of the ... entertainment given to Queen Elizabeth by the Earl of Leycester, in 1575, from the works of Robert Laneham and George Gascoigne; together with Memoirs and Correspondence of Sir Robert Dudley, etc [With plates.]",
           "properties": {
             "type": "book",
-            "id": "BL:A0018635907",
+            "identifier": "BL:A0018635907",
             "collection": "British Library books digitised by Google",
             "title": "Amye Robsart and the Earl of Leycester; a critical inquiry into the authenticity of the various statements in relation to the death of A. Robsart, and of the libels on the Earl of Leycester, with a vindication of the Earl by ... Sir Philip Sydney. And a history of Kenilworth Castle, including an account of the ... entertainment given to Queen Elizabeth by the Earl of Leycester, in 1575, from the works of Robert Laneham and George Gascoigne; together with Memoirs and Correspondence of Sir Robert Dudley, etc [With plates.]",
             "public_note": "Visitor site maintained by English Heritage. For more information see https://www.english-heritage.org.uk/visit/places/kenilworth-castle/",
@@ -4615,38 +4606,38 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1014041",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1014041",
           "label": "Kenilworth Castle: a motte and bailey and enclosure castle with mere, dams and 16th century gardens"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1000496",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1000496",
           "label": "KENILWORTH CASTLE"
         },
         {
           "type": "seeAlso",
-          "id": "https://www.english-heritage.org.uk/visit/places/kenilworth-castle/",
+          "identifier": "https://www.english-heritage.org.uk/visit/places/kenilworth-castle/",
           "label": "Kenilworth Castle and Garden"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17672033"
+          "identifier": "http://www.wikidata.org/entity/Q17672033"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q1738764"
+          "identifier": "http://www.wikidata.org/entity/Q1738764"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q2281103"
+          "identifier": "http://www.wikidata.org/entity/Q2281103"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Kenilworth_Castle"
+          "identifier": "https://en.wikipedia.org/wiki/Kenilworth_Castle"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6287237/"
+          "identifier": "https://www.geonames.org/6287237/"
         }
       ],
       "depictions": [
@@ -4683,7 +4674,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/dc263442-b580-4394-8607-212c4260f5fe",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/dc263442-b580-4394-8607-212c4260f5fe",
       "type": "Feature",
       "name": "Dover Castle",
       "geometry": {
@@ -4714,43 +4705,43 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1019075",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1019075",
           "label": "Dover Castle"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1070326",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1070326",
           "label": "DOVER CASTLE"
         },
         {
           "type": "seeAlso",
-          "id": "https://www.nationaltrust.org.uk/the-white-cliffs-of-dover",
+          "identifier": "https://www.nationaltrust.org.uk/the-white-cliffs-of-dover",
           "label": "The White Cliffs of Dover"
         },
         {
           "type": "seeAlso",
-          "id": "https://www.english-heritage.org.uk/visit/places/Dover-Castle",
+          "identifier": "https://www.english-heritage.org.uk/visit/places/Dover-Castle",
           "label": "Dover Castle"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q950970"
+          "identifier": "http://www.wikidata.org/entity/Q950970"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q179224"
+          "identifier": "http://www.wikidata.org/entity/Q179224"
         },
         {
           "type": "closeMatch",
-          "id": "https://whgazetteer.org/api/place/83623"
+          "identifier": "https://whgazetteer.org/api/place/83623"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Dover_Castle"
+          "identifier": "https://en.wikipedia.org/wiki/Dover_Castle"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6287214/"
+          "identifier": "https://www.geonames.org/6287214/"
         }
       ],
       "depictions": [
@@ -4783,7 +4774,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/31083f4b-44d9-4cc2-93d4-5b2b30d873d8",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/31083f4b-44d9-4cc2-93d4-5b2b30d873d8",
       "type": "Feature",
       "name": "Stratford",
       "geometry": {
@@ -4822,29 +4813,29 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1003739",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1003739",
           "label": "Clopton Bridge"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1204167",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1204167",
           "label": "CLOPTON BRIDGE AND ATTACHED FORMER TOLL HOUSE"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q5135123"
+          "identifier": "http://www.wikidata.org/entity/Q5135123"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q189288"
+          "identifier": "http://www.wikidata.org/entity/Q189288"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Clopton_Bridge"
+          "identifier": "https://en.wikipedia.org/wiki/Clopton_Bridge"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2636713/"
+          "identifier": "https://www.geonames.org/2636713/"
         }
       ],
       "depictions": [
@@ -4877,7 +4868,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/ba987651-c0e7-4651-b89b-a9e44e28b137",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/ba987651-c0e7-4651-b89b-a9e44e28b137",
       "type": "Feature",
       "name": "Oxford Castle",
       "geometry": {
@@ -4908,16 +4899,16 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1007730",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1007730",
           "label": "Oxford Castle and earlier settlement remains"
         },
         {
           "type": "seeAlso",
-          "id": "http://britishlibrary.georeferencer.com/id/11030737235",
+          "identifier": "http://britishlibrary.georeferencer.com/id/11030737235",
           "label": "[Map of Oxford, England]",
           "properties": {
             "type": "map",
-            "id": "BLL01:018225897",
+            "identifier": "BLL01:018225897",
             "collection": "British Library georeferencer",
             "title": "[Map of Oxford, England]",
             "bl_record_id": 18225897,
@@ -4928,60 +4919,60 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1369493",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1369493",
           "label": "WELL HOUSE OXFORD CASTLE"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1369492",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1369492",
           "label": "FRONT RANGE WITH ENTRANCE INCLUDING A WING AND LINK TO WING WITH FORMER CHAPEL"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1047047",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1047047",
           "label": "THE GOVERNORS HOUSE"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1047045",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1047045",
           "label": "C WING INCLUDING THE ROUND TOWER"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1047046",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1047046",
           "label": "THE BOUNDARY WALL"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q96122948"
+          "identifier": "http://www.wikidata.org/entity/Q96122948"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q96122946"
+          "identifier": "http://www.wikidata.org/entity/Q96122946"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26299160"
+          "identifier": "http://www.wikidata.org/entity/Q26299160"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17548518"
+          "identifier": "http://www.wikidata.org/entity/Q17548518"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q34217"
+          "identifier": "http://www.wikidata.org/entity/Q34217"
         },
         {
           "type": "closeMatch",
-          "id": "https://whgazetteer.org/api/place/87962"
+          "identifier": "https://whgazetteer.org/api/place/87962"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Oxford_Castle"
+          "identifier": "https://en.wikipedia.org/wiki/Oxford_Castle"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2640729/"
+          "identifier": "https://www.geonames.org/2640729/"
         }
       ],
       "depictions": [
@@ -5018,7 +5009,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/1e6a3ef2-3816-4af7-9046-118acac3533a",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/1e6a3ef2-3816-4af7-9046-118acac3533a",
       "type": "Feature",
       "name": "Perry Bridge",
       "geometry": {
@@ -5054,7 +5045,7 @@
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://www.geograph.org.uk/photo/357281"
+          "identifier": "https://www.geograph.org.uk/photo/357281"
         }
       ],
       "depictions": [
@@ -5081,7 +5072,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/023edf77-23dc-4714-8d34-67889e494b5c",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/023edf77-23dc-4714-8d34-67889e494b5c",
       "type": "Feature",
       "name": "Wetherby Bridge",
       "geometry": {
@@ -5108,29 +5099,29 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1313468",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1313468",
           "label": "WETHERBY BRIDGE (OVER RIVER WHARFE) WITH ATTACHED WAR MEMORIAL"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1005798",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1005798",
           "label": "Wetherby Bridge"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17643965"
+          "identifier": "http://www.wikidata.org/entity/Q17643965"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q817481"
+          "identifier": "http://www.wikidata.org/entity/Q817481"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Wetherby_Bridge"
+          "identifier": "https://en.wikipedia.org/wiki/Wetherby_Bridge"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2634217/"
+          "identifier": "https://www.geonames.org/2634217/"
         }
       ],
       "depictions": [
@@ -5163,7 +5154,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/df37aab0-9804-48f1-9ed2-43781117d337",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/df37aab0-9804-48f1-9ed2-43781117d337",
       "type": "Feature",
       "name": "Nottingham Castle",
       "geometry": {
@@ -5194,26 +5185,26 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1006382",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1006382",
           "label": "Nottingham Castle"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1246764",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1246764",
           "label": "NOTTINGHAM CASTLE MIDDLE BAILEY WALL AND TOWERS"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1246766",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1246766",
           "label": "NOTTINGHAM CASTLE MIDDLE BRIDGE ADJOINING ARCHWAY AND PORTER'S LODGE"
         },
         {
           "type": "seeAlso",
-          "id": "http://access.bl.uk/item/viewer/ark:/81055/vdc_100024122346.0x000001",
+          "identifier": "http://access.bl.uk/item/viewer/ark:/81055/vdc_100024122346.0x000001",
           "label": "Imaginary Conversations between notabilities of the seventeenth century, including Milton, Cromwell, Charles I. ... In blank verse",
           "properties": {
             "type": "book",
-            "id": "BL:A0018617111",
+            "identifier": "BL:A0018617111",
             "collection": "British Library books digitised by Google",
             "title": "Imaginary Conversations between notabilities of the seventeenth century, including Milton, Cromwell, Charles I. ... In blank verse",
             "private_note": "http://books.google.co.uk/books?vid=BL:A0018617111",
@@ -5227,23 +5218,23 @@
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26539142"
+          "identifier": "http://www.wikidata.org/entity/Q26539142"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26539143"
+          "identifier": "http://www.wikidata.org/entity/Q26539143"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Nottingham_Castle"
+          "identifier": "https://en.wikipedia.org/wiki/Nottingham_Castle"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q21885994"
+          "identifier": "http://www.wikidata.org/entity/Q21885994"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6287302/"
+          "identifier": "https://www.geonames.org/6287302/"
         }
       ],
       "depictions": [
@@ -5276,7 +5267,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/82fe6798-ec4b-4fea-ae66-64a6a592e892",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/82fe6798-ec4b-4fea-ae66-64a6a592e892",
       "type": "Feature",
       "name": "Bishophill, York",
       "geometry": {
@@ -5308,20 +5299,20 @@
       "links": [
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/St_Mary_Bishophill_Junior%2C_York"
+          "identifier": "https://en.wikipedia.org/wiki/St_Mary_Bishophill_Junior%2C_York"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1259548",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1259548",
           "label": "CHURCH OF ST MARY BISHOPHILL JUNIOR"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q514750"
+          "identifier": "http://www.wikidata.org/entity/Q514750"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q20986421"
+          "identifier": "http://www.wikidata.org/entity/Q20986421"
         }
       ],
       "depictions": [
@@ -5354,7 +5345,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/b820584b-1452-4bff-bc1b-1317d564dd10",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/b820584b-1452-4bff-bc1b-1317d564dd10",
       "type": "Feature",
       "name": "Northallerton Church",
       "geometry": {
@@ -5376,24 +5367,24 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1150735",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1150735",
           "label": "CHURCH OF ALL SAINTS"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17538110"
+          "identifier": "http://www.wikidata.org/entity/Q17538110"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q920381"
+          "identifier": "http://www.wikidata.org/entity/Q920381"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/All_Saints%27_Church%2C_Northallerton"
+          "identifier": "https://en.wikipedia.org/wiki/All_Saints%27_Church%2C_Northallerton"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2641435/"
+          "identifier": "https://www.geonames.org/2641435/"
         }
       ],
       "depictions": [
@@ -5426,7 +5417,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/c406f3f9-6a7d-47a7-9e36-28026492cd94",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/c406f3f9-6a7d-47a7-9e36-28026492cd94",
       "type": "Feature",
       "name": "Watford",
       "geometry": {
@@ -5448,33 +5439,33 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1021465",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1021465",
           "label": "Watford Park: C18 garden remains overlying the shrunken medieval village of Watford and associated ridge and furrow cultivation"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17664291"
+          "identifier": "http://www.wikidata.org/entity/Q17664291"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17526509"
+          "identifier": "http://www.wikidata.org/entity/Q17526509"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1077018",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1077018",
           "label": "CHURCH OF ST PETER AND ST PAUL"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q6517197"
+          "identifier": "http://www.wikidata.org/entity/Q6517197"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/St_Peter_%26_St_Paul%27s_Church%2C_Watford"
+          "identifier": "https://en.wikipedia.org/wiki/St_Peter_%26_St_Paul%27s_Church%2C_Watford"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2634676/"
+          "identifier": "https://www.geonames.org/2634676/"
         }
       ],
       "depictions": [
@@ -5507,7 +5498,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/e9738ed5-1b46-4990-87e4-b6be598b4642",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/e9738ed5-1b46-4990-87e4-b6be598b4642",
       "type": "Feature",
       "name": "Liverpool, Lancashire",
       "geometry": {
@@ -5529,19 +5520,19 @@
       "links": [
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Liverpool_Castle"
+          "identifier": "https://en.wikipedia.org/wiki/Liverpool_Castle"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q24826"
+          "identifier": "http://www.wikidata.org/entity/Q24826"
         },
         {
           "type": "closeMatch",
-          "id": "https://whgazetteer.org/api/place/86317"
+          "identifier": "https://whgazetteer.org/api/place/86317"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6288086/"
+          "identifier": "https://www.geonames.org/6288086/"
         }
       ],
       "depictions": [
@@ -5570,7 +5561,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/e1e69479-f07e-4243-9678-1438cd57962c",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/e1e69479-f07e-4243-9678-1438cd57962c",
       "type": "Feature",
       "name": "Devil's Arrows",
       "geometry": {
@@ -5606,24 +5597,24 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1014705",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1014705",
           "label": "Stone alignment west of Boroughbridge known as the Devil's Arrows, including three standing stones and the setting for a fourth"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q1419372"
+          "identifier": "http://www.wikidata.org/entity/Q1419372"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q2569056"
+          "identifier": "http://www.wikidata.org/entity/Q2569056"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Devil%27s_Arrows"
+          "identifier": "https://en.wikipedia.org/wiki/Devil%27s_Arrows"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2655173/"
+          "identifier": "https://www.geonames.org/2655173/"
         }
       ],
       "depictions": [
@@ -5656,7 +5647,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/db938400-2f10-45f0-8df3-4e755370757e",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/db938400-2f10-45f0-8df3-4e755370757e",
       "type": "Feature",
       "name": "Newgate",
       "geometry": {
@@ -5692,20 +5683,20 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1003773",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1003773",
           "label": "London Wall: site of Newgate and 121-124 Newgate Street, remains of Roman and\nmedieval wall, gateway and bastion"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Newgate"
+          "identifier": "https://en.wikipedia.org/wiki/Newgate"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17646990"
+          "identifier": "http://www.wikidata.org/entity/Q17646990"
         },
         {
           "type": "seeAlso",
-          "id": "https://openplaques.org/plaques/3956",
+          "identifier": "https://openplaques.org/plaques/3956",
           "label": "Newgate blue plaque"
         }
       ],
@@ -5739,7 +5730,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/b943b3ac-7724-4918-aa93-47c1f464ba52",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/b943b3ac-7724-4918-aa93-47c1f464ba52",
       "type": "Feature",
       "name": "St Oswald's Church, Durham",
       "geometry": {
@@ -5764,28 +5755,28 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1120678",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1120678",
           "label": "CHURCH OF ST OSWALD"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17535914"
+          "identifier": "http://www.wikidata.org/entity/Q17535914"
         },
         {
           "type": "closeMatch",
-          "id": "https://whgazetteer.org/api/place/6373643"
+          "identifier": "https://whgazetteer.org/api/place/6373643"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q179815"
+          "identifier": "http://www.wikidata.org/entity/Q179815"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/St_Oswald%27s_Church%2C_Durham"
+          "identifier": "https://en.wikipedia.org/wiki/St_Oswald%27s_Church%2C_Durham"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2650628/"
+          "identifier": "https://www.geonames.org/2650628/"
         }
       ],
       "depictions": [
@@ -5818,7 +5809,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/3e995f0d-2b1a-43c5-aef8-16e0bc8dab92",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/3e995f0d-2b1a-43c5-aef8-16e0bc8dab92",
       "type": "Feature",
       "name": "The Spa near Knaresborough",
       "geometry": {
@@ -5854,24 +5845,24 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1293847",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1293847",
           "label": "TEWIT WELL"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q7707194"
+          "identifier": "http://www.wikidata.org/entity/Q7707194"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q894087"
+          "identifier": "http://www.wikidata.org/entity/Q894087"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Tewit_Well"
+          "identifier": "https://en.wikipedia.org/wiki/Tewit_Well"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2647428/"
+          "identifier": "https://www.geonames.org/2647428/"
         }
       ],
       "depictions": [
@@ -5904,7 +5895,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/662373c5-df88-4742-bcab-6d83726a539b",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/662373c5-df88-4742-bcab-6d83726a539b",
       "type": "Feature",
       "name": "Newcastle Bridge",
       "geometry": {
@@ -5936,29 +5927,29 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1003513",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1003513",
           "label": "Old Tyne Bridge (land arches)"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1323141",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1323141",
           "label": "OLD TYNE BRIDGE"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17534245"
+          "identifier": "http://www.wikidata.org/entity/Q17534245"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q1425428"
+          "identifier": "http://www.wikidata.org/entity/Q1425428"
         },
         {
           "type": "closeMatch",
-          "id": "https://whgazetteer.org/api/place/6369765"
+          "identifier": "https://whgazetteer.org/api/place/6369765"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2641673/"
+          "identifier": "https://www.geonames.org/2641673/"
         }
       ],
       "depictions": [
@@ -5984,7 +5975,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/2336d1e4-6c4b-4370-a992-ced306ec1180",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/2336d1e4-6c4b-4370-a992-ced306ec1180",
       "type": "Feature",
       "name": "Beeston Castle",
       "geometry": {
@@ -6040,42 +6031,42 @@
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6286903/"
+          "identifier": "https://www.geonames.org/6286903/"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1007900",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1007900",
           "label": "Beeston Castle; medieval enclosure castle and site of late prehistoric hillfort"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1330329",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1330329",
           "label": "WALLS, TOWERS AND GATEHOUSE OF THE INNER BAILEY AT BEESTON CASTLE"
         },
         {
           "type": "seeAlso",
-          "id": "https://www.english-heritage.org.uk/visit/places/Beeston-Castle-and-Woodland-Park",
+          "identifier": "https://www.english-heritage.org.uk/visit/places/Beeston-Castle-and-Woodland-Park",
           "label": "Beeston Castle and Woodland Park"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26263508"
+          "identifier": "http://www.wikidata.org/entity/Q26263508"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q539538"
+          "identifier": "http://www.wikidata.org/entity/Q539538"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26263437"
+          "identifier": "http://www.wikidata.org/entity/Q26263437"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q1791022"
+          "identifier": "http://www.wikidata.org/entity/Q1791022"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Beeston_Castle"
+          "identifier": "https://en.wikipedia.org/wiki/Beeston_Castle"
         }
       ],
       "depictions": [
@@ -6116,7 +6107,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/53e05f74-546f-4a91-9acb-16a810b6849e",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/53e05f74-546f-4a91-9acb-16a810b6849e",
       "type": "Feature",
       "name": "Beaconsfield, Buckinghamshire",
       "geometry": {
@@ -6133,28 +6124,28 @@
       "links": [
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/7298729/"
+          "identifier": "https://www.geonames.org/7298729/"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1124547",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1124547",
           "label": "PARISH CHURCH OF ST MARY AND ALL SAINTS"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17540205"
+          "identifier": "http://www.wikidata.org/entity/Q17540205"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q812906"
+          "identifier": "http://www.wikidata.org/entity/Q812906"
         },
         {
           "type": "closeMatch",
-          "id": "https://whgazetteer.org/api/place/81952"
+          "identifier": "https://whgazetteer.org/api/place/81952"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/7298729/"
+          "identifier": "https://www.geonames.org/7298729/"
         }
       ],
       "depictions": [
@@ -6180,7 +6171,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/86d9f072-8f25-4ae1-ba31-de7b87e9471d",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/86d9f072-8f25-4ae1-ba31-de7b87e9471d",
       "type": "Feature",
       "name": "STAMFORD",
       "geometry": {
@@ -6197,20 +6188,20 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1062178",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1062178",
           "label": "THE BRIDGE"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26315586"
+          "identifier": "http://www.wikidata.org/entity/Q26315586"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/7295545/"
+          "identifier": "https://www.geonames.org/7295545/"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q1000662"
+          "identifier": "http://www.wikidata.org/entity/Q1000662"
         }
       ],
       "depictions": [
@@ -6236,7 +6227,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/1e019554-9403-41a4-8fd6-c0f9057ef7bf",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/1e019554-9403-41a4-8fd6-c0f9057ef7bf",
       "type": "Feature",
       "name": "Knaresbrough Castle, Yorkshire",
       "geometry": {
@@ -6253,24 +6244,24 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1020586",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1020586",
           "label": "Knaresborough Castle"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q6421781"
+          "identifier": "http://www.wikidata.org/entity/Q6421781"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q535902"
+          "identifier": "http://www.wikidata.org/entity/Q535902"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Knaresborough_Castle"
+          "identifier": "https://en.wikipedia.org/wiki/Knaresborough_Castle"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2645163/"
+          "identifier": "https://www.geonames.org/2645163/"
         }
       ],
       "depictions": [
@@ -6308,7 +6299,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/ae1b815c-dff2-477b-a78e-763f7a2d26d0",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/ae1b815c-dff2-477b-a78e-763f7a2d26d0",
       "type": "Feature",
       "name": "Chester-le-Street, Co. Durham",
       "geometry": {
@@ -6339,24 +6330,24 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1120955",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1120955",
           "label": "CHURCH OF ST MARY AND ST CUTHBERT"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q7594612"
+          "identifier": "http://www.wikidata.org/entity/Q7594612"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q2570025"
+          "identifier": "http://www.wikidata.org/entity/Q2570025"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/St_Mary_and_St_Cuthbert%2C_Chester-le-Street"
+          "identifier": "https://en.wikipedia.org/wiki/St_Mary_and_St_Cuthbert%2C_Chester-le-Street"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2653224/"
+          "identifier": "https://www.geonames.org/2653224/"
         }
       ],
       "depictions": [
@@ -6389,7 +6380,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/b42f123e-16d8-448b-85ae-db49d9006fd5",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/b42f123e-16d8-448b-85ae-db49d9006fd5",
       "type": "Feature",
       "name": "Windsor Bridge",
       "geometry": {
@@ -6411,24 +6402,24 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1117673",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1117673",
           "label": "WINDSOR BRIDGE"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q8024573"
+          "identifier": "http://www.wikidata.org/entity/Q8024573"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q464955"
+          "identifier": "http://www.wikidata.org/entity/Q464955"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Windsor_Bridge"
+          "identifier": "https://en.wikipedia.org/wiki/Windsor_Bridge"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/12088630/"
+          "identifier": "https://www.geonames.org/12088630/"
         }
       ],
       "depictions": [
@@ -6461,7 +6452,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/2b0347f9-214a-4dfb-a1b7-9b748fee123d",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/2b0347f9-214a-4dfb-a1b7-9b748fee123d",
       "type": "Feature",
       "name": "Ripon Bridge, Yorkshire",
       "geometry": {
@@ -6486,20 +6477,20 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1174476",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1174476",
           "label": "NORTH BRIDGE"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q661529"
+          "identifier": "http://www.wikidata.org/entity/Q661529"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2639323/"
+          "identifier": "https://www.geonames.org/2639323/"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://www.geograph.org.uk/photo/6602226"
+          "identifier": "https://www.geograph.org.uk/photo/6602226"
         }
       ],
       "depictions": [
@@ -6526,7 +6517,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/f81a7fae-4f12-44cc-885f-c2612e7f8406",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/f81a7fae-4f12-44cc-885f-c2612e7f8406",
       "type": "Feature",
       "name": "Catterick Bridge",
       "geometry": {
@@ -6547,20 +6538,20 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1131481",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1131481",
           "label": "CATTERICK BRIDGE"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q5054076"
+          "identifier": "http://www.wikidata.org/entity/Q5054076"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Catterick_Bridge"
+          "identifier": "https://en.wikipedia.org/wiki/Catterick_Bridge"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17539015"
+          "identifier": "http://www.wikidata.org/entity/Q17539015"
         }
       ],
       "depictions": [
@@ -6593,7 +6584,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/a6d1ef5d-6cb1-4b16-80a8-3836bb91a418",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/a6d1ef5d-6cb1-4b16-80a8-3836bb91a418",
       "type": "Feature",
       "name": "Windsor Castle",
       "geometry": {
@@ -6624,29 +6615,29 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1006996",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1006996",
           "label": "Windsor Castle"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1001434",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1001434",
           "label": "THE ROYAL ESTATE, WINDSOR: WINDSOR CASTLE AND HOME PARK"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q42646"
+          "identifier": "http://www.wikidata.org/entity/Q42646"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Windsor_Castle"
+          "identifier": "https://en.wikipedia.org/wiki/Windsor_Castle"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2633842/"
+          "identifier": "https://www.geonames.org/2633842/"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q464955"
+          "identifier": "http://www.wikidata.org/entity/Q464955"
         }
       ],
       "depictions": [
@@ -6679,7 +6670,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/0554f055-2937-4dd6-bbbc-7e72788c4a27",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/0554f055-2937-4dd6-bbbc-7e72788c4a27",
       "type": "Feature",
       "name": "High Cross",
       "geometry": {
@@ -6710,25 +6701,25 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1295284",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1295284",
           "label": "THE HIGH CROSS MONUMENT"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1018261",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1018261",
           "label": "High Cross 60m north west of Highcross House"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26583032"
+          "identifier": "http://www.wikidata.org/entity/Q26583032"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17672189"
+          "identifier": "http://www.wikidata.org/entity/Q17672189"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/High_Cross%2C_Leicestershire"
+          "identifier": "https://en.wikipedia.org/wiki/High_Cross%2C_Leicestershire"
         }
       ],
       "depictions": [
@@ -6757,7 +6748,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/c70e6c6a-6157-43e7-91a2-ce7fd7687ab7",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/c70e6c6a-6157-43e7-91a2-ce7fd7687ab7",
       "type": "Feature",
       "name": "Northampton Bridge",
       "geometry": {
@@ -6774,11 +6765,11 @@
       "links": [
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q21044812"
+          "identifier": "http://www.wikidata.org/entity/Q21044812"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6287239/"
+          "identifier": "https://www.geonames.org/6287239/"
         }
       ],
       "depictions": [
@@ -6800,7 +6791,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/b339c5c5-eb7f-4f5a-92c2-651f03209dd0",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/b339c5c5-eb7f-4f5a-92c2-651f03209dd0",
       "type": "Feature",
       "name": "Holdenby",
       "geometry": {
@@ -6836,42 +6827,42 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1006638",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1006638",
           "label": "Holdenby Manor and gardens"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1067053",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1067053",
           "label": "HOLDENBY HOUSE"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1001035",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1001035",
           "label": "HOLDENBY HOUSE"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q3139305"
+          "identifier": "http://www.wikidata.org/entity/Q3139305"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q4729478"
+          "identifier": "http://www.wikidata.org/entity/Q4729478"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q4443243"
+          "identifier": "http://www.wikidata.org/entity/Q4443243"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Holdenby_House"
+          "identifier": "https://en.wikipedia.org/wiki/Holdenby_House"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/All_Saints_Church%2C_Holdenby"
+          "identifier": "https://en.wikipedia.org/wiki/All_Saints_Church%2C_Holdenby"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/7299285/"
+          "identifier": "https://www.geonames.org/7299285/"
         }
       ],
       "depictions": [
@@ -6913,7 +6904,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/416f5d19-f8bb-4f09-969c-fd4b517ec62d",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/416f5d19-f8bb-4f09-969c-fd4b517ec62d",
       "type": "Feature",
       "name": "Tadcaster Bridge, Yorkshire",
       "geometry": {
@@ -6935,24 +6926,24 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1132471",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1132471",
           "label": "WHARFE BRIDGE"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q21877533"
+          "identifier": "http://www.wikidata.org/entity/Q21877533"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q784467"
+          "identifier": "http://www.wikidata.org/entity/Q784467"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Tadcaster_Bridge"
+          "identifier": "https://en.wikipedia.org/wiki/Tadcaster_Bridge"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2636335/"
+          "identifier": "https://www.geonames.org/2636335/"
         }
       ],
       "depictions": [
@@ -6985,7 +6976,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/05288cee-ba1d-4571-9ec2-9df9e03a2d54",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/05288cee-ba1d-4571-9ec2-9df9e03a2d54",
       "type": "Feature",
       "name": "Sherburn in Elmet",
       "geometry": {
@@ -7010,20 +7001,20 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1148444",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1148444",
           "label": "CHURCH OF ALL SAINTS"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17526270"
+          "identifier": "http://www.wikidata.org/entity/Q17526270"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Sherburn"
+          "identifier": "https://en.wikipedia.org/wiki/Sherburn"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2638027/"
+          "identifier": "https://www.geonames.org/2638027/"
         }
       ],
       "depictions": [
@@ -7056,7 +7047,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/96f0f397-5dca-45d8-94bd-860a936cbe31",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/96f0f397-5dca-45d8-94bd-860a936cbe31",
       "type": "Feature",
       "name": "Northallerton Castle",
       "geometry": {
@@ -7078,16 +7069,16 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1020719",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1020719",
           "label": "Motte and Bailey castle and site of a bishops' palace"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q920381"
+          "identifier": "http://www.wikidata.org/entity/Q920381"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6287885/"
+          "identifier": "https://www.geonames.org/6287885/"
         }
       ],
       "depictions": [
@@ -7109,7 +7100,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/1aa3845c-fec0-4715-a788-bbf2b62524dc",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/1aa3845c-fec0-4715-a788-bbf2b62524dc",
       "type": "Feature",
       "name": "Hampton Court",
       "geometry": {
@@ -7145,39 +7136,39 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://www.hrp.org.uk/hampton-court-palace/",
+          "identifier": "https://www.hrp.org.uk/hampton-court-palace/",
           "label": "Hampton Court"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Hampton_Court_Palace"
+          "identifier": "https://en.wikipedia.org/wiki/Hampton_Court_Palace"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1193127",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1193127",
           "label": "HAMPTON COURT PALACE"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1000108",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1000108",
           "label": "HAMPTON COURT"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1002009",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1002009",
           "label": "Hampton Court Palace"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q205666"
+          "identifier": "http://www.wikidata.org/entity/Q205666"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Hampton_Court_Palace"
+          "identifier": "https://en.wikipedia.org/wiki/Hampton_Court_Palace"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6620446/"
+          "identifier": "https://www.geonames.org/6620446/"
         }
       ],
       "depictions": [
@@ -7215,7 +7206,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/582738dd-446e-4e92-9f7a-07b999b8178f",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/582738dd-446e-4e92-9f7a-07b999b8178f",
       "type": "Feature",
       "name": "Ruthin Castle",
       "geometry": {
@@ -7251,33 +7242,33 @@
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q3403676"
+          "identifier": "http://www.wikidata.org/entity/Q3403676"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q1013633"
+          "identifier": "http://www.wikidata.org/entity/Q1013633"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Ruthin_Castle"
+          "identifier": "https://en.wikipedia.org/wiki/Ruthin_Castle"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6286881/"
+          "identifier": "https://www.geonames.org/6286881/"
         },
         {
           "type": "seeAlso",
-          "id": "https://w3id.org/locolligo/eddd181d-bc2b-4767-8c3d-eb4c99395603/5e95a656-7ee6-47b3-ab78-54c3054b5aa4",
+          "identifier": "https://w3id.org/locolligo/eddd181d-bc2b-4767-8c3d-eb4c99395603/5e95a656-7ee6-47b3-ab78-54c3054b5aa4",
           "label": "RUTHIN"
         },
         {
           "type": "seeAlso",
-          "id": "http://cadwpublic-api.azurewebsites.net/reports/sam/FullReport?lang=en&id=3804",
+          "identifier": "http://cadwpublic-api.azurewebsites.net/reports/sam/FullReport?lang=en&id=3804",
           "label": "Ruthin Castle"
         },
         {
           "type": "seeAlso",
-          "id": "http://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=825",
+          "identifier": "http://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=825",
           "label": "Ruthin Castle"
         }
       ],
@@ -7327,7 +7318,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/7a0edc6e-4a6c-4dc0-97c1-deccb547b657",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/7a0edc6e-4a6c-4dc0-97c1-deccb547b657",
       "type": "Feature",
       "name": "St. Robert's Chapel",
       "geometry": {
@@ -7366,17 +7357,17 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1015540",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1015540",
           "label": "St Robert's Cave medieval hermitage, 90m north of Plumpton Mill Farm"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1149914",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1149914",
           "label": "SAINT ROBERTS CAVE, ALSO CALLED SAINT ROBERTS CHAPEL, APPROXIMATELY 120 METRES SOUTH WEST OF GRIMBALD BRIDGE"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Robert_of_Knaresborough"
+          "identifier": "https://en.wikipedia.org/wiki/Robert_of_Knaresborough"
         }
       ],
       "depictions": [
@@ -7405,7 +7396,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/957cf2a1-c1dc-416a-bb8c-0eae5205f9b1",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/957cf2a1-c1dc-416a-bb8c-0eae5205f9b1",
       "type": "Feature",
       "name": "Hawarden Castle",
       "geometry": {
@@ -7444,37 +7435,37 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://w3id.org/locolligo/eddd181d-bc2b-4767-8c3d-eb4c99395603/6bbaa307-c963-418e-b569-e41d604fe8dd",
+          "identifier": "https://w3id.org/locolligo/eddd181d-bc2b-4767-8c3d-eb4c99395603/6bbaa307-c963-418e-b569-e41d604fe8dd",
           "label": "PARISH: HAWARDEN"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q370127"
+          "identifier": "http://www.wikidata.org/entity/Q370127"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q2398901"
+          "identifier": "http://www.wikidata.org/entity/Q2398901"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Hawarden_Castle_%28medieval%29"
+          "identifier": "https://en.wikipedia.org/wiki/Hawarden_Castle_%28medieval%29"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/6287274/"
+          "identifier": "https://www.geonames.org/6287274/"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q3404121"
+          "identifier": "http://www.wikidata.org/entity/Q3404121"
         },
         {
           "type": "seeAlso",
-          "id": "http://cadwpublic-api.azurewebsites.net/reports/sam/FullReport?lang=en&id=3085",
+          "identifier": "http://cadwpublic-api.azurewebsites.net/reports/sam/FullReport?lang=en&id=3085",
           "label": "Hawarden Castle"
         },
         {
           "type": "seeAlso",
-          "id": "http://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=14",
+          "identifier": "http://cadwpublic-api.azurewebsites.net/reports/listedbuilding/FullReport?lang=en&id=14",
           "label": "Hawarden Castle (Old)"
         }
       ],
@@ -7528,7 +7519,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/9c85bdbe-c576-456e-a156-05ecdd5f1ced",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/9c85bdbe-c576-456e-a156-05ecdd5f1ced",
       "type": "Feature",
       "name": "Sunderland Bridge",
       "geometry": {
@@ -7545,29 +7536,29 @@
       "links": [
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17529715"
+          "identifier": "http://www.wikidata.org/entity/Q17529715"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1120699",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1120699",
           "label": "SUNDERLAND BRIDGE"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1002358",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1002358",
           "label": "Sunderland Bridge, near Croxdale"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q6622102"
+          "identifier": "http://www.wikidata.org/entity/Q6622102"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Sunderland_Bridge%2C_County_Durham"
+          "identifier": "https://en.wikipedia.org/wiki/Sunderland_Bridge%2C_County_Durham"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2636530/"
+          "identifier": "https://www.geonames.org/2636530/"
         }
       ],
       "depictions": [
@@ -7600,7 +7591,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/a8dc6091-848a-42e2-8e42-b17e3812c5e0",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/a8dc6091-848a-42e2-8e42-b17e3812c5e0",
       "type": "Feature",
       "name": "Woodstock",
       "geometry": {
@@ -7617,15 +7608,15 @@
       "links": [
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Woodstock_Palace"
+          "identifier": "https://en.wikipedia.org/wiki/Woodstock_Palace"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q208181"
+          "identifier": "http://www.wikidata.org/entity/Q208181"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/12207119/"
+          "identifier": "https://www.geonames.org/12207119/"
         }
       ],
       "depictions": [
@@ -7658,7 +7649,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/2f4c9d98-eaf9-4e2d-afa1-860ba219968f",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/2f4c9d98-eaf9-4e2d-afa1-860ba219968f",
       "type": "Feature",
       "name": "Boroughbridge Church",
       "geometry": {
@@ -7679,24 +7670,24 @@
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1150092",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1150092",
           "label": "CHURCH OF ST JAMES"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26442951"
+          "identifier": "http://www.wikidata.org/entity/Q26442951"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q2569056"
+          "identifier": "http://www.wikidata.org/entity/Q2569056"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Boroughbridge"
+          "identifier": "https://en.wikipedia.org/wiki/Boroughbridge"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2655173/"
+          "identifier": "https://www.geonames.org/2655173/"
         }
       ],
       "depictions": [
@@ -7725,7 +7716,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/62845007-1f05-4eef-9836-a26f834445e5",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/62845007-1f05-4eef-9836-a26f834445e5",
       "type": "Feature",
       "name": "LOUGHBOROUGH",
       "geometry": {
@@ -7774,7 +7765,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/8e07d9c8-23d4-40bc-8712-ae01595fcb69",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/8e07d9c8-23d4-40bc-8712-ae01595fcb69",
       "type": "Feature",
       "name": "Stony Stratford Bridge",
       "geometry": {
@@ -7796,24 +7787,24 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1371277",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1371277",
           "label": "BRIDGE OVER RIVER OUSE (THAT PART IN OLD STRATFORD CIVIL PARISH)"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26652450"
+          "identifier": "http://www.wikidata.org/entity/Q26652450"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q787279"
+          "identifier": "http://www.wikidata.org/entity/Q787279"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Stony_Stratford"
+          "identifier": "https://en.wikipedia.org/wiki/Stony_Stratford"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/2636795/"
+          "identifier": "https://www.geonames.org/2636795/"
         }
       ],
       "depictions": [
@@ -7846,7 +7837,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/63ee3069-ea9a-44ae-a1f8-cfb4538e0eb2",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/63ee3069-ea9a-44ae-a1f8-cfb4538e0eb2",
       "type": "Feature",
       "name": "Gravestones at Nun Appleton",
       "geometry": {
@@ -7877,19 +7868,19 @@
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q26461344"
+          "identifier": "http://www.wikidata.org/entity/Q26461344"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/Nun_Appleton_Priory"
+          "identifier": "https://en.wikipedia.org/wiki/Nun_Appleton_Priory"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/11594066/"
+          "identifier": "https://www.geonames.org/11594066/"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1167924",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1167924",
           "label": "NUN APPLETON HALL"
         }
       ],
@@ -7919,7 +7910,7 @@
       ]
     },
     {
-      "@id": "https://w3id.org/locolligo/338347a9-fa89-487f-9571-7a30b3b657ff/db75c08f-975f-4663-9947-f8f7c864cc52",
+      "@id": "https://w3id.org/locolligo/Hollar-1660/db75c08f-975f-4663-9947-f8f7c864cc52",
       "type": "Feature",
       "name": "West Wycombe Church",
       "geometry": {
@@ -7944,38 +7935,38 @@
       "links": [
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1125117",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1125117",
           "label": "CHURCH OF ST LAWRENCE"
         },
         {
           "type": "seeAlso",
-          "id": "https://historicengland.org.uk/listing/the-list/list-entry/1003261",
+          "identifier": "https://historicengland.org.uk/listing/the-list/list-entry/1003261",
           "label": "Camp on Church Hill"
         },
         {
           "type": "seeAlso",
-          "id": "https://www.nationaltrust.org.uk/west-wycombe-park-village-and-hill",
+          "identifier": "https://www.nationaltrust.org.uk/west-wycombe-park-village-and-hill",
           "label": "West Wycombe Park, Village and Hill"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q7593951"
+          "identifier": "http://www.wikidata.org/entity/Q7593951"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q17648696"
+          "identifier": "http://www.wikidata.org/entity/Q17648696"
         },
         {
           "type": "primaryTopicOf",
-          "id": "https://en.wikipedia.org/wiki/St_Lawrence%27s_Church%2C_West_Wycombe"
+          "identifier": "https://en.wikipedia.org/wiki/St_Lawrence%27s_Church%2C_West_Wycombe"
         },
         {
           "type": "closeMatch",
-          "id": "http://www.wikidata.org/entity/Q2366839"
+          "identifier": "http://www.wikidata.org/entity/Q2366839"
         },
         {
           "type": "closeMatch",
-          "id": "https://www.geonames.org/7296184/"
+          "identifier": "https://www.geonames.org/7296184/"
         }
       ],
       "depictions": [
