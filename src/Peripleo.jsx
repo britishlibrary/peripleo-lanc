@@ -46,7 +46,7 @@ const Peripleo = () => {
   useEffect(() => {
     if (debouncedQuery)
       setSearchResults(store.searchMappable(debouncedQuery));
-    else  
+    else if (config)
       setSearchResults(store.getNodesInBounds(config.initial_bounds));
   }, [debouncedQuery]);
 
