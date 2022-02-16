@@ -1,3 +1,5 @@
+import bbox from '@turf/bbox';
+
 import Store from './Store';
 
 /** 
@@ -13,8 +15,12 @@ export const getBounds = node => {
      const [x, y] = node.geometry.coordinates;
      return {minX: x, minY: y, maxX: x, maxY: y};
    } else {
-     const [minX, minY, maxX, maxY] = bbox(feature);
-     return {minX, minY, maxX, maxY};
+     try {
+       const [minX, minY, maxX, maxY] = bbox(node);
+       return {minX, minY, maxX, maxY};
+     } catch {
+       console.error('Error parsing geometry for node', node);
+     }
    }
  } 
 }
