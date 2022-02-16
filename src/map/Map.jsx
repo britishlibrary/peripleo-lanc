@@ -54,8 +54,11 @@ const Map = props => {
   }, [ hover ]);
 
   const onClick = () => {
-    if (hover)
+    if (hover) {
+      const { node } = hover;
       console.log('clicked', hover); // TODO
+      history.pushState(node, node.title, `#/${encodeURIComponent(node.id)}`);
+    }
   }
 
   const onMove = useCallback(evt =>

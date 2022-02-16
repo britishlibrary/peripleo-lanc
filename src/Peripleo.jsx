@@ -1,9 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useParams } from "react-router-dom";
 
 import { StoreContext } from './store';
 import Map from './map/Map';
 
 const Peripleo = () => {
+
+  // Pre-selected record via hash URL
+  const { recordId } = useParams();
+  console.log('route:', recordId);
 
   const { store } = useContext(StoreContext);
 
