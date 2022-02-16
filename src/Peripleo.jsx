@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
+import { useDebounce } from 'use-debounce';
 
 import { StoreContext } from './store';
 
@@ -18,6 +19,7 @@ const Peripleo = () => {
   const [ isDataLoaded, setIsDataLoaded ] = useState(false);
 
   const [ searchQuery, setSearchQuery ] = useState();
+  const [ debouncedQuery ] = useDebounce(searchQuery, 250);
 
   useEffect(() => {
     fetch('peripleo.config.json')
@@ -35,8 +37,8 @@ const Peripleo = () => {
   }, [config]);
 
   useEffect(() => {
-    console.log(store.search(searchQuery));
-  }, [searchQuery]);
+    console.log(store.search(debouncedQuery));
+  }, [debouncedQuery]);
 
   // TODO LOADING screen
   return config ? 
