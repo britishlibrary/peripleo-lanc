@@ -81,8 +81,9 @@ export const loadLinkedPlaces = (name, url, store) =>
       store.graph.endUpdate();
 
       // Add to search index
-      console.time('Indexing...');
+      console.log('Indexing...');
+      console.time('Took');
       store.index(nodes);
-      console.timeEnd('Indexing...');
+      console.timeEnd('Took');
     });
 

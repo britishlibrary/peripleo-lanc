@@ -21,6 +21,8 @@ const Peripleo = () => {
   const [ searchQuery, setSearchQuery ] = useState();
   const [ debouncedQuery ] = useDebounce(searchQuery, 250);
 
+  const [ searchResults, setSearchResults ] = useState();
+
   useEffect(() => {
     fetch('peripleo.config.json')
       .then(response => response.json())
@@ -37,7 +39,12 @@ const Peripleo = () => {
   }, [config]);
 
   useEffect(() => {
-    console.log(store.search(debouncedQuery));
+    if (isDataLoaded)
+      setSearchResults(store.getNodesInBounds(config.initial_bounds));
+  }, [isDataLoaded]);
+
+  useEffect(() => {
+    setSearchResults(store.searchMappable(debouncedQuery));
   }, [debouncedQuery]);
 
   // TODO LOADING screen
@@ -45,7 +52,8 @@ const Peripleo = () => {
     <>
       <Map 
         config={config} 
-        loaded={isDataLoaded} />
+        loaded={isDataLoaded} 
+        searchResults={searchResults} />
 
       <HUD 
         config={config}

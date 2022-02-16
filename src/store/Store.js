@@ -16,6 +16,9 @@ const nodeToDocument = node => ({
   names: node.name ? [ node.name ] : node.names?.map(n => n.toponym)
 })
 
+const isMappable = node =>
+  node.geometry?.type;
+
 export default class Store {
 
   constructor() {
@@ -82,7 +85,13 @@ export default class Store {
       .map(result => result.node);
   }
 
+  // To be extended in the future
   search = query =>
-    this.searchIndex.search(query);
+    this.searchIndex.search(query)
+      .map(document => this.getNode(document.id));
+
+  // To be extended in the future
+  searchMappable = query => 
+    this.search(query).filter(isMappable);
 
 }

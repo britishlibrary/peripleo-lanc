@@ -1,6 +1,6 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import ReactMapGL, {Source, Layer} from 'react-map-gl';
-import WebMercatorViewport from '@math.gl/web-mercator';
+// import WebMercatorViewport from '@math.gl/web-mercator';
 import { useDebounce } from 'use-debounce';
 
 import { StoreContext } from '../store';
@@ -23,18 +23,13 @@ const Map = props => {
 
   const [ debouncedViewState ] = useDebounce(viewState, 500);
 
-  const [ searchResults, setSearchResults ] = useState(toFeatureCollection());
-
   const [ hover, setHover ] = useState();
 
   const style = `https://api.maptiler.com/maps/outdoor/style.json?key=${config.api_key}`;
 
-  // For testing: start with all data
   useEffect(() => {
-    setSearchResults(toFeatureCollection(store.getNodesInBounds(config.initial_bounds)));
-  }, [ props.loaded ]);
-
-  useEffect(() => {
+    // TODO we'll need this handler later!
+    /*
     const viewport = {
       width: window.innerWidth,
       height: window.innerHeight,
@@ -44,6 +39,7 @@ const Map = props => {
     const bounds = new WebMercatorViewport(viewport).getBounds();
     const nodes = store.getNodesInBounds(bounds);
     setSearchResults(toFeatureCollection(nodes));
+    */
   }, [ debouncedViewState ]);
 
   useEffect(() => {
@@ -93,7 +89,7 @@ const Map = props => {
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave} >
 
-        <Source type="geojson" data={searchResults}>
+        <Source type="geojson" data={toFeatureCollection(props.searchResults)}>
           <Layer 
             id="search-results"
             {...pointStyle({ fill: 'red', radius: 5 })} />
