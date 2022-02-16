@@ -44,7 +44,10 @@ const Peripleo = () => {
   }, [isDataLoaded]);
 
   useEffect(() => {
-    setSearchResults(store.searchMappable(debouncedQuery));
+    if (debouncedQuery)
+      setSearchResults(store.searchMappable(debouncedQuery));
+    else  
+      setSearchResults(store.getNodesInBounds(config.initial_bounds));
   }, [debouncedQuery]);
 
   // TODO LOADING screen
