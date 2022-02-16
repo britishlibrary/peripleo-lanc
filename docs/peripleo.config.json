@@ -2,6 +2,7 @@
   "api_key": "cqqmcLw28krG9Fl7V3kg",
   "initial_bounds": [-7.9, 49.5, 2.2, 59.4],
   "data": [
-    { "name": "Hollar", "format": "LINKED_PLACES", "src": "data/Hollar_LP.json" }
+    { "name": "Hollar", "format": "LINKED_PLACES", "src": "data/Hollar_LP.json" },
+    { "name": "Portable Antiquities Scheme", "format": "LINKED_PLACES", "src": "data/PAS_Warwickshire.lp.json" }
   ]
 }
