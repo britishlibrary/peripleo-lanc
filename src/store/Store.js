@@ -4,6 +4,18 @@ import * as JsSearch from 'js-search';
 
 import { loadLinkedPlaces } from './loaders/LinkedPlacesLoader';
 
+/**
+ * Converts a network node to a JsSearch
+ * document for indexing.
+ */
+const nodeToDocument = node => ({
+  id: node.id,
+  dataset: node.dataset,
+  title: node.title,
+  description: node.properties?.description,
+  names: node.name ? [ node.name ] : node.names?.map(n => n.toponym)
+})
+
 export default class Store {
 
   constructor() {
@@ -12,8 +24,8 @@ export default class Store {
     this.spatialIndex = new RBush();
 
     // Fulltext search, using node ID as primary key
-    this.search = new JsSearch.Search('id');
-    this.search.tokenizer = {
+    this.searchIndex = new JsSearch.Search('id');
+    this.searchIndex.tokenizer = {
       tokenize(text) {
         return text
           .replace(/[.,'"#!$%^&*;:{}=\-_`~()]/g, '')
@@ -21,13 +33,9 @@ export default class Store {
       }
     };
 
-    this.search.addIndex('title'); 
-    this.search.addIndex('description');
-    this.search.addIndex('names'); 
-  }
-
-  index = nodes => {
-    // TODO index for fulltext search
+    this.searchIndex.addIndex('title'); 
+    this.searchIndex.addIndex('description');
+    this.searchIndex.addIndex('names'); 
   }
 
   init = config => {
@@ -44,6 +52,9 @@ export default class Store {
       }  
     }));
   }
+
+  index = nodes => this.searchIndex.addDocuments(
+    nodes.map(node => nodeToDocument(node)));
 
   getNode = id =>
     this.graph.getNode(id)?.data;
@@ -70,5 +81,8 @@ export default class Store {
         result.node.geometry.type === 'Point' || isInsideBounds(result))
       .map(result => result.node);
   }
+
+  search = query =>
+    this.searchIndex.search(query);
 
 }

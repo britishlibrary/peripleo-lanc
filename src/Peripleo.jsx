@@ -35,8 +35,7 @@ const Peripleo = () => {
   }, [config]);
 
   useEffect(() => {
-    // TODO
-    console.log('query: ' + searchQuery);
+    console.log(store.search(searchQuery));
   }, [searchQuery]);
 
   // TODO LOADING screen
