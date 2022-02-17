@@ -5,12 +5,13 @@ import { AnimatePresence } from 'framer-motion';
 import { StoreContext } from './store';
 import Loading from './loading/Loading';
 import Peripleo from './Peripleo';
+import Tutorial, { isFirstTimeVisitor } from './tutorial/Tutorial';
 
 /**
  * The 'App' class manages the basic load and data setup sequence, 
  * before the actual UI becomes fully operational.
  */
-const App = props => {
+const App = () => {
 
   // Pre-selected record via hash URL
   const { recordId } = useParams();
@@ -103,6 +104,10 @@ const App = props => {
           loaded={loadState.stage === 'CLOSE'}
           initialRecord={recordId}
           onMapLoaded={onMapLoaded} />
+      }
+
+      {isFirstTimeVisitor && loadState.stage === 'CLOSE' &&
+        <Tutorial />
       }
     </>
   )
