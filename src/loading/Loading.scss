@@ -25,14 +25,11 @@
       padding:10px 0;
     }
 
-    .p6o-loading-stage {
-      padding-top:24px;
-    }
-
     .p6o-load-progress-outer {
+      margin-top:18px;
       background-color:rgba(255, 255, 255, 0.2);
       height:2px;
-      width:280px;
+      width:320px;
       max-width:80vw;
       position:relative;
 
@@ -41,6 +38,10 @@
         background-color:#fff;
       }
 
+    }
+
+    .p6o-loading-stage {
+      padding-top:8px;      
     }
 
   }

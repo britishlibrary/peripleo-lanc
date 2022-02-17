@@ -12,7 +12,7 @@ const Loading = props => {
   if (stage === 'LOADING_CONFIG') {
     label = 'Loading configuration data';
   } else if (stage === 'LOADING_DATA' && props.state.dataset) {
-    label = `Loading: ${props.state.dataset}...`;
+    label = `Loading: ${props.state.dataset}`;
   } else if (stage === 'LOADING_DATA') {
     label = 'Preparing map';
   } else if (stage === 'ERROR') {
@@ -36,18 +36,16 @@ const Loading = props => {
         <img 
           className="logo-image" 
           src="startup-logo.svg" />
+
+        <ProgressBar progress={props.state.progress} />        
         
-        <p className="p6o-loading-stage">{label}</p>
-
-        <ProgressBar progress={props.state.progress} />
-
-        <p className="p6o-loading-store">
-          {nodes + edges > 0 ?
+        <p className="p6o-loading-stage">
+          {label} {nodes + edges > 0 ?
             <>
-              {(props.state.nodes || 0).toLocaleString('en')} nodes, {(props.state.edges || 0).toLocaleString('en')} edges
+              ({(props.state.nodes || 0).toLocaleString('en')} nodes/{(props.state.edges || 0).toLocaleString('en')} edges)
             </> : <>&nbsp;</>
           } 
-        </p> 
+        </p>
       </div>
 
       <div className="p6o-loading-bottom">
