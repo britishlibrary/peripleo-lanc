@@ -32,16 +32,18 @@
       width:320px;
       max-width:80vw;
       position:relative;
+      @include rounded-corners(2px);
 
       .p6o-load-progress-inner {
         height:100%;
         background-color:#fff;
+        @include rounded-corners(2px);
       }
 
     }
 
     .p6o-loading-stage {
-      padding-top:10px;      
+      padding-top:12px;      
     }
 
   }
