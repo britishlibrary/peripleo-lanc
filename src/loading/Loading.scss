@@ -17,6 +17,32 @@
     display:flex;
     align-items:center;
     justify-content:center;
+    flex-direction:column;
+    font-size:14px;
+
+    p {
+      margin:0;
+      padding:10px 0;
+    }
+
+    .p6o-loading-stage {
+      padding-top:24px;
+    }
+
+    .p6o-load-progress-outer {
+      border:1px solid #fff;
+      height:2px;
+      width:240px;
+      max-width:80vw;
+      position:relative;
+
+      .p6o-load-progress-inner {
+        height:100%;
+        background-color:#fff;
+      }
+
+    }
+
   }
 
   .p6o-loading-bottom {
@@ -25,6 +51,53 @@
     left:20px;
     font-size:13px;
     color:#bfe1ff;
+  }
+
+  @keyframes rotating {
+
+    from {
+      -webkit-transform:rotate(0deg);
+         -moz-transform:rotate(0deg);
+          -ms-transform:rotate(0deg);
+           -o-transform:rotate(0deg);
+              transform:rotate(0deg);
+    }
+
+    to {
+      -webkit-transform:rotate(360deg);
+         -moz-transform:rotate(360deg);
+          -ms-transform:rotate(360deg);
+           -o-transform:rotate(360deg);
+              transform:rotate(360deg);
+    }
+
+  }
+
+  @-webkit-keyframes rotating {
+
+    from {
+      -webkit-transform:rotate(0deg);
+           -o-transform:rotate(0deg);
+              transform:rotate(0deg);
+    }
+
+    to {
+      -webkit-transform:rotate(360deg);
+           -o-transform:rotate(360deg);
+              transform:rotate(360deg);
+    }
+
+  }
+
+  .logo-image {
+    width:80px;
+    height:80px;
+    
+    -webkit-animation:rotating 15s linear infinite;
+       -moz-animation:rotating 15s linear infinite;
+        -ms-animation:rotating 15s linear infinite;
+         -o-animation:rotating 15s linear infinite;
+            animation:rotating 15s linear infinite;
   }
 
 }

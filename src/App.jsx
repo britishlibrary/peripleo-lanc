@@ -65,7 +65,13 @@ const App = props => {
             edges: store.countEdges()
           });
 
-          return store.loadDataset(nextConfig);
+          return store.loadDataset(nextConfig)
+            .then(() =>
+              setLoadState({...loadState, progress: (idx + 1) / data.length }))
+            .catch(error => {
+              setLoadState({ stage: 'ERROR', cause: 'Dataset: ' + name });
+              throw error;
+            });
         });   
       }, Promise.resolve());
 
@@ -90,7 +96,7 @@ const App = props => {
         }
       </AnimatePresence>
 
-      {config && 
+      {config &&
         <Peripleo
           config={config}
           dataAvailable={loadState.stage === 'LOADED' || loadState.stage === 'CLOSE'}
