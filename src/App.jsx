@@ -51,6 +51,9 @@ const App = () => {
     if (!data?.length > 0) {
       setLoadState({ stage: 'ERROR', cause: 'NO_DATA' });
     } else {
+      // Just a small inch of progress to show at start
+      const initialProgress = 1 / (3 * data.length);
+
       // Chain all loadDataset promises
       const loaded = data.reduce((previousPromise, nextConfig) => {
         const { name } = nextConfig;
@@ -61,7 +64,7 @@ const App = () => {
           setLoadState({ 
             stage: 'LOADING_DATA', 
             dataset: name, 
-            progress: idx / data.length,
+            progress: Math.max(initialProgress, idx / data.length),
             nodes: store.countNodes(),
             edges: store.countEdges()
           });
