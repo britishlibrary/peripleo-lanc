@@ -97,7 +97,7 @@ const App = () => {
         }
       </AnimatePresence>
 
-      {config &&
+      {config && 
         <Peripleo
           config={config}
           dataAvailable={loadState.stage === 'LOADED' || loadState.stage === 'CLOSE'}

@@ -6,11 +6,29 @@ const Welcome = props => {
   return ReactDOM.createPortal(
     <div className="p6o-welcome-wrapper">
       <div className="p6o-welcome">
-        Welcome to Peripleo
+        <h1>
+          Locating a National Collection
+        </h1>
 
-        <button onClick={props.onTakeTour}>
-          Yes, take the tour
-        </button>
+        <p>
+          Welcome to the visualization prototype for the 
+          Locating a National Collection project. 
+          To learn more, take the tour.
+        </p>
+        
+        <div className="p6o-welcome-buttons">
+          <button 
+            className="p6o-no-thanks"
+            onClick={props.onNoThanks}>
+            No thanks
+          </button>
+
+          <button 
+            className="p6o-take-tour"
+            onClick={props.onTakeTour}>
+            Yes, take the tour
+          </button>
+        </div>
       </div>
     </div>,
 

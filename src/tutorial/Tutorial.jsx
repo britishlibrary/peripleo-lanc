@@ -11,6 +11,8 @@ export const isFirstTimeVisitor =
 
 const Tutorial = props => {
 
+  const [ showWelcome, setShowWelcome ] = useState(true);
+
   const [ showTour, setShowTour ] = useState(false);
 
   useEffect(() => {
@@ -18,11 +20,21 @@ const Tutorial = props => {
       localStorage.setItem(BEEN_HERE_TOKEN, true);
   }, []);
 
+  const onStartTour = () => {
+    setShowWelcome(false);
+    setShowTour(true);
+  }
+
   return (
     <>
-      {showTour ? 
-        <Joyride steps={tour} /> :
-        <Welcome onTakeTour={() => setShowTour(true)} />
+      {showWelcome && 
+        <Welcome
+          onNoThanks={() => setShowWelcome(false)} 
+          onTakeTour={onStartTour} />
+      }
+
+      {showTour &&
+        <Joyride steps={tour} />
       }
     </>
   )
