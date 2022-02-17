@@ -14,7 +14,7 @@ const Loading = props => {
   } else if (stage === 'LOADING_DATA' && props.state.dataset) {
     label = `Loading: ${props.state.dataset}`;
   } else if (stage === 'LOADING_DATA') {
-    label = 'Preparing map';
+    label = 'Starting Peripleo';
   } else if (stage === 'ERROR') {
     label = `An error occurred (${props.state.cause})`;
   } else {
