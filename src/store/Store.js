@@ -41,23 +41,32 @@ export default class Store {
     this.searchIndex.addIndex('names'); 
   }
 
-  init = config => {
-    if (!config.data?.length > 0)
-      throw "No data";
-      
-    return Promise.all(config.data.map(conf => {
-      const { name, format, src } = conf;
+  loadDataset = (config, afterLoad) => {
+    const { name, format, src } = config;
 
-      if (format === 'LINKED_PLACES') {
-        return loadLinkedPlaces(name, src, this);
-      } else {
-        throw 'Unsupported format: ' + format
-      }  
-    }));
+    if (format === 'LINKED_PLACES') {
+      return loadLinkedPlaces(name, src, this, afterLoad);
+    } else {
+      return new Promise((_, reject) => 
+        reject(new Error('Unsupported format: ' + format)));
+    }  
   }
 
   index = nodes => this.searchIndex.addDocuments(
     nodes.map(node => nodeToDocument(node)));
+
+  countNodes = () => {
+    let nodes = 0;
+    this.graph.forEachNode(() =>{ nodes = nodes + 1; });
+    return nodes;
+  }
+
+  countEdges = () => {
+    let edges = 0;
+    this.graph.forEachLink(() => { edges += 1; });
+    return edges;
+  }
+
 
   getNode = id =>
     this.graph.getNode(id)?.data;

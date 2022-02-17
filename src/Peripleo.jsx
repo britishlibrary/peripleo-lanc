@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useDebounce } from 'use-debounce';
 
 import { StoreContext } from './store';
@@ -7,16 +6,11 @@ import { StoreContext } from './store';
 import HUD from './hud/HUD';
 import Map from './map/Map';
 
-const Peripleo = () => {
+const Peripleo = props => {
 
-  // Pre-selected record via hash URL
-  const { recordId } = useParams();
+  const el = useRef();
 
   const { store } = useContext(StoreContext);
-
-  const [ config, setConfig ] = useState();
-
-  const [ isDataLoaded, setIsDataLoaded ] = useState(false);
 
   const [ searchQuery, setSearchQuery ] = useState();
   const [ debouncedQuery ] = useDebounce(searchQuery, 250);
@@ -24,47 +18,38 @@ const Peripleo = () => {
   const [ searchResults, setSearchResults ] = useState();
 
   useEffect(() => {
-    fetch('peripleo.config.json')
-      .then(response => response.json())
-      .then(setConfig)
-      .catch(error => {
-        // TODO error
-        console.error('Error loading Peripleo config. Please add a valid `peripleo.config.json` to your application root.');
-      });
-  }, []);
+    if (el.current)
+      el.current.classList.add('loading');
+  }, [el.current]);
 
   useEffect(() => {
-    if (config)
-      store.init(config).then(() => setIsDataLoaded(true));
-  }, [config]);
+    setSearchResults(store.getNodesInBounds(props.config.initial_bounds));
+  }, [props.dataAvailable]);
 
   useEffect(() => {
-    if (isDataLoaded)
-      setSearchResults(store.getNodesInBounds(config.initial_bounds));
-  }, [isDataLoaded]);
+    el.current.classList.remove('loading');
+  }, [props.loaded]);
 
   useEffect(() => {
     if (debouncedQuery)
       setSearchResults(store.searchMappable(debouncedQuery));
-    else if (config)
-      setSearchResults(store.getNodesInBounds(config.initial_bounds));
+    else
+      setSearchResults(store.getNodesInBounds(props.config.initial_bounds));
   }, [debouncedQuery]);
 
-  // TODO LOADING screen
-  return config ? 
-    <>
-      <Map 
-        config={config} 
-        loaded={isDataLoaded} 
-        searchResults={searchResults} />
-
+  return (
+    <Map 
+      ref={el}
+      config={props.config} 
+      searchResults={searchResults}
+      onLoad={props.onMapLoaded}>
+      
       <HUD 
-        config={config}
+        config={props.config}
         searchQuery={searchQuery}
         onChangeSearchQuery={setSearchQuery} />
-    </> :
-
-    <div>LOADING</div>
+    </Map>
+  )
 
 }
 

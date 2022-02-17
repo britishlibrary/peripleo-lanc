@@ -55,10 +55,10 @@ export const loadLinkedPlaces = (name, url, store) =>
       });
 
       // Add edges to graph
-      nodes
+      const edgeCount = nodes
         .filter(node => node.links?.length > 0)
-        .forEach(node => 
-          node.links.forEach(link => {
+        .reduce((totalCount, node) => { 
+          return totalCount + node.links.reduce((countPerNode, link) => {
             const identifier = link.identifier || link.id; // required
 
             if (identifier) {
@@ -72,11 +72,14 @@ export const loadLinkedPlaces = (name, url, store) =>
 
               // Note that this will create 'empty nodes' for targets not yet in
               store.graph.addLink(sourceId, targetId, link);
+
+              return countPerNode + 1;
             } else {
               console.warn('Link does not declare identifier', link, 'on node', node);
+              return countPerNode;
             }
-          })
-        );
+          }, 0)
+        }, 0);
 
       store.graph.endUpdate();
 
@@ -85,5 +88,7 @@ export const loadLinkedPlaces = (name, url, store) =>
       console.time('Took');
       store.index(nodes);
       console.timeEnd('Took');
+
+      return { nodes: nodes.length, edges: edgeCount };
     });
 

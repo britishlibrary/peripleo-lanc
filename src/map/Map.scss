@@ -16,3 +16,12 @@
 .p6o-map-container.hover * {
   cursor:pointer;
 }
+
+.p6o-map-container.loading {
+  filter: blur(4px) grayscale(0.8) brightness(1.2) contrast(0.7);
+
+  .p6o-hud {
+    display:none;
+  }
+
+}

@@ -1,0 +1,30 @@
+.p6o-loading {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  background-color:#1a6dad6b;
+  z-index:1;
+
+  .p6o-loading-center {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .p6o-loading-bottom {
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    font-size:13px;
+    color:#bfe1ff;
+  }
+
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { HashRouter, Routes, Route } from "react-router-dom";
 
-import Peripleo from './Peripleo';
+import App from './App';
 import { StoreContextProvider } from './store';
 
 import './index.scss';
@@ -12,8 +12,8 @@ ReactDOM.render(
     <HashRouter>
       <Routes>
         <Route> 
-          <Route path=":recordId" element={<Peripleo />} />
-          <Route path="/" element={<Peripleo />} />
+          <Route path=":recordId" element={<App />} />
+          <Route path="/" element={<App />} />
         </Route> 
       </Routes>
     </HashRouter>

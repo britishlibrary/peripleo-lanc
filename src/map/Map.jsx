@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import ReactMapGL, {Source, Layer} from 'react-map-gl';
 // import WebMercatorViewport from '@math.gl/web-mercator';
 import { useDebounce } from 'use-debounce';
@@ -11,9 +11,7 @@ import Hover from './components/Hover';
 const toFeatureCollection = features => 
   ({ type: 'FeatureCollection', features: features || [] });
 
-const Map = props => {
-
-  const el = useRef();
+const Map = React.forwardRef((props, ref) => {
 
   const { store } = useContext(StoreContext);
 
@@ -26,6 +24,10 @@ const Map = props => {
   const [ hover, setHover ] = useState();
 
   const style = `https://api.maptiler.com/maps/outdoor/style.json?key=${config.api_key}`;
+
+  useEffect(() => {
+    console.log('Initial map render!');
+  }, []);
 
   useEffect(() => {
     // TODO we'll need this handler later!
@@ -44,9 +46,9 @@ const Map = props => {
 
   useEffect(() => {
     if (hover)
-      el.current.classList.add('hover');
+      ref.current.classList.add('hover');
     else
-      el.current.classList.remove('hover');
+      ref.current.classList.remove('hover');
   }, [ hover ]);
 
   const onClick = () => {
@@ -77,13 +79,14 @@ const Map = props => {
   const onMouseLeave = () => setHover(null);
 
   return (  
-    <div className="p6o-map-container" ref={el}>
+    <div className="p6o-map-container" ref={ref}>
       <ReactMapGL
         initialViewState={{
           bounds: config.initial_bounds
         }}
         mapStyle={style}
         interactiveLayerIds={['search-results']}
+        onLoad={props.onLoad}
         onMove={onMove}
         onClick={onClick}
         onMouseMove={onMouseMove}
@@ -97,10 +100,12 @@ const Map = props => {
 
       </ReactMapGL>
 
+      {props.children}
+
       {hover && <Hover {...hover} />}
     </div>
   )
 
-}
+});
 
 export default Map;
