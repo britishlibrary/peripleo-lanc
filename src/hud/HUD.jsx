@@ -14,7 +14,7 @@ const HUD = props => {
   return (
     <div className="p6o-hud">
       <div 
-        className="p6o-magic-button"
+        className="p6o-magic-button p6o-hud-button"
         onClick={onToggleHUD}>
         <BiSearchAlt2 />
       </div>
