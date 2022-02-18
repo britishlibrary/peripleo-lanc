@@ -16,9 +16,7 @@ const HUD = props => {
       <div 
         className="p6o-magic-button"
         onClick={onToggleHUD}>
-
         <BiSearchAlt2 />
-
       </div>
 
       <AnimatePresence>

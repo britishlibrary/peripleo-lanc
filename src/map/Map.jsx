@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import ReactMapGL, {Source, Layer} from 'react-map-gl';
 // import WebMercatorViewport from '@math.gl/web-mercator';
 import { useDebounce } from 'use-debounce';
@@ -6,12 +6,15 @@ import { useDebounce } from 'use-debounce';
 import { StoreContext } from '../store';
 import { pointStyle } from './Styles';
 
+import Zoom from './components/Zoom';
 import Hover from './components/Hover';
 
 const toFeatureCollection = features => 
   ({ type: 'FeatureCollection', features: features || [] });
 
 const Map = React.forwardRef((props, ref) => {
+
+  const mapRef = useRef();
 
   const { store } = useContext(StoreContext);
 
@@ -78,9 +81,16 @@ const Map = React.forwardRef((props, ref) => {
 
   const onMouseLeave = () => setHover(null);
 
+  const onZoom = inc => () => {
+    const map = mapRef.current;
+    const z = mapRef.current.getZoom();
+    map.easeTo({ zoom: z + inc });
+  }
+
   return (  
     <div className="p6o-map-container" ref={ref}>
       <ReactMapGL
+        ref={mapRef}
         initialViewState={{
           bounds: config.initial_bounds
         }}
@@ -99,6 +109,10 @@ const Map = React.forwardRef((props, ref) => {
         </Source>
 
       </ReactMapGL>
+
+      <Zoom 
+        onZoomIn={onZoom(1)}
+        onZoomOut={onZoom(-1)} />
 
       {props.children}
 

@@ -13,7 +13,7 @@
     justify-content:center;
     background-color:#f4f4f4;
     border:1px solid rgba(0,0,0,0.2);
-    box-shadow:inset 2px 4px 18px #fff, inset -2px -3px 4px rgba(0,0,0,0.15), 0 0 12px rgba(0,0,0,0.14);
+    box-shadow:inset 2px 4px 18px #fff, inset -2px -3px 4px rgba(0,0,0,0.15), 0 0 12px rgba(0,0,0,0.35);
     z-index:98;
     cursor:pointer;
     @include rounded-corners(50%);
