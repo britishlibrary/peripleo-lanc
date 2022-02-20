@@ -1,6 +1,6 @@
 # Peripleo LaNC
 
-Peripleo LaNC is a prototype applicaiton for spatio-temporal search and visualization of collection data, currently under 
+Peripleo LaNC is a prototype application for spatio-temporal search and visualization of collection data, currently under 
 development as part of the [**Locating a National Collection project**](https://www.bl.uk/projects/locating-a-national-collection) (LaNC).
 
 LaNC investigates how creating links between locations in different collections might open up new forms of research, engagement and interaction for different audiences. Based at the British Library, project partners include: National Trust, Historic Royal Palaces, Historic England, Historic Environment Scotland, Museum of London Archaeology, Portable Antiquities Scheme, English Heritage.
