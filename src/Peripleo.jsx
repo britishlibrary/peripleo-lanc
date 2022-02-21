@@ -47,6 +47,7 @@ const Peripleo = props => {
       <HUD 
         config={props.config}
         searchQuery={searchQuery}
+        searchResults={searchResults}
         onChangeSearchQuery={setSearchQuery} />
     </Map>
   )

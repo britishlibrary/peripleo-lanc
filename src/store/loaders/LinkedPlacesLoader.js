@@ -59,23 +59,28 @@ export const loadLinkedPlaces = (name, url, store) =>
         .filter(node => node.links?.length > 0)
         .reduce((totalCount, node) => { 
           return totalCount + node.links.reduce((countPerNode, link) => {
-            const identifier = link.identifier || link.id; // required
+            try {
+              const identifier = link.identifier || link.id; // required
 
-            if (identifier) {
-              // In LinkedPlaces, links have the shape
-              // { type, id }
-              const sourceId = node.id;
-              const targetId = normalizeURI(link.id || link.identifier);
+              if (identifier) {
+                // In LinkedPlaces, links have the shape
+                // { type, id }
+                const sourceId = node.id;
+                const targetId = normalizeURI(link.id || link.identifier);
 
-              // Normalize in place
-              link.id = targetId;
+                // Normalize in place
+                link.id = targetId;
 
-              // Note that this will create 'empty nodes' for targets not yet in
-              store.graph.addLink(sourceId, targetId, link);
+                // Note that this will create 'empty nodes' for targets not yet in
+                store.graph.addLink(sourceId, targetId, link);
 
-              return countPerNode + 1;
-            } else {
-              console.warn('Link does not declare identifier', link, 'on node', node);
+                return countPerNode + 1;
+              } else {
+                console.warn('Link does not declare identifier', link, 'on node', node);
+                return countPerNode;
+              }
+            } catch {
+              console.error('Unable to parse link', link, 'on node', node);
               return countPerNode;
             }
           }, 0)

@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+
+import SearchToolbar from './SearchToolbar';
 
 const SearchPanel = props => {
 
@@ -22,10 +24,18 @@ const SearchPanel = props => {
       animate={{ opacity: 1, width: 340 }}
       exit={{ opacity: 0, width: 0 }}>
 
-      <input 
-        value={props.query || ''} 
-        onChange={onChange} />
-    
+      <div className="p6o-hud-searchinput">
+        <input 
+          value={props.query || ''} 
+          onChange={onChange} />
+      </div>
+
+      {/*
+      <AnimatePresence>
+        <SearchToolbar />
+      </AnimatePresence>
+      */}
+      
     </motion.div>
   )
 

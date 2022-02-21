@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { BiSearchAlt2 } from 'react-icons/bi';
 
-import SearchPanel from './components/SearchPanel';
+import SearchPanel from './search/SearchPanel';
 
 const HUD = props => {
 
@@ -23,6 +23,7 @@ const HUD = props => {
         {isHudOpen &&
           <SearchPanel 
             query={props.searchQuery}
+            results={props.searchResults}
             onChange={props.onChangeSearchQuery} />
         }
       </AnimatePresence>
