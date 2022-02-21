@@ -4,7 +4,7 @@ import ReactMapGL, {Source, Layer} from 'react-map-gl';
 import { useDebounce } from 'use-debounce';
 
 import { StoreContext } from '../store';
-import { pointStyle } from './Styles';
+import { pointStyle, coverageHeatmapStyle, coveragePointStyle } from './Styles';
 
 import Zoom from './components/Zoom';
 import Hover from './components/Hover';
@@ -95,17 +95,35 @@ const Map = React.forwardRef((props, ref) => {
           bounds: config.initial_bounds
         }}
         mapStyle={style}
-        interactiveLayerIds={['search-results']}
+        interactiveLayerIds={['search-results-ht', 'search-results-pt']}
         onLoad={props.onLoad}
         onMove={onMove}
         onClick={onClick}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave} >
 
+        {/*
         <Source type="geojson" data={toFeatureCollection(props.searchResults)}>
+          {/
           <Layer 
             id="search-results"
             {...pointStyle({ fill: 'red', radius: 5 })} />
+          /}
+
+          <Layer
+            id="search-results-ht"
+            {...coverageHeatmapStyle()} />
+        </Source>
+        */}
+
+        <Source type="geojson" data={toFeatureCollection(props.searchResults)}>
+          <Layer
+            id="search-results-ht"
+            {...coverageHeatmapStyle()} />
+        
+          <Layer
+            id="search-results-pt"
+            {...coveragePointStyle()} />
         </Source>
 
       </ReactMapGL>
