@@ -8,6 +8,50 @@ export const pointStyle = args => ({
   }
 });
 
+export const pointCategoryStyle = args => ({
+  'type': 'circle',
+  'paint': {
+    'circle-radius': [
+      'interpolate',
+      ['linear'],
+      ['zoom'],
+      5,
+      12,
+      9,
+      5
+    ],
+    'circle-color': [
+      'match',
+      ['get', 'dataset'],
+      'Portable Antiquities Scheme',
+      'orange',
+      'Hollar',
+      'red',
+      'VisitPlus',
+      'green',
+      /* other */ '#ccc'
+    ],
+    'circle-opacity': [
+      'interpolate',
+      ['linear'],
+      ['zoom'],
+      5,
+      0.35,
+      9,
+      1
+    ],
+    'circle-blur': [
+      'interpolate',
+      ['linear'],
+      ['zoom'],
+      5,
+      1,
+      9,
+      0.2
+    ]
+  }
+});
+
 export const coverageHeatmapStyle = args => ({
   'type': 'heatmap',
   'maxzoom': 9,

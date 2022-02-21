@@ -4,7 +4,7 @@ import ReactMapGL, {Source, Layer} from 'react-map-gl';
 import { useDebounce } from 'use-debounce';
 
 import { StoreContext } from '../store';
-import { pointStyle, coverageHeatmapStyle, coveragePointStyle } from './Styles';
+import { pointStyle, coverageHeatmapStyle, coveragePointStyle, pointCategoryStyle } from './Styles';
 
 import Zoom from './components/Zoom';
 import Hover from './components/Hover';
@@ -84,6 +84,7 @@ const Map = React.forwardRef((props, ref) => {
   const onZoom = inc => () => {
     const map = mapRef.current;
     const z = mapRef.current.getZoom();
+    console.log('current zoom', z);
     map.easeTo({ zoom: z + inc });
   }
 
@@ -95,27 +96,20 @@ const Map = React.forwardRef((props, ref) => {
           bounds: config.initial_bounds
         }}
         mapStyle={style}
-        interactiveLayerIds={['search-results-ht', 'search-results-pt']}
+        interactiveLayerIds={['search-results']}
         onLoad={props.onLoad}
         onMove={onMove}
         onClick={onClick}
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave} >
 
-        {/*
         <Source type="geojson" data={toFeatureCollection(props.searchResults)}>
-          {/
           <Layer 
             id="search-results"
             {...pointStyle({ fill: 'red', radius: 5 })} />
-          /}
-
-          <Layer
-            id="search-results-ht"
-            {...coverageHeatmapStyle()} />
         </Source>
-        */}
 
+        {/*
         <Source type="geojson" data={toFeatureCollection(props.searchResults)}>
           <Layer
             id="search-results-ht"
@@ -123,8 +117,9 @@ const Map = React.forwardRef((props, ref) => {
         
           <Layer
             id="search-results-pt"
-            {...coveragePointStyle()} />
+            {...pointCategoryStyle()} /> 
         </Source>
+        */}
 
       </ReactMapGL>
 

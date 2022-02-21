@@ -16,9 +16,6 @@ const nodeToDocument = node => ({
   names: node.name ? [ node.name ] : node.names?.map(n => n.toponym)
 })
 
-const isMappable = node =>
-  node.geometry?.type;
-
 export default class Store {
 
   constructor() {
@@ -67,9 +64,18 @@ export default class Store {
     return edges;
   }
 
-
   getNode = id =>
     this.graph.getNode(id)?.data;
+
+  getLinkedNodes = id => {
+    const linkedNodes = [];
+
+    this.graph.forEachLinkedNode(id, (node, link) => {
+      linkedNodes.push({ node, link });
+    });
+
+    return linkedNodes;
+  }
 
   getNodesInBounds = (bounds, optDataset) => {
     let minX, minY, maxX, maxY;
@@ -94,13 +100,53 @@ export default class Store {
       .map(result => result.node);
   }
 
+  fetchGeometryRecursive = (node, maxHops, spentHops = 0) => {
+    if (spentHops >= maxHops)
+      return;
+    
+    // Don't walk graph unnecessarily
+    if (node.geometry)
+      return node.geometry;
+
+    // Get all neighbors
+    const neighbors = this.getLinkedNodes(node.id).map(t => t.node.data);
+    console.log('neighbours', neighbors);
+
+    // Find first neighbour with a geometry
+    const locatedNeighbour = neighbors.find(node => node.geometry);
+    console.log('located neighbour', locatedNeighbour);
+
+    if (locatedNeighbour) {
+      return locatedNeighbour.geometry;
+    } else if (neighbors.length > 0) {
+      const nextHops = neighbors.map(node => 
+        this.fetchUpstreamGeometry(node, maxHops, spentHops + 1));
+
+      console.log(nextHops);
+
+      return nextHops.find(geom => geom);
+    }
+  }
+
   // To be extended in the future
   search = query =>
     this.searchIndex.search(query)
       .map(document => this.getNode(document.id));
 
   // To be extended in the future
-  searchMappable = query => 
-    this.search(query).filter(isMappable);
+  searchMappable = query => {
+    const withInferredGeometry = this.search(query)
+      .map(node => {
+        if (node.geometry?.type) {
+          return node;
+        } else {
+          // Unlocated node - try to fetch location from the graph
+          return { ...node, geometry: this.fetchGeometryRecursive(node, 2) };
+        }
+      })
+    .filter(n => n.geometry?.type);
+
+    return withInferredGeometry;
+  }
 
 }

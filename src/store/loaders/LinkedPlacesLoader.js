@@ -1,5 +1,7 @@
 import Store, { normalizeURI, getBounds } from '..';
 
+import { getEmbeddedLinkedNodes } from './LinkedPlacesExtended';
+
 /**
  * Converts a GeoJSON/LP feature into a store graph node.
  * 
@@ -43,17 +45,35 @@ export const loadLinkedPlaces = (name, url, store) =>
 
       // Add nodes to graph and spatial tree
       const nodes = data.features.map(feature => {
+        // This feature, as a node
         const node = featureToNode(feature, name);
-
+        
         store.graph.addNode(node.id, node);
 
         const bounds = getBounds(node);
         if (bounds)
-          store.spatialIndex.insert({ ...bounds, node });
+            store.spatialIndex.insert({ ...bounds, node });  
 
         return node;
       });
 
+      // Special case for LPx: embedded nodes
+      const embeddedNodes = nodes
+        .filter(node => node.links?.length > 0)
+        .reduce((all, node ) => {
+          const embedded = getEmbeddedLinkedNodes(node, name);   
+          
+          embedded.forEach(node => {
+            store.graph.addNode(node.id, node);
+
+            const bounds = getBounds(node);
+            if (bounds)
+              store.spatialIndex.insert({ ...bounds, node });  
+          });
+
+          return [...all, ...embedded];
+        }, []);
+    
       // Add edges to graph
       const edgeCount = nodes
         .filter(node => node.links?.length > 0)
@@ -91,9 +111,9 @@ export const loadLinkedPlaces = (name, url, store) =>
       // Add to search index
       console.log('Indexing...');
       console.time('Took');
-      store.index(nodes);
+      store.index([...nodes, ...embeddedNodes ]);
       console.timeEnd('Took');
 
-      return { nodes: nodes.length, edges: edgeCount };
+      return { nodes: nodes.length + embeddedNodes.length, edges: edgeCount };
     });
 
