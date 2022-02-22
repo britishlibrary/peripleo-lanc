@@ -1,6 +1,6 @@
 import createGraph from 'ngraph.graph';
 import RBush from 'rbush';
-import * as JsSearch from 'js-search';
+import FlexSearch from 'flexsearch';
 
 import { loadLinkedPlaces } from './loaders/LinkedPlacesLoader';
 
@@ -24,18 +24,23 @@ export default class Store {
     this.spatialIndex = new RBush();
 
     // Fulltext search, using node ID as primary key
-    this.searchIndex = new JsSearch.Search('id');
-    this.searchIndex.tokenizer = {
-      tokenize(text) {
+    // this.searchIndex = new JsSearch.Search('id');
+    this.searchIndex = new FlexSearch.Document({
+      document: {
+        id: 'id',
+        index: [
+          'title',
+          'description',
+          'names[]'
+        ],
+        store: ['dataset']
+      },
+      tokenize: function(text) {
         return text
           .replace(/[.,'"#!$%^&*;:{}=\-_`~()]/g, '')
           .split(/[\s,-]+/)
       }
-    };
-
-    this.searchIndex.addIndex('title'); 
-    this.searchIndex.addIndex('description');
-    this.searchIndex.addIndex('names'); 
+    });
   }
 
   loadDataset = (config, afterLoad) => {
@@ -49,8 +54,12 @@ export default class Store {
     }  
   }
 
-  index = nodes => this.searchIndex.addDocuments(
-    nodes.map(node => nodeToDocument(node)));
+  index = nodes => {
+    nodes.forEach(n => {
+      const doc = nodeToDocument(n);
+      this.searchIndex.add(doc);
+    });
+  }
 
   countNodes = () => {
     let nodes = 0;
@@ -110,11 +119,9 @@ export default class Store {
 
     // Get all neighbors
     const neighbors = this.getLinkedNodes(node.id).map(t => t.node.data);
-    console.log('neighbours', neighbors);
 
     // Find first neighbour with a geometry
     const locatedNeighbour = neighbors.find(node => node.geometry);
-    console.log('located neighbour', locatedNeighbour);
 
     if (locatedNeighbour) {
       return locatedNeighbour.geometry;
@@ -122,20 +129,23 @@ export default class Store {
       const nextHops = neighbors.map(node => 
         this.fetchUpstreamGeometry(node, maxHops, spentHops + 1));
 
-      console.log(nextHops);
-
       return nextHops.find(geom => geom);
     }
   }
 
-  // To be extended in the future
-  search = query =>
-    this.searchIndex.search(query)
-      .map(document => this.getNode(document.id));
-
-  // To be extended in the future
   searchMappable = query => {
-    const withInferredGeometry = this.search(query)
+    // FlexSearch result format is horrible and creates duplicates!
+    const response = this.searchIndex.search(query, { limit: 100000 });
+
+    const results = Array.from(
+      // Remove duplicates
+      response.reduce((ids, r) =>
+        new Set([...ids, ...r.result]), new Set())
+      
+      // Resolve IDs
+    ).map(id => this.getNode(id));
+    
+    const withInferredGeometry = results
       .map(node => {
         if (node.geometry?.type) {
           return node;

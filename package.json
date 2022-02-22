@@ -36,8 +36,8 @@
   "dependencies": {
     "@math.gl/web-mercator": "^3.5.7",
     "@turf/bbox": "^6.5.0",
+    "flexsearch": "^0.7.21",
     "framer-motion": "^6.2.6",
-    "js-search": "^2.0.0",
     "maplibre-gl": "^2.1.6",
     "ngraph.graph": "^20.0.0",
     "rbush": "^3.0.1",
