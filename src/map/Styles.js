@@ -104,7 +104,7 @@ export const coverageHeatmapStyle = args => ({
   'maxzoom': 9,
   'paint': {
     // Increase the heatmap weight based on frequency and property 'records'
-    'heatmap-weight': 0.5 /*[
+    'heatmap-weight': 0.9 /*[
       'interpolate',
       ['linear'],
       ['get', 'records'],
