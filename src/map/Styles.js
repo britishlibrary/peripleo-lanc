@@ -1,3 +1,50 @@
+const COLOR_SCALES = [
+  [
+    // Blue
+    0,
+    'rgba(0,0,0,0)',
+    0.2,
+    '#eff3ff',
+    0.4,
+    '#bdd7e7',
+    0.6,
+    '#6baed6',
+    0.8,
+    '#3182bd',
+    1,
+    '#08519c'
+  ], [
+    // Red
+    0,
+    'rgba(0,0,0,0)',
+    0.2,
+    'rgba(254,237,222,0.8)',
+    0.4,
+    'rgba(253,190,133,0.8)',
+    0.6,
+    'rgba(253,141,60,0.8)',
+    0.8,
+    'rgba(230,85,13,0.8)',
+    1,
+    'rgba(166,54,3,0.8)'
+  ],[
+    // Green
+    0,
+    'rgba(0,0,0,0)',
+    0.2,
+    'rgba(237,248,233,0.8)',
+    0.4,
+    'rgba(186,228,179,0.8)',
+    0.6,
+    'rgba(116,196,118,0.8)',
+    0.8,
+    'rgba(49,163,84,0.8)',
+    1,
+    'rgba(0,109,44,0.8)'
+  ]
+]
+
+
 export const pointStyle = args => ({
   'type': 'circle',
   'paint': {
@@ -57,7 +104,7 @@ export const coverageHeatmapStyle = args => ({
   'maxzoom': 9,
   'paint': {
     // Increase the heatmap weight based on frequency and property 'records'
-    'heatmap-weight': [
+    'heatmap-weight': 0.5 /*[
       'interpolate',
       ['linear'],
       ['get', 'records'],
@@ -65,7 +112,7 @@ export const coverageHeatmapStyle = args => ({
       0,
       6,
       1
-    ],
+    ]*/,
     // Increase the heatmap color weight weight by zoom level
     // heatmap-intensity is a multiplier on top of heatmap-weight
     'heatmap-intensity': [
@@ -84,18 +131,7 @@ export const coverageHeatmapStyle = args => ({
       'interpolate',
       ['linear'],
       ['heatmap-density'],
-      0,
-      'rgba(33,102,172,0)',
-      0.2,
-      'rgb(103,169,207)',
-      0.4,
-      'rgb(209,229,240)',
-      0.6,
-      'rgb(253,219,199)',
-      0.8,
-      'rgb(239,138,98)',
-      1,
-      'rgb(178,24,43)'
+      ...COLOR_SCALES[args]
     ],
     // Adjust the heatmap radius by zoom level
     'heatmap-radius': [

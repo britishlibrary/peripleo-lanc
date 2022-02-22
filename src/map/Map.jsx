@@ -8,6 +8,7 @@ import { pointStyle, coverageHeatmapStyle, coveragePointStyle, pointCategoryStyl
 
 import Zoom from './components/Zoom';
 import Hover from './components/Hover';
+import { partitionBy } from './Layers';
 
 const toFeatureCollection = features => 
   ({ type: 'FeatureCollection', features: features || [] });
@@ -20,21 +21,19 @@ const Map = React.forwardRef((props, ref) => {
 
   const { config } = props;
 
-  const [ viewState, setViewState ] = useState();
+  // const [ viewState, setViewState ] = useState();
 
-  const [ debouncedViewState ] = useDebounce(viewState, 500);
+  // const [ debouncedViewState ] = useDebounce(viewState, 500);
+
+  const [ layers, setLayers ] = useState([]);
 
   const [ hover, setHover ] = useState();
 
   const style = `https://api.maptiler.com/maps/outdoor/style.json?key=${config.api_key}`;
 
-  useEffect(() => {
-    console.log('Initial map render!');
-  }, []);
-
+  /*
   useEffect(() => {
     // TODO we'll need this handler later!
-    /*
     const viewport = {
       width: window.innerWidth,
       height: window.innerHeight,
@@ -44,8 +43,15 @@ const Map = React.forwardRef((props, ref) => {
     const bounds = new WebMercatorViewport(viewport).getBounds();
     const nodes = store.getNodesInBounds(bounds);
     setSearchResults(toFeatureCollection(nodes));
-    */
   }, [ debouncedViewState ]);
+  */
+
+  // Hack, for testing
+  useEffect(() => {
+    if (props.searchResults) {
+      setLayers(partitionBy(props.searchResults, 'dataset'));
+    }
+  }, [props.searchResults])
 
   useEffect(() => {
     if (hover)
@@ -62,8 +68,8 @@ const Map = React.forwardRef((props, ref) => {
     }
   }
 
-  const onMove = useCallback(evt =>
-    setViewState(evt.viewState), []);
+  //const onMove = useCallback(evt =>
+  //  setViewState(evt.viewState), []);
 
   const onMouseMove = useCallback(evt => {
     const { features, point } = evt;
@@ -79,12 +85,12 @@ const Map = React.forwardRef((props, ref) => {
     setHover(updated);
   }, []);
 
-  const onMouseLeave = () => setHover(null);
+  const onMouseLeave = () => 
+    setHover(null);
 
   const onZoom = inc => () => {
     const map = mapRef.current;
     const z = mapRef.current.getZoom();
-    console.log('current zoom', z);
     map.easeTo({ zoom: z + inc });
   }
 
@@ -96,31 +102,32 @@ const Map = React.forwardRef((props, ref) => {
           bounds: config.initial_bounds
         }}
         mapStyle={style}
-        interactiveLayerIds={['search-results']}
+        // interactiveLayerIds={['search-results']}
         onLoad={props.onLoad}
-        onMove={onMove}
-        onClick={onClick}
-        onMouseMove={onMouseMove}
-        onMouseLeave={onMouseLeave} >
+        // onMove={onMove}
+        onClick={onClick}>
+        {/*onMouseMove={onMouseMove}
+        //onMouseLeave={onMouseLeave} > */}
 
+        {/*
         <Source type="geojson" data={toFeatureCollection(props.searchResults)}>
           <Layer 
             id="search-results"
             {...pointStyle({ fill: 'red', radius: 5 })} />
         </Source>
-
-        {/*
-        <Source type="geojson" data={toFeatureCollection(props.searchResults)}>
-          <Layer
-            id="search-results-ht"
-            {...coverageHeatmapStyle()} />
-        
-          <Layer
-            id="search-results-pt"
-            {...pointCategoryStyle()} /> 
-        </Source>
         */}
 
+        {Object.entries(layers).map(([layer, features], idx) =>
+          <Source key={layer} type="geojson" data={toFeatureCollection(features)}>
+            <Layer
+              id={`search-results-ht-${layer}`}
+              {...coverageHeatmapStyle(idx)} />
+          
+            <Layer
+              id={`search-results-pt-${layer}`}
+              {...coveragePointStyle()} /> 
+          </Source>
+        )}
       </ReactMapGL>
 
       <Zoom 
