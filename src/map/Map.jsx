@@ -4,7 +4,7 @@ import ReactMapGL, {Source, Layer} from 'react-map-gl';
 import { useDebounce } from 'use-debounce';
 
 import { StoreContext } from '../store';
-import { pointStyle, coverageHeatmapStyle, coveragePointStyle, pointCategoryStyle } from './Styles';
+import { pointStyle, coverageHeatmapStyle, coveragePointStyle, pointCategoryStyle, clusterPointStyle, clusterLabels } from './Styles';
 
 import Zoom from './components/Zoom';
 import Hover from './components/Hover';
@@ -117,6 +117,7 @@ const Map = React.forwardRef((props, ref) => {
         </Source>
         */}
 
+        {/*
         {Object.entries(layers).map(([layer, features], idx) =>
           <Source key={layer} type="geojson" data={toFeatureCollection(features)}>
             <Layer
@@ -128,6 +129,25 @@ const Map = React.forwardRef((props, ref) => {
               {...coveragePointStyle()} /> 
           </Source>
         )}
+        */}
+
+        <Source 
+          type="geojson" 
+          cluster={true}
+          data={toFeatureCollection(props.searchResults)}>
+
+          <Layer  
+            id="search-results"
+            {...clusterPointStyle()} />
+
+          <Layer  
+            {...clusterLabels()} />
+
+          <Layer 
+            id="search-results"
+            filter={['!', ['has', 'point_count']]}
+            {...pointStyle({ fill: 'red', radius: 5 })} />
+        </Source>
       </ReactMapGL>
 
       <Zoom 
