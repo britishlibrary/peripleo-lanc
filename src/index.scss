@@ -23,6 +23,13 @@ $bl-red-hover:#e55767;
           border-radius:$radius;
 }
 
+@mixin rounded-corners-top($radius) {
+  -webkit-border-radius:$radius $radius 0 0;
+   -khtml-border-radius:$radius $radius 0 0;
+     -moz-border-radius:$radius $radius 0 0;
+          border-radius:$radius $radius 0 0;
+}
+
 @mixin box-shadow($x, $y, $radius, $opacity) {
   -webkit-box-shadow:$x $y $radius rgba(0, 0, 0, $opacity);
      -moz-box-shadow:$x $y $radius rgba(0, 0, 0, $opacity);

@@ -43,7 +43,8 @@ const Peripleo = props => {
   }, [debouncedQuery]);
 
   const onSelect = selection => {
-    // TODO
+    // TODO this is currently a single node ONLY
+    // but will (or may) be an array of nodes in the future
     setSelection(selection);
   }
 

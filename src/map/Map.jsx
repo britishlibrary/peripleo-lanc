@@ -89,6 +89,14 @@ const Map = React.forwardRef((props, ref) => {
       setHover(null);
     }
   }, []);
+
+  const onClick = () => {
+    if (hover) {
+      const { node } = hover;
+      history.pushState(node, node.title, `#/${encodeURIComponent(node.id)}`);
+      props.onSelect(node);
+    }
+  }
   
   /** 
    * TODO temporary - for user testing
@@ -98,17 +106,6 @@ const Map = React.forwardRef((props, ref) => {
       setLayers(partitionBy(props.searchResults, 'dataset'));
     }
   }, [props.searchResults])
-
-
-
-
-  const onClick = () => {
-    if (hover) {
-      const { node } = hover;
-      console.log('clicked', hover); // TODO
-      history.pushState(node, node.title, `#/${encodeURIComponent(node.id)}`);
-    }
-  }
 
 
 
