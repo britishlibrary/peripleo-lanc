@@ -5,6 +5,7 @@ import { StoreContext } from './store';
 
 import HUD from './hud/HUD';
 import Map from './map/Map';
+import SelectionPreview from './selection/SelectionPreview';
 
 const Peripleo = props => {
 
@@ -12,10 +13,14 @@ const Peripleo = props => {
 
   const { store } = useContext(StoreContext);
 
+  const [ viewport, setViewport ] = useState();
+
   const [ searchQuery, setSearchQuery ] = useState();
   const [ debouncedQuery ] = useDebounce(searchQuery, 250);
 
   const [ searchResults, setSearchResults ] = useState();
+
+  const [ selection, setSelection ] = useState();
 
   useEffect(() => {
     if (el.current)
@@ -37,19 +42,33 @@ const Peripleo = props => {
       setSearchResults(store.getNodesInBounds(props.config.initial_bounds));
   }, [debouncedQuery]);
 
+  const onSelect = selection => {
+    // TODO
+    setSelection(selection);
+  }
+
   return (
-    <Map 
-      ref={el}
-      config={props.config} 
-      searchResults={searchResults}
-      onLoad={props.onMapLoaded}>
-      
-      <HUD 
-        config={props.config}
-        searchQuery={searchQuery}
+    <>
+      <Map 
+        ref={el}
+        config={props.config} 
         searchResults={searchResults}
-        onChangeSearchQuery={setSearchQuery} />
-    </Map>
+        onLoad={props.onMapLoaded}
+        onChangeViewport={setViewport}
+        onSelect={onSelect}>
+        
+        <HUD 
+          config={props.config}
+          searchQuery={searchQuery}
+          searchResults={searchResults}
+          onChangeSearchQuery={setSearchQuery} />
+      </Map>
+
+      {selection && 
+        <SelectionPreview 
+          selection={selection} />
+      }
+    </>
   )
 
 }

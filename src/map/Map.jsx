@@ -1,19 +1,23 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import ReactMapGL, {Source, Layer} from 'react-map-gl';
-// import WebMercatorViewport from '@math.gl/web-mercator';
-// import { useDebounce } from 'use-debounce';
+import WebMercatorViewport from '@math.gl/web-mercator';
+import { useDebounce } from 'use-debounce';
 
 import { StoreContext } from '../store';
+
+import Zoom from './components/Zoom';
+import Hover from './components/Hover';
+
+import { partitionBy } from './Layers';
 
 import { pointStyle } from './styles/point';
 import { clusterPointStyle, clusterLabelStyle } from './styles/cluster';
 import { heatmapCoverageStyle, heatmapPointStyle } from './styles/heatmap';
 import { colorHeatmapCoverage, colorHeatmapPoint } from './styles/colorHeatmap';
 
-import Zoom from './components/Zoom';
-import Hover from './components/Hover';
-import { partitionBy } from './Layers';
-
+/** 
+ * TODO temporary - for user testing
+ */
 import VariantsRadioButton from '../usertesting/VariantsRadioButton';
 
 const toFeatureCollection = features => 
@@ -27,9 +31,9 @@ const Map = React.forwardRef((props, ref) => {
 
   const { config } = props;
 
-  // const [ viewState, setViewState ] = useState();
+  const [ viewState, setViewState ] = useState();
 
-  // const [ debouncedViewState ] = useDebounce(viewState, 500);
+  const [ debouncedViewState ] = useDebounce(viewState, 500);
 
   const [ layers, setLayers ] = useState([]);
 
@@ -39,9 +43,8 @@ const Map = React.forwardRef((props, ref) => {
 
   const [ selectedMode, setSelectedMode ] = useState('POINTS');
 
-  /*
   useEffect(() => {
-    // TODO we'll need this handler later!
+    // Feed the current viewport state upstream 
     const viewport = {
       width: window.innerWidth,
       height: window.innerHeight,
@@ -49,24 +52,55 @@ const Map = React.forwardRef((props, ref) => {
     };
 
     const bounds = new WebMercatorViewport(viewport).getBounds();
-    const nodes = store.getNodesInBounds(bounds);
-    setSearchResults(toFeatureCollection(nodes));
+    props.onChangeViewport(bounds);
   }, [ debouncedViewState ]);
-  */
 
-  // Hack, for testing
+  useEffect(() => {
+    // Map container gets hover element, 
+    // so we can toggle cursor
+    if (hover)
+      ref.current.classList.add('hover');
+    else
+      ref.current.classList.remove('hover');
+  }, [ hover ]);
+
+  const onMapChange = useCallback(evt =>
+    setViewState(evt.viewState), []);
+
+  const onMouseMove = useCallback(evt => {
+    const { point } = evt;
+
+    const features = mapRef.current
+      .queryRenderedFeatures(evt.point)
+      .filter(f => f.layer.id.startsWith('p6o'));
+
+    if (features.length > 0) {
+      const { id } = features[0].properties;
+
+      const updated = id === hover?.id ? {
+        ...hover, ...point
+      } : { 
+        node: store.getNode(id),
+        ...point
+      };
+  
+      setHover(updated);
+    } else {
+      setHover(null);
+    }
+  }, []);
+  
+  /** 
+   * TODO temporary - for user testing
+   */
   useEffect(() => {
     if (props.searchResults) {
       setLayers(partitionBy(props.searchResults, 'dataset'));
     }
   }, [props.searchResults])
 
-  useEffect(() => {
-    if (hover)
-      ref.current.classList.add('hover');
-    else
-      ref.current.classList.remove('hover');
-  }, [ hover ]);
+
+
 
   const onClick = () => {
     if (hover) {
@@ -76,22 +110,7 @@ const Map = React.forwardRef((props, ref) => {
     }
   }
 
-  //const onMove = useCallback(evt =>
-  //  setViewState(evt.viewState), []);
 
-  const onMouseMove = useCallback(evt => {
-    const { features, point } = evt;
-    const { id } = features[0].properties;
-    
-    const updated = id === hover?.id ? {
-      ...hover, ...point
-    } : { 
-      node: store.getNode(id),
-      ...point
-    };
-
-    setHover(updated);
-  }, []);
 
   const onMouseLeave = () => 
     setHover(null);
@@ -110,18 +129,15 @@ const Map = React.forwardRef((props, ref) => {
           bounds: config.initial_bounds
         }}
         mapStyle={style}
-        // interactiveLayerIds={['search-results']}
         onLoad={props.onLoad}
-        // onMove={onMove}
+        onMove={onMapChange}
         onClick={onClick}
-        // onMouseMove={onMouseMove}
-        // onMouseLeave={onMouseLeave} >
-        >
+        onMouseMove={onMouseMove}>
 
         {selectedMode === 'POINTS' &&
           <Source type="geojson" data={toFeatureCollection(props.searchResults)}>
             <Layer 
-              id="search-results"
+              id="p6o-points"
               {...pointStyle({ fill: 'red', radius: 5 })} />
           </Source>
         }
@@ -139,7 +155,7 @@ const Map = React.forwardRef((props, ref) => {
               {...clusterLabelStyle()} />
 
             <Layer 
-              id="search-results"
+              id="p6o-points"
               filter={['!', ['has', 'point_count']]}
               {...pointStyle({ fill: 'red', radius: 5 })} />
           </Source>
@@ -148,11 +164,11 @@ const Map = React.forwardRef((props, ref) => {
         {selectedMode === 'HEATMAP' &&
           <Source type="geojson" data={toFeatureCollection(props.searchResults)}>
             <Layer
-              id="search-results-ht"
+              id="p6o-heatmap"
               {...heatmapCoverageStyle()} />
           
             <Layer
-              id="search-results-pt"
+              id="p6o-points"
               {...heatmapPointStyle()} /> 
           </Source>
         }
@@ -161,11 +177,11 @@ const Map = React.forwardRef((props, ref) => {
           Object.entries(layers).map(([layer, features], idx) =>
             <Source key={layer} type="geojson" data={toFeatureCollection(features)}>
               <Layer
-                id={`search-results-ht-${layer}`}
+                id={`p6o-heatmap-${layer}`}
                 {...colorHeatmapCoverage(idx)} />
             
               <Layer
-                id={`search-results-pt-${layer}`}
+                id={`p6o-points-${layer}`}
                 {...colorHeatmapPoint(idx)} /> 
             </Source>
           )

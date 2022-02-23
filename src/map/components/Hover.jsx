@@ -3,7 +3,7 @@ import React from 'react';
 const OFFSET = [15, 15];
 
 const Hover = props => {
-
+  
   const { node } = props;
 
   return (
