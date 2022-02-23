@@ -1,14 +1,20 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import ReactMapGL, {Source, Layer} from 'react-map-gl';
 // import WebMercatorViewport from '@math.gl/web-mercator';
-import { useDebounce } from 'use-debounce';
+// import { useDebounce } from 'use-debounce';
 
 import { StoreContext } from '../store';
-import { pointStyle, coverageHeatmapStyle, coveragePointStyle, pointCategoryStyle, clusterPointStyle, clusterLabels } from './Styles';
+
+import { pointStyle } from './styles/point';
+import { clusterPointStyle, clusterLabelStyle } from './styles/cluster';
+import { heatmapCoverageStyle, heatmapPointStyle } from './styles/heatmap';
+import { colorHeatmapCoverage, colorHeatmapPoint } from './styles/colorHeatmap';
 
 import Zoom from './components/Zoom';
 import Hover from './components/Hover';
 import { partitionBy } from './Layers';
+
+import VariantsRadioButton from '../usertesting/VariantsRadioButton';
 
 const toFeatureCollection = features => 
   ({ type: 'FeatureCollection', features: features || [] });
@@ -30,6 +36,8 @@ const Map = React.forwardRef((props, ref) => {
   const [ hover, setHover ] = useState();
 
   const style = `https://api.maptiler.com/maps/outdoor/style.json?key=${config.api_key}`;
+
+  const [ selectedMode, setSelectedMode ] = useState('POINTS');
 
   /*
   useEffect(() => {
@@ -105,50 +113,69 @@ const Map = React.forwardRef((props, ref) => {
         // interactiveLayerIds={['search-results']}
         onLoad={props.onLoad}
         // onMove={onMove}
-        onClick={onClick}>
-        {/*onMouseMove={onMouseMove}
-        //onMouseLeave={onMouseLeave} > */}
+        onClick={onClick}
+        // onMouseMove={onMouseMove}
+        // onMouseLeave={onMouseLeave} >
+        >
 
-        {/*
-        <Source type="geojson" data={toFeatureCollection(props.searchResults)}>
-          <Layer 
-            id="search-results"
-            {...pointStyle({ fill: 'red', radius: 5 })} />
-        </Source>
-        */}
+        {selectedMode === 'POINTS' &&
+          <Source type="geojson" data={toFeatureCollection(props.searchResults)}>
+            <Layer 
+              id="search-results"
+              {...pointStyle({ fill: 'red', radius: 5 })} />
+          </Source>
+        }
 
-        {/*
-        {Object.entries(layers).map(([layer, features], idx) =>
-          <Source key={layer} type="geojson" data={toFeatureCollection(features)}>
+        {selectedMode === 'CLUSTERS' &&
+          <Source 
+            type="geojson" 
+            cluster={true}
+            data={toFeatureCollection(props.searchResults)}>
+
+            <Layer 
+              {...clusterPointStyle()} />
+
+            <Layer  
+              {...clusterLabelStyle()} />
+
+            <Layer 
+              id="search-results"
+              filter={['!', ['has', 'point_count']]}
+              {...pointStyle({ fill: 'red', radius: 5 })} />
+          </Source>
+        }
+
+        {selectedMode === 'HEATMAP' &&
+          <Source type="geojson" data={toFeatureCollection(props.searchResults)}>
             <Layer
-              id={`search-results-ht-${layer}`}
-              {...coverageHeatmapStyle(idx)} />
+              id="search-results-ht"
+              {...heatmapCoverageStyle()} />
           
             <Layer
-              id={`search-results-pt-${layer}`}
-              {...coveragePointStyle()} /> 
+              id="search-results-pt"
+              {...heatmapPointStyle()} /> 
           </Source>
-        )}
-        */}
+        }
 
-        <Source 
-          type="geojson" 
-          cluster={true}
-          data={toFeatureCollection(props.searchResults)}>
-
-          <Layer  
-            id="search-results"
-            {...clusterPointStyle()} />
-
-          <Layer  
-            {...clusterLabels()} />
-
-          <Layer 
-            id="search-results"
-            filter={['!', ['has', 'point_count']]}
-            {...pointStyle({ fill: 'red', radius: 5 })} />
-        </Source>
+        {selectedMode === 'COLOURED_HEATMAP' &&
+          Object.entries(layers).map(([layer, features], idx) =>
+            <Source key={layer} type="geojson" data={toFeatureCollection(features)}>
+              <Layer
+                id={`search-results-ht-${layer}`}
+                {...colorHeatmapCoverage(idx)} />
+            
+              <Layer
+                id={`search-results-pt-${layer}`}
+                {...colorHeatmapPoint(idx)} /> 
+            </Source>
+          )
+        }
       </ReactMapGL>
+
+      {/* USERTESTING */}
+      <VariantsRadioButton 
+        selected={selectedMode}
+        onSelect={setSelectedMode} />
 
       <Zoom 
         onZoomIn={onZoom(1)}

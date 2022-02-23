@@ -1,0 +1,27 @@
+.p6o-usertesting.variants-container {
+  position:absolute;
+  top:22px;
+  right:100px;
+  background-color:#fff;
+  border-radius:3px;
+  box-shadow:0 0 12px rgba(0,0,0,0.2);
+  border:1px solid rgba(0,0,0,0.15);
+  overflow:hidden;
+
+  .variant {
+    font-size:16px;
+    padding:8px 12px;
+    display:inline-block;
+    cursor:pointer; 
+    border-right:1px solid rgba(0,0,0,0.15);
+  }
+
+  .variant:last-child {
+    border-right:none;
+  }
+
+  .variant.selected {
+    background-color:rgba(0,0,0,0.1);
+  }
+
+}

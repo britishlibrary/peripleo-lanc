@@ -39,7 +39,8 @@ export default class Store {
         return text
           .replace(/[.,'"#!$%^&*;:{}=\-_`~()]/g, '')
           .split(/[\s,-]+/)
-      }
+      },
+      // tokenize: 'full'
     });
   }
 
