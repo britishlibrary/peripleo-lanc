@@ -30,16 +30,30 @@ $bl-red-hover:#e55767;
           border-radius:$radius $radius 0 0;
 }
 
+@mixin rounded-corners-bottom($radius) {
+  -webkit-border-radius:0 0 $radius $radius;
+   -khtml-border-radius:0 0 $radius $radius;
+     -moz-border-radius:0 0 $radius $radius;
+          border-radius:0 0 $radius $radius;
+}
+
 @mixin box-shadow($x, $y, $radius, $opacity) {
   -webkit-box-shadow:$x $y $radius rgba(0, 0, 0, $opacity);
      -moz-box-shadow:$x $y $radius rgba(0, 0, 0, $opacity);
           box-shadow:$x $y $radius rgba(0, 0, 0, $opacity);
 }
 
+@mixin linear-gradient($start, $end) {
+  background-image: -webkit-linear-gradient(top, $start, $end); 
+  background-image:    -moz-linear-gradient(top, $start, $end); 
+  background-image:     -ms-linear-gradient(top, $start, $end); 
+  background-image:      -o-linear-gradient(top, $start, $end); 
+  background-image:         linear-gradient(top, $start, $end);
+}
+
 @import './hud/HUD';
 @import './loading/Loading';
 @import './map/Map';
-@import './selection/SelectionPreview';
 @import './tutorial/Tutorial';
 
 @import './usertesting/UserTesting';

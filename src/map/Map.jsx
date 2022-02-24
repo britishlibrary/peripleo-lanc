@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import ReactMapGL, {Source, Layer} from 'react-map-gl';
+import ReactMapGL, { Source, Layer } from 'react-map-gl';
 import WebMercatorViewport from '@math.gl/web-mercator';
 import { useDebounce } from 'use-debounce';
 
@@ -7,6 +7,7 @@ import { StoreContext } from '../store';
 
 import Zoom from './components/Zoom';
 import Hover from './components/Hover';
+import SelectionPreview from './components/SelectionPreview';
 
 import { partitionBy } from './Layers';
 
@@ -39,6 +40,8 @@ const Map = React.forwardRef((props, ref) => {
 
   const [ hover, setHover ] = useState();
 
+  const [ selection, setSelection ] = useState();
+
   const style = `https://api.maptiler.com/maps/outdoor/style.json?key=${config.api_key}`;
 
   const [ selectedMode, setSelectedMode ] = useState('POINTS');
@@ -52,7 +55,7 @@ const Map = React.forwardRef((props, ref) => {
     };
 
     const bounds = new WebMercatorViewport(viewport).getBounds();
-    props.onChangeViewport(bounds);
+    props.onChangeViewport && props.onChangeViewport(bounds);
   }, [ debouncedViewState ]);
 
   useEffect(() => {
@@ -94,7 +97,10 @@ const Map = React.forwardRef((props, ref) => {
     if (hover) {
       const { node } = hover;
       history.pushState(node, node.title, `#/${encodeURIComponent(node.id)}`);
-      props.onSelect(node);
+      
+      setSelection(node);
+    } else {
+      setSelection(null);
     }
   }
   
@@ -182,6 +188,12 @@ const Map = React.forwardRef((props, ref) => {
                 {...colorHeatmapPoint(idx)} /> 
             </Source>
           )
+        }
+
+        {selection && 
+          <SelectionPreview 
+            config={props.config}
+            selection={selection} />
         }
       </ReactMapGL>
 

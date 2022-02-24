@@ -5,7 +5,6 @@ import { StoreContext } from './store';
 
 import HUD from './hud/HUD';
 import Map from './map/Map';
-import SelectionPreview from './selection/SelectionPreview';
 
 const Peripleo = props => {
 
@@ -13,14 +12,10 @@ const Peripleo = props => {
 
   const { store } = useContext(StoreContext);
 
-  const [ viewport, setViewport ] = useState();
-
   const [ searchQuery, setSearchQuery ] = useState();
   const [ debouncedQuery ] = useDebounce(searchQuery, 250);
 
   const [ searchResults, setSearchResults ] = useState();
-
-  const [ selection, setSelection ] = useState();
 
   useEffect(() => {
     if (el.current)
@@ -55,7 +50,6 @@ const Peripleo = props => {
         config={props.config} 
         searchResults={searchResults}
         onLoad={props.onMapLoaded}
-        onChangeViewport={setViewport}
         onSelect={onSelect}>
         
         <HUD 
@@ -64,11 +58,6 @@ const Peripleo = props => {
           searchResults={searchResults}
           onChangeSearchQuery={setSearchQuery} />
       </Map>
-
-      {selection && 
-        <SelectionPreview 
-          selection={selection} />
-      }
     </>
   )
 
