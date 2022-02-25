@@ -1,7 +1,9 @@
-import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { VscListUnordered } from 'react-icons/vsc';
 import { GiSpade } from 'react-icons/gi';
+
+import Facets from './Facets';
 
 const parentAnimation = {
   visible: { 
@@ -28,6 +30,8 @@ const childAnimation = {
 const SearchPanel = props => {
 
   const el = useRef();
+
+  const [ facet, setFacet ] = useState();
 
   useEffect(() => {
     if (el.current)
@@ -70,10 +74,14 @@ const SearchPanel = props => {
           </button>
 
           <button className="p6o-hud-searchtoolbar-btn p6o-hud-searchtoolbar-btn-dig">
-            <GiSpade />
+            <GiSpade onClick={(() => setFacet(!facet))}/>
           </button>
         </div>
       </motion.div>
+
+      <AnimatePresence>
+        {facet && <Facets facet={facet} /> }
+      </AnimatePresence>
     </motion.div>
   )
 

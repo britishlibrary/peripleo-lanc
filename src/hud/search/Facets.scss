@@ -1,0 +1,42 @@
+.p6o-facets-container {
+  width:100%;
+  box-sizing:border-box;
+  padding:0 5px 0 20px;
+
+  .p6o-facets {
+
+    ul {
+      list-style-type:none;
+      margin:5px 0 0 0;
+      padding:0;
+    }
+
+    li {
+      margin-bottom:5px;
+      display:block;
+
+      .p6o-facet-value-wrapper {
+        display:inline-block;
+        white-space:nowrap;
+        background-color:#fff;
+        max-width:100%;
+        overflow:hidden;
+        @include rounded-corners(3px);
+        @include box-shadow(0, 0, 4px, 0.25);
+       
+        span {
+          display:inline-block;
+          padding:8px 12px;
+        }
+
+        span.p6o-facet-value-count {
+          width:60px;
+          text-align:right;
+        }
+
+      }
+    }
+
+  }
+
+}
