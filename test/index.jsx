@@ -13,7 +13,7 @@ const App = () => {
 
   const [ query, setQuery ] = useState('');
 
-  const [ results, setResults ] = useState();
+  const [ results, setResults ] = useState(DUMMY_RESULTS);
 
   // For testing: set results as soon as there is a query
   useEffect(() => {
