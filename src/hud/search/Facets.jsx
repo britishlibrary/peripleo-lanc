@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { SIGNATURE_COLOR } from '../../Colors';
 
 const DUMMY_FACET = {
   title: 'Datasets',
@@ -57,12 +58,15 @@ const Facets = props => {
           animate="visible"
           exit="hidden">
 
-          {facet.values.map(f => 
+          {facet.values.map((f, idx) => 
             <motion.li 
               key="label"
               variants={childAnimation}>
               <div className="p6o-facet-value-wrapper">
-                <span className="p6o-facet-value-count">{f.count.toLocaleString('en')}</span>
+                <span 
+                  className="p6o-facet-value-count"
+                  style={{ backgroundColor: SIGNATURE_COLOR[idx] }}>{f.count.toLocaleString('en')}</span>
+
                 <span className="p6o-facet-value-label">{f.label}</span>
               </div>
             </motion.li>
