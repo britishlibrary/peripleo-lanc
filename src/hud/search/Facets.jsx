@@ -82,7 +82,7 @@ const Facets = props => {
 
           {displayed.map(([label, results], idx) => 
             <motion.li 
-              key={label}
+              key={label + idx}
               variants={childAnimation}>
               <div className="p6o-facet-value-wrapper">
                 <span 
