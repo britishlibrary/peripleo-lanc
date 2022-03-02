@@ -4,6 +4,33 @@
   padding:0 5px 0 20px;
 
   .p6o-facets {
+    color:#5c5c5c;
+
+    .p6o-facets-carousel {
+      display:flex;
+      width:100%;
+      box-sizing:border-box;
+      align-items:center;
+      justify-content: space-between;
+      background-color:#fff;
+      padding:6px;
+      margin:20px 0 10px 0;
+      @include rounded-corners(3px);
+      @include box-shadow(0, 0, 4px, 0.25);
+
+      h3 {
+        padding:0;
+        margin:0;
+        font-size:14px;
+        text-transform:capitalize;
+      }
+
+      button {
+        font-size:22px;
+        display:flex;
+        color:#5c5c5c;
+      }
+    }
 
     ul {
       list-style-type:none;

@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
+
 import { SIGNATURE_COLOR } from '../../Colors';
 
 const parentAnimation = {
@@ -40,7 +42,23 @@ const Facets = props => {
       key="facets-container"
       className="p6o-facets-container">
       <div className="p6o-facets">
-        {/* <h1>{facet.title}</h1> */}
+        <motion.div
+          className="p6o-facets-carousel"
+          variants={parentAnimation}
+          initial="hidden"
+          animate="visible"
+          exit="hidden">
+
+          <button>
+            <HiOutlineChevronLeft />
+          </button>
+          
+          <h3>{props.facet}</h3>
+          
+          <button>
+            <HiOutlineChevronRight />
+          </button>
+        </motion.div>
 
         <motion.ul 
           variants={parentAnimation} 
@@ -61,6 +79,7 @@ const Facets = props => {
               </div>
             </motion.li>
           )}
+
         </motion.ul>
 
       </div>

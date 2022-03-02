@@ -12,6 +12,15 @@ html, body, #app {
 
 }
 
+button {
+  outline:none;
+  border:none;
+  background-color:transparent;
+  margin:0;
+  padding:0;
+  cursor:pointer;
+}
+
 $bl-red:#c61327;
 $bl-red-hover:#e55767;
 

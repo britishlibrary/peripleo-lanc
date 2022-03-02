@@ -1,30 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import HUD from '../src/hud/HUD';
 
-import './index.scss';
+import  { mockResults } from './MockSearchResults';
 
-const DUMMY_RESULTS = [
-  { title: 'Record #1' }
-];
+import './index.scss';
 
 const App = () => {
 
   const [ query, setQuery ] = useState('');
 
-  const [ results, setResults ] = useState(DUMMY_RESULTS);
-
-  // For testing: set results as soon as there is a query
-  useEffect(() => {
-    if (query)
-      setResults(DUMMY_RESULTS);
-  }, [query]);
-
   return (
     <HUD 
       searchQuery={query}
-      searchResults={results}
+      searchResults={mockResults}
       onChangeSearchQuery={setQuery} />
   )
 
