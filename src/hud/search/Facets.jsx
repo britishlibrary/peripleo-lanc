@@ -4,6 +4,15 @@ import { HiOutlineChevronLeft, HiOutlineChevronRight, HiOutlinePlusCircle } from
 
 import { SIGNATURE_COLOR } from '../../Colors';
 
+const formatNumber = num => {
+  if (num > 1000)
+    return (num / 1000).toFixed(1) + 'k';
+  else if (num > 1000000)
+    return (num / 1000000).toFixed(1) + 'M';
+  else 
+    return num;
+}
+
 const parentAnimation = {
   hidden: { 
     opacity: 0,
@@ -78,7 +87,7 @@ const Facets = props => {
               <div className="p6o-facet-value-wrapper">
                 <span 
                   className="p6o-facet-value-count"
-                  style={{ backgroundColor: SIGNATURE_COLOR[idx] }}>{results.length.toLocaleString('en')}</span>
+                  style={{ backgroundColor: SIGNATURE_COLOR[idx] }}>{formatNumber(results.length)}</span>
 
                 <span className="p6o-facet-value-label">{label}</span>
               </div>
