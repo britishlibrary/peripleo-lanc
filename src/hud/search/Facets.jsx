@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
+import { HiOutlineChevronLeft, HiOutlineChevronRight, HiOutlinePlusCircle } from 'react-icons/hi';
 
 import { SIGNATURE_COLOR } from '../../Colors';
 
@@ -22,11 +22,11 @@ const parentAnimation = {
 const childAnimation = {
   hidden: { 
     opacity: 0,
-    width: 0 
+    maxWidth: 0 
   },
   visible: { 
     opacity: 1,
-    width: 700,
+    maxWidth: 500,
     transition: {
       duration: 0.5
     }
@@ -35,7 +35,12 @@ const childAnimation = {
 
 const Facets = props => {
 
-  const values = props.results.getFacetValues(props.facet);
+  // Sort facet values by item count
+  const values = Object.entries(props.results.getFacetValues(props.facet));
+  values.sort((a, b) => b[1].length - a[1].length);
+
+  const displayed = values.slice(0, 8);
+  const remaining = values.length - displayed.length;
 
   return (
     <motion.div 
@@ -49,13 +54,13 @@ const Facets = props => {
           animate="visible"
           exit="hidden">
 
-          <button>
+          <button onClick={props.onPreviousFacet}>
             <HiOutlineChevronLeft />
           </button>
           
           <h3>{props.facet}</h3>
           
-          <button>
+          <button onClick={props.onNextFacet}>
             <HiOutlineChevronRight />
           </button>
         </motion.div>
@@ -66,7 +71,7 @@ const Facets = props => {
           animate="visible"
           exit="hidden">
 
-          {Object.entries(values).map(([label, results], idx) => 
+          {displayed.map(([label, results], idx) => 
             <motion.li 
               key={label}
               variants={childAnimation}>
@@ -80,6 +85,16 @@ const Facets = props => {
             </motion.li>
           )}
 
+          {remaining > 0 && 
+            <motion.li
+              key="p6o-remaining"
+              variants={childAnimation}
+              className="p6o-facet-values-remaining">
+              <div className="p6o-facet-value-wrapper">
+                <span><HiOutlinePlusCircle /> {remaining} more</span>
+              </div>
+            </motion.li>
+          }
         </motion.ul>
 
       </div>

@@ -41,6 +41,7 @@
     li {
       margin-bottom:5px;
       display:block;
+      pointer-events:none;
 
       .p6o-facet-value-wrapper {
         display:inline-block;
@@ -48,6 +49,7 @@
         background-color:#fff;
         max-width:100%;
         overflow:hidden;
+        pointer-events:all;
         @include rounded-corners(3px);
         @include box-shadow(0, 0, 4px, 0.25);
        
@@ -63,7 +65,30 @@
           font-weight:bold;
         }
 
+        span.p6o-facet-value-label {
+          text-transform:capitalize;
+        }
+
       }
+    }
+
+    li.p6o-facet-values-remaining {
+
+      .p6o-facet-value-wrapper {
+        margin-top:5px;
+        @include rounded-corners(2em);
+
+        span {
+          padding:6px 12px 6px 8px;
+        }
+        
+        svg {
+          font-size:20px;
+          vertical-align:text-bottom;
+        }
+
+      }
+
     }
 
   }

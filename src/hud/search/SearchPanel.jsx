@@ -53,6 +53,13 @@ const SearchPanel = props => {
       setFacet(results.facets[0]);
   }
 
+  const onChangeFacet = inc => () => {
+    const { length } = results.facets;
+    const currentIdx = results.facets.indexOf(facet);
+    const updatedIdx = (currentIdx + inc + length) % length; 
+    setFacet(results.facets[updatedIdx]);
+  }
+
   return (
     <motion.div 
       ref={el}
@@ -92,7 +99,13 @@ const SearchPanel = props => {
       </motion.div>
 
       <AnimatePresence>
-        {facet && <Facets results={results} facet={facet} /> }
+        {facet && 
+          <Facets 
+            results={results} 
+            facet={facet} 
+            onNextFacet={onChangeFacet(1)}
+            onPreviousFacet={onChangeFacet(-1)} /> 
+        }
       </AnimatePresence>
     </motion.div>
   )
