@@ -2,16 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { SIGNATURE_COLOR } from '../../Colors';
 
-const DUMMY_FACET = {
-  title: 'Datasets',
-  values: [
-    { label: 'Hollar 1660', count: 100 },
-    { label: 'Portable Antiquities Scheme', count: 5230 },
-    { label: 'VisitPlus', count: 54 },
-    { label: 'Leif\'s Coins and Monasteries', count: 212 }
-  ]
-}
-
 const parentAnimation = {
   hidden: { 
     opacity: 0,
@@ -43,7 +33,7 @@ const childAnimation = {
 
 const Facets = props => {
 
-  const facet = DUMMY_FACET;
+  const values = props.results.getFacetValues(props.facet);
 
   return (
     <motion.div 
@@ -58,16 +48,16 @@ const Facets = props => {
           animate="visible"
           exit="hidden">
 
-          {facet.values.map((f, idx) => 
+          {Object.entries(values).map(([label, results], idx) => 
             <motion.li 
-              key="label"
+              key={label}
               variants={childAnimation}>
               <div className="p6o-facet-value-wrapper">
                 <span 
                   className="p6o-facet-value-count"
-                  style={{ backgroundColor: SIGNATURE_COLOR[idx] }}>{f.count.toLocaleString('en')}</span>
+                  style={{ backgroundColor: SIGNATURE_COLOR[idx] }}>{results.length.toLocaleString('en')}</span>
 
-                <span className="p6o-facet-value-label">{f.label}</span>
+                <span className="p6o-facet-value-label">{label}</span>
               </div>
             </motion.li>
           )}
