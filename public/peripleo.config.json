@@ -12,6 +12,7 @@
     { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "data/coins/ptolemaic-coins.lp.json" }
   ],
   "layers": [
-    
+    { "name": "SW Rivers", "src": "layers/SW_rivers.geojson" },
+    { "name": "SW Routes", "src": "layers/SW_Routes.geojson" }
   ]
 }
