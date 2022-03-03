@@ -4,6 +4,14 @@
   "data": [
     { "name": "Portable Antiquities Scheme", "format": "LINKED_PLACES", "src": "data/PAS_Warwickshire.lp.json" },
     { "name": "Hollar", "format": "LINKED_PLACES", "src": "data/Hollar-1660.lp.json" },
-    { "name": "VisitPlus", "format": "LINKED_PLACES", "src": "data/VisitPlus-UK.lp.json" }
+    { "name": "VisitPlus", "format": "LINKED_PLACES", "src": "data/VisitPlus-UK.lp.json" },
+    { "name": "VCH Places", "format": "LINKED_PLACES", "src": "data/VCH-Places.lp.json" },
+    { "name": "Leif's Early Monasteries", "format": "LINKED_PLACES", "src": "data/early-monasteries.lp.json" },
+    { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "data/coins/alexandrian-tetradrachms.lp.json" },
+    { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "data/coins/base-byzantine-coins.lp.json" },
+    { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "data/coins/ptolemaic-coins.lp.json" }
+  ],
+  "layers": [
+    
   ]
 }

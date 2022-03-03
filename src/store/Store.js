@@ -119,7 +119,10 @@ export default class Store {
       return node.geometry;
 
     // Get all neighbors
-    const neighbors = this.getLinkedNodes(node.id).map(t => t.node.data);
+    const neighbors = this.getLinkedNodes(node.id)
+      // Don't use "blank nodes" that were auto-generated but don't have payload
+      .filter(t => t.node.data) 
+      .map(t => t.node.data);
 
     // Find first neighbour with a geometry
     const locatedNeighbour = neighbors.find(node => node.geometry);
