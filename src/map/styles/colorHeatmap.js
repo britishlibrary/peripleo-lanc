@@ -1,47 +1,43 @@
+// https://gist.github.com/danieliser/b4b24c9f772066bcf0a6
+const hexToRGBA = (hexCode, opacity = 1) => {  
+  let hex = hexCode.replace('#', '');
+  
+  if (hex.length === 3) {
+    hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+  }    
+  
+  const r = parseInt(hex.substring(0, 2), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
+  const b = parseInt(hex.substring(4, 6), 16);
+  
+  return `rgba(${r},${g},${b},${opacity})`;
+};
+
+const colorScale = color => ([
+  0,
+  hexToRGBA(color, 0), 
+  0.2,
+  hexToRGBA(color, 0.1),
+  0.4,
+  hexToRGBA(color, 0.2),
+  0.6,
+  hexToRGBA(color, 0.4),
+  0.8,
+  hexToRGBA(color, 0.6),
+  1,
+  hexToRGBA(color, 0.7)
+]);
+
 const COLOR_SCALES = [
-  [
-    // Blue
-    0,
-    'rgba(0,0,255,0)',
-    0.2,
-    'rgba(0,0,255,0.1)',
-    0.4,
-    'rgba(0,0,255,0.2)',
-    0.6,
-    'rgba(0,0,255,0.4)',
-    0.8,
-    'rgba(0,0,255,0.6)',
-    1,
-    'rgba(0,0,255,0.7)',
-  ], [
-    // Red
-    0,
-    'rgba(255,0,0,0)',
-    0.2,
-    'rgba(255,0,0,0.1)',
-    0.4,
-    'rgba(255,0,0,0.2)',
-    0.6,
-    'rgba(255,0,0,0.4)',
-    0.8,
-    'rgba(255,0,0,0.6)',
-    1,
-    'rgba(255,0,0,0.7)',
-  ],[
-    // Green
-    0,
-    'rgba(0,255,0,0)',
-    0.2,
-    'rgba(0,255,0,0.1)',
-    0.4,
-    'rgba(0,255,0,0.2)',
-    0.6,
-    'rgba(0,255,0,0.4)',
-    0.8,
-    'rgba(0,255,0,0.6)',
-    1,
-    'rgba(0,255,0,0.7)',
-  ]
+  colorScale('#0000ff'),
+  colorScale('#ff0000'),
+  colorScale('#00ff00'),
+  colorScale('#0000ff'),
+  colorScale('#ff0000'),
+  colorScale('#00ff00'),
+  colorScale('#0000ff'),
+  colorScale('#ff0000'),
+  colorScale('#00ff00')
 ];
 
 export const colorHeatmapCoverage = idx => ({
@@ -86,6 +82,8 @@ export const colorHeatmapCoverage = idx => ({
 });
 
 const POINT_COLORS = [
+  'blue', 'red', 'green',
+  'blue', 'red', 'green',
   'blue', 'red', 'green'
 ];
 
