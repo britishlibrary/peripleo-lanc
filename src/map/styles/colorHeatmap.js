@@ -1,3 +1,5 @@
+import { SIGNATURE_COLOR } from '../../Colors';
+
 // https://gist.github.com/danieliser/b4b24c9f772066bcf0a6
 const hexToRGBA = (hexCode, opacity = 1) => {  
   let hex = hexCode.replace('#', '');
@@ -28,17 +30,7 @@ const colorScale = color => ([
   hexToRGBA(color, 0.7)
 ]);
 
-const COLOR_SCALES = [
-  colorScale('#0000ff'),
-  colorScale('#ff0000'),
-  colorScale('#00ff00'),
-  colorScale('#0000ff'),
-  colorScale('#ff0000'),
-  colorScale('#00ff00'),
-  colorScale('#0000ff'),
-  colorScale('#ff0000'),
-  colorScale('#00ff00')
-];
+const COLOR_SCALES = SIGNATURE_COLOR.map(colorScale);
 
 export const colorHeatmapCoverage = idx => ({
   'type': 'heatmap',
@@ -81,18 +73,12 @@ export const colorHeatmapCoverage = idx => ({
   }
 });
 
-const POINT_COLORS = [
-  'blue', 'red', 'green',
-  'blue', 'red', 'green',
-  'blue', 'red', 'green'
-];
-
 export const colorHeatmapPoint = idx => ({
   'type': 'circle',
   'minzoom': 6,
   'paint': {
     'circle-radius': 5,
-    'circle-color': POINT_COLORS[idx],
+    'circle-color': SIGNATURE_COLOR[idx],
     'circle-stroke-color': 'white',
     'circle-stroke-width': 1,
     'circle-opacity': [
