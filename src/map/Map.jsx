@@ -15,6 +15,7 @@ import { pointStyle } from './styles/point';
 import { clusterPointStyle, clusterLabelStyle } from './styles/cluster';
 import { heatmapCoverageStyle, heatmapPointStyle } from './styles/heatmap';
 import { colorHeatmapCoverage, colorHeatmapPoint } from './styles/colorHeatmap';
+import { geojsonLineStyle } from './styles/backgroundLayers';
 
 /** 
  * TODO temporary - for user testing
@@ -103,6 +104,8 @@ const Map = React.forwardRef((props, ref) => {
       setSelection(null);
     }
   }
+
+  console.log(props.config);
   
   /** 
    * TODO temporary - for user testing
@@ -136,6 +139,13 @@ const Map = React.forwardRef((props, ref) => {
         onMove={onMapChange}
         onClick={onClick}
         onMouseMove={onMouseMove}>
+
+        {props.config.layers && props.config.layers.map(layer =>
+          <Source key={layer.name} type="geojson" data={layer.src}>
+            <Layer
+              {...geojsonLineStyle(layer.color)} />
+          </Source>
+        )}
 
         {selectedMode === 'POINTS' &&
           <Source type="geojson" data={toFeatureCollection(props.searchResults)}>
