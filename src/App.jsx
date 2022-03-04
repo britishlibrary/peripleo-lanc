@@ -29,7 +29,9 @@ const App = () => {
 
   // Initial mount: load config
   useEffect(() => {
-    fetch('peripleo.config.json')
+    // Load config file from custom path or default location
+    const customPath = document.querySelector('meta[name="peripleo:config"]')?.getAttribute('content');
+    fetch(customPath || 'peripleo.config.json')
       .then(response => response.json())
       .then(onConfigLoaded)
       .catch(() => {

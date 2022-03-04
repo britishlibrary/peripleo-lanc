@@ -105,7 +105,6 @@ const Map = React.forwardRef((props, ref) => {
     }
   }
 
-  console.log(props.config);
   
   /** 
    * TODO temporary - for user testing
@@ -115,7 +114,6 @@ const Map = React.forwardRef((props, ref) => {
       setLayers(partitionBy(props.searchResults, 'dataset'));
     }
   }, [props.searchResults])
-
 
 
   const onMouseLeave = () => 
