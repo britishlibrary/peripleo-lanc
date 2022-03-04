@@ -5,9 +5,6 @@ import { GiSpade } from 'react-icons/gi';
 
 import Facets from './Facets';
 
-// EXPERIMENTAL
-import SearchResults from '../../SearchResults';
-
 const parentAnimation = {
   visible: { 
     opacity: 1, 
@@ -36,8 +33,6 @@ const SearchPanel = props => {
 
   const [ facet, setFacet ] = useState();
 
-  const results = new SearchResults(props.results);
-
   useEffect(() => {
     if (el.current)
       el.current.querySelector('input').focus();
@@ -50,14 +45,14 @@ const SearchPanel = props => {
     if (facet)
       setFacet(null);
     else
-      setFacet(results.facets[0]);
+      setFacet(props.results.facets[0]);
   }
 
   const onChangeFacet = inc => () => {
-    const { length } = results.facets;
-    const currentIdx = results.facets.indexOf(facet);
+    const { length } = props.results.facets;
+    const currentIdx = props.results.facets.indexOf(facet);
     const updatedIdx = (currentIdx + inc + length) % length; 
-    setFacet(results.facets[updatedIdx]);
+    setFacet(props.results.facets[updatedIdx]);
   }
 
   return (
@@ -85,7 +80,7 @@ const SearchPanel = props => {
         
         <div className="p6o-hud-searchtoolbar-wrapper">
           <div className="p6o-hud-searchtoolbar-resultcount">
-            {props.results.length.toLocaleString('en')} Result{props.results.length !== 1 && 's'}
+            {props.results.total.toLocaleString('en')} Result{props.results.length !== 1 && 's'}
           </div>
           
           <button className="p6o-hud-searchtoolbar-btn p6o-hud-searchtoolbar-btn-list">
@@ -101,7 +96,7 @@ const SearchPanel = props => {
       <AnimatePresence>
         {facet && 
           <Facets 
-            results={results} 
+            results={props.results} 
             facet={facet} 
             onNextFacet={onChangeFacet(1)}
             onPreviousFacet={onChangeFacet(-1)} /> 

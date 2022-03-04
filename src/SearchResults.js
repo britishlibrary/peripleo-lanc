@@ -8,10 +8,10 @@ export default class SearchResults {
 
   constructor(nodes) {
     // Total result item count
-    this.total = nodes.length;
+    this.total = nodes?.length || 0;
 
     // Result items
-    this.items = nodes;
+    this.items = nodes || [];
 
     // Experimental (and a bit hacked...)
     this.facets = [ 'dataset', 'has image', 'type'];

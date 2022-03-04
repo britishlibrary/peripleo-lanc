@@ -105,25 +105,20 @@ const Map = React.forwardRef((props, ref) => {
     }
   }
 
-  
-  /** 
-   * TODO temporary - for user testing
-   */
-  useEffect(() => {
-    if (props.searchResults) {
-      setLayers(partitionBy(props.searchResults, 'dataset'));
-    }
-  }, [props.searchResults])
-
-
-  const onMouseLeave = () => 
-    setHover(null);
-
   const onZoom = inc => () => {
     const map = mapRef.current;
     const z = mapRef.current.getZoom();
     map.easeTo({ zoom: z + inc });
   }
+  
+  /** 
+   * TODO temporary - for user testing
+   */
+  useEffect(() => {
+    if (props.searchResults)
+      setLayers(partitionBy(props.searchResults.items, 'dataset')); 
+  }, [props.searchResults])
+
 
   return (  
     <div className="p6o-map-container" ref={ref}>
@@ -146,7 +141,7 @@ const Map = React.forwardRef((props, ref) => {
         )}
 
         {selectedMode === 'POINTS' &&
-          <Source type="geojson" data={toFeatureCollection(props.searchResults)}>
+          <Source type="geojson" data={toFeatureCollection(props.searchResults.items)}>
             <Layer 
               id="p6o-points"
               {...pointStyle({ fill: 'red', radius: 5 })} />
@@ -157,7 +152,7 @@ const Map = React.forwardRef((props, ref) => {
           <Source 
             type="geojson" 
             cluster={true}
-            data={toFeatureCollection(props.searchResults)}>
+            data={toFeatureCollection(props.searchResults.items)}>
 
             <Layer 
               {...clusterPointStyle()} />
@@ -173,7 +168,7 @@ const Map = React.forwardRef((props, ref) => {
         }
 
         {selectedMode === 'HEATMAP' &&
-          <Source type="geojson" data={toFeatureCollection(props.searchResults)}>
+          <Source type="geojson" data={toFeatureCollection(props.searchResults.items)}>
             <Layer
               id="p6o-heatmap"
               {...heatmapCoverageStyle()} />

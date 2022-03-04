@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useDebounce } from 'use-debounce';
 
 import { StoreContext } from './store';
+import SearchResults from './SearchResults';
 
 import HUD from './hud/HUD';
 import Map from './map/Map';
@@ -15,7 +16,7 @@ const Peripleo = props => {
   const [ searchQuery, setSearchQuery ] = useState();
   const [ debouncedQuery ] = useDebounce(searchQuery, 250);
 
-  const [ searchResults, setSearchResults ] = useState();
+  const [ searchResults, setSearchResults ] = useState(new SearchResults());
 
   useEffect(() => {
     if (el.current)
@@ -23,7 +24,8 @@ const Peripleo = props => {
   }, [el.current]);
 
   useEffect(() => {
-    setSearchResults(store.getNodesInBounds(props.config.initial_bounds));
+    const results = new SearchResults(store.getNodesInBounds(props.config.initial_bounds));
+    setSearchResults(results);
   }, [props.dataAvailable]);
 
   useEffect(() => {
@@ -31,10 +33,11 @@ const Peripleo = props => {
   }, [props.loaded]);
 
   useEffect(() => {
-    if (debouncedQuery)
-      setSearchResults(store.searchMappable(debouncedQuery));
-    else
-      setSearchResults(store.getNodesInBounds(props.config.initial_bounds));
+    const results = debouncedQuery ?
+      store.searchMappable(debouncedQuery) :
+      store.getNodesInBounds(props.config.initial_bounds);
+
+    setSearchResults(new SearchResults(results));
   }, [debouncedQuery]);
 
   const onSelect = selection => {
