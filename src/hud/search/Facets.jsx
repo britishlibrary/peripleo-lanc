@@ -44,10 +44,7 @@ const childAnimation = {
 
 const Facets = props => {
 
-  // Sort facet values by item count
-  const values = Object.entries(props.results.getFacetValues(props.facet));
-  values.sort((a, b) => b[1].length - a[1].length);
-
+  const values = props.results.getFacetValues(props.facet);
   const displayed = values.slice(0, 8);
   const remaining = values.length - displayed.length;
 

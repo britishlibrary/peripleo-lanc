@@ -3,6 +3,12 @@ const groupBy = (arr, key) =>
     (grouped[obj[key]] = grouped[obj[key]] || []).push(obj);
     return grouped;
   }, {});
+
+const toSortedArray = obj => {
+  const entries = Object.entries(obj);
+  entries.sort((a, b) => b[1].length - a[1].length);
+  return entries;
+}
   
 export default class SearchResults {
 
@@ -21,15 +27,15 @@ export default class SearchResults {
   // Experimental
   getFacetValues = facet => {
     if (facet === 'dataset') {
-      return groupBy(this.items, 'dataset');
+      return toSortedArray(groupBy(this.items, 'dataset'));
     } else if (facet === 'has image') {
       const has = this.items.filter(i => i.depictions?.length > 0);
       const hasnt = this.items.filter(i => !i.depictions?.length > 0);
 
-      return {
-        'With image': has,
-        'Without image': hasnt
-      }
+      return [
+        ['With image', has],
+        ['Without image', hasnt]
+      ]
     } else if (facet === 'type') {
       return this.items.reduce((grouped, item) => {
         // This is a multi-value facet!
@@ -42,7 +48,7 @@ export default class SearchResults {
         if (labels.length === 0)
           (grouped.untyped = grouped.untyped || []).push(item);
 
-        return grouped;
+        return toSortedArray(grouped);
       }, {});
     }
   }

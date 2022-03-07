@@ -5,25 +5,17 @@ import { useDebounce } from 'use-debounce';
 
 import { StoreContext } from '../store';
 
+import LayersCategorized from './LayersCategorized';
+import LayersUncategorized from './LayersUncategorized';
+
 import Zoom from './components/Zoom';
 import Hover from './components/Hover';
 import SelectionPreview from './components/SelectionPreview';
 
-import { partitionBy } from './Layers';
-
-import { pointStyle } from './styles/point';
-import { clusterPointStyle, clusterLabelStyle } from './styles/cluster';
-import { heatmapCoverageStyle, heatmapPointStyle } from './styles/heatmap';
-import { colorHeatmapCoverage, colorHeatmapPoint } from './styles/colorHeatmap';
 import { geojsonLineStyle } from './styles/backgroundLayers';
 
-/** 
- * TODO temporary - for user testing
- */
+/** TODO temporary - for user testing **/
 import VariantsRadioButton from '../usertesting/VariantsRadioButton';
-
-const toFeatureCollection = features => 
-  ({ type: 'FeatureCollection', features: features || [] });
 
 const Map = React.forwardRef((props, ref) => {
 
@@ -36,8 +28,6 @@ const Map = React.forwardRef((props, ref) => {
   const [ viewState, setViewState ] = useState();
 
   const [ debouncedViewState ] = useDebounce(viewState, 500);
-
-  const [ layers, setLayers ] = useState([]);
 
   const [ hover, setHover ] = useState();
 
@@ -58,10 +48,6 @@ const Map = React.forwardRef((props, ref) => {
     const bounds = new WebMercatorViewport(viewport).getBounds();
     props.onChangeViewport && props.onChangeViewport(bounds);
   }, [ debouncedViewState ]);
-
-  useEffect(() => {
-    console.log('facet', props.currentFacet);
-  }, [props.currentFacet]);
 
   useEffect(() => {
     // Map container gets hover element, 
@@ -102,7 +88,6 @@ const Map = React.forwardRef((props, ref) => {
     if (hover) {
       const { node } = hover;
       history.pushState(node, node.title, `#/${encodeURIComponent(node.id)}`);
-      
       setSelection(node);
     } else {
       setSelection(null);
@@ -114,15 +99,6 @@ const Map = React.forwardRef((props, ref) => {
     const z = mapRef.current.getZoom();
     map.easeTo({ zoom: z + inc });
   }
-  
-  /** 
-   * TODO temporary - for user testing
-   */
-  useEffect(() => {
-    if (props.searchResults)
-      setLayers(partitionBy(props.searchResults.items, 'dataset')); 
-  }, [props.searchResults])
-
 
   return (  
     <div className="p6o-map-container" ref={ref}>
@@ -144,57 +120,17 @@ const Map = React.forwardRef((props, ref) => {
           </Source>
         )}
 
-        {selectedMode === 'POINTS' &&
-          <Source type="geojson" data={toFeatureCollection(props.searchResults.items)}>
-            <Layer 
-              id="p6o-points"
-              {...pointStyle({ fill: 'red', radius: 5 })} />
-          </Source>
-        }
-
-        {selectedMode === 'CLUSTERS' &&
-          <Source 
-            type="geojson" 
-            cluster={true}
-            data={toFeatureCollection(props.searchResults.items)}>
-
-            <Layer 
-              {...clusterPointStyle()} />
-
-            <Layer  
-              {...clusterLabelStyle()} />
-
-            <Layer 
-              id="p6o-points"
-              filter={['!', ['has', 'point_count']]}
-              {...pointStyle({ fill: 'red', radius: 5 })} />
-          </Source>
-        }
-
-        {selectedMode === 'HEATMAP' &&
-          <Source type="geojson" data={toFeatureCollection(props.searchResults.items)}>
-            <Layer
-              id="p6o-heatmap"
-              {...heatmapCoverageStyle()} />
+        {props.currentFacet ?
+          <LayersCategorized 
+            selectedMode={selectedMode}
+            searchResults={props.searchResults} 
+            facet={props.currentFacet} /> 
           
-            <Layer
-              id="p6o-points"
-              {...heatmapPointStyle()} /> 
-          </Source>
-        }
-
-        {selectedMode === 'COLOURED_HEATMAP' &&
-          Object.entries(layers).map(([layer, features], idx) =>
-            <Source key={layer} type="geojson" data={toFeatureCollection(features)}>
-              <Layer
-                id={`p6o-heatmap-${layer}`}
-                {...colorHeatmapCoverage(idx)} />
-            
-              <Layer
-                id={`p6o-points-${layer}`}
-                {...colorHeatmapPoint(idx)} /> 
-            </Source>
-          )
+          :
+          
+          <LayersUncategorized 
+            selectedMode={selectedMode}
+            searchResults={props.searchResults} />
         }
 
         {selection && 
