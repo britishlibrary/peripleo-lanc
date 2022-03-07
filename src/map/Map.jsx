@@ -62,6 +62,7 @@ const Map = React.forwardRef((props, ref) => {
         ...hover, ...point
       } : { 
         node: store.getNode(id),
+        feature: features[0],
         ...point
       };
   
