@@ -60,6 +60,10 @@ const Map = React.forwardRef((props, ref) => {
   }, [ debouncedViewState ]);
 
   useEffect(() => {
+    console.log('facet', props.currentFacet);
+  }, [props.currentFacet]);
+
+  useEffect(() => {
     // Map container gets hover element, 
     // so we can toggle cursor
     if (hover)

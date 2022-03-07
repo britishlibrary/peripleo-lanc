@@ -18,6 +18,8 @@ const Peripleo = props => {
 
   const [ searchResults, setSearchResults ] = useState(new SearchResults());
 
+  const [ currentFacet, setCurrentFacet ] = useState();
+
   useEffect(() => {
     if (el.current)
       el.current.classList.add('loading');
@@ -52,6 +54,7 @@ const Peripleo = props => {
         ref={el}
         config={props.config} 
         searchResults={searchResults}
+        currentFacet={currentFacet}
         onLoad={props.onMapLoaded}
         onSelect={onSelect}>
         
@@ -59,7 +62,9 @@ const Peripleo = props => {
           config={props.config}
           searchQuery={searchQuery}
           searchResults={searchResults}
-          onChangeSearchQuery={setSearchQuery} />
+          currentFacet={currentFacet}
+          onChangeSearchQuery={setSearchQuery} 
+          onChangeFacet={setCurrentFacet} />
       </Map>
     </>
   )

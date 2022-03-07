@@ -31,8 +31,6 @@ const SearchPanel = props => {
 
   const el = useRef();
 
-  const [ facet, setFacet ] = useState();
-
   useEffect(() => {
     if (el.current)
       el.current.querySelector('input').focus();
@@ -42,17 +40,17 @@ const SearchPanel = props => {
     props.onChange(evt.target.value);
 
   const onToggleFacet = () => {
-    if (facet)
-      setFacet(null);
+    if (props.facet)
+      props.onChangeFacet(null);
     else
-      setFacet(props.results.facets[0]);
+      props.onChangeFacet(props.results.facets[0]);
   }
 
   const onChangeFacet = inc => () => {
     const { length } = props.results.facets;
-    const currentIdx = props.results.facets.indexOf(facet);
+    const currentIdx = props.results.facets.indexOf(props.facet);
     const updatedIdx = (currentIdx + inc + length) % length; 
-    setFacet(props.results.facets[updatedIdx]);
+    props.onChangeFacet(props.results.facets[updatedIdx]);
   }
 
   return (
@@ -94,10 +92,10 @@ const SearchPanel = props => {
       </motion.div>
 
       <AnimatePresence>
-        {facet && 
+        {props.facet && 
           <Facets 
             results={props.results} 
-            facet={facet} 
+            facet={props.facet} 
             onNextFacet={onChangeFacet(1)}
             onPreviousFacet={onChangeFacet(-1)} /> 
         }
