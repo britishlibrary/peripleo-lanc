@@ -8,8 +8,6 @@ const HUD = props => {
 
   const [ isHudOpen, setIsHudOpen ] = useState();
 
-  const [ facet, setFacet ] = useState();
-
   const onToggleHUD = () =>
     setIsHudOpen(!isHudOpen);
 
@@ -27,9 +25,9 @@ const HUD = props => {
             key="search-panel"
             query={props.searchQuery}
             results={props.searchResults}
-            facet={facet}
+            facet={props.currentFacet}
             onChange={props.onChangeSearchQuery} 
-            onChangeFacet={setFacet} />
+            onChangeFacet={props.onChangeFacet} />
         }
       </AnimatePresence>
     </div>
