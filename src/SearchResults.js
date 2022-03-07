@@ -37,7 +37,7 @@ export default class SearchResults {
         ['Without image', hasnt]
       ]
     } else if (facet === 'type') {
-      return this.items.reduce((grouped, item) => {
+      return toSortedArray(this.items.reduce((grouped, item) => {
         // This is a multi-value facet!
         const labels = item.types?.map(t => t.label) || [];
         
@@ -48,8 +48,8 @@ export default class SearchResults {
         if (labels.length === 0)
           (grouped.untyped = grouped.untyped || []).push(item);
 
-        return toSortedArray(grouped);
-      }, {});
+        return grouped;
+      }, {}));
     }
   }
 

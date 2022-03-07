@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Source, Layer } from 'react-map-gl';
 
-import { pointStyle } from './styles/point';
+import { SIGNATURE_COLOR } from '../Colors';
+
+import { pointCategoryStyle } from './styles/point';
 import { clusterPointStyle, clusterLabelStyle } from './styles/cluster';
 import { heatmapCoverageStyle, heatmapPointStyle } from './styles/heatmap';
 import { colorHeatmapCoverage, colorHeatmapPoint } from './styles/colorHeatmap';
@@ -11,15 +13,32 @@ const toFeatureCollection = features =>
 
 const LayersCategorized = props => {
 
-  const layers = props.searchResults.getFacetValues(props.facet);
+  const [ flattened, setFlattened ] = useState();
+
+  useEffect(() => {
+    const layers = props.searchResults.getFacetValues(props.facet);
+
+    const flattened = layers.reduce((flat, [, items], idx) => [
+      ...flat,
+      ...items.map(feature => ({
+        ...feature,
+        properties: {
+          ...feature.properties,
+          color: SIGNATURE_COLOR[idx]
+        }
+      }))
+    ], []);
+    
+    setFlattened(flattened);
+  }, [ props.searchResults, props.facet ])
 
   return (
     <>
       {props.selectedMode === 'POINTS' &&
-        <Source type="geojson" data={toFeatureCollection(props.searchResults.items)}>
+        <Source type="geojson" data={toFeatureCollection(flattened)}>
           <Layer 
             id="p6o-points"
-            {...pointStyle({ fill: 'red', radius: 5 })} />
+            {...pointCategoryStyle()} />
         </Source>
       } 
 
