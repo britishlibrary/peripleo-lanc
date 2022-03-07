@@ -14,7 +14,7 @@ import Tutorial, { isFirstTimeVisitor } from './tutorial/Tutorial';
 const App = () => {
 
   // Pre-selected record via hash URL
-  const { recordId } = useParams();
+  const { lon, lat, zoom } = useParams();
 
   const { store } = useContext(StoreContext);
 
@@ -107,7 +107,8 @@ const App = () => {
           config={config}
           dataAvailable={loadState.stage === 'LOADED' || loadState.stage === 'CLOSE'}
           loaded={loadState.stage === 'CLOSE'}
-          initialRecord={recordId}
+          initialViewport={{ lon, lat, zoom }}
+          initialRecord={null}
           onMapLoaded={onMapLoaded} />
       }
 

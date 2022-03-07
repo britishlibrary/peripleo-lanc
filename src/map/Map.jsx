@@ -1,9 +1,9 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import ReactMapGL, { Source, Layer } from 'react-map-gl';
-import WebMercatorViewport from '@math.gl/web-mercator';
-import { useDebounce } from 'use-debounce';
+import { useSetRecoilState } from 'recoil';
 
 import { StoreContext } from '../store';
+import { mapState } from '../state';
 
 import LayersCategorized from './LayersCategorized';
 import LayersUncategorized from './LayersUncategorized';
@@ -25,9 +25,7 @@ const Map = React.forwardRef((props, ref) => {
 
   const { config } = props;
 
-  const [ viewState, setViewState ] = useState();
-
-  const [ debouncedViewState ] = useDebounce(viewState, 500);
+  const setViewstate = useSetRecoilState(mapState);
 
   const [ hover, setHover ] = useState();
 
@@ -38,18 +36,6 @@ const Map = React.forwardRef((props, ref) => {
   const [ selectedMode, setSelectedMode ] = useState('POINTS');
 
   useEffect(() => {
-    // Feed the current viewport state upstream 
-    const viewport = {
-      width: window.innerWidth,
-      height: window.innerHeight,
-      ...debouncedViewState
-    };
-
-    const bounds = new WebMercatorViewport(viewport).getBounds();
-    props.onChangeViewport && props.onChangeViewport(bounds);
-  }, [ debouncedViewState ]);
-
-  useEffect(() => {
     // Map container gets hover element, 
     // so we can toggle cursor
     if (hover)
@@ -58,8 +44,9 @@ const Map = React.forwardRef((props, ref) => {
       ref.current.classList.remove('hover');
   }, [ hover ]);
 
-  const onMapChange = useCallback(evt =>
-    setViewState(evt.viewState), []);
+  const onMapChange = useCallback(evt => {
+    setViewstate(evt.viewState);
+  }, []);
 
   const onMouseMove = useCallback(evt => {
     const { point } = evt;

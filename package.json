@@ -48,6 +48,7 @@
     "react-joyride": "^2.3.2",
     "react-map-gl": "^7.0.6",
     "react-router-dom": "^6.2.1",
+    "recoil": "^0.6.1",
     "use-debounce": "^7.0.1"
   }
 }
