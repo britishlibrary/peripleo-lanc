@@ -16,6 +16,12 @@ const App = () => {
   // Pre-selected record via hash URL
   const { lon, lat, zoom } = useParams();
 
+  const initialViewState = (lon && lat && zoom) ? { 
+    longitude: parseFloat(lon), 
+    latitude: parseFloat(lat), 
+    zoom: parseFloat(zoom) 
+  } : null;
+
   const { store } = useContext(StoreContext);
 
   const [ config, setConfig ] = useState();
@@ -107,7 +113,7 @@ const App = () => {
           config={config}
           dataAvailable={loadState.stage === 'LOADED' || loadState.stage === 'CLOSE'}
           loaded={loadState.stage === 'CLOSE'}
-          initialViewport={{ lon, lat, zoom }}
+          initialViewState={initialViewState}
           initialRecord={null}
           onMapLoaded={onMapLoaded} />
       }

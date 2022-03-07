@@ -86,12 +86,12 @@ const Map = React.forwardRef((props, ref) => {
     const z = mapRef.current.getZoom();
     map.easeTo({ zoom: z + inc });
   }
-
+  
   return (  
     <div className="p6o-map-container" ref={ref}>
       <ReactMapGL
         ref={mapRef}
-        initialViewState={{
+        initialViewState={props.initialViewState || {
           bounds: config.initial_bounds
         }}
         mapStyle={style}
