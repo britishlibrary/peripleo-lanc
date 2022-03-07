@@ -50,7 +50,7 @@ export const colorHeatmapCoverage = idx => ({
       'interpolate',
       ['linear'],
       ['heatmap-density'],
-      ...COLOR_SCALES[idx]
+      ...COLOR_SCALES[Math.min(idx, SIGNATURE_COLOR.length -1)]
     ],
     'heatmap-radius': [
       'interpolate',
@@ -78,7 +78,7 @@ export const colorHeatmapPoint = idx => ({
   'minzoom': 6,
   'paint': {
     'circle-radius': 5,
-    'circle-color': SIGNATURE_COLOR[idx],
+    'circle-color': SIGNATURE_COLOR[Math.min(idx, SIGNATURE_COLOR.length -1)],
     'circle-stroke-color': 'white',
     'circle-stroke-width': 1,
     'circle-opacity': [

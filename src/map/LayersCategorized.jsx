@@ -1,9 +1,9 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Source, Layer } from 'react-map-gl';
 
 import { SIGNATURE_COLOR } from '../Colors';
 
-import { pointCategoryStyle } from './styles/point';
+import { pointStyle, pointCategoryStyle } from './styles/point';
 import { clusterPointStyle, clusterLabelStyle } from './styles/cluster';
 import { heatmapCoverageStyle, heatmapPointStyle } from './styles/heatmap';
 import { colorHeatmapCoverage, colorHeatmapPoint } from './styles/colorHeatmap';
@@ -46,7 +46,7 @@ const LayersCategorized = props => {
         <Source 
           type="geojson" 
           cluster={true}
-          data={toFeatureCollection(props.searchResults.items)}>
+          data={toFeatureCollection(flattened)}>
 
           <Layer 
             {...clusterPointStyle()} />
@@ -62,7 +62,7 @@ const LayersCategorized = props => {
       }
 
       {props.selectedMode === 'HEATMAP' &&
-        <Source type="geojson" data={toFeatureCollection(props.searchResults.items)}>
+        <Source type="geojson" data={toFeatureCollection(flattened)}>
           <Layer
             id="p6o-heatmap"
             {...heatmapCoverageStyle()} />
@@ -74,7 +74,7 @@ const LayersCategorized = props => {
       }
 
       {props.selectedMode === 'COLOURED_HEATMAP' &&
-        layers.map(([layer, features], idx) =>
+        props.searchResults.getFacetValues(props.facet).slice(0, 8).map(([layer, features], idx) =>
           <Source key={layer} type="geojson" data={toFeatureCollection(features)}>
             <Layer
               id={`p6o-heatmap-${layer}`}
