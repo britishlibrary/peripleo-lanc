@@ -110,6 +110,9 @@ export default class Store {
       .map(result => result.node);
   }
 
+  getAllLocatedNodes = () =>
+    this.getNodesInBounds([-180,-90,180,90]);
+
   fetchGeometryRecursive = (node, maxHops, spentHops = 0) => {
     if (spentHops >= maxHops)
       return;

@@ -26,7 +26,7 @@ const Peripleo = props => {
   }, [el.current]);
 
   useEffect(() => {
-    const results = new SearchResults(store.getNodesInBounds(props.config.initial_bounds));
+    const results = new SearchResults(store.getAllLocatedNodes());
     setSearchResults(results);
   }, [props.dataAvailable]);
 
@@ -37,7 +37,7 @@ const Peripleo = props => {
   useEffect(() => {
     const results = debouncedQuery ?
       store.searchMappable(debouncedQuery) :
-      store.getNodesInBounds(props.config.initial_bounds);
+      store.getAllLocatedNodes();
 
     setSearchResults(new SearchResults(results));
   }, [debouncedQuery]);
