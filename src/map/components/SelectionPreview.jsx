@@ -1,28 +1,44 @@
 import React from 'react';
 import { Popup } from 'react-map-gl';
+import { HiExternalLink } from 'react-icons/hi';
+import { MdOutlineRadar } from 'react-icons/md';
+import { BiNetworkChart } from 'react-icons/bi';
 
 import { SIGNATURE_COLOR } from '../../Colors';
+
+// TODO IIIF
+const getImage = node => {
+  if (node.depictions?.length > 0) {
+    // Temporary hack!
+    const nonIIIF = node.depictions.filter(d => !d.selector);    
+    if (nonIIIF.length > 0)
+      return nonIIIF[0]['@id']; 
+  }
+}
+
+const getTypes = node => {
+  if (node.properties.type)
+    return [ node.properties.type ];
+  else if (node.types?.length > 0)
+    return node.types.map(t => t.label);
+  else
+    return [];
+}
 
 const SelectionPreview = props => {
   
   console.log(props);
 
-  const { selection } = props;
+  const { node } = props;
 
-  const datasets = props.config.data.map(d => d.name);
-  const idx = datasets.indexOf(selection.dataset)
-
-  const backgroundColor = SIGNATURE_COLOR[idx];
+  const dataset = props.config.data.find(d => d.name === node.dataset);
+  const { logo } = dataset;
     
-  const { coordinates } = selection.geometry;
+  const { coordinates } = node.geometry;
 
-  let image = null;
-  if (selection.depictions?.length > 0) {
-    // Temporary hack!
-    const nonIIIF = selection.depictions.filter(d => !d.selector);    
-    if (nonIIIF.length > 0)
-      image = nonIIIF[0]['@id']; 
-  }
+  const image = getImage(node);
+
+  const color = SIGNATURE_COLOR[3]; 
    
   return (
     <Popup
@@ -32,42 +48,38 @@ const SelectionPreview = props => {
       closeButton={false}
       closeOnClick={false}>
 
-      <div className="p6o-selection">
-        {image ?
-          <>
+      <div className="p6o-selection"
+        style={{ backgroundColor: color }}>
+
+        <div className="p6o-selection-content">
+          {image &&
             <div 
               className="p6o-selection-header-image"
-              style={{ backgroundImage: `url('${image}')` }}>
-              
-              <h1>{selection.title}</h1>
+              style={{ backgroundImage: `url("${image}")` }}>    
             </div> 
+          }
+
+          <main>
+            <h1>{node.title}</h1>
+            <h2 className="p6o-selection-source-link">
+              <HiExternalLink /> 
+              <a href="">{node.dataset}</a>
+            </h2>
+                
+            <ul className="p6o-selection-types">
+              {getTypes(node).map(t => <li key={t}>{t}</li>)}
+            </ul>
             
-            {selection.properties.description &&
+            {node.properties.description &&
               <p className="p6o-selection-description">
-                {selection.properties.description}
+                {node.properties.description}
               </p>
             }
-          </> :
+          </main>
 
-          <>
-            <div className="p6o-selection-header-noimage">
-              <h1>{selection.title}</h1>
-            </div>
-            <p className="p6o-selection-description">
-              {selection.properties.description}
-            </p>
-          </>
-        }
-
-        <div 
-          className="p6o-selection-source" 
-          style={{ backgroundColor }}>
-          <p>
-            <a href={selection.id} target="_blank">Visit Source</a>
-          </p>
-          <p>
-            {selection.dataset}
-          </p>
+          <footer>
+            <MdOutlineRadar /> 21 Nearby <BiNetworkChart /> 2 Connected
+          </footer>
         </div>
       </div>
     </Popup>

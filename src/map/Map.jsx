@@ -74,9 +74,9 @@ const Map = React.forwardRef((props, ref) => {
 
   const onClick = () => {
     if (hover) {
-      const { node } = hover;
+      const { node, feature } = hover;
       history.pushState(node, node.title, `#/${encodeURIComponent(node.id)}`);
-      setSelection(node);
+      setSelection({ node, feature });
     } else {
       setSelection(null);
     }
@@ -123,8 +123,8 @@ const Map = React.forwardRef((props, ref) => {
 
         {selection && 
           <SelectionPreview 
-            config={props.config}
-            selection={selection} />
+            {...selection}
+            config={props.config} />
         }
       </ReactMapGL>
 
