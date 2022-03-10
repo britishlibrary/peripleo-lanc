@@ -10,5 +10,18 @@
   "layers": [
     { "name": "SW Rivers", "src": "layers/SW_rivers.geojson", "color": "#5555ff" },
     { "name": "SW Routes", "src": "layers/SW_Routes.geojson", "color": "#727272" }
-  ]
+  ],
+  "link_icons": {
+    "www.nationaltrust.org.uk": "logos/www.nationaltrust.org.uk.png",
+    "www.mola.org.uk": "logos/www.mola.org.uk.png",
+    "www.historicenvironment.scot": "logos/www.historicenvironment.scot.png",
+    "www.english-heritage.org.uk": "logos/www.english-heritage.org.uk.png",
+    "www.britishmuseum.org": "logos/www.britishmuseum.org.png",
+    "www.bl.uk": "logos/www.bl.uk.png",
+    "hrp.org.uk": "logos/hrp.org.uk.png",
+    "historicengland.org.uk": "logos/historicengland.org.uk.png",
+    "finds.org.uk": "logos/finds.org.uk.png",
+    "en.wikipedia.org": "logos/en.wikipedia.org.png",
+    "cadw.gov.wales": "logos/cadw.gov.wales.png"
+  }
 }
