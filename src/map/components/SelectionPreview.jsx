@@ -31,7 +31,9 @@ const getImage = node => {
 }
 
 const getTypes = node => {
-  if (node.properties.type)
+  if (node.types?.length > 0)
+    return node.types.map(t => t.label);
+  else if (node.properties.type)
     return [ node.properties.type ];
   else if (node.types?.length > 0)
     return node.types.map(t => t.label);
