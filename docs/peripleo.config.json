@@ -2,8 +2,21 @@
   "api_key": "cqqmcLw28krG9Fl7V3kg",
   "initial_bounds": [-7.9, 49.5, 2.2, 59.4],
   "data": [
-    { "name": "Portable Antiquities Scheme", "format": "LINKED_PLACES", "src": "data/PAS_Warwickshire.lp.json" },
+    { "name": "Portable Antiquities Scheme", "format": "LINKED_PLACES", "src": "data/PAS_Warwickshire.lp.json", "logo": "logos/finds.org.uk.png" },
     { "name": "Hollar", "format": "LINKED_PLACES", "src": "data/Hollar-1660.lp.json" },
     { "name": "VisitPlus", "format": "LINKED_PLACES", "src": "data/VisitPlus-UK.lp.json" }
-  ]
+  ],
+  "link_icons": {
+    "www.nationaltrust.org.uk": "logos/www.nationaltrust.org.uk.png",
+    "www.mola.org.uk": "logos/www.mola.org.uk.png",
+    "www.historicenvironment.scot": "logos/www.historicenvironment.scot.png",
+    "www.english-heritage.org.uk": "logos/www.english-heritage.org.uk.png",
+    "www.britishmuseum.org": "logos/www.britishmuseum.org.png",
+    "www.bl.uk": "logos/www.bl.uk.png",
+    "hrp.org.uk": "logos/hrp.org.uk.png",
+    "historicengland.org.uk": "logos/historicengland.org.uk.png",
+    "finds.org.uk": "logos/finds.org.uk.png",
+    "en.wikipedia.org": "logos/en.wikipedia.org.png",
+    "cadw.gov.wales": "logos/cadw.gov.wales.png"
+  }
 }
