@@ -2,9 +2,10 @@ import React, { useContext } from 'react';
 import { Popup } from 'react-map-gl';
 import { HiExternalLink } from 'react-icons/hi';
 import { MdOutlineRadar } from 'react-icons/md';
-import { BiWorld, BiNetworkChart } from 'react-icons/bi';
+import { BiNetworkChart } from 'react-icons/bi';
 import { FaHourglassEnd } from 'react-icons/fa';
 import { SiWikidata } from 'react-icons/si';
+import { VscGlobe } from 'react-icons/vsc';
 
 import { StoreContext } from '../../store';
 import { SIGNATURE_COLOR } from '../../Colors';
@@ -12,7 +13,7 @@ import { SIGNATURE_COLOR } from '../../Colors';
 // Pre-set link icons
 const ICONS = {
   'www.wikidata.org': <SiWikidata />,
-  'www.geonames.org': <BiWorld />
+  'www.geonames.org': <VscGlobe />
 }
 
 // TODO IIIF
@@ -36,6 +37,15 @@ const getTypes = node => {
 
 const isString = val => typeof val === 'string' || val instanceof String;
 
+const placeholderIcon = host => {
+  const initial = host.startsWith('www.') ?
+    host.substring(4, 5) : host.substring(0, 1);
+
+  return (
+    <span className="p6o-link-placeholder">{initial.toUpperCase()}</span>
+  )
+}
+
 const formatLink = (link, optIcons) => {
   const icons = optIcons ? {
     ...ICONS, ...optIcons
@@ -48,11 +58,12 @@ const formatLink = (link, optIcons) => {
   const icon = icons[host] && isString(icons[host]) ?
     <img src={icons[host]} /> : icons[host]; // null or JSX
 
-  console.log(icon);
-
   return (
-    <a href={href} target="_blank">
-      {icon || host}
+    <a 
+      href={href} 
+      target="_blank"
+      title={host}>
+      {icon || placeholderIcon(host)}
     </a>
   )
 }
@@ -124,7 +135,7 @@ const SelectionPreview = props => {
                 </p>
               }
 
-              <ul>
+              <ul className="p6o-selection-external-links">
                 {links.map(l =>
                   <li key={l.identifier}>{formatLink(l, config.link_icons)}</li>
                 )}

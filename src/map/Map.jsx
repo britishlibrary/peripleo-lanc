@@ -75,7 +75,7 @@ const Map = React.forwardRef((props, ref) => {
   const onClick = () => {
     if (hover) {
       const { node, feature } = hover;
-      history.pushState(node, node.title, `#/${encodeURIComponent(node.id)}`);
+      // history.pushState(node, node.title, `#/${encodeURIComponent(node.id)}`);
       setSelection({ node, feature });
     } else {
       setSelection(null);
