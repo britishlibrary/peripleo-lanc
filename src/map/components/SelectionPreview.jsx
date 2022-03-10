@@ -2,8 +2,7 @@ import React, { useContext } from 'react';
 import { Popup } from 'react-map-gl';
 import { HiExternalLink } from 'react-icons/hi';
 import { MdOutlineRadar } from 'react-icons/md';
-import { BiNetworkChart } from 'react-icons/bi';
-import { FaHourglassEnd } from 'react-icons/fa';
+import { BiHourglass, BiNetworkChart } from 'react-icons/bi';
 import { SiWikidata } from 'react-icons/si';
 import { VscGlobe } from 'react-icons/vsc';
 
@@ -119,7 +118,7 @@ const SelectionPreview = props => {
               <h1>{node.title}</h1>
               {when && 
                 <h2>
-                  <FaHourglassEnd /> {when}
+                  <BiHourglass /> {when}
                 </h2>
               }
                   
