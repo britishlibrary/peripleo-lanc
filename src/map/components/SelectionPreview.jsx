@@ -8,7 +8,6 @@ import { VscGlobe } from 'react-icons/vsc';
 
 import { StoreContext } from '../../store';
 import { SIGNATURE_COLOR } from '../../Colors';
-import { FeaturePositionMap } from 'maplibre-gl';
 
 // Pre-set link icons
 const ICONS = {
@@ -16,14 +15,19 @@ const ICONS = {
   'www.geonames.org': <VscGlobe />
 }
 
-// TODO IIIF
 const getImage = node => {
   if (node.depictions?.length > 0) {
     // Temporary hack!
-    const nonIIIF = node.depictions.filter(d => !d.selector);    
-    if (nonIIIF.length > 0)
-      return nonIIIF[0]['@id']; 
-  }
+    const iiif = node.depictions.filter(d => d.selector);
+    if (iiif.length > 0) {
+      const d = node.depictions[0];
+      const baseUrl = d['@id'].substring(0, d['@id'].lastIndexOf('/'));
+      const coordinates = d.selector[0].value.substring(d.selector[0].value.indexOf('pixel:') + 6);
+      return `${baseUrl}/${coordinates}/max/0/default.jpg`;
+    } else {   
+      node.depictions[0]['@id'];
+    }
+  } 
 }
 
 const getTypes = node => {
