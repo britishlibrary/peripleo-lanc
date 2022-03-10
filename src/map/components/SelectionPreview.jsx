@@ -94,6 +94,7 @@ const SelectionPreview = props => {
   const connected = store.getConnectedNodes(node.id);
 
   const links = store.getExternalLinks(node.id);
+  links.sort((a, b) => (b.identifier > a.identifier) ? 1 : -1);
 
   // Temporary hack!
   const color = SIGNATURE_COLOR[3]; 
