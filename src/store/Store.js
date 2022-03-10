@@ -143,8 +143,7 @@ export default class Store {
       return node.geometry;
 
     // Get all neighbors
-    const neighbors = this.getConnectedNodes(node.id)
-      .map(t => t.node.data);
+    const neighbors = this.getConnectedNodes(node.id);
 
     // Find first neighbour with a geometry
     const locatedNeighbour = neighbors.find(node => node.geometry);

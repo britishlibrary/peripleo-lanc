@@ -8,6 +8,7 @@ import { VscGlobe } from 'react-icons/vsc';
 
 import { StoreContext } from '../../store';
 import { SIGNATURE_COLOR } from '../../Colors';
+import { FeaturePositionMap } from 'maplibre-gl';
 
 // Pre-set link icons
 const ICONS = {
@@ -73,12 +74,12 @@ const SelectionPreview = props => {
 
   const { store } = useContext(StoreContext);
   
-  const { node, config } = props;
+  const { node, feature, config } = props;
 
   const dataset = props.config.data.find(d => d.name === node.dataset);
   const { logo } = dataset;
     
-  const { coordinates } = node.geometry;
+  const { coordinates } = (node.geometry || feature.geometry);
 
   const image = getImage(node);
 
