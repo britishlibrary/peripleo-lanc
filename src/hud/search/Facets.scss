@@ -15,6 +15,7 @@
       background-color:#fff;
       padding:6px;
       margin:20px 0 10px 0;
+      pointer-events:all;
       @include rounded-corners(3px);
       @include box-shadow(0, 0, 4px, 0.25);
 

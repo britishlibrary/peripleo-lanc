@@ -3,6 +3,7 @@ import { Popup } from 'react-map-gl';
 import { HiExternalLink } from 'react-icons/hi';
 import { MdOutlineRadar } from 'react-icons/md';
 import { BiNetworkChart } from 'react-icons/bi';
+import { FaHourglassEnd } from 'react-icons/fa';
 
 import { SIGNATURE_COLOR } from '../../Colors';
 
@@ -38,10 +39,15 @@ const SelectionPreview = props => {
 
   const image = getImage(node);
 
+  const when = node.properties?.when;
+
   const color = SIGNATURE_COLOR[3]; 
+
+  const url = node.properties?.url || node.properties?.resource_url || node.id;
    
   return (
     <Popup
+      anchor="bottom"
       longitude={coordinates[0]} 
       latitude={coordinates[1]}
       maxWidth={440}
@@ -60,25 +66,46 @@ const SelectionPreview = props => {
           }
 
           <main>
-            <h1>{node.title}</h1>
-            <h2 className="p6o-selection-source-link">
-              <HiExternalLink /> 
-              <a href="">{node.dataset}</a>
-            </h2>
-                
-            <ul className="p6o-selection-types">
-              {getTypes(node).map(t => <li key={t}>{t}</li>)}
-            </ul>
+            <div className="p6o-selection-main-fixed">
+              <h1>{node.title}</h1>
+              {when && 
+                <h2>
+                  <FaHourglassEnd /> {when}
+                </h2>
+              }
+                  
+              <ul className="p6o-selection-types">
+                {getTypes(node).map(t => <li key={t}>{t}</li>)}
+              </ul>
+            </div>
             
-            {node.properties.description &&
-              <p className="p6o-selection-description">
-                {node.properties.description}
-              </p>
-            }
+            <div className="p6o-selection-main-flex">
+              {node.properties.description &&
+                <p className="p6o-selection-description">
+                  {node.properties.description}
+                </p>
+              }
+
+              {/* <MdOutlineRadar /> 21 Nearby <BiNetworkChart /> 2 Connected */}
+            </div>
           </main>
 
           <footer>
-            <MdOutlineRadar /> 21 Nearby <BiNetworkChart /> 2 Connected
+            <div className="p6o-selection-view-source">
+              <a 
+                href={url} 
+                target="_blank" 
+                className="p6o-selection-view-source-top">
+                <HiExternalLink /> View source record
+              </a>
+
+              <a
+                href={url} 
+                target="_blank" 
+                className="p6o-selection-view-source-bottom">{node.dataset}</a>
+            </div>
+
+            <img src={logo} /> 
           </footer>
         </div>
       </div>

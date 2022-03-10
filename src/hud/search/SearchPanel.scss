@@ -3,6 +3,7 @@
   left:50px;
   top:22px;
   z-index:0;
+  pointer-events:none;
 
   .p6o-hud-searchinput {
     padding-left:40px;
@@ -13,6 +14,7 @@
     border-radius:4px;
     position:relative;
     z-index:2;
+    pointer-events:all;
     
     input {
       font-size:18px;
@@ -32,6 +34,7 @@
     box-sizing:border-box;
     color:#5c5c5c;
     z-index:1;
+    pointer-events:all;
 
     .p6o-hud-searchtoolbar-wrapper {
       display:flex;
