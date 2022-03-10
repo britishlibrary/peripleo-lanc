@@ -67,7 +67,7 @@ const formatLink = (link, optIcons) => {
       href={href} 
       target="_blank"
       title={host}>
-      {icon || placeholderIcon(host)}
+      {icon ? React.cloneElement(icon, { title: host }) : placeholderIcon(host)}
     </a>
   )
 }
