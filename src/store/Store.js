@@ -77,14 +77,35 @@ export default class Store {
   getNode = id =>
     this.graph.getNode(id)?.data;
 
-  getLinkedNodes = id => {
+  /** 
+   * Return nodes in the graph connected to the
+   * node with the given ID. Returns only 'known' nodes, 
+   * where `data` is defined!
+   */
+  getConnectedNodes = id => {
     const linkedNodes = [];
 
     this.graph.forEachLinkedNode(id, (node, link) => {
-      linkedNodes.push({ node, link });
+      if (node.data)
+        linkedNodes.push({ node, link });
     });
 
-    return linkedNodes;
+    return linkedNodes.map(t => t.node.data);
+  }
+
+  /** 
+   * Return 'link nodes' in the graph for this node.
+   * Links are graph nodes with no `data` defined.
+   */
+  getExternalLinks = id => {
+    const linkedNodes = [];
+
+    this.graph.forEachLinkedNode(id, (node, link) => {
+      if (!node.data)
+        linkedNodes.push({ node, link });
+    });
+
+    return linkedNodes.map(t => t.link.data);
   }
 
   getNodesInBounds = (bounds, optDataset) => {
@@ -122,9 +143,7 @@ export default class Store {
       return node.geometry;
 
     // Get all neighbors
-    const neighbors = this.getLinkedNodes(node.id)
-      // Don't use "blank nodes" that were auto-generated but don't have payload
-      .filter(t => t.node.data) 
+    const neighbors = this.getConnectedNodes(node.id)
       .map(t => t.node.data);
 
     // Find first neighbour with a geometry
