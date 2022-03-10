@@ -35,6 +35,9 @@ const Map = React.forwardRef((props, ref) => {
 
   const [ selectedMode, setSelectedMode ] = useState('POINTS');
 
+  useEffect(() => 
+    setSelection(null), [ props.searchResults ]);
+
   useEffect(() => {
     // Map container gets hover element, 
     // so we can toggle cursor
@@ -76,6 +79,7 @@ const Map = React.forwardRef((props, ref) => {
     if (hover) {
       const { node, feature } = hover;
       // history.pushState(node, node.title, `#/${encodeURIComponent(node.id)}`);
+      setHover(null);
       setSelection({ node, feature });
     } else {
       setSelection(null);
