@@ -25,7 +25,7 @@ const getImage = node => {
       const coordinates = d.selector[0].value.substring(d.selector[0].value.indexOf('pixel:') + 6);
       return `${baseUrl}/${coordinates}/max/0/default.jpg`;
     } else {   
-      node.depictions[0]['@id'];
+      return node.depictions[0]['@id'];
     }
   } 
 }
