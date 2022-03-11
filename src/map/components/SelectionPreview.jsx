@@ -103,7 +103,6 @@ const SelectionPreview = props => {
    
   return (
     <Popup
-      anchor="bottom"
       longitude={coordinates[0]} 
       latitude={coordinates[1]}
       maxWidth={440}
