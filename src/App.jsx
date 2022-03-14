@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 import { StoreContext } from './store';
@@ -12,15 +11,6 @@ import Tutorial, { isFirstTimeVisitor } from './tutorial/Tutorial';
  * before the actual UI becomes fully operational.
  */
 const App = () => {
-
-  // Pre-selected record via hash URL
-  const { lon, lat, zoom } = useParams();
-
-  const initialViewState = (lon && lat && zoom) ? { 
-    longitude: parseFloat(lon), 
-    latitude: parseFloat(lat), 
-    zoom: parseFloat(zoom) 
-  } : null;
 
   const { store } = useContext(StoreContext);
 
@@ -113,7 +103,6 @@ const App = () => {
           config={config}
           dataAvailable={loadState.stage === 'LOADED' || loadState.stage === 'CLOSE'}
           loaded={loadState.stage === 'CLOSE'}
-          initialViewState={initialViewState}
           initialRecord={null}
           onMapLoaded={onMapLoaded} />
       }

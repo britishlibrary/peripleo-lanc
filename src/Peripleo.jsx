@@ -55,7 +55,6 @@ const Peripleo = props => {
       <Map 
         ref={el}
         config={props.config} 
-        initialViewState={props.initialViewState}
         searchResults={searchResults}
         currentFacet={currentFacet}
         onLoad={props.onMapLoaded}

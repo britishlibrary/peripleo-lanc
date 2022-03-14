@@ -29,12 +29,13 @@ const toURL = state => {
 
 const URLState = props => {
 
-  const [ state, setState ] = useState({});
-
   const map = useRecoilValue(mapState);
+
   const facet = useRecoilValue(categoryFacetState)
 
   const [ mapDebounced ] = useDebounce(map, 500);
+
+  const [ state, setState ] = useState({ ...map });
 
   useEffect(() => {
     const { longitude, latitude, zoom } = map;

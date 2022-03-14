@@ -1,6 +1,6 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import ReactMapGL, { Source, Layer } from 'react-map-gl';
-import { useSetRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 
 import { StoreContext } from '../store';
 import { mapState } from '../state';
@@ -25,7 +25,7 @@ const Map = React.forwardRef((props, ref) => {
 
   const { config } = props;
 
-  const setViewstate = useSetRecoilState(mapState);
+  const [ viewstate, setViewstate ] = useRecoilState(mapState);
 
   const [ hover, setHover ] = useState();
 
@@ -96,7 +96,7 @@ const Map = React.forwardRef((props, ref) => {
     <div className="p6o-map-container" ref={ref}>
       <ReactMapGL
         ref={mapRef}
-        initialViewState={props.initialViewState || {
+        initialViewState={viewstate.latitude && viewstate.longitude && viewstate.zoom ? viewstate : {
           bounds: config.initial_bounds
         }}
         mapStyle={style}
