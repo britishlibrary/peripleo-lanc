@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { VscListUnordered } from 'react-icons/vsc';
 import { GiSpade } from 'react-icons/gi';
-import { useSetRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 
 import { categoryFacetState } from '../../state';
 
@@ -34,7 +34,7 @@ const SearchPanel = props => {
 
   const el = useRef();
 
-  const setFacetState = useSetRecoilState(categoryFacetState);
+  const [ facet, setFacet ] = useRecoilState(categoryFacetState);
 
   useEffect(() => {
     if (el.current)
@@ -45,17 +45,17 @@ const SearchPanel = props => {
     props.onChange(evt.target.value);
 
   const onToggleFacet = () => {
-    if (props.facet)
-      setFacetState(null);
+    if (facet)
+      setFacet(null);
     else
-      setFacetState(props.results.facets[0]);
+      setFacet(props.results.facets[0]);
   }
 
   const onChangeFacet = inc => () => {
     const { length } = props.results.facets;
     const currentIdx = props.results.facets.indexOf(props.facet);
     const updatedIdx = (currentIdx + inc + length) % length; 
-    setFacetState(props.results.facets[updatedIdx]);
+    setFacet(props.results.facets[updatedIdx]);
   }
 
   return (
@@ -97,10 +97,10 @@ const SearchPanel = props => {
       </motion.div>
 
       <AnimatePresence>
-        {props.facet && 
+        {facet && 
           <Facets 
             results={props.results} 
-            facet={props.facet} 
+            facet={facet} 
             onNextFacet={onChangeFacet(1)}
             onPreviousFacet={onChangeFacet(-1)} /> 
         }

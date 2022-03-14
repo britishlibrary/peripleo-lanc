@@ -2,6 +2,8 @@ import { atom } from 'recoil';
 
 import SearchResults from '../SearchResults';
 
+const initialParams = new URLSearchParams(window.location.search);
+
 export const searchQueryState = atom({
   key: 'searchQuery',
   default: ''
@@ -9,7 +11,7 @@ export const searchQueryState = atom({
 
 export const categoryFacetState = atom({
   key: 'categoryFacet',
-  default: null
+  default: initialParams.get('facet')
 });
 
 export const searchResultState = atom({

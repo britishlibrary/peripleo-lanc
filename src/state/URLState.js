@@ -2,12 +2,26 @@ import { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { useDebounce } from 'use-debounce';
 
-import { mapState } from '.';
+import { categoryFacetState, mapState } from '.';
 
 const toURL = state => {
-  const { longitude, latitude, zoom } = state;
+  const { longitude, latitude, zoom, facet } = state;
+  
+  let fragment = '#/';
+  const params = [];
+
+  // Map viewport
   if (longitude && latitude && zoom)
-    history.pushState(state, null, `#/${zoom.toFixed(2)}/${longitude.toFixed(4)}/${latitude.toFixed(4)}`);
+    fragment = fragment + `${zoom.toFixed(2)}/${longitude.toFixed(4)}/${latitude.toFixed(4)}`;
+
+  // Facet value (if any)
+  if (facet)
+    params.push(`facet=${facet}`);
+  
+  const url = params.length > 0 ?
+    '?' + params.join('&') + fragment : fragment;
+
+  history.pushState(state, null, url);
 }
 
 const URLState = props => {
@@ -15,6 +29,7 @@ const URLState = props => {
   const [ state, setState ] = useState({});
 
   const map = useRecoilValue(mapState);
+  const facet = useRecoilValue(categoryFacetState)
 
   const [ mapDebounced ] = useDebounce(map, 500);
 
@@ -26,10 +41,13 @@ const URLState = props => {
     });
   }, [ mapDebounced ]);
 
+  useEffect(() => {
+    setState({...state, facet })
+  }, [ facet ]);
+
   useEffect(() => toURL(state), [ state ]);
 
   return null;
-
 }
 
 export default URLState;

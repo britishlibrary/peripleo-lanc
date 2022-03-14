@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { BiSearchAlt2 } from 'react-icons/bi';
+import { useRecoilValue } from 'recoil';
+
+import { categoryFacetState } from '../state';
 
 import SearchPanel from './search/SearchPanel';
 
 const HUD = props => {
+  
+  const facet = useRecoilValue(categoryFacetState);
 
-  const [ isHudOpen, setIsHudOpen ] = useState();
+  // HUD open by default, if there's a facet
+  const [ isHudOpen, setIsHudOpen ] = useState(!!facet);
 
   const onToggleHUD = () =>
     setIsHudOpen(!isHudOpen);
