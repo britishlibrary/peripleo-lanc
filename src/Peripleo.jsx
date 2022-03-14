@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useDebounce } from 'use-debounce';
+import { useRecoilValue } from 'recoil';
 
 import { StoreContext } from './store';
+import { categoryFacetState } from './state';
 import SearchResults from './SearchResults';
 
 import HUD from './hud/HUD';
@@ -18,7 +20,7 @@ const Peripleo = props => {
 
   const [ searchResults, setSearchResults ] = useState(new SearchResults());
 
-  const [ currentFacet, setCurrentFacet ] = useState();
+  const currentFacet = useRecoilValue(categoryFacetState);
 
   useEffect(() => {
     if (el.current)
@@ -64,8 +66,7 @@ const Peripleo = props => {
           searchQuery={searchQuery}
           searchResults={searchResults}
           currentFacet={currentFacet}
-          onChangeSearchQuery={setSearchQuery} 
-          onChangeFacet={setCurrentFacet} />
+          onChangeSearchQuery={setSearchQuery} />
       </Map>
     </>
   )

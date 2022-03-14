@@ -26,8 +26,7 @@ const HUD = props => {
             query={props.searchQuery}
             results={props.searchResults}
             facet={props.currentFacet}
-            onChange={props.onChangeSearchQuery} 
-            onChangeFacet={props.onChangeFacet} />
+            onChange={props.onChangeSearchQuery} />
         }
       </AnimatePresence>
     </div>

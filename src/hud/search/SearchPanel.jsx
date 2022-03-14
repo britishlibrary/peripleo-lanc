@@ -2,6 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { VscListUnordered } from 'react-icons/vsc';
 import { GiSpade } from 'react-icons/gi';
+import { useSetRecoilState } from 'recoil';
+
+import { categoryFacetState } from '../../state';
 
 import Facets from './Facets';
 
@@ -31,6 +34,8 @@ const SearchPanel = props => {
 
   const el = useRef();
 
+  const setFacetState = useSetRecoilState(categoryFacetState);
+
   useEffect(() => {
     if (el.current)
       el.current.querySelector('input').focus();
@@ -41,16 +46,16 @@ const SearchPanel = props => {
 
   const onToggleFacet = () => {
     if (props.facet)
-      props.onChangeFacet(null);
+      setFacetState(null);
     else
-      props.onChangeFacet(props.results.facets[0]);
+      setFacetState(props.results.facets[0]);
   }
 
   const onChangeFacet = inc => () => {
     const { length } = props.results.facets;
     const currentIdx = props.results.facets.indexOf(props.facet);
     const updatedIdx = (currentIdx + inc + length) % length; 
-    props.onChangeFacet(props.results.facets[updatedIdx]);
+    setFacetState(props.results.facets[updatedIdx]);
   }
 
   return (
