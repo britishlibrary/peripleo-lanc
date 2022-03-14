@@ -6,20 +6,23 @@ import { categoryFacetState, mapState } from '.';
 
 const toURL = state => {
   const { longitude, latitude, zoom, facet } = state;
-  
+
   let fragment = '#/';
+
   const params = [];
 
   // Map viewport
   if (longitude && latitude && zoom)
     fragment = fragment + `${zoom.toFixed(2)}/${longitude.toFixed(4)}/${latitude.toFixed(4)}`;
+  else 
+    fragment = fragment + '?/?/?';
 
   // Facet value (if any)
   if (facet)
     params.push(`facet=${facet}`);
   
   const url = params.length > 0 ?
-    '?' + params.join('&') + fragment : fragment;
+    fragment + '/' + params.join('&') : fragment;
 
   history.pushState(state, null, url);
 }

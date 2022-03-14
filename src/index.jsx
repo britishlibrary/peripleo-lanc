@@ -19,6 +19,7 @@ ReactDOM.render(
         <Routes>
           <Route> 
             <Route path="/:zoom/:lon/:lat" element={<App />} />
+            <Route path="/:zoom/:lon/:lat/:args" element={<App />} />
             <Route path="/" element={<App />} />
           </Route> 
         </Routes>
