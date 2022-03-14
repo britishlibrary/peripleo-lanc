@@ -12,10 +12,11 @@ import { SIGNATURE_COLOR } from '../../Colors';
 import FullscreenImage from './FullscreenImage';
 
 // Pre-set link icons
-const ICONS = {
-  'www.wikidata.org': <SiWikidata />,
-  'www.geonames.org': <VscGlobe />
-}
+const ICONS = [
+  [ 'www.wikidata.org', <SiWikidata /> ],
+  [ 'www.geonames.org', <VscGlobe /> ],
+  [ 'wikipedia.org', <img src="logos/en.wikipedia.org.png" /> ]
+]
 
 const getImage = node => {
   if (node.depictions?.length > 0) {
@@ -54,26 +55,46 @@ const placeholderIcon = host => {
   )
 }
 
-const formatLink = (link, optIcons) => {
-  const icons = optIcons ? {
-    ...ICONS, ...optIcons
-  } :  ICONS;
+const formatLinks = (links, optIcons) => {
 
-  const url = new URL(link.identifier);
+  const customIcons = optIcons ? 
+    Object.entries(optIcons) : [];
 
-  const { host, href } = url;
-  
-  const icon = icons[host] && isString(icons[host]) ?
-    <img src={icons[host]} /> : icons[host]; // null or JSX
+  const linksWithIcons = links.map(link => {
+    const url = new URL(link.identifier);
 
-  return (
-    <a 
-      href={href} 
-      target="_blank"
-      title={host}>
-      {icon ? React.cloneElement(icon, { title: host }) : placeholderIcon(host)}
-    </a>
-  )
+    const { host, href } = url;
+
+    const customIcon = customIcons.find(t => host.includes(t[0]));
+
+    if (customIcon) {
+      // Custom icon - img element, priority 1
+      return { href, host, icon: <img src={customIcon[1]} />, priority: 1 };
+    } else {
+      const builtInIcon = ICONS.find(t => host.includes(t[0]));
+      if (builtInIcon) {
+        // Built-in icon: Wikipedia before others
+        const priority =  builtInIcon[0] === 'wikipedia.org' ? 2 : 3;
+        return { href, host, icon: builtInIcon[1], priority };
+      } else {
+        // Default: placeholder
+        return { href, host, icon: placeholderIcon(host), priority: 4 };
+      }
+    } 
+  });
+
+  linksWithIcons.sort((a, b) => 
+    a.priority === b.priority ?
+      (a.href > b.href ? 1 : -1) :
+      a.priority - b.priority);
+
+  return linksWithIcons.map(({ href, host, icon }) => 
+    <li key={href}>
+      <a href={href} target="_blank" title={host}>
+        {React.cloneElement(icon, { title:host })}
+      </a>
+    </li>
+  );
 }
 
 const SelectionPreview = props => {
@@ -97,8 +118,7 @@ const SelectionPreview = props => {
 
   const url = node.properties?.url || node.properties?.resource_url || node.id;
 
-  const links = store.getExternalLinks(node.id);
-  links.sort((a, b) => (b.identifier > a.identifier) ? 1 : -1);
+  const links = formatLinks(store.getExternalLinks(node.id), config.link_icons);
 
   // Temporary hack!
   const color = SIGNATURE_COLOR[3]; 
@@ -150,9 +170,7 @@ const SelectionPreview = props => {
               }
 
               <ul className="p6o-selection-external-links">
-                {links.map(l =>
-                  <li key={l.identifier}>{formatLink(l, config.link_icons)}</li>
-                )}
+                {links}
               </ul>
 
               {/* <MdOutlineRadar /> 21 Nearby <BiNetworkChart /> 2 Connected */}
