@@ -169,11 +169,14 @@ const SelectionPreview = props => {
                 </p>
               }
 
-              <ul className="p6o-selection-external-links">
-                {links}
-              </ul>
-
-              {/* <MdOutlineRadar /> 21 Nearby <BiNetworkChart /> 2 Connected */}
+              {links.length > 0 &&
+                <div className="p6o-selection-external-links">
+                  <h3>Links to External Resources:</h3>
+                  <ul>
+                    {links}
+                  </ul>
+                </div>
+              }
             </div>
           </main>
 
