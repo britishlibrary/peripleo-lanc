@@ -118,6 +118,23 @@
         height:140px;
         background-size:cover;
         background-position:center;
+        position:relative;
+
+        .p6o-selection-header-image-btn-full {
+          position:absolute;
+          top:5px;
+          right:5px;
+          width:24px;
+          height:24px;
+          display:flex;
+          justify-content:center;
+          align-items:center;
+          font-size:18px;
+          color:#000;
+          background-color:rgba(255,255,255,0.8);
+          @include rounded-corners(2px);
+        }
+
       }
 
       main {

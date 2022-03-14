@@ -9,6 +9,8 @@ import URLState from './state/URLState';
 
 import './index.scss';
 
+import 'react-image-lightbox/style.css';
+
 ReactDOM.render(
   <RecoilRoot>
     <StoreContextProvider>

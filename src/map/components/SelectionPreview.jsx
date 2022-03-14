@@ -1,13 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Popup } from 'react-map-gl';
 import { HiExternalLink } from 'react-icons/hi';
-import { MdOutlineRadar } from 'react-icons/md';
-import { BiHourglass, BiNetworkChart } from 'react-icons/bi';
+import { BiHourglass } from 'react-icons/bi';
+import { BsArrowsFullscreen } from 'react-icons/bs';
 import { SiWikidata } from 'react-icons/si';
 import { VscGlobe } from 'react-icons/vsc';
 
 import { StoreContext } from '../../store';
 import { SIGNATURE_COLOR } from '../../Colors';
+
+import FullscreenImage from './FullscreenImage';
 
 // Pre-set link icons
 const ICONS = {
@@ -78,6 +80,8 @@ const SelectionPreview = props => {
 
   console.log(props);
 
+  const [ showFullscreenImage, setShowFullscreenImage ] = useState(false);
+
   const { store } = useContext(StoreContext);
   
   const { node, feature, config } = props;
@@ -92,8 +96,6 @@ const SelectionPreview = props => {
   const when = node.properties?.when;
 
   const url = node.properties?.url || node.properties?.resource_url || node.id;
-
-  const connected = store.getConnectedNodes(node.id);
 
   const links = store.getExternalLinks(node.id);
   links.sort((a, b) => (b.identifier > a.identifier) ? 1 : -1);
@@ -116,7 +118,13 @@ const SelectionPreview = props => {
           {image &&
             <div 
               className="p6o-selection-header-image"
-              style={{ backgroundImage: `url("${image}")` }}>    
+              style={{ backgroundImage: `url("${image}")` }}>   
+
+              <button 
+                className="p6o-selection-header-image-btn-full"
+                onClick={() => setShowFullscreenImage(true) }>
+                <BsArrowsFullscreen />
+              </button>
             </div> 
           }
 
@@ -170,6 +178,10 @@ const SelectionPreview = props => {
           </footer>
         </div>
       </div>
+
+      {showFullscreenImage && 
+        <FullscreenImage src={image} onClose={() => setShowFullscreenImage(false)} />
+      }
     </Popup>
   )
 
