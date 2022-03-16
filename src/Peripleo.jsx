@@ -9,6 +9,18 @@ import SearchResults from './SearchResults';
 import HUD from './hud/HUD';
 import Map from './map/Map';
 
+const goFullScreen = () => {
+  const element = document.documentElement;
+
+  if (element.requestFullScreen) {
+    element.requestFullScreen();
+  } else if (element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if (element.webkitRequestFullScreen) {
+    element.webkitRequestFullScreen();
+  }
+}
+
 const Peripleo = props => {
 
   const el = useRef();
@@ -55,8 +67,10 @@ const Peripleo = props => {
       <Map 
         ref={el}
         config={props.config} 
+        isIFrame={props.isIFrame}
         searchResults={searchResults}
         currentFacet={currentFacet}
+        onGoFullscreen={goFullScreen}
         onLoad={props.onMapLoaded}
         onSelect={onSelect}>
         

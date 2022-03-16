@@ -4,8 +4,6 @@ import SearchResults from '../SearchResults';
 
 const { hash } = window.location;
 
-console.log(hash && hash.split('/'));
-
 const initialViewstate = (hash.match(/\//g) || []).length < 3 ?
   {} : {
     zoom: parseFloat(hash.split('/')[1]),

@@ -138,8 +138,10 @@ const Map = React.forwardRef((props, ref) => {
         onSelect={setSelectedMode} />
 
       <Zoom 
+        fullscreenButton={props.isIFrame}
         onZoomIn={onZoom(1)}
-        onZoomOut={onZoom(-1)} />
+        onZoomOut={onZoom(-1)} 
+        onGoFullscreen={props.onGoFullscreen} />
 
       {props.children}
 
