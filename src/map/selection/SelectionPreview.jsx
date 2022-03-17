@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Popup } from 'react-map-gl';
 import { HiExternalLink } from 'react-icons/hi';
-import { BiHourglass } from 'react-icons/bi';
+import { BiHourglass, BiNetworkChart } from 'react-icons/bi';
 import { BsArrowsFullscreen } from 'react-icons/bs';
 import { SiWikidata } from 'react-icons/si';
 import { VscGlobe } from 'react-icons/vsc';
@@ -43,8 +44,6 @@ const getTypes = node => {
   else
     return [];
 }
-
-const isString = val => typeof val === 'string' || val instanceof String;
 
 const placeholderIcon = host => {
   const initial = host.startsWith('www.') ?
@@ -101,6 +100,8 @@ const SelectionPreview = props => {
 
   console.log(props);
 
+  const [ sliderOpen, setSliderOpen ] = useState(false);
+
   const [ showFullscreenImage, setShowFullscreenImage ] = useState(false);
 
   const { store } = useContext(StoreContext);
@@ -119,6 +120,8 @@ const SelectionPreview = props => {
   const url = node.properties?.url || node.properties?.resource_url || node.id;
 
   const links = formatLinks(store.getExternalLinks(node.id), config.link_icons);
+
+  const connected = store.getConnectedNodes(node.id);
 
   // Temporary hack!
   const color = SIGNATURE_COLOR[3]; 
@@ -177,6 +180,12 @@ const SelectionPreview = props => {
                   </ul>
                 </div>
               }
+
+              {connected.length > 0 && 
+                <div className="p6o-selection-connected-records">
+                  <BiNetworkChart /> {connected.length} Related
+                </div>
+              }
             </div>
           </main>
 
@@ -199,6 +208,20 @@ const SelectionPreview = props => {
           </footer>
         </div>
       </div>
+
+      <AnimatePresence>
+        {sliderOpen && 
+          <motion.div
+            onClick={() => setSliderOpen(false)}
+            className="p6o-selection-related"
+            initial={{ width: 0, left: 440 }}
+            animate={{ width: 440, left: 0 }}
+            transition={{ duration: 0.15 }}
+            exit={{ width: 0, left: 440 }}>
+            
+          </motion.div>
+        }
+      </AnimatePresence>
 
       {showFullscreenImage && 
         <FullscreenImage src={image} onClose={() => setShowFullscreenImage(false)} />

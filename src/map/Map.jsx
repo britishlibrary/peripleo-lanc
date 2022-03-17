@@ -8,9 +8,9 @@ import { mapState } from '../state';
 import LayersCategorized from './LayersCategorized';
 import LayersUncategorized from './LayersUncategorized';
 
-import Zoom from './components/Zoom';
-import Hover from './components/Hover';
-import SelectionPreview from './components/SelectionPreview';
+import Zoom from './controls/Zoom';
+import HoverBubble from './HoverBubble';
+import SelectionPreview from './selection/SelectionPreview';
 
 import { geojsonLineStyle } from './styles/backgroundLayers';
 
@@ -145,7 +145,7 @@ const Map = React.forwardRef((props, ref) => {
 
       {props.children}
 
-      {hover && <Hover {...hover} />}
+      {hover && <HoverBubble {...hover} />}
     </div>
   )
 

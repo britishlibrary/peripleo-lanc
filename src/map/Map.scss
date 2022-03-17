@@ -263,6 +263,11 @@
           }
 
         }
+
+        .p6o-selection-connected-records {
+          padding: 20px 20px 0 20px;
+          border-top: 1px solid #e9e9e9;
+        }
         
       }
       
@@ -332,6 +337,15 @@
 
     }
 
+  }
+
+  .p6o-selection-related {
+    position:absolute;
+    top:0;
+    right:0;
+    left:440px;
+    height:100%;
+    background-color:red;
   }
 
 }
