@@ -189,7 +189,7 @@ const SelectionPreview = props => {
             </div>
           </main>
 
-          <footer>
+          <footer onClick={() => setSliderOpen(!sliderOpen)}>
             <div className="p6o-selection-view-source">
               <a 
                 href={url} 
