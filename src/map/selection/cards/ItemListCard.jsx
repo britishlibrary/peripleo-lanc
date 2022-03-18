@@ -2,6 +2,7 @@ import React from 'react';
 import { IoArrowBackOutline, IoCloseSharp } from 'react-icons/io5';
 import { SiWikidata } from 'react-icons/si';
 import { VscGlobe } from 'react-icons/vsc';
+import { BiRightArrowAlt } from 'react-icons/bi';
 
 import { SIGNATURE_COLOR } from '../../../Colors';
 
@@ -25,8 +26,16 @@ const placeholderIcon = host => {
 
 const InternalLink = props => {
 
+  const { node } = props;
+
   return (
-    <span>Internal</span>
+    <div onClick={() => props.onSelect(node)}>
+      <div>
+        <h3>{node.title}</h3>
+        <h4>{node.dataset}</h4>
+      </div>
+      <BiRightArrowAlt />
+    </div>
   )
 
 }
@@ -77,11 +86,19 @@ const ItemListCard = props => {
         </button>
       </header>
       <ul>
-      {props.data.map(selection =>
-        <li key={selection.node.identifier}>
-          {selection.node.properties ?
-            <InternalLink {...selection } /> : <ExternalLink {...selection } />
-          }
+      {props.data.map(selection => selection.node.properties ?
+        <li 
+          key={selection.node.identifier}
+          className="p6o-link-internal">
+            <InternalLink 
+              {...selection } 
+              onSelect={node => props.onGoTo(node)} /> 
+        </li> :
+
+        <li
+          key={selection.node.identifier}
+          className="p6o-link-external">
+          <ExternalLink  {...selection } />
         </li>
       )}
       </ul>

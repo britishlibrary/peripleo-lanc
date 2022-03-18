@@ -17,10 +17,11 @@ const SelectionPreview = props => {
     setCards([ props ]);
   }, [ props.feature ]);
 
-  const onGoTo = connected => {
-    const data = connected.map(node => ({...props, node }));
+  const onGoTo = nodeOrNodes => {
+    const arr = Array.isArray(nodeOrNodes) ? nodeOrNodes : [ nodeOrNodes ];
+    const data = arr.map(node => ({...props, node }));
 
-    if (connected.length === 1) {
+    if (arr.length === 1) {
       // Next card: node
       setCards([ ...cards, data[0] ]);
     } else {

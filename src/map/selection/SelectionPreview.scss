@@ -77,7 +77,30 @@
   li {
     padding:15px;
     border-top:1px solid #e9e9e9;
+  }
 
+  li.p6o-link-internal {
+
+    h3, h4 {
+      margin:0;
+      padding:0;
+    }
+
+    svg {
+      font-size:27px;
+      cursor:pointer;
+    }
+
+  }
+
+  li.p6o-link-internal > div {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  li.p6o-link-external {
+    
     a {
       text-decoration:none;
       color:#626262;
