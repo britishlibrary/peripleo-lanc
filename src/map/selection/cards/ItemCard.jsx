@@ -68,7 +68,7 @@ const ItemCard = props => {
 
         <main>
           <div className="p6o-selection-main-fixed">
-            <h1 onClick={props.onGoBack}>{node.title}</h1>
+            <h1>{node.title}</h1>
             {when && 
               <h2>
                 <BiHourglass /> {when}
