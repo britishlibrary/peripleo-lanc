@@ -248,9 +248,18 @@
 
       svg {
         font-size:22px;
-        vertical-align:text-bottom;
+        vertical-align:bottom;
       }
 
+    }
+
+    .p6o-selection-related-records.disabled {
+      color:#9f9f9f;
+      font-size:15px;
+
+      span:hover {
+        text-decoration:none;
+      }
     }
 
   }

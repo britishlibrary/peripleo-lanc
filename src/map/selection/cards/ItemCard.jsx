@@ -90,13 +90,18 @@ const ItemCard = props => {
         </main>
 
         <footer>
-          {connected.length > 0 && 
+          {connected.length > 0 ?
             <div
               onClick={goTo} 
               className="p6o-selection-related-records">
               <button>
                 <BiNetworkChart /> <span>{connected.length} Related Records</span>
               </button>
+            </div> :
+
+            <div
+              className="p6o-selection-related-records disabled">
+              <BiNetworkChart /> <span>No Related Records</span>
             </div>
           }
         </footer>

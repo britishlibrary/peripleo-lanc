@@ -11,23 +11,27 @@ const CardStack = props => {
 
   const [ duration, setDuration ] = useState(ANIMATION_DURATION);
 
-  useEffect(() => {
-    // Get index of current card in 'cards' array
-    const currentIdx = props.cards.indexOf(current);
+  useEffect(() => {     
+    if (props.reset) {
+      setCurrent(props.cards[props.cards.length - 1]);
+    } else {
+      // Get index of current card in 'cards' array
+      const currentIdx = props.cards.indexOf(current);
 
-    if (currentIdx == -1) {
-      // Card was removed - set 'previous' to top-most...
-      setPrevious(props.cards[props.cards.length - 1]);
+      if (currentIdx == -1) {
+        // Card was removed - set 'previous' to top-most...
+        setPrevious(props.cards[props.cards.length - 1]);
 
-      // ..and current to null
-      setCurrent(null);
+        // ..and current to null
+        setCurrent(null);
 
-      // Set to null for the following swap previous -> current
-      setDuration(0);
-    } else if (props.cards.length > currentIdx + 1) {
-      // Card was added at the end - set as next
-      // setPrevious(null);
-      setNext(props.cards[props.cards.length - 1]);
+        // Set to null for the following swap previous -> current
+        setDuration(0);
+      } else if (props.cards.length > currentIdx + 1) {
+        // Card was added at the end - set as next
+        // setPrevious(null);
+        setNext(props.cards[props.cards.length - 1]);
+      }
     }
   }, [ props.cards ]);
 

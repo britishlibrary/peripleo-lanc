@@ -9,15 +9,20 @@ const SelectionPreview = props => {
 
   const [ cards, setCards ] = useState([ props ]); 
 
+  const [ reset, setReset ] = useState(props.feature) 
+
   const { node, feature } = props;
 
   const { coordinates } = (node.geometry || feature.geometry);
 
   useEffect(() => {
     setCards([ props ]);
+    setReset(true);
   }, [ props.feature ]);
 
   const onGoTo = nodeOrNodes => {
+    setReset(false);
+
     const arr = Array.isArray(nodeOrNodes) ? nodeOrNodes : [ nodeOrNodes ];
     const data = arr.map(node => ({...props, node }));
 
@@ -44,20 +49,22 @@ const SelectionPreview = props => {
       closeOnClick={false}>
       
       <CardStack 
+        reset={reset}
         cards={cards} 
         render={data => Array.isArray(data) ?
-          <ItemListCard 
-            data={data} 
-            onClose={props.onClose} 
-            onGoTo={onGoTo} 
-            onGoBack={onGoBack} /> :
 
-          <ItemCard 
-            {...data}
-            backButton={cards.length > 1}
-            onClose={props.onClose}
-            onGoTo={onGoTo} 
-            onGoBack={onGoBack} /> 
+        <ItemListCard 
+          data={data} 
+          onClose={props.onClose} 
+          onGoTo={onGoTo} 
+          onGoBack={onGoBack} /> :
+
+        <ItemCard 
+          {...data}
+          backButton={cards.length > 1}
+          onClose={props.onClose}
+          onGoTo={onGoTo} 
+          onGoBack={onGoBack} /> 
         }
       />
     </Popup>
