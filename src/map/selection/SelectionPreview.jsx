@@ -3,6 +3,7 @@ import { Popup } from 'react-map-gl';
 
 import CardStack from './cards/CardStack';
 import ItemCard from './cards/ItemCard';
+import ItemListCard from './cards/ItemListCard';
 
 const SelectionPreview = props => {
 
@@ -16,8 +17,17 @@ const SelectionPreview = props => {
     setCards([ props ]);
   }, [ props.feature ]);
 
-  const onGoTo = node =>
-    setCards([ ...cards, { ...props, node }]);
+  const onGoTo = connected => {
+    const data = connected.map(node => ({...props, node }));
+
+    if (connected.length === 1) {
+      // Next card: node
+      setCards([ ...cards, data[0] ]);
+    } else {
+      // Next card: list
+      setCards([ ...cards, data ]);
+    }
+  }
 
   const onGoBack = () => {
     if (cards.length > 1)
@@ -34,9 +44,15 @@ const SelectionPreview = props => {
       
       <CardStack 
         cards={cards} 
-        render={props => 
+        render={data => Array.isArray(data) ?
+          <ItemListCard 
+            data={data} 
+            onClose={props.onClose} 
+            onGoTo={onGoTo} 
+            onGoBack={onGoBack} /> :
+
           <ItemCard 
-            {...props} 
+            {...data}
             backButton={cards.length > 1}
             onClose={props.onClose}
             onGoTo={onGoTo} 

@@ -28,14 +28,11 @@ const ItemCard = props => {
     ...store.getExternalLinks(node.id)
   ];
 
+  const goTo = () =>
+    props.onGoTo(connected);
+
   // Temporary hack!
   const color = SIGNATURE_COLOR[3]; 
-
-  // Hack for testing!
-  const toNext = () => {
-    if (connected.length > 0)
-      props.onGoTo(connected[0]);
-  }
 
   return (
     <div className="p6o-selection-card p6o-selection-itemcard">
@@ -95,7 +92,7 @@ const ItemCard = props => {
         <footer>
           {connected.length > 0 && 
             <div
-              onClick={toNext} 
+              onClick={goTo} 
               className="p6o-selection-related-records">
               <button>
                 <BiNetworkChart /> <span>{connected.length} Related Records</span>
