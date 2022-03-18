@@ -91,6 +91,9 @@ const Map = React.forwardRef((props, ref) => {
     const z = mapRef.current.getZoom();
     map.easeTo({ zoom: z + inc });
   }
+
+  const onClosePopup = () =>
+    setSelection(null);
   
   return (  
     <div className="p6o-map-container" ref={ref}>
@@ -128,7 +131,8 @@ const Map = React.forwardRef((props, ref) => {
         {selection && 
           <SelectionPreview 
             {...selection}
-            config={props.config} />
+            config={props.config} 
+            onClose={onClosePopup} />
         }
       </ReactMapGL>
 

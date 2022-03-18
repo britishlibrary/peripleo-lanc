@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const ANIMATION_DURATION = 0.25;
+const ANIMATION_DURATION = 0.2;
 
 const CardStack = props => {
 
@@ -67,8 +67,13 @@ const CardStack = props => {
         {!previous && 
           <motion.div
             className="card current"
-            initial={{ width: 440, left: 0 }}
-            exit={{ width: 0, left: 440 }}
+            initial={{ 
+              left: 0 
+            }}
+            exit={{ 
+              opacity: 0,
+              left: 440 
+            }}
             transition={{ duration }}
             onAnimationComplete={onExitComplete}>
             {props.render(current)}
@@ -80,8 +85,12 @@ const CardStack = props => {
         {next && 
           <motion.div 
             className="card next"
-            initial={{ width: 0, left: 440 }}
-            animate={{ width: 440, left: 0 }}
+            initial={{ 
+              left: 440 
+            }}
+            animate={{ 
+              left: 0 
+            }}
             transition={{ duration: ANIMATION_DURATION }}
             onAnimationComplete={onEntryComplete}>
             {props.render(next)}

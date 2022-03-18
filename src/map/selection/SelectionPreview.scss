@@ -1,0 +1,160 @@
+.cardstack {
+  position:relative;
+  width:440px;
+  overflow:hidden;
+  @include rounded-corners(3px);
+  @include box-shadow(0, 0, 12px, 0.45);
+
+  .card {
+    width:440px;
+  }
+
+  .card.next {
+    position:absolute;
+    top:0;
+    left:0;
+    max-height:800px;
+    overflow:hidden;
+    z-index:3;
+  }
+
+  .card.current {
+    position:relative;  
+    z-index:2;
+  }
+
+  .card.previous {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+  }
+
+}
+
+.cardstack .card .p6o-selection-itemcard {
+  @include rounded-corners(3px);
+
+  header {
+    border-radius:3px 3px 0 0;
+    padding:5px 8px;
+    font-size:20px;
+    display:flex;
+    align-items:center;
+    @include rounded-corners-top(3px);
+
+    button {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:22px;
+      color:#fff;
+    }
+
+  }
+
+  .p6o-selection-content {
+    background-color:#fff;
+    @include rounded-corners-bottom(3px); 
+  }
+  
+  .p6o-selection-header-image {
+    width:100%;
+    height:140px;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+
+    .p6o-selection-header-image-btn-full {
+      position:absolute;
+      top:6px;
+      right:6px;
+      width:24px;
+      height:24px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:16px;
+      color:#000;
+      background-color:rgba(255,255,255,0.8);
+      @include rounded-corners(2px);
+    }
+
+  }
+
+  main {
+    border-top:1px solid #e9e9e9;
+    padding-bottom:20px;
+
+    .p6o-selection-main-fixed {
+      padding:10px 20px 0 20px;
+      margin-bottom:10px;
+    }
+
+    h1 {
+      padding-top:10px;
+      font-size:16px;
+    }
+
+    ul.p6o-selection-types {
+      list-style-type:none;
+      margin:0;
+      padding:8px 0 4px 0;
+
+      li {
+        display:inline-block;
+        padding:2px 8px;
+        color:#fff;
+        background-color:#858585;
+        border-radius:3px;
+        text-transform:capitalize;
+        font-weight:bold;
+        font-size:12px;
+        margin:0 3px 3px 0;
+      }
+
+    }
+
+    ul.p6o-selection-types:empty {
+      display:none;
+    }
+
+    .p6o-selection-main-flex {
+      max-height:160px;
+      overflow-y:auto;     
+    } 
+
+    .p6o-selection-description {
+      padding:0 20px;
+      font-size:13px;
+    }
+
+  }
+
+  footer {
+    padding:15px 18px;
+    background-color:#f7f7f7;
+    border-top:1px solid #e9e9e9;
+    @include rounded-corners-bottom(3px); 
+
+    .p6o-selection-related-records {
+
+      button {
+        color:#626262;
+        font-size:15px;
+      }
+
+      span:hover {
+        text-decoration:underline;
+      }
+
+      svg {
+        font-size:22px;
+        vertical-align:text-bottom;
+      }
+
+    }
+
+  }
+
+}
