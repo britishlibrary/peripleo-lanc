@@ -62,6 +62,12 @@ const Peripleo = props => {
     setSelection(selection);
   }
 
+  const onSearchEnter = () => {
+    const r = searchResults.clone();
+    r.fitMap = true;
+    setSearchResults(r);
+  }
+
   return (
     <>
       <Map 
@@ -79,7 +85,8 @@ const Peripleo = props => {
           searchQuery={searchQuery}
           searchResults={searchResults}
           currentFacet={currentFacet}
-          onChangeSearchQuery={setSearchQuery} />
+          onChangeSearchQuery={setSearchQuery} 
+          onSearchEnter={onSearchEnter} />
       </Map>
     </>
   )

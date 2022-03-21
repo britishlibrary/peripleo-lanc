@@ -44,6 +44,11 @@ const SearchPanel = props => {
   const onChange = evt =>
     props.onChange(evt.target.value);
 
+  const onKeyDown = evt => {
+    if (evt.code === 'Enter')
+      props.onEnter();
+  }
+
   const onToggleFacet = () => {
     if (facet)
       setFacet(null);
@@ -73,6 +78,7 @@ const SearchPanel = props => {
           tabIndex={2}
           aria-label="Enter search"
           value={props.query || ''} 
+          onKeyDown={onKeyDown}
           onChange={onChange} />
       </div>
 
