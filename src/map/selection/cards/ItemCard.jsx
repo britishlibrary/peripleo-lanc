@@ -115,9 +115,8 @@ const ItemCard = props => {
         <footer aria-live={true}>
           {connected.length > 0 ?
             <div
-              onClick={goTo} 
               className="p6o-selection-related-records">
-              <button>
+              <button onClick={goTo} >
                 <BiNetworkChart /> <span>{connected.length} Related Records</span>
               </button>
             </div> :

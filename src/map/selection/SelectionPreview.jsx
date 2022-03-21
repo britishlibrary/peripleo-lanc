@@ -27,8 +27,11 @@ const SelectionPreview = props => {
     const data = arr.map(node => ({...props, node }));
 
     if (arr.length === 1) {
-      // Next card: node
-      setCards([ ...cards, data[0] ]);
+      const link = data[0];
+      if (link.node.properties)
+        setCards([ ...cards, link ]); // Open internal link directly
+      else 
+        setCards([ ...cards, [ link ]]); // External link: show list
     } else {
       // Next card: list
       setCards([ ...cards, data ]);
