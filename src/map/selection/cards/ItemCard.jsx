@@ -35,7 +35,9 @@ const ItemCard = props => {
   const color = SIGNATURE_COLOR[3]; 
 
   return (
-    <div className="p6o-selection-card p6o-selection-itemcard">
+    <div 
+      className="p6o-selection-card p6o-selection-itemcard"
+      aria-live="polite">
       <header 
         style={{ 
           backgroundColor: color,
@@ -82,7 +84,9 @@ const ItemCard = props => {
 
           <div className="p6o-selection-main-flex">
             {node.properties.description &&
-              <p className="p6o-selection-description">
+              <p 
+                className="p6o-selection-description"
+                aria-level={3}>
                 {node.properties.description}
               </p>
             }

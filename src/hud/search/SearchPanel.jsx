@@ -70,6 +70,8 @@ const SearchPanel = props => {
 
       <div className="p6o-hud-searchinput">
         <input 
+          tabIndex={2}
+          aria-label="Enter search"
           value={props.query || ''} 
           onChange={onChange} />
       </div>
@@ -82,16 +84,25 @@ const SearchPanel = props => {
         exit="hidden">
         
         <div className="p6o-hud-searchtoolbar-wrapper">
-          <div className="p6o-hud-searchtoolbar-resultcount">
+          <h2 
+            className="p6o-hud-searchtoolbar-resultcount"
+            aria-live="polite">
             {props.results.total.toLocaleString('en')} Result{props.results.length !== 1 && 's'}
-          </div>
+          </h2>
           
-          <button className="p6o-hud-searchtoolbar-btn p6o-hud-searchtoolbar-btn-list">
+          <button 
+            className="p6o-hud-searchtoolbar-btn p6o-hud-searchtoolbar-btn-list"
+            tabIndex={2}
+            aria-label="List search results">
             <VscListUnordered />
           </button>
 
-          <button className="p6o-hud-searchtoolbar-btn p6o-hud-searchtoolbar-btn-dig">
-            <GiSpade onClick={onToggleFacet}/>
+          <button 
+            className="p6o-hud-searchtoolbar-btn p6o-hud-searchtoolbar-btn-dig"
+            tabIndex={3}
+            aria-label="Filter your search"
+            onClick={onToggleFacet}>
+            <GiSpade />
           </button>
         </div>
       </motion.div>
