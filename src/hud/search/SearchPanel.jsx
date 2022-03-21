@@ -71,14 +71,14 @@ const SearchPanel = props => {
     if (facet)
       setFacet(null);
     else
-      setFacet(props.results.facets[0]);
+      setFacet(searchResults.facets[0]);
   }
 
   const onChangeFacet = inc => () => {
-    const { length } = props.results.facets;
-    const currentIdx = props.results.facets.indexOf(props.facet);
+    const { length } = searchResults.facets;
+    const currentIdx = searchResults.facets.indexOf(facet);
     const updatedIdx = (currentIdx + inc + length) % length; 
-    setFacet(props.results.facets[updatedIdx]);
+    setFacet(searchResults.facets[updatedIdx]);
   }
 
   return (
