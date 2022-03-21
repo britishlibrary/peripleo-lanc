@@ -77,11 +77,15 @@ const ItemListCard = props => {
       <header 
         style={{ backgroundColor: color }}>
         
-        <button onClick={props.onGoBack}>
+        <button 
+          aria-label="Go Back"
+          onClick={props.onGoBack}>
           <IoArrowBackOutline />
         </button>
         
-        <button onClick={props.onClose}>
+        <button
+          aria-label="Close" 
+          onClick={props.onClose}>
           <IoCloseSharp />
         </button>
       </header>

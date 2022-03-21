@@ -16,7 +16,7 @@ export const getPreviewImage = node => {
 export const getTypes = node => {
   if (node.types?.length > 0)
     return node.types.map(t => t.label);
-  else if (node.properties.type)
+  else if (node.properties?.type)
     return [ node.properties.type ];
   else if (node.types?.length > 0)
     return node.types.map(t => t.label);

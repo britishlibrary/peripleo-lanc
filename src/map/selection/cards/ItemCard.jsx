@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { BiHourglass, BiNetworkChart } from 'react-icons/bi';
 import { IoArrowBackOutline, IoCloseSharp } from 'react-icons/io5';
 import { CgArrowsExpandRight } from 'react-icons/cg';
@@ -9,8 +9,11 @@ import { StoreContext } from '../../../store';
 import { getPreviewImage, getTypes } from './Utils';
 
 import FullscreenImage from './FullscreenImage';
+import { selectedState } from '../../../state';
 
 const ItemCard = props => {
+
+  const el = useRef();
 
   const { store } = useContext(StoreContext);
 
@@ -28,6 +31,12 @@ const ItemCard = props => {
     ...store.getExternalLinks(node.id)
   ];
 
+  useEffect(() => {
+    if (el.current) {
+      el.current.querySelector('header button').blur();
+    }
+  }, [ el.current ]);
+
   const goTo = () =>
     props.onGoTo(connected);
 
@@ -36,25 +45,31 @@ const ItemCard = props => {
 
   return (
     <div 
-      className="p6o-selection-card p6o-selection-itemcard"
-      aria-live="polite">
+      ref={el}
+      className="p6o-selection-card p6o-selection-itemcard">
       <header 
+        aria-disabled
         style={{ 
           backgroundColor: color,
           justifyContent: props.backButton ? 'space-between' : 'flex-end'
         }}>
         
         {props.backButton && 
-          <button onClick={props.onGoBack}>
+          <button
+            aria-label="Go Back"
+            onClick={props.onGoBack}>
             <IoArrowBackOutline />
           </button>
         }
 
-        <button onClick={props.onClose}>
+        <button
+          aria-label="Close"
+          onClick={props.onClose}>
           <IoCloseSharp />
         </button>
       </header>
-      <div className="p6o-selection-content">
+      <div 
+        className="p6o-selection-content">
         {image &&
           <div 
             className="p6o-selection-header-image"
@@ -68,8 +83,12 @@ const ItemCard = props => {
           </div> 
         }
 
-        <main>
-          <div className="p6o-selection-main-fixed">
+        <main
+          role="region" 
+          aria-live="polite">
+          
+          <div
+            className="p6o-selection-main-fixed">
             <h1>{node.title}</h1>
             {when && 
               <h2>
@@ -93,7 +112,7 @@ const ItemCard = props => {
           </div>
         </main>
 
-        <footer>
+        <footer aria-live={true}>
           {connected.length > 0 ?
             <div
               onClick={goTo} 

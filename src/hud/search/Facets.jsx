@@ -67,8 +67,10 @@ const Facets = props => {
             <HiOutlineChevronLeft />
           </button>
           
-          <h3 aria-live="polite">
-            <span class="screenreader-only">Current filter category </span>{props.facet}
+          <h3 
+            aria-live="polite"
+            aria-atomic={true}>
+            {props.facet}
           </h3>
           
           <button

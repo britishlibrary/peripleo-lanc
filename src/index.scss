@@ -18,7 +18,7 @@ h1, h2 {
 
 button {
   outline:none;
-  border:none;
+  border:1px solid transparent;
   background-color:transparent;
   margin:0;
   padding:0;
@@ -26,7 +26,8 @@ button {
 }
 
 button:focus {
-  outline:solid;
+  outline:none;
+  border:1px solid rgba(0,0,0,0.5);
 }
 
 .screenreader-only {
