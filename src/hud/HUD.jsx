@@ -31,10 +31,6 @@ const HUD = props => {
         {isHudOpen &&
           <SearchPanel 
             key="search-panel"
-            query={props.searchQuery}
-            results={props.searchResults}
-            facet={props.currentFacet}
-            onChange={props.onChangeSearchQuery} 
             onEnter={props.onSearchEnter} />
         }
       </AnimatePresence>

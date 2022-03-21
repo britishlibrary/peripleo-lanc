@@ -17,11 +17,6 @@ const initialParams = (hash.match(/\//g) || []).length !== 4 ?
     .split('&')
     .map(t => t.split('=')));
 
-export const searchQueryState = atom({
-  key: 'searchQuery',
-  default: ''
-});
-
 export const categoryFacetState = atom({
   key: 'categoryFacet',
   default: initialParams.facet

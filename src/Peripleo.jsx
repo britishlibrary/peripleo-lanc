@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import { useDebounce } from 'use-debounce';
-import { useRecoilValue } from 'recoil';
+import React, { useContext, useEffect, useRef } from 'react';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
 import { StoreContext } from './store';
-import { categoryFacetState } from './state';
+import { categoryFacetState, searchResultState } from './state';
 import SearchResults from './SearchResults';
 
 import HUD from './hud/HUD';
@@ -27,10 +26,7 @@ const Peripleo = props => {
 
   const { store } = useContext(StoreContext);
 
-  const [ searchQuery, setSearchQuery ] = useState();
-  const [ debouncedQuery ] = useDebounce(searchQuery, 250);
-
-  const [ searchResults, setSearchResults ] = useState(new SearchResults());
+  const [ searchResults, setSearchResults ] = useRecoilState(searchResultState);
 
   const currentFacet = useRecoilValue(categoryFacetState);
 
@@ -47,14 +43,6 @@ const Peripleo = props => {
   useEffect(() => {
     el.current.classList.remove('loading');
   }, [props.loaded]);
-
-  useEffect(() => {
-    const results = debouncedQuery ?
-      store.searchMappable(debouncedQuery) :
-      store.getAllLocatedNodes();
-
-    setSearchResults(new SearchResults(results));
-  }, [debouncedQuery]);
 
   const onSelect = selection => {
     // TODO this is currently a single node ONLY
@@ -82,10 +70,6 @@ const Peripleo = props => {
         
         <HUD 
           config={props.config}
-          searchQuery={searchQuery}
-          searchResults={searchResults}
-          currentFacet={currentFacet}
-          onChangeSearchQuery={setSearchQuery} 
           onSearchEnter={onSearchEnter} />
       </Map>
     </>

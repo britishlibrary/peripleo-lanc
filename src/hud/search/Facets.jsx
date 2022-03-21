@@ -90,7 +90,8 @@ const Facets = props => {
           {displayed.map(([label, results], idx) => 
             <motion.li 
               key={label + idx}
-              variants={childAnimation}>
+              variants={childAnimation}
+              onClick={() => props.onToggleFilter(label)}>
               <div className="p6o-facet-value-wrapper">
                 <span 
                   className="p6o-facet-value-count"
