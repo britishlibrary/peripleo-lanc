@@ -60,13 +60,23 @@ const Facets = props => {
           animate="visible"
           exit="hidden">
 
-          <button onClick={props.onPreviousFacet}>
+          <button 
+            tabIndex={4}
+            aria-label="Previous filter category"
+            onClick={props.onPreviousFacet}>
             <HiOutlineChevronLeft />
           </button>
           
-          <h3>{props.facet}</h3>
+          <h3 
+            aria-live="polite"
+            aria-atomic={true}>
+            {props.facet}
+          </h3>
           
-          <button onClick={props.onNextFacet}>
+          <button
+            tabIndex={5}
+            aria-label="Next filter category" 
+            onClick={props.onNextFacet}>
             <HiOutlineChevronRight />
           </button>
         </motion.div>

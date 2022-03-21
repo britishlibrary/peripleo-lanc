@@ -18,11 +18,27 @@ h1, h2 {
 
 button {
   outline:none;
-  border:none;
+  border:1px solid transparent;
   background-color:transparent;
   margin:0;
   padding:0;
   cursor:pointer;
+}
+
+button:focus {
+  outline:none;
+  border:1px solid rgba(0,0,0,0.5);
+}
+
+.screenreader-only {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  clip: rect(1px 1px 1px 1px); // IE 6 and 7
+  clip: rect(1px,1px,1px,1px);
+  clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  -webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  overflow: hidden !important;
 }
 
 $bl-red:#c61327;

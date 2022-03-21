@@ -35,8 +35,13 @@ const Map = React.forwardRef((props, ref) => {
 
   const [ selectedMode, setSelectedMode ] = useState('POINTS');
 
-  useEffect(() => 
-    setSelection(null), [ props.searchResults ]);
+  useEffect(() => {
+    setSelection(null);
+
+    const fitMap = props.searchResults?.fitMap;
+    if (fitMap && mapRef.current)
+      mapRef.current.fitBounds(props.searchResults.bounds(), { padding: 40 });
+  }, [ props.searchResults ]);
 
   useEffect(() => {
     // Map container gets hover element, 
@@ -78,7 +83,6 @@ const Map = React.forwardRef((props, ref) => {
   const onClick = () => {
     if (hover) {
       const { node, feature } = hover;
-      // history.pushState(node, node.title, `#/${encodeURIComponent(node.id)}`);
       setHover(null);
       setSelection({ node, feature });
     } else {

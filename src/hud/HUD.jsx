@@ -19,11 +19,13 @@ const HUD = props => {
 
   return (
     <div className="p6o-hud">
-      <div 
+      <button 
         className="p6o-magic-button p6o-hud-button"
+        tabIndex={1}
+        aria-label="Search"
         onClick={onToggleHUD}>
         <BiSearchAlt2 />
-      </div>
+      </button>
 
       <AnimatePresence>
         {isHudOpen &&
@@ -32,7 +34,8 @@ const HUD = props => {
             query={props.searchQuery}
             results={props.searchResults}
             facet={props.currentFacet}
-            onChange={props.onChangeSearchQuery} />
+            onChange={props.onChangeSearchQuery} 
+            onEnter={props.onSearchEnter} />
         }
       </AnimatePresence>
     </div>
