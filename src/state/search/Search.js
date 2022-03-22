@@ -21,9 +21,9 @@ export default class Search {
 
     this.fitMap = !!fitMap;
 
-    this.items = items;
+    this.items = items || [];
 
-    this.total = this.items?.length || 0;
+    this.total = this.items.length;
 
     // Experimental (and a bit hacked...)
     this.facets = [ 'dataset', 'has image', 'type'];

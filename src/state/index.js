@@ -29,7 +29,7 @@ export const mapState = atom({
 /** Current search (query, filter, facet) + search results **/
 export const searchState = atom({
   key: 'search',
-  default: null
+  default: new Search()
 });
 
 /** Current category facet **/
