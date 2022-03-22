@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import useSearch from './state/search/useSearch'
 
@@ -16,21 +16,11 @@ import Map from './map/Map';
   }
 })();
 
-const goFullScreen = () => {
-  const element = document.documentElement;
-
-  if (element.requestFullScreen) {
-    element.requestFullScreen();
-  } else if (element.mozRequestFullScreen) {
-    element.mozRequestFullScreen();
-  } else if (element.webkitRequestFullScreen) {
-    element.webkitRequestFullScreen();
-  }
-}
-
 const Peripleo = props => {
 
   const el = useRef();
+
+  const [ isFullscreen, setIsFullscreen ] = useState(false);
 
   const { refreshSearch } = useSearch();
 
@@ -47,13 +37,41 @@ const Peripleo = props => {
     el.current.classList.remove('loading');
   }, [props.loaded]);
 
+  const toggleFullScreen = () => {
+    if (isFullscreen) {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
+    } else {
+      const element = document.documentElement;
+      if (element.requestFullScreen) {
+        element.requestFullScreen();
+      } else if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+      } else if (element.webkitRequestFullScreen) {
+        element.webkitRequestFullScreen();
+      } else if (element.msRequestFullScreen) {
+        element.msRequestFullScreen();
+      }
+    }
+
+    setIsFullscreen(!isFullscreen);
+  }
+
   return (
     <>
       <Map 
         ref={el}
         config={props.config} 
         isIFrame={isIFrame}
-        onGoFullscreen={goFullScreen}
+        isFullscreen={isFullscreen}
+        onToggleFullscreen={toggleFullScreen}
         onLoad={props.onMapLoaded}>
         
         <HUD 

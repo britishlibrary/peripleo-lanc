@@ -1,5 +1,5 @@
 import React from 'react';
-import { AiOutlineFullscreen, AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
+import { AiOutlineFullscreen, AiOutlineFullscreenExit, AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
 
 const Zoom = props => {
 
@@ -9,8 +9,11 @@ const Zoom = props => {
           className="p6o-zoom-btn p6o-hud-button p6o-go-fullscreen"
           aria-label="Switch to fullscreen"
           tabIndex={30}
-          onClick={props.onGoFullscreen}>
-          <AiOutlineFullscreen />
+          onClick={props.onToggleFullscreen}>
+          {props.isFullscreen ? 
+            <AiOutlineFullscreenExit /> :
+            <AiOutlineFullscreen />
+          }
         </button>
       }
       

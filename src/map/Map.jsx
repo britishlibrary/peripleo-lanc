@@ -1,6 +1,6 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import ReactMapGL, { Source, Layer } from 'react-map-gl';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 
 import useSearch from '../state/search/useSearch';
 import { StoreContext } from '../store';
@@ -153,9 +153,10 @@ const Map = React.forwardRef((props, ref) => {
 
       <Zoom 
         fullscreenButton={props.isIFrame}
+        isFullscreen={props.isFullscreen}
         onZoomIn={onZoom(1)}
         onZoomOut={onZoom(-1)} 
-        onGoFullscreen={props.onGoFullscreen} />
+        onToggleFullscreen={props.onToggleFullscreen} />
 
       {props.children}
 
