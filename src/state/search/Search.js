@@ -12,34 +12,26 @@ const toSortedArray = obj => {
   return entries;
 }
   
-export default class SearchResults {
+export default class Search {
 
-  constructor(nodes) {
-    // Total result item count
-    this.total = nodes?.length || 0;
+  constructor(query, filters, fitMap, items) {
+    this.query = query;
 
-    // Result items
-    this.items = nodes || [];
+    this.filters = filters;
+
+    this.fitMap = !!fitMap;
+
+    this.items = items;
+
+    this.total = this.items?.length || 0;
 
     // Experimental (and a bit hacked...)
     this.facets = [ 'dataset', 'has image', 'type'];
     this._facetValues = {};
-
-    this.fitMap = false;
   }
 
-  clone = () => {
-    const r = new SearchResults();
-
-    r.total = this.total;
-    r.items = this.items;
-    r.facets = this.facets;
-    r._facetValues = this._facetValues;
-    
-    r.fitMap = this.fitMap;
-
-    return r;
-  }
+  clone = () =>
+    new Search(this.query, this.filters, this.fitMap, this.items);
 
   // Experimental
   getFacetValues = facet => {
@@ -71,13 +63,17 @@ export default class SearchResults {
   }
 
   bounds = () => {
-    const fc = { 
-      type: 'FeatureCollection', 
-      features: this.items 
-    };
+    if (this.items?.length > 0) {
+      const [ minX, minY, maxX, maxY ] = bbox({ 
+        type: 'FeatureCollection', 
+        features: this.items 
+      });
 
-    const [minX, minY, maxX, maxY] = bbox(fc);
-    return [[minX, minY], [maxX, maxY]];
+      // MapLibre format
+      return [ [minX, minY], [maxX, maxY] ];
+    } else {
+      return null;
+    }
   }
 
 }

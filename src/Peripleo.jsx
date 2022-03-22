@@ -1,12 +1,20 @@
-import React, { useContext, useEffect, useRef } from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import React, { useEffect, useRef } from 'react';
 
-import { StoreContext } from './store';
-import { categoryFacetState, searchResultState } from './state';
-import SearchResults from './SearchResults';
+import useSearch from './state/search/useSearch'
 
 import HUD from './hud/HUD';
 import Map from './map/Map';
+
+/**
+ * Test if Peripleo is running in an <iframe>
+ */
+ const isIFrame = (() => {
+  try {
+    return window.self !== window.top;
+  } catch {
+    return true;
+  }
+})();
 
 const goFullScreen = () => {
   const element = document.documentElement;
@@ -24,11 +32,7 @@ const Peripleo = props => {
 
   const el = useRef();
 
-  const { store } = useContext(StoreContext);
-
-  const [ searchResults, setSearchResults ] = useRecoilState(searchResultState);
-
-  const currentFacet = useRecoilValue(categoryFacetState);
+  const { setSearch } = useSearch();
 
   useEffect(() => {
     if (el.current)
@@ -36,41 +40,25 @@ const Peripleo = props => {
   }, [el.current]);
 
   useEffect(() => {
-    const results = new SearchResults(store.getAllLocatedNodes());
-    setSearchResults(results);
+    // Reset search after data available
+    setSearch();
   }, [props.dataAvailable]);
 
   useEffect(() => {
     el.current.classList.remove('loading');
   }, [props.loaded]);
 
-  const onSelect = selection => {
-    // TODO this is currently a single node ONLY
-    // but will (or may) be an array of nodes in the future
-    setSelection(selection);
-  }
-
-  const onSearchEnter = () => {
-    const r = searchResults.clone();
-    r.fitMap = true;
-    setSearchResults(r);
-  }
-
   return (
     <>
       <Map 
         ref={el}
         config={props.config} 
-        isIFrame={props.isIFrame}
-        searchResults={searchResults}
-        currentFacet={currentFacet}
+        isIFrame={isIFrame}
         onGoFullscreen={goFullScreen}
-        onLoad={props.onMapLoaded}
-        onSelect={onSelect}>
+        onLoad={props.onMapLoaded}>
         
         <HUD 
-          config={props.config}
-          onSearchEnter={onSearchEnter} />
+          config={props.config} />
       </Map>
     </>
   )

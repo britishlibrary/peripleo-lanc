@@ -30,8 +30,7 @@ const HUD = props => {
       <AnimatePresence>
         {isHudOpen &&
           <SearchPanel 
-            key="search-panel"
-            onEnter={props.onSearchEnter} />
+            key="search-panel" />
         }
       </AnimatePresence>
     </div>

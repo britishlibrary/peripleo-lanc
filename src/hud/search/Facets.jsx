@@ -44,7 +44,7 @@ const childAnimation = {
 
 const Facets = props => {
 
-  const values = props.results.getFacetValues(props.facet);
+  const values = props.search.getFacetValues(props.facet);
   const displayed = values.slice(0, 8);
   const remaining = values.length - displayed.length;
 

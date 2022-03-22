@@ -1,13 +1,12 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { VscListUnordered } from 'react-icons/vsc';
 import { RiFilter2Line } from 'react-icons/ri';
 import { useDebounce } from 'use-debounce';
 import { useRecoilState } from 'recoil';
 
-import SearchResults from '../../SearchResults';
-import { StoreContext } from '../../store';
-import { categoryFacetState, searchResultState } from '../../state';
+import useSearch from '../../state/search/useSearch';
+import { categoryFacetState } from '../../state';
 
 import Facets from './Facets';
 
@@ -37,21 +36,15 @@ const SearchPanel = props => {
 
   const el = useRef();
 
-  const { store } = useContext(StoreContext);
-
   const [ query, setQuery ] = useState('');
   const [ debouncedQuery ] = useDebounce(query, 250);
 
-  const [ searchResults, setSearchResults ] = useRecoilState(searchResultState)
+  const { search, setSearch, fitMap } = useSearch();
 
   const [ facet, setFacet ] = useRecoilState(categoryFacetState);
 
   useEffect(() => {
-    const results = debouncedQuery ?
-      store.searchMappable(debouncedQuery) :
-      store.getAllLocatedNodes();
-
-    setSearchResults(new SearchResults(results));
+    setSearch(debouncedQuery, search.filters);
   }, [debouncedQuery]);
 
   useEffect(() => {
@@ -62,23 +55,27 @@ const SearchPanel = props => {
   const onChange = evt =>
     setQuery(evt.target.value);
 
-  const onKeyDown = evt => {
+  const onKeyDown = evt => { 
     if (evt.code === 'Enter')
-      props.onEnter();
+      fitMap();
   }
 
-  const onToggleFacet = () => {
+  const onToggleFacetsList = () => {
     if (facet)
       setFacet(null);
     else
-      setFacet(searchResults.facets[0]);
+      setFacet(search.facets[0]);
   }
 
   const onChangeFacet = inc => () => {
-    const { length } = searchResults.facets;
-    const currentIdx = searchResults.facets.indexOf(facet);
+    const { length } = search.facets;
+    const currentIdx = search.facets.indexOf(facet);
     const updatedIdx = (currentIdx + inc + length) % length; 
-    setFacet(searchResults.facets[updatedIdx]);
+    setFacet(search.facets[updatedIdx]);
+  }
+
+  const onToggleFilter = filter => {
+    console.log('toggling filter', filter);
   }
 
   return (
@@ -111,7 +108,7 @@ const SearchPanel = props => {
           <h2 
             className="p6o-hud-searchtoolbar-resultcount"
             aria-live="polite">
-            {searchResults.total.toLocaleString('en')} Result{searchResults.length !== 1 && 's'}
+            {search.total.toLocaleString('en')} Result{search.total !== 1 && 's'}
           </h2>
           
           <button 
@@ -125,7 +122,7 @@ const SearchPanel = props => {
             className="p6o-hud-searchtoolbar-btn p6o-hud-searchtoolbar-btn-dig"
             tabIndex={3}
             aria-label="Filter your search"
-            onClick={onToggleFacet}>
+            onClick={onToggleFacetsList}>
             <RiFilter2Line />
           </button>
         </div>
@@ -134,11 +131,11 @@ const SearchPanel = props => {
       <AnimatePresence>
         {facet && 
           <Facets 
-            results={searchResults} 
+            search={search} 
             facet={facet} 
             onNextFacet={onChangeFacet(1)}
             onPreviousFacet={onChangeFacet(-1)}
-            onToggleFilter={props.onToggleFilter} /> 
+            onToggleFilter={onToggleFilter} /> 
         }
       </AnimatePresence>
     </motion.div>

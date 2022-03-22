@@ -1,9 +1,10 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import ReactMapGL, { Source, Layer } from 'react-map-gl';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
+import useSearch from '../state/search/useSearch';
 import { StoreContext } from '../store';
-import { mapState } from '../state';
+import { categoryFacetState, mapState } from '../state';
 
 import LayersCategorized from './LayersCategorized';
 import LayersUncategorized from './LayersUncategorized';
@@ -19,13 +20,17 @@ import VariantsRadioButton from '../usertesting/VariantsRadioButton';
 
 const Map = React.forwardRef((props, ref) => {
 
+  const { config } = props;
+
   const mapRef = useRef();
 
   const { store } = useContext(StoreContext);
 
-  const { config } = props;
+  const { search } = useSearch();
 
   const [ viewstate, setViewstate ] = useRecoilState(mapState);
+
+  const currentFacet = useRecoilValue(categoryFacetState);
 
   const [ hover, setHover ] = useState();
 
@@ -38,10 +43,13 @@ const Map = React.forwardRef((props, ref) => {
   useEffect(() => {
     setSelection(null);
 
-    const fitMap = props.searchResults?.fitMap;
-    if (fitMap && mapRef.current)
-      mapRef.current.fitBounds(props.searchResults.bounds(), { padding: 40 });
-  }, [ props.searchResults ]);
+    const fitMap = search?.fitMap;
+    if (fitMap && mapRef.current) {
+      const bounds = search.bounds();
+      if (bounds)
+        mapRef.current.fitBounds(bounds, { padding: 40 });
+    }
+  }, [ search ]);
 
   useEffect(() => {
     // Map container gets hover element, 
@@ -119,17 +127,17 @@ const Map = React.forwardRef((props, ref) => {
           </Source>
         )}
 
-        {props.currentFacet ?
+        {currentFacet ?
           <LayersCategorized 
             selectedMode={selectedMode}
-            searchResults={props.searchResults} 
-            facet={props.currentFacet} /> 
+            searchResults={search} 
+            facet={currentFacet} /> 
           
           :
           
           <LayersUncategorized 
             selectedMode={selectedMode}
-            searchResults={props.searchResults} />
+            searchResults={search} />
         }
 
         {selection && 
