@@ -13,29 +13,38 @@ const toFeatureCollection = features =>
 
 const LayersCategorized = props => {
 
-  const [ flattened, setFlattened ] = useState();
+  const [ features, setFeatures ] = useState();
 
   useEffect(() => {
-    const layers = props.searchResults.getFacetValues(props.facet);
+    const { counts, items } = props.search.facetDistribution;
 
-    const flattened = layers.reduce((flat, [, items], idx) => [
-      ...flat,
-      ...items.map(feature => ({
+    // Just the facet value labels, in order of the legend
+    const currentFacets = counts.map(c => c[0]);
+
+    // Colorize the features according to their facet values
+    const colorized = items.map(feature => {
+      // Facet values assigned to this feature
+      const values = feature._facet?.values || [];
+      
+      const color = values.length === 1 ?
+        SIGNATURE_COLOR[currentFacets.indexOf(values[0])] : 'grey';
+
+      return {
         ...feature,
         properties: {
           ...feature.properties,
-          color: SIGNATURE_COLOR[idx]
+          color
         }
-      }))
-    ], []);
-    
-    setFlattened(flattened);
-  }, [ props.searchResults, props.facet ])
+      }
+    });
+
+    setFeatures(colorized);
+  }, [ props.search, props.facet ])
 
   return (
     <>
       {props.selectedMode === 'POINTS' &&
-        <Source type="geojson" data={toFeatureCollection(flattened)}>
+        <Source type="geojson" data={toFeatureCollection(features)}>
           <Layer 
             id="p6o-points"
             {...pointCategoryStyle()} />
@@ -46,7 +55,7 @@ const LayersCategorized = props => {
         <Source 
           type="geojson" 
           cluster={true}
-          data={toFeatureCollection(flattened)}>
+          data={toFeatureCollection(features)}>
 
           <Layer 
             {...clusterPointStyle()} />
@@ -62,7 +71,7 @@ const LayersCategorized = props => {
       }
 
       {props.selectedMode === 'HEATMAP' &&
-        <Source type="geojson" data={toFeatureCollection(flattened)}>
+        <Source type="geojson" data={toFeatureCollection(features)}>
           <Layer
             id="p6o-heatmap"
             {...heatmapCoverageStyle()} />
@@ -74,7 +83,7 @@ const LayersCategorized = props => {
       }
 
       {props.selectedMode === 'COLOURED_HEATMAP' &&
-        props.searchResults.getFacetValues(props.facet).slice(0, 8).map(([layer, features], idx) =>
+        props.search.getFacetValues(props.facet).slice(0, 8).map(([layer, features], idx) =>
           <Source key={layer} type="geojson" data={toFeatureCollection(features)}>
             <Layer
               id={`p6o-heatmap-${layer}`}

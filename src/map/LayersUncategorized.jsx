@@ -11,13 +11,10 @@ const toFeatureCollection = features =>
 
 const LayersUncategorized = props => {
 
-  // Default, so we can demo multi-color heatmap
-  const layers = props.searchResults.getFacetValues('dataset');
-
   return (
     <>
       {props.selectedMode === 'POINTS' &&
-        <Source type="geojson" data={toFeatureCollection(props.searchResults.items)}>
+        <Source type="geojson" data={toFeatureCollection(props.search.items)}>
           <Layer 
             id="p6o-points"
             {...pointStyle({ fill: 'red', radius: 5 })} />
@@ -28,7 +25,7 @@ const LayersUncategorized = props => {
         <Source 
           type="geojson" 
           cluster={true}
-          data={toFeatureCollection(props.searchResults.items)}>
+          data={toFeatureCollection(props.search.items)}>
 
           <Layer 
             {...clusterPointStyle()} />
@@ -44,7 +41,7 @@ const LayersUncategorized = props => {
       }
 
       {props.selectedMode === 'HEATMAP' &&
-        <Source type="geojson" data={toFeatureCollection(props.searchResults.items)}>
+        <Source type="geojson" data={toFeatureCollection(props.search.items)}>
           <Layer
             id="p6o-heatmap"
             {...heatmapCoverageStyle()} />
@@ -55,7 +52,7 @@ const LayersUncategorized = props => {
         </Source>
       }
 
-      {props.selectedMode === 'COLOURED_HEATMAP' &&
+      {/* props.selectedMode === 'COLOURED_HEATMAP' &&
         layers.map(([layer, features], idx) =>
           <Source key={layer} type="geojson" data={toFeatureCollection(features)}>
             <Layer
@@ -67,7 +64,7 @@ const LayersUncategorized = props => {
               {...colorHeatmapPoint(idx)} /> 
           </Source>
         )
-      }
+      */}
     </>
   )
 

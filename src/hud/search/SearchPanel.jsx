@@ -39,13 +39,18 @@ const SearchPanel = props => {
   const [ query, setQuery ] = useState('');
   const [ debouncedQuery ] = useDebounce(query, 250);
 
-  const { search, setSearch, fitMap } = useSearch();
-
-  const [ facet, setFacet ] = useRecoilState(categoryFacetState);
+  const { 
+    search, 
+    changeSearchQuery, 
+    fitMap, 
+    toggleFilter, 
+    setCategoryFacet,
+    availableFacets
+  } = useSearch();
 
   useEffect(() => {
-    setSearch(debouncedQuery, search.filters);
-  }, [debouncedQuery]);
+    changeSearchQuery(debouncedQuery);
+  }, [ debouncedQuery ]);
 
   useEffect(() => {
     if (el.current)
@@ -61,22 +66,21 @@ const SearchPanel = props => {
   }
 
   const onToggleFacetsList = () => {
-    if (facet)
-      setFacet(null);
+    if (search.facet)
+      setCategoryFacet(null);
     else
-      setFacet(search.facets[0]);
+      setCategoryFacet(availableFacets[0]);
   }
 
   const onChangeFacet = inc => () => {
-    const { length } = search.facets;
-    const currentIdx = search.facets.indexOf(facet);
+    const { length } = availableFacets;
+    const currentIdx = availableFacets.indexOf(search.facet);
     const updatedIdx = (currentIdx + inc + length) % length; 
-    setFacet(search.facets[updatedIdx]);
+    setCategoryFacet(availableFacets[updatedIdx]);
   }
 
-  const onToggleFilter = filter => {
-    console.log('toggling filter', filter);
-  }
+  const onToggleFilter = value =>
+    toggleFilter(search.facet, value);
 
   return (
     <motion.div 
@@ -129,10 +133,9 @@ const SearchPanel = props => {
       </motion.div>
 
       <AnimatePresence>
-        {facet && 
+        {search.facet && 
           <Facets 
             search={search} 
-            facet={facet} 
             onNextFacet={onChangeFacet(1)}
             onPreviousFacet={onChangeFacet(-1)}
             onToggleFilter={onToggleFilter} /> 

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { useDebounce } from 'use-debounce';
 
-import { categoryFacetState, mapState } from '.';
+import { searchState, mapState } from '.';
 
 const toURL = state => {
   const { longitude, latitude, zoom, facet } = state;
@@ -31,7 +31,7 @@ const URLState = props => {
 
   const map = useRecoilValue(mapState);
 
-  const facet = useRecoilValue(categoryFacetState)
+  const search = useRecoilValue(searchState)
 
   const [ mapDebounced ] = useDebounce(map, 500);
 
@@ -46,8 +46,8 @@ const URLState = props => {
   }, [ mapDebounced ]);
 
   useEffect(() => {
-    setState({...state, facet })
-  }, [ facet ]);
+    setState({...state, facet: search.facet })
+  }, [ search ]);
 
   useEffect(() => toURL(state), [ state ]);
 

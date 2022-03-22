@@ -4,7 +4,7 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 
 import useSearch from '../state/search/useSearch';
 import { StoreContext } from '../store';
-import { categoryFacetState, mapState } from '../state';
+import { mapState } from '../state';
 
 import LayersCategorized from './LayersCategorized';
 import LayersUncategorized from './LayersUncategorized';
@@ -29,8 +29,6 @@ const Map = React.forwardRef((props, ref) => {
   const { search } = useSearch();
 
   const [ viewstate, setViewstate ] = useRecoilState(mapState);
-
-  const currentFacet = useRecoilValue(categoryFacetState);
 
   const [ hover, setHover ] = useState();
 
@@ -127,17 +125,17 @@ const Map = React.forwardRef((props, ref) => {
           </Source>
         )}
 
-        {currentFacet ?
+        {search.facet ?
           <LayersCategorized 
             selectedMode={selectedMode}
-            searchResults={search} 
-            facet={currentFacet} /> 
+            search={search} 
+            facet={search.facet} /> 
           
           :
           
           <LayersUncategorized 
             selectedMode={selectedMode}
-            searchResults={search} />
+            search={search} />
         }
 
         {selection && 

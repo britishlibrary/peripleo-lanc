@@ -32,7 +32,7 @@ const Peripleo = props => {
 
   const el = useRef();
 
-  const { setSearch } = useSearch();
+  const { refreshSearch } = useSearch();
 
   useEffect(() => {
     if (el.current)
@@ -40,8 +40,7 @@ const Peripleo = props => {
   }, [el.current]);
 
   useEffect(() => {
-    // Reset search after data available
-    setSearch();
+    refreshSearch();
   }, [props.dataAvailable]);
 
   useEffect(() => {

@@ -29,13 +29,11 @@ export const mapState = atom({
 /** Current search (query, filter, facet) + search results **/
 export const searchState = atom({
   key: 'search',
-  default: new Search()
-});
-
-/** Current category facet **/
-export const categoryFacetState = atom({
-  key: 'categoryFacet',
-  default: initialParams.facet
+  default: new Search(
+    null, // query
+    null, // filters,
+    initialParams.facet
+  )
 });
 
 /**
