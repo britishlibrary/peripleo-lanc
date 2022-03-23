@@ -11,35 +11,67 @@ import { colorHeatmapCoverage, colorHeatmapPoint } from './styles/colorHeatmap';
 const toFeatureCollection = features => 
   ({ type: 'FeatureCollection', features: features || [] });
 
+const getLayers = facetDistribution => {
+  const { counts, items } = facetDistribution
+
+  const topValues = counts.slice(0, 8).map(t => t[0]);
+
+  // For every feature, we'll check the facet value, and assign it 
+  // to the first layer it matches. In other words: the feature will
+  // get the color of the most common facet value.
+  const layers = Object.fromEntries(topValues.map(label => [ label, [] ]));
+
+  items.forEach(item => {
+    const values = item._facet?.values || [];
+
+    const firstMatch = topValues.find(l => values.indexOf(l) > -1);
+    if (firstMatch) {
+      layers[firstMatch].push(item);
+    } else {
+      // TODO 'untyped'
+    }
+  });
+
+  const arr = Object.entries(layers);
+  arr.sort((a, b) => b[1].length - a[1].length);
+  return arr;
+}
+
 const LayersCategorized = props => {
 
   const [ features, setFeatures ] = useState();
 
+  const [ layers, setLayers ] = useState();
+
   useEffect(() => {
-    const { counts, items } = props.search.facetDistribution;
+    if (props.selectedMode === 'COLOURED_HEATMAP') {
+      setLayers(getLayers(props.search.facetDistribution));       
+    } else {
+      const { counts, items } = props.search.facetDistribution;
 
-    // Just the facet value labels, in order of the legend
-    const currentFacets = counts.map(c => c[0]);
+      // Just the facet value labels, in order of the legend
+      const currentFacets = counts.map(c => c[0]);
 
-    // Colorize the features according to their facet values
-    const colorized = items.map(feature => {
-      // Facet values assigned to this feature
-      const values = feature._facet?.values || [];
-      
-      const color = values.length === 1 ?
-        SIGNATURE_COLOR[currentFacets.indexOf(values[0])] : 'grey';
+      // Colorize the features according to their facet values
+      const colorized = items.map(feature => {
+        // Facet values assigned to this feature
+        const values = feature._facet?.values || [];
+        
+        const color = values.length === 1 ?
+          SIGNATURE_COLOR[currentFacets.indexOf(values[0])] : 'grey';
 
-      return {
-        ...feature,
-        properties: {
-          ...feature.properties,
-          color
+        return {
+          ...feature,
+          properties: {
+            ...feature.properties,
+            color
+          }
         }
-      }
-    });
+      });
 
-    setFeatures(colorized);
-  }, [ props.search, props.facet ])
+      setFeatures(colorized);
+    }
+  }, [ props.search, props.facet, props.selectedMode ])
 
   return (
     <>
@@ -83,7 +115,7 @@ const LayersCategorized = props => {
       }
 
       {props.selectedMode === 'COLOURED_HEATMAP' &&
-        props.search.getFacetValues(props.facet).slice(0, 8).map(([layer, features], idx) =>
+        layers?.map(([layer, features], idx) =>
           <Source key={layer} type="geojson" data={toFeatureCollection(features)}>
             <Layer
               id={`p6o-heatmap-${layer}`}

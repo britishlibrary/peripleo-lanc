@@ -65,19 +65,17 @@ const Peripleo = props => {
   }
 
   return (
-    <>
-      <Map 
-        ref={el}
-        config={props.config} 
-        isIFrame={isIFrame}
-        isFullscreen={isFullscreen}
-        onToggleFullscreen={toggleFullScreen}
-        onLoad={props.onMapLoaded}>
-        
-        <HUD 
-          config={props.config} />
-      </Map>
-    </>
+    <Map 
+      ref={el}
+      config={props.config} 
+      isIFrame={isIFrame}
+      isFullscreen={isFullscreen}
+      onToggleFullscreen={toggleFullScreen}
+      onLoad={props.onMapLoaded}>
+      
+      <HUD 
+        config={props.config} />
+    </Map>
   )
 
 }
