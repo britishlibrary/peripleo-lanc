@@ -41,7 +41,7 @@ const useSearch = () => {
    * Changes the search query, running a new search. Keeps filters and current facet.
    */
   const changeSearchQuery = query => 
-    executeSearch(query, search?.filters, search?.facet, search?.fitMap);
+    executeSearch(query, search?.filters, search?.facet, false);
 
   /**
    * Clears the search query, running a new search. Keeps filters

@@ -19,7 +19,7 @@ export default class Search {
   }
 
   clone = () =>
-    new Search(this.query, this.filters, this.facet, this.fitMap, this.items);
+    new Search(this.query, this.filters, this.facet, this.fitMap, this.items, this.facetDistribution);
 
   hasAnyFilters = () =>
     this.filters.length > 0;
