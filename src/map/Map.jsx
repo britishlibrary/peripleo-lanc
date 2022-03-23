@@ -125,11 +125,10 @@ const Map = React.forwardRef((props, ref) => {
           </Source>
         )}
 
-        {search.facet ?
+        {search.facetDistribution ?
           <LayersCategorized 
             selectedMode={selectedMode}
-            search={search} 
-            facet={search.facet} /> 
+            search={search} /> 
           
           :
           

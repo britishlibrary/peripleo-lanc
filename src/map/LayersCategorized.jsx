@@ -20,21 +20,25 @@ const getLayers = facetDistribution => {
   // to the first layer it matches. In other words: the feature will
   // get the color of the most common facet value.
   const layers = Object.fromEntries(topValues.map(label => [ label, [] ]));
+  const unassigned = [];
 
   items.forEach(item => {
     const values = item._facet?.values || [];
 
     const firstMatch = topValues.find(l => values.indexOf(l) > -1);
-    if (firstMatch) {
+    if (firstMatch)
       layers[firstMatch].push(item);
-    } else {
-      // TODO 'untyped'
-    }
+    else
+      unassigned.push(item);
   });
 
   const arr = Object.entries(layers);
   arr.sort((a, b) => b[1].length - a[1].length);
-  return arr;
+
+  return [
+    ...arr,
+    ['__unassigned', unassigned ]
+  ].slice().reverse(); // Largest layer at bottom
 }
 
 const LayersCategorized = props => {
@@ -115,15 +119,15 @@ const LayersCategorized = props => {
       }
 
       {props.selectedMode === 'COLOURED_HEATMAP' &&
-        layers?.map(([layer, features], idx) =>
+        layers?.map(([layer, features], idx) => 
           <Source key={layer} type="geojson" data={toFeatureCollection(features)}>
             <Layer
               id={`p6o-heatmap-${layer}`}
-              {...colorHeatmapCoverage(idx)} />
+              {...colorHeatmapCoverage(layers.length - idx - 1)} />
           
             <Layer
               id={`p6o-points-${layer}`}
-              {...colorHeatmapPoint(idx)} /> 
+              {...colorHeatmapPoint(layers.length - idx - 1)} /> 
           </Source>
         )
       }

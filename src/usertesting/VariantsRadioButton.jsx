@@ -1,14 +1,28 @@
 import React from 'react';
 
+import useSearch from '../state/search/useSearch';
+
 const VariantsRadioButton = props => {
 
   const toVal = label => label.toUpperCase().replaceAll(' ', '_');
+
+  const { 
+    setCategoryFacet,
+    availableFacets
+  } = useSearch();
+
+  const onSelect = label => () => {
+    if (label === 'COLOURED_HEATMAP')
+      setCategoryFacet(availableFacets[0]);
+
+    props.onSelect(label);
+  }
 
   const variant = label => (
     <div 
       key={label}
       className={props.selected === toVal(label) ? 'variant selected' : 'variant'}
-      onClick={() => props.onSelect(toVal(label))}>
+      onClick={onSelect(toVal(label))}>
       {label}
     </div>
   );
