@@ -3,10 +3,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { VscListUnordered } from 'react-icons/vsc';
 import { RiFilter2Line } from 'react-icons/ri';
 import { useDebounce } from 'use-debounce';
-import { useRecoilState } from 'recoil';
 
 import useSearch from '../../state/search/useSearch';
-import { categoryFacetState } from '../../state';
 
 import Facets from './Facets';
 
@@ -36,9 +34,6 @@ const SearchPanel = props => {
 
   const el = useRef();
 
-  const [ query, setQuery ] = useState('');
-  const [ debouncedQuery ] = useDebounce(query, 250);
-
   const { 
     search, 
     changeSearchQuery, 
@@ -47,6 +42,9 @@ const SearchPanel = props => {
     setCategoryFacet,
     availableFacets
   } = useSearch();
+
+  const [ query, setQuery ] = useState(search?.query || '');
+  const [ debouncedQuery ] = useDebounce(query, 250);
 
   useEffect(() => {
     changeSearchQuery(debouncedQuery);

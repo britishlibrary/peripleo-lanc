@@ -90,6 +90,7 @@ const useSearch = () => {
       updated.facetDistribution = computeFacetDistribution(search.items, facet);
     } else {
       updated.facet = null;
+      updated.facetDistribution = null;
     }
     
     setSearchState(updated);
