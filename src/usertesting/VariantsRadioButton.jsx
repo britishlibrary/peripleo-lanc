@@ -7,12 +7,14 @@ const VariantsRadioButton = props => {
   const toVal = label => label.toUpperCase().replaceAll(' ', '_');
 
   const { 
+    search,
     setCategoryFacet,
     availableFacets
   } = useSearch();
 
   const onSelect = label => () => {
-    if (label === 'COLOURED_HEATMAP')
+    // Set default facet, if there's none yet
+    if (label === 'COLOURED_HEATMAP' && !search.facet)
       setCategoryFacet(availableFacets[0]);
 
     props.onSelect(label);
