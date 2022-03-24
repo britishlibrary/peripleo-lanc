@@ -24,7 +24,7 @@ const toSortedArray = counts => {
   return entries;
 }
 
-const computeFacet = (items, facetName, fn) => {
+const computeFacet = (items, facetName, fn, postFilter) => {
   const counts = {};
 
   const facetedItems = items.map(item => {
@@ -51,17 +51,20 @@ const computeFacet = (items, facetName, fn) => {
   return {
     facet: facetName,
     counts: toSortedArray(counts),
-    items: facetedItems
+  
+    // If there is a post-filter, remove all items that don't satisfy 
+    // the filter condition (counts should remain unchanged though!)
+    items: postFilter ? facetedItems.filter(postFilter) : facetedItems
   };
 }
 
-const computeSimpleFieldFacet = (items, facet) =>
-  computeFacet(items, facet.name, item => item[facet.definition]);
+const computeSimpleFieldFacet = (items, facet, postFilter) =>
+  computeFacet(items, facet.name, item => item[facet.definition], postFilter);
 
-const computeCustomFnFacet = (items, facet) => 
-  computeFacet(items, facet.name, facet.definition);
+const computeCustomFnFacet = (items, facet, postFilter) => 
+  computeFacet(items, facet.name, facet.definition, postFilter);
 
-const computeNestedFieldFacet = (items, facet) => {
+const computeNestedFieldFacet = (items, facet, postFilter) => {
 
   const getValueRecursive = (obj, path) => {
     const [ nextSegment, ...pathRest ] = path;
@@ -76,15 +79,15 @@ const computeNestedFieldFacet = (items, facet) => {
     }
   };
 
-  return computeFacet(items, facet.name, item => getValueRecursive(item, facet.definition));
+  return computeFacet(items, facet.name, item => getValueRecursive(item, facet.definition), postFilter);
 }
 
-export const computeFacetDistribution = (items, facet) => {
+export const computeFacetDistribution = (items, facet, postFilter) => {
   const { definition } = facet;
   if (Array.isArray(definition))
-    return computeNestedFieldFacet(items, facet);
+    return computeNestedFieldFacet(items, facet, postFilter);
   else if (definition instanceof Function)
-    return computeCustomFnFacet(items, facet);
+    return computeCustomFnFacet(items, facet, postFilter);
   else 
-    return computeSimpleFieldFacet(items, facet);
+    return computeSimpleFieldFacet(items, facet, postFilter);
 }

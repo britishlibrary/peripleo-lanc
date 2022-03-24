@@ -10,6 +10,22 @@ import Filter from './Filter';
 
 import { DEFAULT_FACETS, computeFacetDistribution } from './Facets';
 
+/*
+const satisfiesFilter = (item, filters) => {
+
+  const filterFunctions = []; // TODO
+
+  for(const fn of filterFunctions) {
+    const v = fn(item);
+    const values = Array.isArray(v) ? v : [ v ];
+
+    if (values.includes())
+  }
+
+  return item;
+}
+*/
+
 const useSearch = () => {
 
   const { store } = useContext(StoreContext);
@@ -20,15 +36,34 @@ const useSearch = () => {
    * Executes a new search - warning costly operation!
    */
   const executeSearch = (query, filters, facet, fitMap) => {
-    // TODO handle filters
-    const items = query ?
+    const all = query ?
       store.searchMappable(query) :
       store.getAllLocatedNodes();
 
+    let items, postFilter;
+
+    if (filters?.length > 0) {
+      // All filters except on the current facet
+      const preFilters = filters.filter(f => f.facet !== facet)
+        .map(f => f.executable(DEFAULT_FACETS));
+
+      console.log('prefilters', preFilters);
+
+      // The current facet filter (if any)
+      postFilter = filters.find(f => f.facet === facet)?.executable(DEFAULT_FACETS);
+
+      console.log('postfilter', postFilter);
+
+      // Step 1: apply pre-filters
+      items = all.filter(item => preFilters.every(fn => fn(item)));
+    } else {
+      items = all;
+    }
+
     const facetDistribution = 
-      facet && 
+      facet &&
       DEFAULT_FACETS.find(f => f.name === facet) &&
-      computeFacetDistribution(items, DEFAULT_FACETS.find(f => f.name === facet));
+      computeFacetDistribution(items, DEFAULT_FACETS.find(f => f.name === facet), postFilter);
 
     setSearchState(new Search(query, filters, facet, fitMap, items, facetDistribution));
   }
@@ -103,19 +138,8 @@ const useSearch = () => {
    * but not the search.
    */
   const setCategoryFacet = facetName => {
-    const updated = search.clone();
-
-    const facet = DEFAULT_FACETS.find(f => f.name === facetName);
-
-    if (facet) {
-      updated.facet = facetName;
-      updated.facetDistribution = computeFacetDistribution(search.items, facet);
-    } else {
-      updated.facet = null;
-      updated.facetDistribution = null;
-    }
-    
-    setSearchState(updated);
+    const { query, filters } = search;
+    executeSearch(query, filters, facetName);
   }
 
   return {
