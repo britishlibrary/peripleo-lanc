@@ -14,8 +14,6 @@ import FullscreenImage from './FullscreenImage';
 
 const ItemCard = props => {
 
-  console.log('itemcard', props);
-
   const el = useRef();
 
   const { store } = useContext(StoreContext);
@@ -50,8 +48,6 @@ const ItemCard = props => {
   
   // Temporary hack!
   const color = SIGNATURE_COLOR[3]; 
-
-  console.log(node);
 
   return (
     <div 

@@ -65,13 +65,35 @@ const useSearch = () => {
   const toggleFilter = (filterFacet, filterValue) => {
     const { query, filters, facet, fitMap } = search;
 
-    const filter = new Filter(filterFacet, filterValue);
+    // Is there already a filter on this facet?
+    const existingFilter = filters.find(f => f.facet === filterFacet);
 
-    const updatedFilters = search.hasFilter(filter) ?
-      // Remove
-      filters.filter(f => !f.equals(filter)) :
-      // Add
-      [...filters, filter ];
+    let updatedFilters = [];
+
+    if (existingFilter?.values.length === 1 && existingFilter?.values[0] === filterValue) {
+      // Toggle last remaining value for the existing filter -> remove!
+      updatedFilters = filter.filter(f => f.facet !== filterFacet);
+    } else if (existingFilter) {
+      // Toggle single value in existing filter
+      updatedFilters = filters.map(f => {
+        if (f.facet === filterFacet) {
+          // Update this filter
+          return f.values.includes(filterValue) ?
+            // Remove this value
+            new Filter(filterFacet, f.values.filter(v => v !== filterValue)) :
+            // Append this value
+            new Filter(filterFacet, [...f.values, filterValue ]);
+        } else {
+          return f;
+        }
+      });
+    } else {
+      // No existing filter on this facet yet
+      updatedFilters = [
+        ...filters,
+        new Filter(filterFacet, filterValue)
+      ];
+    }
       
     executeSearch(query, updatedFilters, facet, fitMap);
   }

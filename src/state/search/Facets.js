@@ -33,9 +33,8 @@ const computeFacet = (items, facetName, fn) => {
     if (value) {
       const values = Array.isArray(value) ? value : [ value ];
 
-      values.forEach(v => {
-        counts[v] = counts[v] ? counts[v] + 1 : 1;
-      });
+      values.forEach(v =>
+        counts[v] = counts[v] ? counts[v] + 1 : 1);
 
       return {
         ...item,
