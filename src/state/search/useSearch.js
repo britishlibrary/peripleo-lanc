@@ -47,12 +47,8 @@ const useSearch = () => {
       const preFilters = filters.filter(f => f.facet !== facet)
         .map(f => f.executable(DEFAULT_FACETS));
 
-      console.log('prefilters', preFilters);
-
       // The current facet filter (if any)
       postFilter = filters.find(f => f.facet === facet)?.executable(DEFAULT_FACETS);
-
-      console.log('postfilter', postFilter);
 
       // Step 1: apply pre-filters
       items = all.filter(item => preFilters.every(fn => fn(item)));
