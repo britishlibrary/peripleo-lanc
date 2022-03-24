@@ -66,6 +66,16 @@
 
   header {
     justify-content:space-between;
+
+    h1 {
+      color:#fff;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      font-size:16px;
+      max-width:320px;
+    }
+    
   }
 
   ul {

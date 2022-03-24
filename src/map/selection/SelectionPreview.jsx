@@ -20,21 +20,24 @@ const SelectionPreview = props => {
     setReset(true);
   }, [ props.feature ]);
 
-  const onGoTo = nodeOrNodes => {
+  const onGoTo = arg => {
     setReset(false);
 
-    const arr = Array.isArray(nodeOrNodes) ? nodeOrNodes : [ nodeOrNodes ];
-    const data = arr.map(node => ({...props, node }));
+    const data = arg.nodeList ?
+      { ...arg, nodeList: arg.nodeList.map(node => ({...props, node }))} :
+      { ...props, node: arg };
 
-    if (arr.length === 1) {
-      const link = data[0];
-      if (link.node.properties)
-        setCards([ ...cards, link ]); // Open internal link directly
-      else 
-        setCards([ ...cards, [ link ]]); // External link: show list
-    } else {
-      // Next card: list
+    const isList = data.nodeList?.length > 1;
+    if (isList) {
       setCards([ ...cards, data ]);
+    } else {
+      // Single link
+      const link = data.nodeList ? data.nodeList[0] : data;
+      if (link.node.properties) {
+        setCards([ ...cards, link ]); // Open internal link directly
+      } else { 
+        setCards([ ...cards, data ]); // External link: show list
+      }
     }
   }
 
@@ -54,10 +57,10 @@ const SelectionPreview = props => {
       <CardStack 
         reset={reset}
         cards={cards} 
-        render={data => Array.isArray(data) ?
+        render={data => data.nodeList ?
 
         <ItemListCard 
-          data={data} 
+          {...data} 
           onClose={props.onClose} 
           onGoTo={onGoTo} 
           onGoBack={onGoBack} /> :

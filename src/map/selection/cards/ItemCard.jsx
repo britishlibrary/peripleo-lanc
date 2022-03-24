@@ -13,6 +13,8 @@ import FullscreenImage from './FullscreenImage';
 
 const ItemCard = props => {
 
+  console.log('itemcard', props);
+
   const el = useRef();
 
   const { store } = useContext(StoreContext);
@@ -40,9 +42,11 @@ const ItemCard = props => {
     ...store.getExternalLinks(node.id)
   ];
 
-  const goTo = () =>
-    props.onGoTo(connected);
-
+  const goTo = () => props.onGoTo({
+    referrer: props,
+    nodeList: connected
+  });
+  
   // Temporary hack!
   const color = SIGNATURE_COLOR[3]; 
 

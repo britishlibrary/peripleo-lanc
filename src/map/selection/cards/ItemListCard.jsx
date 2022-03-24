@@ -70,6 +70,8 @@ const ExternalLink = props => {
 
 const ItemListCard = props => {
 
+  const { referrer } = props;
+
   // Temporary hack!
   const color = SIGNATURE_COLOR[3]; 
 
@@ -83,6 +85,10 @@ const ItemListCard = props => {
           onClick={props.onGoBack}>
           <IoArrowBackOutline />
         </button>
+
+        {referrer && 
+          <h1>{referrer.node.title}</h1>
+        }
         
         <button
           aria-label="Close" 
@@ -91,7 +97,7 @@ const ItemListCard = props => {
         </button>
       </header>
       <ul>
-      {props.data.map(selection => selection.node.properties ?
+      {props.nodeList.map(selection => selection.node.properties ?
         <li 
           key={selection.node.identifier}
           className="p6o-link-internal">
