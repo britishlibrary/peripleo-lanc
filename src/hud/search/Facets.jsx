@@ -49,6 +49,9 @@ const Facets = props => {
   const displayed = counts.slice(0, 8);
   const remaining = counts.length - displayed.length;
 
+  // Filter values on the current facet (if any)
+  const currentFacetFilter = props.search.filters.find(f => f.facet === props.search.facet);
+
   return (
     <motion.div 
       key="facets-container"
@@ -91,6 +94,8 @@ const Facets = props => {
           {displayed.map(([label, count], idx) => 
             <motion.li 
               key={label + idx}
+              className={currentFacetFilter &&
+                (currentFacetFilter.values.includes(label) ? 'p6o-filter-shown' : 'p6o-filter-hidden')}
               variants={childAnimation}
               onClick={() => props.onToggleFilter(label)}>
               <div className="p6o-facet-value-wrapper">

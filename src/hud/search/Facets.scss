@@ -79,6 +79,18 @@
       transform:scale(1.04);
     }
 
+    li.p6o-filter-shown {
+      transform:scale(1) !important;
+    }
+
+    li.p6o-filter-hidden {
+      opacity:0.2 !important;
+    }
+
+    li.p6o-filter-hidden:hover {
+      opacity:0.7 !important;
+    }
+
     li.p6o-facet-values-remaining {
 
       .p6o-facet-value-wrapper {
