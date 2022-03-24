@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { BiHourglass, BiNetworkChart } from 'react-icons/bi';
+import { BiNetworkChart } from 'react-icons/bi';
+import { BsHourglassSplit } from 'react-icons/bs';
 import { IoArrowBackOutline, IoCloseSharp } from 'react-icons/io5';
 import { HiExternalLink } from 'react-icons/hi';
 import { CgArrowsExpandRight } from 'react-icons/cg';
@@ -7,7 +8,7 @@ import { CgArrowsExpandRight } from 'react-icons/cg';
 import { SIGNATURE_COLOR } from '../../../Colors';
 
 import { StoreContext } from '../../../store';
-import { getPreviewImage, getTypes } from './Utils';
+import { formatTime, getPreviewImage, getTypes } from './Utils';
 
 import FullscreenImage from './FullscreenImage';
 
@@ -98,22 +99,25 @@ const ItemCard = props => {
             className="p6o-selection-main-fixed">
             <h1>
               <a href={sourceUrl} target="_blank">
-                {node.title}
+                {node.title}<HiExternalLink />
               </a>
             </h1>
+
             <h2>
               <a href={sourceUrl} target="_blank">
-                Source: {node.dataset}<HiExternalLink />
+                Source: {node.dataset}
               </a>
             </h2>
+            
             <a 
               href={sourceUrl}
               className="p6o-new-tab-hint"
               target="_blank">Link opens a new tab</a>
+
             {when && 
-              <h3>
-                <BiHourglass /> {when}
-              </h3>
+              <p className="when">
+                <BsHourglassSplit /> {formatTime(when)}
+              </p>
             }
                 
             <ul className="p6o-selection-types">

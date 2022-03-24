@@ -6,6 +6,8 @@
   @include box-shadow(0, 0, 12px, 0.45);
 
   .p6o-new-tab-hint {
+    display:block;
+    padding:2px 0 4px 0;
     color:#626262;
     font-size:13px;
     text-decoration:none;
@@ -75,7 +77,7 @@
       font-size:16px;
       max-width:320px;
     }
-    
+
   }
 
   ul {
@@ -222,17 +224,30 @@
     h1 {
       padding-top:10px;
       font-size:16px;
+      
+      svg {
+        padding-left:2px;
+        font-size:19px;
+        vertical-align:text-top;
+      }
     }
 
     h2 {
       padding-top:5px;
-      font-size:15px;
+      font-size:16px;
+      font-weight:normal;
+    }
+
+    p.when {
+      font-size:13px;
+      padding:0;
+      margin:4px 0 0 0;
 
       svg {
-        padding-left:2px;
-        font-size:18px;
-        vertical-align:text-top;
+        font-size:16px;
+        vertical-align:text-bottom;
       }
+
     }
 
     ul.p6o-selection-types {
