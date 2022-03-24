@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { BiNetworkChart } from 'react-icons/bi';
 import { BsHourglassSplit } from 'react-icons/bs';
 import { IoArrowBackOutline, IoCloseSharp } from 'react-icons/io5';
-import { HiExternalLink } from 'react-icons/hi';
+import { RiExternalLinkLine } from 'react-icons/ri';
 import { CgArrowsExpandRight } from 'react-icons/cg';
 
 import { SIGNATURE_COLOR } from '../../../Colors';
@@ -50,6 +50,8 @@ const ItemCard = props => {
   
   // Temporary hack!
   const color = SIGNATURE_COLOR[3]; 
+
+  console.log(node);
 
   return (
     <div 
@@ -99,13 +101,13 @@ const ItemCard = props => {
             className="p6o-selection-main-fixed">
             <h1>
               <a href={sourceUrl} target="_blank">
-                {node.title}<HiExternalLink />
+                {node.title}
               </a>
             </h1>
 
             <h2>
               <a href={sourceUrl} target="_blank">
-                Source: {node.dataset}
+                {node.dataset}<RiExternalLinkLine />
               </a>
             </h2>
             
@@ -114,15 +116,15 @@ const ItemCard = props => {
               className="p6o-new-tab-hint"
               target="_blank">Link opens a new tab</a>
 
-            {when && 
-              <p className="when">
-                <BsHourglassSplit /> {formatTime(when)}
-              </p>
-            }
-                
             <ul className="p6o-selection-types">
               {getTypes(node).map(t => <li key={t}>{t}</li>)}
             </ul>
+
+            {when && 
+              <p className="when">
+                <BsHourglassSplit /> {formatTime(String(when))}
+              </p>
+            }
           </div>
 
           <div className="p6o-selection-main-flex">
