@@ -12,7 +12,7 @@ const toFeatureCollection = features =>
   ({ type: 'FeatureCollection', features: features || [] });
 
 const getLayers = facetDistribution => {
-  const { counts, items } = facetDistribution
+  const { counts, items } = facetDistribution;
 
   const topValues = counts.slice(0, 8).map(t => t[0]);
 
@@ -61,8 +61,11 @@ const LayersCategorized = props => {
         // Facet values assigned to this feature
         const values = feature._facet?.values || [];
         
-        const color = values.length === 1 ?
-          SIGNATURE_COLOR[currentFacets.indexOf(values[0])] : 'grey';
+        // Color the feature by top facet
+        const topValue = values.find(value => currentFacets.indexOf(value) > -1);
+
+        const color = topValue ?
+          SIGNATURE_COLOR[currentFacets.indexOf(topValue)] : '#a2a2a2';
 
         return {
           ...feature,
