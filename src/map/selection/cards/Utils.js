@@ -23,3 +23,7 @@ export const getTypes = node => {
   else
     return [];
 }
+
+export const formatTime = str =>
+  str.replace('>=', 'after ')
+     .replace('/', ' - ');

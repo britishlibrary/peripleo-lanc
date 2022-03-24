@@ -7,17 +7,6 @@ import Peripleo from './Peripleo';
 import Tutorial, { isFirstTimeVisitor } from './tutorial/Tutorial';
 
 /**
- * Test if Peripleo is running in an <iframe>
- */
-const isIFrame = (() => {
-  try {
-    return window.self !== window.top;
-  } catch {
-    return true;
-  }
-})();
-
-/**
  * The 'App' class manages the basic load and data setup sequence, 
  * before the actual UI becomes fully operational.
  */
@@ -112,7 +101,6 @@ const App = () => {
       {config && 
         <Peripleo
           config={config}
-          isIFrame={isIFrame}
           dataAvailable={loadState.stage === 'LOADED' || loadState.stage === 'CLOSE'}
           loaded={loadState.stage === 'CLOSE'}
           initialRecord={null}

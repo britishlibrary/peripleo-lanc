@@ -44,9 +44,10 @@ const childAnimation = {
 
 const Facets = props => {
 
-  const values = props.results.getFacetValues(props.facet);
-  const displayed = values.slice(0, 8);
-  const remaining = values.length - displayed.length;
+  const counts = props.search.facetDistribution?.counts || [];
+
+  const displayed = counts.slice(0, 8);
+  const remaining = counts.length - displayed.length;
 
   return (
     <motion.div 
@@ -70,7 +71,7 @@ const Facets = props => {
           <h3 
             aria-live="polite"
             aria-atomic={true}>
-            {props.facet}
+            {props.search.facet.replace('_', ' ')}
           </h3>
           
           <button
@@ -87,14 +88,15 @@ const Facets = props => {
           animate="visible"
           exit="hidden">
 
-          {displayed.map(([label, results], idx) => 
+          {displayed.map(([label, count], idx) => 
             <motion.li 
               key={label + idx}
-              variants={childAnimation}>
+              variants={childAnimation}
+              onClick={() => props.onToggleFilter(label)}>
               <div className="p6o-facet-value-wrapper">
                 <span 
                   className="p6o-facet-value-count"
-                  style={{ backgroundColor: SIGNATURE_COLOR[idx] }}>{formatNumber(results.length)}</span>
+                  style={{ backgroundColor: SIGNATURE_COLOR[idx] }}>{formatNumber(count)}</span>
 
                 <span className="p6o-facet-value-label">{label}</span>
               </div>

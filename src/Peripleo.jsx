@@ -1,38 +1,28 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import { useDebounce } from 'use-debounce';
-import { useRecoilValue } from 'recoil';
+import React, { useEffect, useRef, useState } from 'react';
 
-import { StoreContext } from './store';
-import { categoryFacetState } from './state';
-import SearchResults from './SearchResults';
+import useSearch from './state/search/useSearch'
 
 import HUD from './hud/HUD';
 import Map from './map/Map';
 
-const goFullScreen = () => {
-  const element = document.documentElement;
-
-  if (element.requestFullScreen) {
-    element.requestFullScreen();
-  } else if (element.mozRequestFullScreen) {
-    element.mozRequestFullScreen();
-  } else if (element.webkitRequestFullScreen) {
-    element.webkitRequestFullScreen();
+/**
+ * Test if Peripleo is running in an <iframe>
+ */
+ const isIFrame = (() => {
+  try {
+    return window.self !== window.top;
+  } catch {
+    return true;
   }
-}
+})();
 
 const Peripleo = props => {
 
   const el = useRef();
 
-  const { store } = useContext(StoreContext);
+  const [ isFullscreen, setIsFullscreen ] = useState(false);
 
-  const [ searchQuery, setSearchQuery ] = useState();
-  const [ debouncedQuery ] = useDebounce(searchQuery, 250);
-
-  const [ searchResults, setSearchResults ] = useState(new SearchResults());
-
-  const currentFacet = useRecoilValue(categoryFacetState);
+  const { refreshSearch } = useSearch();
 
   useEffect(() => {
     if (el.current)
@@ -40,55 +30,52 @@ const Peripleo = props => {
   }, [el.current]);
 
   useEffect(() => {
-    const results = new SearchResults(store.getAllLocatedNodes());
-    setSearchResults(results);
+    refreshSearch();
   }, [props.dataAvailable]);
 
   useEffect(() => {
     el.current.classList.remove('loading');
   }, [props.loaded]);
 
-  useEffect(() => {
-    const results = debouncedQuery ?
-      store.searchMappable(debouncedQuery) :
-      store.getAllLocatedNodes();
+  const toggleFullScreen = () => {
+    if (isFullscreen) {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
+    } else {
+      const element = document.documentElement;
+      if (element.requestFullScreen) {
+        element.requestFullScreen();
+      } else if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+      } else if (element.webkitRequestFullScreen) {
+        element.webkitRequestFullScreen();
+      } else if (element.msRequestFullScreen) {
+        element.msRequestFullScreen();
+      }
+    }
 
-    setSearchResults(new SearchResults(results));
-  }, [debouncedQuery]);
-
-  const onSelect = selection => {
-    // TODO this is currently a single node ONLY
-    // but will (or may) be an array of nodes in the future
-    setSelection(selection);
-  }
-
-  const onSearchEnter = () => {
-    const r = searchResults.clone();
-    r.fitMap = true;
-    setSearchResults(r);
+    setIsFullscreen(!isFullscreen);
   }
 
   return (
-    <>
-      <Map 
-        ref={el}
-        config={props.config} 
-        isIFrame={props.isIFrame}
-        searchResults={searchResults}
-        currentFacet={currentFacet}
-        onGoFullscreen={goFullScreen}
-        onLoad={props.onMapLoaded}
-        onSelect={onSelect}>
-        
-        <HUD 
-          config={props.config}
-          searchQuery={searchQuery}
-          searchResults={searchResults}
-          currentFacet={currentFacet}
-          onChangeSearchQuery={setSearchQuery} 
-          onSearchEnter={onSearchEnter} />
-      </Map>
-    </>
+    <Map 
+      ref={el}
+      config={props.config} 
+      isIFrame={isIFrame}
+      isFullscreen={isFullscreen}
+      onToggleFullscreen={toggleFullScreen}
+      onLoad={props.onMapLoaded}>
+      
+      <HUD 
+        config={props.config} />
+    </Map>
   )
 
 }

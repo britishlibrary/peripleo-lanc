@@ -47,7 +47,8 @@ const ExternalLink = props => {
   const url = new URL(link.identifier);
   const { host, href } = url;
 
-  const customIcon = props.config.icons?.find(t => host.includes(t[0]));
+  const customIcon = props.config.link_icons &&
+    Object.entries(props.config.link_icons).find(t => host.includes(t[0]));
 
   const icon  = customIcon ?
     <img src={customIcon[1]} /> :
@@ -69,6 +70,8 @@ const ExternalLink = props => {
 
 const ItemListCard = props => {
 
+  const { referrer } = props;
+
   // Temporary hack!
   const color = SIGNATURE_COLOR[3]; 
 
@@ -82,6 +85,10 @@ const ItemListCard = props => {
           onClick={props.onGoBack}>
           <IoArrowBackOutline />
         </button>
+
+        {referrer && 
+          <h1>{referrer.node.title}</h1>
+        }
         
         <button
           aria-label="Close" 
@@ -90,7 +97,7 @@ const ItemListCard = props => {
         </button>
       </header>
       <ul>
-      {props.data.map(selection => selection.node.properties ?
+      {props.nodeList.map(selection => selection.node.properties ?
         <li 
           key={selection.node.identifier}
           className="p6o-link-internal">

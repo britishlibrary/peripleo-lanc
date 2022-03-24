@@ -30,7 +30,12 @@ const colorScale = color => ([
   hexToRGBA(color, 0.7)
 ]);
 
-const COLOR_SCALES = SIGNATURE_COLOR.map(colorScale);
+const COLORS = [
+  ...SIGNATURE_COLOR,
+  '#a2a2a2' // One more for untyped
+];
+
+const COLOR_SCALES = COLORS.map(colorScale);
 
 export const colorHeatmapCoverage = idx => ({
   'type': 'heatmap',
@@ -50,7 +55,7 @@ export const colorHeatmapCoverage = idx => ({
       'interpolate',
       ['linear'],
       ['heatmap-density'],
-      ...COLOR_SCALES[Math.min(idx, SIGNATURE_COLOR.length -1)]
+      ...COLOR_SCALES[Math.min(idx, COLOR_SCALES.length -1)]
     ],
     'heatmap-radius': [
       'interpolate',
@@ -78,7 +83,7 @@ export const colorHeatmapPoint = idx => ({
   'minzoom': 6,
   'paint': {
     'circle-radius': 5,
-    'circle-color': SIGNATURE_COLOR[Math.min(idx, SIGNATURE_COLOR.length -1)],
+    'circle-color': COLORS[Math.min(idx, COLORS.length -1)],
     'circle-stroke-color': 'white',
     'circle-stroke-width': 1,
     'circle-opacity': [

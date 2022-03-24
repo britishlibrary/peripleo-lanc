@@ -11,31 +11,76 @@ import { colorHeatmapCoverage, colorHeatmapPoint } from './styles/colorHeatmap';
 const toFeatureCollection = features => 
   ({ type: 'FeatureCollection', features: features || [] });
 
+const getLayers = facetDistribution => {
+  const { counts, items } = facetDistribution
+
+  const topValues = counts.slice(0, 8).map(t => t[0]);
+
+  // For every feature, we'll check the facet value, and assign it 
+  // to the first layer it matches. In other words: the feature will
+  // get the color of the most common facet value.
+  const layers = Object.fromEntries(topValues.map(label => [ label, [] ]));
+  const unassigned = [];
+
+  items.forEach(item => {
+    const values = item._facet?.values || [];
+
+    const firstMatch = topValues.find(l => values.indexOf(l) > -1);
+    if (firstMatch)
+      layers[firstMatch].push(item);
+    else
+      unassigned.push(item);
+  });
+
+  const arr = Object.entries(layers);
+  arr.sort((a, b) => b[1].length - a[1].length);
+
+  return [
+    ...arr,
+    ['__unassigned', unassigned ]
+  ].slice().reverse(); // Largest layer at bottom
+}
+
 const LayersCategorized = props => {
 
-  const [ flattened, setFlattened ] = useState();
+  const [ features, setFeatures ] = useState();
+
+  const [ layers, setLayers ] = useState();
 
   useEffect(() => {
-    const layers = props.searchResults.getFacetValues(props.facet);
+    if (props.selectedMode === 'COLOURED_HEATMAP') {
+      setLayers(getLayers(props.search.facetDistribution));       
+    } else {
+      const { counts, items } = props.search.facetDistribution;
 
-    const flattened = layers.reduce((flat, [, items], idx) => [
-      ...flat,
-      ...items.map(feature => ({
-        ...feature,
-        properties: {
-          ...feature.properties,
-          color: SIGNATURE_COLOR[idx]
+      // Just the facet value labels, in order of the legend
+      const currentFacets = counts.map(c => c[0]);
+
+      // Colorize the features according to their facet values
+      const colorized = items.map(feature => {
+        // Facet values assigned to this feature
+        const values = feature._facet?.values || [];
+        
+        const color = values.length === 1 ?
+          SIGNATURE_COLOR[currentFacets.indexOf(values[0])] : 'grey';
+
+        return {
+          ...feature,
+          properties: {
+            ...feature.properties,
+            color
+          }
         }
-      }))
-    ], []);
-    
-    setFlattened(flattened);
-  }, [ props.searchResults, props.facet ])
+      });
+
+      setFeatures(colorized);
+    }
+  }, [ props.search, props.facet, props.selectedMode ])
 
   return (
     <>
       {props.selectedMode === 'POINTS' &&
-        <Source type="geojson" data={toFeatureCollection(flattened)}>
+        <Source type="geojson" data={toFeatureCollection(features)}>
           <Layer 
             id="p6o-points"
             {...pointCategoryStyle()} />
@@ -46,7 +91,7 @@ const LayersCategorized = props => {
         <Source 
           type="geojson" 
           cluster={true}
-          data={toFeatureCollection(flattened)}>
+          data={toFeatureCollection(features)}>
 
           <Layer 
             {...clusterPointStyle()} />
@@ -62,7 +107,7 @@ const LayersCategorized = props => {
       }
 
       {props.selectedMode === 'HEATMAP' &&
-        <Source type="geojson" data={toFeatureCollection(flattened)}>
+        <Source type="geojson" data={toFeatureCollection(features)}>
           <Layer
             id="p6o-heatmap"
             {...heatmapCoverageStyle()} />
@@ -74,15 +119,15 @@ const LayersCategorized = props => {
       }
 
       {props.selectedMode === 'COLOURED_HEATMAP' &&
-        props.searchResults.getFacetValues(props.facet).slice(0, 8).map(([layer, features], idx) =>
+        layers?.map(([layer, features], idx) => 
           <Source key={layer} type="geojson" data={toFeatureCollection(features)}>
             <Layer
               id={`p6o-heatmap-${layer}`}
-              {...colorHeatmapCoverage(idx)} />
+              {...colorHeatmapCoverage(layers.length - idx - 1)} />
           
             <Layer
               id={`p6o-points-${layer}`}
-              {...colorHeatmapPoint(idx)} /> 
+              {...colorHeatmapPoint(layers.length - idx - 1)} /> 
           </Source>
         )
       }
