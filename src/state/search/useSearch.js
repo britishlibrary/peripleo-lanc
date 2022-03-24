@@ -72,7 +72,7 @@ const useSearch = () => {
 
     if (existingFilter?.values.length === 1 && existingFilter?.values[0] === filterValue) {
       // Toggle last remaining value for the existing filter -> remove!
-      updatedFilters = filter.filter(f => f.facet !== filterFacet);
+      updatedFilters = filters.filter(f => f.facet !== filterFacet);
     } else if (existingFilter) {
       // Toggle single value in existing filter
       updatedFilters = filters.map(f => {
@@ -88,7 +88,7 @@ const useSearch = () => {
         }
       });
     } else {
-      // No existing filter on this facet yet
+      // No existing filter on this facet yet - add
       updatedFilters = [
         ...filters,
         new Filter(filterFacet, filterValue)
