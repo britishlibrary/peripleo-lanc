@@ -1,5 +1,10 @@
 import React from 'react';
-import { AiOutlineFullscreen, AiOutlineFullscreenExit, AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
+import { 
+  AiOutlineFullscreen, 
+  AiOutlineFullscreenExit, 
+  AiOutlinePlus, 
+  AiOutlineMinus 
+} from 'react-icons/ai';
 
 const Zoom = props => {
 

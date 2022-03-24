@@ -5,6 +5,12 @@
   @include rounded-corners(3px);
   @include box-shadow(0, 0, 12px, 0.45);
 
+  .p6o-new-tab-hint {
+    color:#626262;
+    font-size:13px;
+    text-decoration:none;
+  }
+
   .card {
     width:440px;
   }
@@ -190,9 +196,33 @@
       margin-bottom:10px;
     }
 
+    h1, h2 {
+
+      a {
+        color:#333;
+        text-decoration:none;
+      }
+
+      a:hover {
+        text-decoration:underline;
+      }
+  
+    }
+
     h1 {
       padding-top:10px;
       font-size:16px;
+    }
+
+    h2 {
+      padding-top:5px;
+      font-size:15px;
+
+      svg {
+        padding-left:2px;
+        font-size:18px;
+        vertical-align:text-top;
+      }
     }
 
     ul.p6o-selection-types {

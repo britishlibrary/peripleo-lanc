@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { BiHourglass, BiNetworkChart } from 'react-icons/bi';
 import { IoArrowBackOutline, IoCloseSharp } from 'react-icons/io5';
+import { HiExternalLink } from 'react-icons/hi';
 import { CgArrowsExpandRight } from 'react-icons/cg';
 
 import { SIGNATURE_COLOR } from '../../../Colors';
@@ -9,7 +10,6 @@ import { StoreContext } from '../../../store';
 import { getPreviewImage, getTypes } from './Utils';
 
 import FullscreenImage from './FullscreenImage';
-import { selectedState } from '../../../state';
 
 const ItemCard = props => {
 
@@ -21,7 +21,16 @@ const ItemCard = props => {
 
   const { node } = props;
 
+  useEffect(() => {
+    if (el.current) {
+      el.current.querySelector('header button').blur();
+    }
+  }, [ el.current ]);
+
   const image = getPreviewImage(node);
+
+  const sourceUrl = 
+    node.properties?.url || node?.identifier || node.id;
 
   const when = node.properties?.when;
 
@@ -30,12 +39,6 @@ const ItemCard = props => {
     ...store.getConnectedNodes(node.id),
     ...store.getExternalLinks(node.id)
   ];
-
-  useEffect(() => {
-    if (el.current) {
-      el.current.querySelector('header button').blur();
-    }
-  }, [ el.current ]);
 
   const goTo = () =>
     props.onGoTo(connected);
@@ -89,11 +92,24 @@ const ItemCard = props => {
           
           <div
             className="p6o-selection-main-fixed">
-            <h1>{node.title}</h1>
+            <h1>
+              <a href={sourceUrl} target="_blank">
+                {node.title}
+              </a>
+            </h1>
+            <h2>
+              <a href={sourceUrl} target="_blank">
+                Source: {node.dataset}<HiExternalLink />
+              </a>
+            </h2>
+            <a 
+              href={sourceUrl}
+              className="p6o-new-tab-hint"
+              target="_blank">Link opens a new tab</a>
             {when && 
-              <h2>
+              <h3>
                 <BiHourglass /> {when}
-              </h2>
+              </h3>
             }
                 
             <ul className="p6o-selection-types">

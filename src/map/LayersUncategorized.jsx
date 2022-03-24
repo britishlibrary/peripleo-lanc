@@ -4,7 +4,6 @@ import { Source, Layer } from 'react-map-gl';
 import { pointStyle } from './styles/point';
 import { clusterPointStyle, clusterLabelStyle } from './styles/cluster';
 import { heatmapCoverageStyle, heatmapPointStyle } from './styles/heatmap';
-import { colorHeatmapCoverage, colorHeatmapPoint } from './styles/colorHeatmap';
 
 const toFeatureCollection = features => 
   ({ type: 'FeatureCollection', features: features || [] });
@@ -51,20 +50,6 @@ const LayersUncategorized = props => {
             {...heatmapPointStyle()} /> 
         </Source>
       }
-
-      {/* props.selectedMode === 'COLOURED_HEATMAP' &&
-        layers.map(([layer, features], idx) =>
-          <Source key={layer} type="geojson" data={toFeatureCollection(features)}>
-            <Layer
-              id={`p6o-heatmap-${layer}`}
-              {...colorHeatmapCoverage(idx)} />
-          
-            <Layer
-              id={`p6o-points-${layer}`}
-              {...colorHeatmapPoint(idx)} /> 
-          </Source>
-        )
-      */}
     </>
   )
 
