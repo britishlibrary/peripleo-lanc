@@ -31,13 +31,17 @@ const computeFacet = (items, facetName, fn) => {
     const value = fn(item);
     
     if (value) {
-      counts[value] = counts[value] ? counts[value] + 1 : 1;
+      const values = Array.isArray(value) ? value : [ value ];
+
+      values.forEach(v => {
+        counts[v] = counts[v] ? counts[v] + 1 : 1;
+      });
 
       return {
         ...item,
         _facet: {
           name: facetName,
-          values: Array.isArray(value) ? value : [ value ]
+          values
         }
       };
     } else {
