@@ -38,7 +38,8 @@ const SearchPanel = props => {
     search, 
     changeSearchQuery, 
     fitMap, 
-    toggleFilter, 
+    toggleFilter,
+    clearFilter, 
     setCategoryFacet,
     availableFacets
   } = useSearch();
@@ -79,6 +80,9 @@ const SearchPanel = props => {
 
   const onToggleFilter = value =>
     toggleFilter(search.facet, value);
+
+  const onClearFilter = () => 
+    clearFilter(search.facet);
 
   return (
     <motion.div 
@@ -136,7 +140,8 @@ const SearchPanel = props => {
             search={search} 
             onNextFacet={onChangeFacet(1)}
             onPreviousFacet={onChangeFacet(-1)}
-            onToggleFilter={onToggleFilter} /> 
+            onToggleFilter={onToggleFilter} 
+            onClearFilter={onClearFilter} /> 
         }
       </AnimatePresence>
     </motion.div>

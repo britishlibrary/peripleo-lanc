@@ -42,6 +42,18 @@ const childAnimation = {
   }
 }
 
+const equivalentFilters = (a, b) => {
+  if (a.length === b.length) {
+    const setA = new Set(a);
+    const setB = new Set(b);
+
+    for (const x of setA) if (!setB.has(x)) return false;
+    return true;
+  } else {
+    return false;
+  }
+}
+
 const Facets = props => {
 
   const counts = props.search.facetDistribution?.counts || [];
@@ -51,6 +63,20 @@ const Facets = props => {
 
   // Filter values on the current facet (if any)
   const currentFacetFilter = props.search.filters.find(f => f.facet === props.search.facet);
+
+  const onToggleFilter = label => () => {
+    const allDisplayed = displayed.map(t => t[0]);
+    const filterValues = currentFacetFilter?.values || [];
+    const filterValuesAfter = [...filterValues, label ];
+
+    const isAllValues = equivalentFilters(allDisplayed, filterValuesAfter); 
+
+    // If the user has enabled all displayed filter values -> remove filter on this facet!
+    if (isAllValues)
+      props.onClearFilter();
+    else
+      props.onToggleFilter(label);
+  }
 
   return (
     <motion.div 
@@ -97,7 +123,7 @@ const Facets = props => {
               className={currentFacetFilter &&
                 (currentFacetFilter.values.includes(label) ? 'p6o-filter-shown' : 'p6o-filter-hidden')}
               variants={childAnimation}
-              onClick={() => props.onToggleFilter(label)}>
+              onClick={onToggleFilter(label)}>
               <div className="p6o-facet-value-wrapper">
                 <span 
                   className="p6o-facet-value-count"

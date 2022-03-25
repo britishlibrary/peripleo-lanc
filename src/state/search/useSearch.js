@@ -94,7 +94,7 @@ const useSearch = () => {
    * Adds or removes a filter and re-runs the search
    */
   const toggleFilter = (filterFacet, filterValue) => {
-    const { query, filters, facet, fitMap } = search;
+    const { query, filters, facet } = search;
 
     // Is there already a filter on this facet?
     const existingFilter = filters.find(f => f.facet === filterFacet);
@@ -126,7 +126,15 @@ const useSearch = () => {
       ];
     }
       
-    executeSearch(query, updatedFilters, facet, fitMap);
+    executeSearch(query, updatedFilters, facet);
+  }
+
+  const clearFilter = filterFacet => {
+    const { query, filters, facet } = search;
+
+    const updatedFilters = filters.filter(f => f.facet !== filterFacet);
+
+    executeSearch(query, updatedFilters, facet);
   }
 
   /**
@@ -145,6 +153,7 @@ const useSearch = () => {
     clearSearchQuery,
     fitMap,
     toggleFilter,
+    clearFilter,
     setCategoryFacet,
     availableFacets: DEFAULT_FACETS.map(f => f.name)
   };
