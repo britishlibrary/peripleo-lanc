@@ -42,6 +42,8 @@ const InternalLink = props => {
 
 const ExternalLink = props => {
 
+  console.log(props);
+
   const link = props.node;
 
   const url = new URL(link.identifier);
@@ -61,8 +63,22 @@ const ExternalLink = props => {
 
   return (
     <>
-      {icon}
-      <a href={href} target="_blank" title={host}>{host}</a>
+      <div className="p6o-external-link-icon">{icon}</div>
+      <div className="p6o-external-link-meta">
+        {link.label && 
+          <a 
+            className="p6o-external-link-label" 
+            href={href} 
+            target="_blank" 
+            title={link.label}>{link.label}</a>
+        }
+
+        <a 
+          className="p6o-external-link-host" 
+          href={href} 
+          target="_blank" 
+          title={link.label || host}>{host}</a>
+      </div>
     </>
   )
 
