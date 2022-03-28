@@ -7,6 +7,7 @@ import { useDebounce } from 'use-debounce';
 import useSearch from '../../state/search/useSearch';
 
 import Facets from './Facets';
+import Filters from './Filters';
 
 const parentAnimation = {
   visible: { 
@@ -21,12 +22,10 @@ const parentAnimation = {
 
 const childAnimation = {
   visible: { 
-    opacity: 1, 
-    height: 40
+    opacity: 1
   },
   hidden: { 
-    opacity: 0,
-    height: 0
+    opacity: 0
   }
 };
 
@@ -109,28 +108,32 @@ const SearchPanel = props => {
         initial="hidden"
         animate="visible"
         exit="hidden">
-        
-        <div className="p6o-hud-searchtoolbar-wrapper">
-          <h2 
-            className="p6o-hud-searchtoolbar-resultcount"
-            aria-live="polite">
-            {search.total.toLocaleString('en')} Result{search.total !== 1 && 's'}
-          </h2>
-          
-          <button 
-            className="p6o-hud-searchtoolbar-btn p6o-hud-searchtoolbar-btn-list"
-            tabIndex={2}
-            aria-label="List search results">
-            <VscListUnordered />
-          </button>
 
-          <button 
-            className="p6o-hud-searchtoolbar-btn p6o-hud-searchtoolbar-btn-dig"
-            tabIndex={3}
-            aria-label="Filter your search"
-            onClick={onToggleFacetsList}>
-            <RiFilter2Line />
-          </button>
+        <div className="p6o-hud-searchtoolbar-body">
+          {search.filters.length > 0 && <Filters /> }
+          
+          <div className="p6o-hud-searchtoolbar-footer">
+            <h2 
+              className="p6o-hud-searchtoolbar-resultcount"
+              aria-live="polite">
+              {search.total.toLocaleString('en')} Result{search.total !== 1 && 's'}
+            </h2>
+            
+            <button 
+              className="p6o-hud-searchtoolbar-btn p6o-hud-searchtoolbar-btn-list"
+              tabIndex={2}
+              aria-label="List search results">
+              <VscListUnordered />
+            </button>
+
+            <button 
+              className="p6o-hud-searchtoolbar-btn p6o-hud-searchtoolbar-btn-dig"
+              tabIndex={3}
+              aria-label="Filter your search"
+              onClick={onToggleFacetsList}>
+              <RiFilter2Line />
+            </button>
+          </div>
         </div>
       </motion.div>
 
