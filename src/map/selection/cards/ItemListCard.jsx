@@ -6,6 +6,9 @@ import { BiRightArrowAlt } from 'react-icons/bi';
 
 import { SIGNATURE_COLOR } from '../../../Colors';
 
+const sanitizeURL = str => /^http(s?):\/\//.test(str) ?
+  str : 'http://' + str;
+
 // Pre-set link icons
 const ICONS = [
   [ 'www.wikidata.org', <SiWikidata /> ],
@@ -42,11 +45,9 @@ const InternalLink = props => {
 
 const ExternalLink = props => {
 
-  console.log(props);
-
   const link = props.node;
 
-  const url = new URL(link.identifier);
+  const url = new URL(sanitizeURL(link.identifier));
   const { host, href } = url;
 
   const customIcon = props.config.link_icons &&

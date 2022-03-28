@@ -13,7 +13,6 @@ import { formatTime, getPreviewImage, getTypes } from './Utils';
 import FullscreenImage from './FullscreenImage';
 
 const ItemCard = props => {
-
   const el = useRef();
 
   const { store } = useContext(StoreContext);
