@@ -1,15 +1,25 @@
 import React from 'react';
-import { IoCloseOutline } from 'react-icons/io5';
+import { AnimatePresence, motion } from 'framer-motion';
+import { IoCloseCircleSharp } from 'react-icons/io5';
 
 import useSearch from '../../state/search/useSearch';
+
+const animation = {
+  hidden: { 
+    maxHeight: 0
+  },
+  visible: { 
+    maxHeight: 42
+  }
+}
 
 const Filter = props => {
 
   return (
-    <li className="p6o-hud-filter-group">
+    <div className="p6o-hud-filter-group">
       <span>{props.facet} = {props.values.join(', ')}</span>
-      <IoCloseOutline onClick={props.onClear} />
-    </li>
+      <IoCloseCircleSharp onClick={props.onClear} />
+    </div>
   )
 
 }
@@ -24,12 +34,22 @@ const Filters = () => {
   return (
     <div className="p6o-hud-filters-container">
       <ul>
-        {search.filters.map(filter =>
-          <Filter 
-            key={filter.facet}
-            onClear={onClear(filter.facet)}
-            {...filter} />
-        )}
+        <AnimatePresence>
+          {search.filters.map(filter =>
+            <motion.li
+              key={filter.facet}
+              variants={animation}
+              initial="hidden"
+              animate="visible"
+              exit="hidden">
+
+              <Filter 
+                onClear={onClear(filter.facet)}
+                {...filter} />
+
+            </motion.li>
+          )}
+        </AnimatePresence>
       </ul>
     </div>
   )

@@ -1,5 +1,5 @@
 .p6o-hud-filters-container {
-  background-color:#f6f6f6;
+  background-color:#f2f2f2;
   position:relative;
 
   ul {
@@ -8,18 +8,33 @@
     list-style-type:none;
   }
 
-  li.p6o-hud-filter-group {
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:10px;
+  li {
+    position:relative;
+    overflow:hidden;
     border-bottom:1px solid #dfdfdf;
 
-    svg {
-      font-size:20px;
-      cursor:pointer;
-    }
+    .p6o-hud-filter-group {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px;
 
+      span {
+        text-transform:capitalize;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+
+      svg {
+        padding-left:5px;
+        font-size:20px;
+        flex-shrink:0;
+        cursor:pointer;
+      }
+
+    }
+  
   }
 
 }
