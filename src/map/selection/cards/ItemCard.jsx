@@ -111,7 +111,7 @@ const ItemCard = props => {
               className="p6o-new-tab-hint"
               target="_blank">Link opens a new tab</a>
 
-            <ul className="p6o-selection-types">
+            <ul className="p6o-node-types">
               {getTypes(node).map(t => <li key={t}>{t}</li>)}
             </ul>
 

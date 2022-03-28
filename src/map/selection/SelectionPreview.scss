@@ -15,6 +15,30 @@
 
   .card {
     width:440px;
+
+    ul.p6o-node-types {
+      list-style-type:none;
+      margin:0;
+      padding:8px 0 4px 0;
+
+      li {
+        display:inline-block;
+        padding:2px 8px;
+        color:#fff;
+        background-color:#858585;
+        border-radius:3px;
+        text-transform:capitalize;
+        font-weight:bold;
+        font-size:12px;
+        margin:0 3px 3px 0;
+      }
+
+    }
+
+    ul.p6o-selection-types:empty {
+      display:none;
+    }
+
   }
 
   .card.next {
@@ -66,6 +90,7 @@
 .cardstack .card .p6o-selection-itemlistcard {
   min-height:180px;
 
+
   header {
     justify-content:space-between;
 
@@ -104,14 +129,43 @@
   }
 
   li.p6o-link-internal {
+    position:relative;
 
-    h3, h4 {
-      margin:0;
-      padding:0;
+    .p6o-internal-link-meta {
+      overflow:hidden;
+
+      h3, h4 {
+        margin:0;
+        padding:0;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+      }
+
+      h3 {
+        font-weight:normal;
+      }
+
+      h4 {
+        font-size:14px;
+      }
+
+      .p6o-node-types {
+        padding-top:3px;
+
+        li { 
+          display:inline; 
+        }
+        
+      }
+
     }
 
     svg {
+      flex-basis:30px;
+      flex-shrink:0;
       font-size:27px;
+      padding-left:5px;
       cursor:pointer;
     }
 
@@ -121,6 +175,7 @@
     display:flex;
     justify-content:space-between;
     align-items:center;
+    width:100%;
   }
 
   li.p6o-link-external {
@@ -280,29 +335,6 @@
         vertical-align:text-bottom;
       }
 
-    }
-
-    ul.p6o-selection-types {
-      list-style-type:none;
-      margin:0;
-      padding:8px 0 4px 0;
-
-      li {
-        display:inline-block;
-        padding:2px 8px;
-        color:#fff;
-        background-color:#858585;
-        border-radius:3px;
-        text-transform:capitalize;
-        font-weight:bold;
-        font-size:12px;
-        margin:0 3px 3px 0;
-      }
-
-    }
-
-    ul.p6o-selection-types:empty {
-      display:none;
     }
 
     .p6o-selection-main-flex {

@@ -4,6 +4,7 @@ import { SiWikidata } from 'react-icons/si';
 import { VscGlobe } from 'react-icons/vsc';
 import { BiRightArrowAlt } from 'react-icons/bi';
 
+import { getTypes } from './Utils';
 import { SIGNATURE_COLOR } from '../../../Colors';
 
 const sanitizeURL = str => /^http(s?):\/\//.test(str) ?
@@ -33,9 +34,12 @@ const InternalLink = props => {
 
   return (
     <div onClick={() => props.onSelect(node)}>
-      <div>
+      <div className="p6o-internal-link-meta">
         <h3>{node.title}</h3>
         <h4>{node.dataset}</h4>
+        <ul className="p6o-node-types">
+          {getTypes(node).map(t => <li key={t}>{t}</li>)}
+        </ul>
       </div>
       <BiRightArrowAlt />
     </div>
