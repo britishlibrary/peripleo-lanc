@@ -1,22 +1,19 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import ReactMapGL, { Source, Layer } from 'react-map-gl';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
 import useSearch from '../state/search/useSearch';
 import { StoreContext } from '../store';
-import { mapState } from '../state';
+import { mapViewState, mapModeState } from '../state';
 
 import LayersCategorized from './LayersCategorized';
 import LayersUncategorized from './LayersUncategorized';
 
-import Controls from './Controls';
+import Controls from './controls/Controls';
 import HoverBubble from './HoverBubble';
 import SelectionPreview from './selection/SelectionPreview';
 
 import { geojsonLineStyle } from './styles/backgroundLayers';
-
-/** TODO temporary - for user testing **/
-import VariantsRadioButton from '../usertesting/VariantsRadioButton';
 
 const Map = React.forwardRef((props, ref) => {
 
@@ -28,15 +25,15 @@ const Map = React.forwardRef((props, ref) => {
 
   const { search } = useSearch();
 
-  const [ viewstate, setViewstate ] = useRecoilState(mapState);
+  const [ viewstate, setViewstate ] = useRecoilState(mapViewState);
+
+  const modeState = useRecoilValue(mapModeState);
 
   const [ hover, setHover ] = useState();
 
   const [ selection, setSelection ] = useState();
 
   const style = `https://api.maptiler.com/maps/outdoor/style.json?key=${config.api_key}`;
-
-  const [ selectedMode, setSelectedMode ] = useState('POINTS');
 
   useEffect(() => {
     setSelection(null);
@@ -127,13 +124,13 @@ const Map = React.forwardRef((props, ref) => {
 
         {search.facetDistribution ?
           <LayersCategorized 
-            selectedMode={selectedMode}
+            selectedMode={modeState}
             search={search} /> 
           
           :
           
           <LayersUncategorized 
-            selectedMode={selectedMode}
+            selectedMode={modeState}
             search={search} />
         }
 
@@ -144,11 +141,6 @@ const Map = React.forwardRef((props, ref) => {
             onClose={onClosePopup} />
         }
       </ReactMapGL>
-
-      {/* USERTESTING */}
-      <VariantsRadioButton 
-        selected={selectedMode}
-        onSelect={setSelectedMode} />
 
       <Controls 
         fullscreenButton={props.isIFrame}

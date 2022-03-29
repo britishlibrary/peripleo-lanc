@@ -12,7 +12,7 @@ const LayersUncategorized = props => {
 
   return (
     <>
-      {props.selectedMode === 'POINTS' &&
+      {props.selectedMode === 'points' &&
         <Source type="geojson" data={toFeatureCollection(props.search.items)}>
           <Layer 
             id="p6o-points"
@@ -20,7 +20,7 @@ const LayersUncategorized = props => {
         </Source>
       } 
 
-      {props.selectedMode === 'CLUSTERS' && 
+      {props.selectedMode === 'clusters' && 
         <Source 
           type="geojson" 
           cluster={true}
@@ -39,7 +39,7 @@ const LayersUncategorized = props => {
         </Source>
       }
 
-      {props.selectedMode === 'HEATMAP' &&
+      {props.selectedMode === 'heatmap' &&
         <Source type="geojson" data={toFeatureCollection(props.search.items)}>
           <Layer
             id="p6o-heatmap"

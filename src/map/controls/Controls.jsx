@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { RiMapLine } from 'react-icons/ri';
 import { 
   AiOutlineFullscreen, 
@@ -7,7 +7,11 @@ import {
   AiOutlineMinus 
 } from 'react-icons/ai';
 
+import MapModesDropdown from './MapModesDropdown';
+
 const Zoom = props => {
+
+  const [ isModesMenuVisible, setIsModesMenuVisible ] = useState(false);
 
   return (
     <div className="p6o-controls">
@@ -42,9 +46,14 @@ const Zoom = props => {
       <button
         className="p6o-controls-btn p6o-hud-button p6o-map-modes"
         tabIndex={33}
-        aria-label="Mapping modes">
+        aria-label="Mapping modes"
+        onClick={() => setIsModesMenuVisible(!isModesMenuVisible) }>
         <RiMapLine />
       </button>
+
+      {isModesMenuVisible &&
+        <MapModesDropdown />
+      }
     </div>
   )
 

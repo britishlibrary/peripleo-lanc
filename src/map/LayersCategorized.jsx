@@ -48,7 +48,7 @@ const LayersCategorized = props => {
   const [ layers, setLayers ] = useState();
 
   useEffect(() => {
-    if (props.selectedMode === 'COLOURED_HEATMAP') {
+    if (props.selectedMode === 'heatmap') {
       setLayers(getLayers(props.search.facetDistribution));       
     } else {
       const { counts, items } = props.search.facetDistribution;
@@ -82,7 +82,7 @@ const LayersCategorized = props => {
 
   return (
     <>
-      {props.selectedMode === 'POINTS' &&
+      {props.selectedMode === 'points' &&
         <Source type="geojson" data={toFeatureCollection(features)}>
           <Layer 
             id="p6o-points"
@@ -90,7 +90,7 @@ const LayersCategorized = props => {
         </Source>
       } 
 
-      {props.selectedMode === 'CLUSTERS' && 
+      {props.selectedMode === 'clusters' && 
         <Source 
           type="geojson" 
           cluster={true}
@@ -109,19 +109,7 @@ const LayersCategorized = props => {
         </Source>
       }
 
-      {props.selectedMode === 'HEATMAP' &&
-        <Source type="geojson" data={toFeatureCollection(features)}>
-          <Layer
-            id="p6o-heatmap"
-            {...heatmapCoverageStyle()} />
-
-          <Layer
-            id="p6o-points"
-            {...heatmapPointStyle()} /> 
-        </Source>
-      }
-
-      {props.selectedMode === 'COLOURED_HEATMAP' &&
+      {props.selectedMode === 'heatmap' &&
         layers?.map(([layer, features], idx) => 
           <Source key={layer} type="geojson" data={toFeatureCollection(features)}>
             <Layer
