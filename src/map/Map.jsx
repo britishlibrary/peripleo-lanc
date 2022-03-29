@@ -9,7 +9,7 @@ import { mapState } from '../state';
 import LayersCategorized from './LayersCategorized';
 import LayersUncategorized from './LayersUncategorized';
 
-import Zoom from './controls/Zoom';
+import Controls from './Controls';
 import HoverBubble from './HoverBubble';
 import SelectionPreview from './selection/SelectionPreview';
 
@@ -150,7 +150,7 @@ const Map = React.forwardRef((props, ref) => {
         selected={selectedMode}
         onSelect={setSelectedMode} />
 
-      <Zoom 
+      <Controls 
         fullscreenButton={props.isIFrame}
         isFullscreen={props.isFullscreen}
         onZoomIn={onZoom(1)}

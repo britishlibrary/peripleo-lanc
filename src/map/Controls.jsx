@@ -1,4 +1,5 @@
 import React from 'react';
+import { RiMapLine } from 'react-icons/ri';
 import { 
   AiOutlineFullscreen, 
   AiOutlineFullscreenExit, 
@@ -9,9 +10,9 @@ import {
 const Zoom = props => {
 
   return (
-    <div className="p6o-zoom">
+    <div className="p6o-controls">
       {props.fullscreenButton && <button 
-          className="p6o-zoom-btn p6o-hud-button p6o-go-fullscreen"
+          className="p6o-controls-btn p6o-hud-button p6o-toggle-fullscreen"
           aria-label="Switch to fullscreen"
           tabIndex={30}
           onClick={props.onToggleFullscreen}>
@@ -23,7 +24,7 @@ const Zoom = props => {
       }
       
       <button 
-        className="p6o-zoom-btn p6o-hud-button p6o-zoom-in"
+        className="p6o-controls-btn p6o-hud-button p6o-zoom-in"
         tabIndex={31}
         aria-label="Zoom in"
         onClick={props.onZoomIn}>
@@ -31,11 +32,18 @@ const Zoom = props => {
       </button>
 
       <button 
-        className="p6o-zoom-btn p6o-hud-button p6o-zoom-out"
+        className="p6o-controls-btn p6o-hud-button p6o-zoom-out"
         tabIndex={32}
         aria-label="Zoom out"
         onClick={props.onZoomOut}>
         <AiOutlineMinus />
+      </button>
+
+      <button
+        className="p6o-controls-btn p6o-hud-button p6o-map-modes"
+        tabIndex={33}
+        aria-label="Mapping modes">
+        <RiMapLine />
       </button>
     </div>
   )
