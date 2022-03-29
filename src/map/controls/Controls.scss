@@ -1,3 +1,5 @@
+@import './MapModesDropdown';
+
 .p6o-map-container .p6o-controls {
   position:absolute;
   right:20px;
@@ -15,8 +17,15 @@
     @include rounded-corners(50%);
   }
 
-  .p6o-controls-btn.p6o-map-modes {
-    font-size:24px;
+  .p6o-map-modes {
+    position:relative;
+
+    .p6o-controls-btn {
+      position:relative;
+      z-index:2;
+      font-size:24px;
+    }
+
   }
 
 }

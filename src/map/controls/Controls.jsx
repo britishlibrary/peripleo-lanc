@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { RiMapLine } from 'react-icons/ri';
 import { 
   AiOutlineFullscreen, 
@@ -7,14 +7,21 @@ import {
   AiOutlineMinus 
 } from 'react-icons/ai';
 
+import useClickOutside from './useClickoutside';
 import MapModesDropdown from './MapModesDropdown';
 
 const Zoom = props => {
 
   const [ isModesMenuVisible, setIsModesMenuVisible ] = useState(false);
 
+  const el = useRef();
+
+  useClickOutside(el, () => setIsModesMenuVisible(false));
+
   return (
-    <div className="p6o-controls">
+    <div
+      ref={el} 
+      className="p6o-controls">
       {props.fullscreenButton && <button 
           className="p6o-controls-btn p6o-hud-button p6o-toggle-fullscreen"
           aria-label="Switch to fullscreen"
@@ -43,17 +50,19 @@ const Zoom = props => {
         <AiOutlineMinus />
       </button>
 
-      <button
-        className="p6o-controls-btn p6o-hud-button p6o-map-modes"
-        tabIndex={33}
-        aria-label="Mapping modes"
-        onClick={() => setIsModesMenuVisible(!isModesMenuVisible) }>
-        <RiMapLine />
-      </button>
+      <div className="p6o-map-modes">
+        <button
+          className="p6o-controls-btn p6o-hud-button"
+          tabIndex={33}
+          aria-label="Mapping modes"
+          onClick={() => setIsModesMenuVisible(!isModesMenuVisible) }>
+          <RiMapLine />
+        </button>
 
-      {isModesMenuVisible &&
-        <MapModesDropdown />
-      }
+        {isModesMenuVisible &&
+          <MapModesDropdown />
+        }
+      </div>
     </div>
   )
 
