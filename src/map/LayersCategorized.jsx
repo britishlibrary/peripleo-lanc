@@ -3,9 +3,9 @@ import { Source, Layer } from 'react-map-gl';
 
 import { SIGNATURE_COLOR } from '../Colors';
 
-import { pointStyle, pointCategoryStyle } from './styles/point';
-import { clusterPointStyle, clusterLabelStyle } from './styles/cluster';
-import { colorHeatmapCoverage, colorHeatmapPoint } from './styles/colorHeatmap';
+import { pointStyle, pointCategoryStyle } from './styles/Point';
+import { clusterPointStyle, clusterLabelStyle } from './styles/Clusters';
+import { colorHeatmapCoverage, colorHeatmapPoint } from './styles/Heatmap';
 
 const toFeatureCollection = features => 
   ({ type: 'FeatureCollection', features: features || [] });

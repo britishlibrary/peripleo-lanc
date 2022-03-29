@@ -13,7 +13,7 @@ import Controls from './controls/Controls';
 import HoverBubble from './HoverBubble';
 import SelectionPreview from './selection/SelectionPreview';
 
-import { geojsonLineStyle } from './styles/backgroundLayers';
+import { geojsonLineStyle } from './styles/BackgroundLayers';
 
 const Map = React.forwardRef((props, ref) => {
 

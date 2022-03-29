@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { VscListUnordered } from 'react-icons/vsc';
-import { RiFilter2Line } from 'react-icons/ri';
 import { useDebounce } from 'use-debounce';
 
 import useSearch from '../../state/search/useSearch';
