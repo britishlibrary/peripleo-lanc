@@ -1,4 +1,5 @@
 import React from 'react';
+import { AiOutlineInfoCircle } from 'react-icons/ai';
 import { IoArrowBackOutline, IoCloseSharp } from 'react-icons/io5';
 import { SiWikidata } from 'react-icons/si';
 import { VscGlobe } from 'react-icons/vsc';
@@ -134,6 +135,9 @@ const ItemListCard = props => {
         </li>
       )}
       </ul>
+      <footer aria-live={true}>
+        <AiOutlineInfoCircle />Links open a new tab
+      </footer>
     </div>
   )
 
