@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
-import { RiMapLine } from 'react-icons/ri';
+import { FiMap } from 'react-icons/fi';
+import { AnimatePresence } from 'framer-motion';
 import { 
   AiOutlineFullscreen, 
   AiOutlineFullscreenExit, 
@@ -56,12 +57,14 @@ const Zoom = props => {
           tabIndex={33}
           aria-label="Mapping modes"
           onClick={() => setIsModesMenuVisible(!isModesMenuVisible) }>
-          <RiMapLine />
+          <FiMap />
         </button>
 
-        {isModesMenuVisible &&
-          <MapModesDropdown />
-        }
+        <AnimatePresence>
+          {isModesMenuVisible &&
+            <MapModesDropdown />
+          }
+        </AnimatePresence>
       </div>
     </div>
   )
