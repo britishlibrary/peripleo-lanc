@@ -17,7 +17,7 @@ const Filter = props => {
 
   return (
     <div className="p6o-hud-filter-group">
-      <span>{props.facet} = {props.values.join(', ')}</span>
+      <span>{props.facet.replace('_', ' ')}: {props.values.join(', ')}</span>
       <IoCloseCircleSharp onClick={props.onClear} />
     </div>
   )

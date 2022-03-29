@@ -10,22 +10,6 @@ import Filter from './Filter';
 
 import { DEFAULT_FACETS, computeFacetDistribution } from './Facets';
 
-/*
-const satisfiesFilter = (item, filters) => {
-
-  const filterFunctions = []; // TODO
-
-  for(const fn of filterFunctions) {
-    const v = fn(item);
-    const values = Array.isArray(v) ? v : [ v ];
-
-    if (values.includes())
-  }
-
-  return item;
-}
-*/
-
 const useSearch = () => {
 
   const { store } = useContext(StoreContext);
@@ -40,7 +24,7 @@ const useSearch = () => {
       store.searchMappable(query) :
       store.getAllLocatedNodes();
 
-    let items, postFilter;
+    let preFilteredItems, postFilter;
 
     if (filters?.length > 0) {
       // All filters except on the current facet
@@ -51,15 +35,18 @@ const useSearch = () => {
       postFilter = filters.find(f => f.facet === facet)?.executable(DEFAULT_FACETS);
 
       // Step 1: apply pre-filters
-      items = all.filter(item => preFilters.every(fn => fn(item)));
+      preFilteredItems = all.filter(item => preFilters.every(fn => fn(item)));
     } else {
-      items = all;
+      preFilteredItems = all;
     }
 
     const facetDistribution = 
       facet &&
       DEFAULT_FACETS.find(f => f.name === facet) &&
-      computeFacetDistribution(items, DEFAULT_FACETS.find(f => f.name === facet), postFilter);
+      computeFacetDistribution(preFilteredItems, DEFAULT_FACETS.find(f => f.name === facet), postFilter);
+
+    const items = facetDistribution ? 
+      facetDistribution.items : preFilteredItems;
 
     setSearchState(new Search(query, filters, facet, fitMap, items, facetDistribution));
   }

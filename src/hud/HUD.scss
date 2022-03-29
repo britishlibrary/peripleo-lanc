@@ -14,18 +14,66 @@
 .p6o-hud {
   color:#3e3e3e;
 
-  .p6o-magic-button {
+  .p6o-search-button,
+  .p6o-filters-button {
     position:absolute;
-    left:20px;
-    top:20px;
-    width:60px;
-    height:60px;
     color:#3e3e3e;
-    font-size:34px;
     display:flex;
     align-items:center;
     justify-content:center;
+    border:1px solid rgba(0,0,0,0.2);
+    z-index:98;
     @include rounded-corners(50%);
+  }
+
+  .p6o-search-button {
+    top:18px;
+    left:18px;
+    width:64px;
+    height:64px;
+    font-size:34px;
+    background-color:#f8f8f8;
+    box-shadow:inset 2px 4px 18px #fff, inset -2px -3px 4px rgba(0,0,0,0.15), 0 0 4px rgba(0,0,0,0.2);
+  }
+
+  .p6o-search-button:hover {
+    background-color:#fff;
+    box-shadow:inset 2px 4px 18px #fff, inset -2px -3px 4px rgba(0,0,0,0.15), 0 0 12px rgba(255,255,255,0.2);
+  }
+  
+  .p6o-filters-button {
+    top:20px;
+    left:21px;
+    width:58px;
+    height:104px;
+    background-color:#f5f5f5;
+    font-size:20px;
+    padding-top:55px;
+    z-index:97;
+    box-shadow:0 0 12px rgba(0,0,0,0.35);
+    @include rounded-corners(30px);
+
+    .p6o-filters-badge {
+      color:#fff;
+      background-color:red;
+      font-size:10px;
+      font-family:Arial, Helvetica, sans-serif;
+      font-weight:bold;
+      width:16px;
+      height:16px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:absolute;
+      bottom:23px;
+      right:6px;
+      @include rounded-corners(50%);
+    }
+
+  }
+
+  .p6o-filters-button:hover {
+    background-color:#fff;
   }
 
 }

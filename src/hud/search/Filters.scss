@@ -20,6 +20,7 @@
       padding:10px;
 
       span {
+        font-weight:bold;
         text-transform:capitalize;
         white-space:nowrap;
         overflow:hidden;
@@ -35,6 +36,10 @@
 
     }
   
+  }
+
+  li:last-child {
+    border-bottom:none;
   }
 
 }

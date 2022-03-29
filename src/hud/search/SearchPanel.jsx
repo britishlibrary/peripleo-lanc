@@ -63,13 +63,6 @@ const SearchPanel = props => {
       fitMap();
   }
 
-  const onToggleFacetsList = () => {
-    if (search.facet)
-      setCategoryFacet(null);
-    else
-      setCategoryFacet(availableFacets[0]);
-  }
-
   const onChangeFacet = inc => () => {
     const { length } = availableFacets;
     const currentIdx = availableFacets.indexOf(search.facet);
@@ -96,6 +89,7 @@ const SearchPanel = props => {
       <div className="p6o-hud-searchinput">
         <input 
           tabIndex={2}
+          placeholder="Enter your search"
           aria-label="Enter search"
           value={query} 
           onKeyDown={onKeyDown}
@@ -110,7 +104,7 @@ const SearchPanel = props => {
         exit="hidden">
 
         <div className="p6o-hud-searchtoolbar-body">
-          {search.filters.length > 0 && <Filters /> }
+          <Filters />
           
           <div className="p6o-hud-searchtoolbar-footer">
             <h2 
@@ -118,21 +112,6 @@ const SearchPanel = props => {
               aria-live="polite">
               {search.total.toLocaleString('en')} Result{search.total !== 1 && 's'}
             </h2>
-            
-            <button 
-              className="p6o-hud-searchtoolbar-btn p6o-hud-searchtoolbar-btn-list"
-              tabIndex={2}
-              aria-label="List search results">
-              <VscListUnordered />
-            </button>
-
-            <button 
-              className="p6o-hud-searchtoolbar-btn p6o-hud-searchtoolbar-btn-dig"
-              tabIndex={3}
-              aria-label="Filter your search"
-              onClick={onToggleFacetsList}>
-              <RiFilter2Line />
-            </button>
           </div>
         </div>
       </motion.div>
