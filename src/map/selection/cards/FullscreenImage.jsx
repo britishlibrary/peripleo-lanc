@@ -13,7 +13,7 @@ const FullscreenImage = props => {
           <h1>
             {image.title} {image.accreditation && 
               <span dangerouslySetInnerHTML={{__html: `(${image.accreditation})`}} ></span>
-            }
+            } {image.license?.label && <span> - {image.license.label}</span>}
           </h1> 
         </div>
       }

@@ -1,3 +1,13 @@
+const LICENSES = [
+  [ 'creativecommons.org/licenses/by', 'CC BY' ],
+  [ 'creativecommons.org/licenses/by-sa', 'CC BY-SA' ],
+  [ 'creativecommons.org/licenses/by-nc', 'CC BY-NC' ],
+  [ 'creativecommons.org/licenses/by-nc-sa', 'CC BY-NC-SA' ],
+  [ 'creativecommons.org/licenses/by-nd', 'CC BY-ND' ],
+  [ 'creativecommons.org/licenses/by-nc-nd', 'CC BY-NC-ND' ],
+  [ 'creativecommons.org/publicdomain/zero', 'CC0' ]
+]
+
 /**
  * TODO read image attribution info.
  * 
@@ -24,10 +34,21 @@ export const getPreviewImage = node => {
       };
     } else {   
       const d = node.depictions[0];
+
+      let license = null;
+
+      if (d.license) {
+        const label = LICENSES.find(t => d.license.indexOf(t[0]) > - 1);
+        license = {
+          src: d.license,
+          label: label ? label[1] : null
+        };
+      }
+
       return {
         src: node.depictions[0]['@id'], 
         title: d.title,
-        license: d.license,
+        license,
         accreditation: d.accreditation
       }
     }
