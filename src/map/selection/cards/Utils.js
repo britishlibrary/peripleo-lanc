@@ -43,6 +43,16 @@ export const getPreviewImage = node => {
     }
   }}
 
+export const getDescription = node => {
+  if (node.descriptions) {
+    const descriptions = Array.isArray(node.descriptions) ? node.descriptions : [ node. descriptions ];
+    if (descriptions.length > 0)
+      return descriptions[0].value;
+  } else {
+    return node.properties?.description;
+  }
+}
+
 export const getTypes = node => {
   if (node.types?.length > 0)
     return node.types.map(t => t.label);

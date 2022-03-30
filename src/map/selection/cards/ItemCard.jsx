@@ -8,7 +8,7 @@ import { CgArrowsExpandRight } from 'react-icons/cg';
 import { SIGNATURE_COLOR } from '../../../Colors';
 
 import { StoreContext } from '../../../store';
-import { formatTime, getPreviewImage, getTypes } from './Utils';
+import { formatTime, getDescription, getPreviewImage, getTypes } from './Utils';
 
 import FullscreenImage from './FullscreenImage';
 
@@ -28,6 +28,8 @@ const ItemCard = props => {
   }, [ el.current ]);
 
   const image = getPreviewImage(node);
+
+  const description = getDescription(node);
 
   const sourceUrl = 
     node.properties?.url || node?.identifier || node.id;
@@ -129,11 +131,11 @@ const ItemCard = props => {
           </div>
 
           <div className="p6o-selection-main-flex">
-            {node.properties.description &&
+            {description &&
               <p 
                 className="p6o-selection-description"
                 aria-level={3}>
-                {node.properties.description}
+                {description}
               </p>
             }
           </div>
