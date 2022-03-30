@@ -7,10 +7,9 @@
     { "name": "VisitPlus", "format": "LINKED_PLACES", "src": "data/VisitPlus.lp.json" }
   ],
   "facets": [
-    "dataset",
-    "has_image",
+    { "name": "custodian", "path": ["relations", "label"], "condition": [ "relationType", "http://vocab.getty.edu/page/aat/300160390" ] },
     "type",
-    { "name": "custodian", "path": ["relations", "label"], "condition": [ "relationType", "http://vocab.getty.edu/page/aat/300160390" ] }
+    "has_image"
   ],
   "link_icons": {
     "www.nationaltrust.org.uk": "logos/www.nationaltrust.org.uk.png",
