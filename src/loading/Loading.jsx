@@ -47,10 +47,6 @@ const Loading = props => {
           } 
         </p>
       </div>
-
-      <div className="p6o-loading-bottom">
-        Peripleo-LaNC v0.1.0
-      </div>
     </motion.div>
   )
 
