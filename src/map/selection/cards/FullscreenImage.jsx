@@ -3,9 +3,20 @@ import Lightbox from 'react-image-lightbox';
 
 const FullscreenImage = props => {
 
+  const { image } = props;
+
   return (
     <Lightbox 
-      mainSrc={props.src}
+      mainSrc={image.src}
+      imageCaption={
+        <div className="p6o-fullscreen-image-caption">
+          <h1>
+            {image.title} {image.accreditation && 
+              <span dangerouslySetInnerHTML={{__html: `(${image.accreditation})`}} ></span>
+            }
+          </h1> 
+        </div>
+      }
       onCloseRequest={props.onClose} />
   )
 

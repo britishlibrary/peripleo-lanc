@@ -29,6 +29,8 @@ const ItemCard = props => {
 
   const image = getPreviewImage(node);
 
+  console.log('image', image);
+
   const sourceUrl = 
     node.properties?.url || node?.identifier || node.id;
 
@@ -78,7 +80,13 @@ const ItemCard = props => {
         {image &&
           <div 
             className="p6o-selection-header-image"
-            style={{ backgroundImage: `url("${image}")` }}>   
+            style={{ backgroundImage: `url("${image.src}")` }}>   
+
+            {image.accreditation &&
+              <span 
+                className="p6o-selection-header-image-accreditation" 
+                dangerouslySetInnerHTML={{ __html: image.accreditation }} />
+            }
 
             <button 
               className="p6o-selection-header-image-btn-full"
@@ -151,7 +159,7 @@ const ItemCard = props => {
       </div>
 
       {showLightbox && 
-        <FullscreenImage src={image} onClose={() => setShowLightbox(false)} />
+        <FullscreenImage image={image} onClose={() => setShowLightbox(false)} />
       }
     </div>
   )

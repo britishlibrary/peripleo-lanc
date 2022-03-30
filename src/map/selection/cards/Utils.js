@@ -13,15 +13,25 @@ export const getPreviewImage = node => {
   if (node.depictions?.length > 0) {
     const iiif = node.depictions.filter(d => d.selector);
     if (iiif.length > 0) {
-      const d = node.depictions[0];
+      const d = iiif[0];
       const baseUrl = d['@id'].substring(0, d['@id'].lastIndexOf('/'));
       const coordinates = d.selector[0].value.substring(d.selector[0].value.indexOf('pixel:') + 6);
-      return `${baseUrl}/${coordinates}/max/0/default.jpg`;
+      return {
+        src: `${baseUrl}/${coordinates}/max/0/default.jpg`,
+        title: d.title,
+        license: d.license,
+        accreditation: d.accreditation
+      };
     } else {   
-      return node.depictions[0]['@id'];
+      const d = node.depictions[0];
+      return {
+        src: node.depictions[0]['@id'], 
+        title: d.title,
+        license: d.license,
+        accreditation: d.accreditation
+      }
     }
-  } 
-}
+  }}
 
 export const getTypes = node => {
   if (node.types?.length > 0)
