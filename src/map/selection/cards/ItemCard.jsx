@@ -8,7 +8,8 @@ import { CgArrowsExpandRight } from 'react-icons/cg';
 import { SIGNATURE_COLOR } from '../../../Colors';
 
 import { StoreContext } from '../../../store';
-import { formatTime, getDescription, getPreviewImage, getTypes } from './Utils';
+import { parseWhen } from './When';
+import { getDescription, getPreviewImage, getTypes } from './Utils';
 
 import FullscreenImage from './FullscreenImage';
 
@@ -34,7 +35,7 @@ const ItemCard = props => {
   const sourceUrl = 
     node.properties?.url || node?.identifier || node.id;
 
-  const when = node.properties?.when;
+  const when = parseWhen(node.properties?.when || node.when);
 
   // Related items includes external + internal links!
   const connected = [
@@ -125,7 +126,7 @@ const ItemCard = props => {
 
             {when && 
               <p className="when">
-                <BsHourglassSplit /> {formatTime(String(when))}
+                <BsHourglassSplit /> {when.label}
               </p>
             }
           </div>
