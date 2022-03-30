@@ -29,8 +29,6 @@ const ItemCard = props => {
 
   const image = getPreviewImage(node);
 
-  console.log('image', image);
-
   const sourceUrl = 
     node.properties?.url || node?.identifier || node.id;
 
