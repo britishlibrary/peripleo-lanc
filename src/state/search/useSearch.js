@@ -2,17 +2,20 @@ import { useContext } from 'react';
 import { useRecoilState } from 'recoil';
 
 import { StoreContext } from '../../store';
+import { FacetsContext } from './FacetsContext';
 
 import Search from './Search';
 import { searchState } from '..';
 
 import Filter from './Filter';
 
-import { DEFAULT_FACETS, computeFacetDistribution } from './Facets';
+import { computeFacetDistribution } from './Facets';
 
 const useSearch = () => {
 
   const { store } = useContext(StoreContext);
+
+  const { availableFacets } = useContext(FacetsContext);
 
   const [ search, setSearchState ] = useRecoilState(searchState);
 
@@ -29,10 +32,10 @@ const useSearch = () => {
     if (filters?.length > 0) {
       // All filters except on the current facet
       const preFilters = filters.filter(f => f.facet !== facet)
-        .map(f => f.executable(DEFAULT_FACETS));
+        .map(f => f.executable(availableFacets));
 
       // The current facet filter (if any)
-      postFilter = filters.find(f => f.facet === facet)?.executable(DEFAULT_FACETS);
+      postFilter = filters.find(f => f.facet === facet)?.executable(availableFacets);
 
       // Step 1: apply pre-filters
       preFilteredItems = all.filter(item => preFilters.every(fn => fn(item)));
@@ -42,8 +45,8 @@ const useSearch = () => {
 
     const facetDistribution = 
       facet &&
-      DEFAULT_FACETS.find(f => f.name === facet) &&
-      computeFacetDistribution(preFilteredItems, DEFAULT_FACETS.find(f => f.name === facet), postFilter);
+      availableFacets.find(f => f.name === facet) &&
+      computeFacetDistribution(preFilteredItems, availableFacets.find(f => f.name === facet), postFilter);
 
     const items = facetDistribution ? 
       facetDistribution.items : preFilteredItems;
@@ -142,7 +145,7 @@ const useSearch = () => {
     toggleFilter,
     clearFilter,
     setCategoryFacet,
-    availableFacets: DEFAULT_FACETS.map(f => f.name)
+    availableFacets: availableFacets.map(f => f.name)
   };
 
 }

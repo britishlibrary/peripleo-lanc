@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
 import { StoreContext } from './store';
+import { FacetsContext } from './state/search/FacetsContext';
+
 import Loading from './loading/Loading';
 import Peripleo from './Peripleo';
 import Tutorial, { isFirstTimeVisitor } from './tutorial/Tutorial';
@@ -14,6 +16,8 @@ const App = () => {
 
   const { store } = useContext(StoreContext);
 
+  const { setAvailableFacets} = useContext(FacetsContext);
+
   const [ config, setConfig ] = useState();
 
   const [ loadState, setLoadState ] = useState({ stage: 'LOADING_CONFIG' });
@@ -21,6 +25,9 @@ const App = () => {
   const onConfigLoaded = config => {
     setConfig(config);
     setLoadState({ stage: 'LOADING_DATA' });
+
+    if (config.facets)
+      setAvailableFacets(config.facets);
   }
 
   // Initial mount: load config

@@ -1,22 +1,12 @@
 export class Facet {
 
-  constructor(name, definition) {
+  constructor(name, definition, condition) {
     this.name = name;
     this.definition = definition;
+    this.condition = condition;
   } 
 
 }
-
-export const DEFAULT_FACETS = [
-  // Facet value = value of the top-level 'dataset' field
-  new Facet('dataset', 'dataset'),
-
-  // Facet value is 'With Image' or 'Without Image', based on eval function
-  new Facet('has_image', record => record.depictions?.length > 0 ? 'With Image' : 'Without Image'),
-
-  // Facet value = value of the types > label fields
-  new Facet('type', ['types', 'label'])
-];
 
 const toSortedArray = counts => {
   const entries = Object.entries(counts);
@@ -29,7 +19,7 @@ const computeFacet = (items, facetName, fn, postFilter) => {
 
   const facetedItems = items.map(item => {
     const value = fn(item);
-    
+
     if (value) {
       const values = Array.isArray(value) ? value : [ value ];
 
@@ -66,20 +56,44 @@ const computeCustomFnFacet = (items, facet, postFilter) =>
 
 const computeNestedFieldFacet = (items, facet, postFilter) => {
 
-  const getValueRecursive = (obj, path) => {
+  const getValueRecursive = (obj, path, condition) => {
     const [ nextSegment, ...pathRest ] = path;
+
+    const meetsCondition = obj => {
+      if (!condition)
+        return true;
+      
+      const [ key, val ] = condition;
+
+      // If obj doesn't have the condition key -> admit
+      if (!obj[key])
+        return true;
+
+      // If obj has the key, and the value matches -> admit
+      if (obj[key] === val)
+        return true;
+
+      return false;
+    }
 
     const value = obj[nextSegment];
     if (pathRest.length === 0 || !value) {
       return value;
     } else {
       return Array.isArray(value) ?
-        value.map(obj => getValueRecursive(obj, pathRest)): 
-        getValueRecursive(value, pathRest);
+
+        value.filter(meetsCondition)
+          .map(obj => getValueRecursive(obj, pathRest, condition))
+          .filter(value => value) // Remove undefined
+
+        :
+        
+        meetsCondition(value) ?
+          getValueRecursive(value, pathRest, condition) : [];       
     }
   };
 
-  return computeFacet(items, facet.name, item => getValueRecursive(item, facet.definition), postFilter);
+  return computeFacet(items, facet.name, item => getValueRecursive(item, facet.definition, facet.condition), postFilter);
 }
 
 export const computeFacetDistribution = (items, facet, postFilter) => {
