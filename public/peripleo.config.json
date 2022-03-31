@@ -11,6 +11,7 @@
     "dataset",
     { "name": "custodian", "path": ["relations", "label"], "condition": [ "relationType", "http://vocab.getty.edu/page/aat/300160390" ] },
     "type",
+    { "name": "technique", "path": ["relations", "label"], "condition": [ "relationType", "aat:300138082" ] },
     "has_image"
   ],
   "link_icons": {
