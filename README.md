@@ -29,4 +29,4 @@ To run Peripleo in development mode:
 
 ## Site Preview
 
-Site preview is available at <https://britishlibrary.github.io/peripleo-lanc/>
+The project web site is can be found [here](https://britishlibrary.github.io/locating-a-national-collection/home.html), and includes several examples of geospatial datasets rendered as maps using *Peripleo*.
