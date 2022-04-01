@@ -1,12 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { VscListUnordered } from 'react-icons/vsc';
-import { RiFilter2Line } from 'react-icons/ri';
 import { useDebounce } from 'use-debounce';
 
 import useSearch from '../../state/search/useSearch';
 
 import Facets from './Facets';
+import Filters from './Filters';
 
 const parentAnimation = {
   visible: { 
@@ -21,12 +20,10 @@ const parentAnimation = {
 
 const childAnimation = {
   visible: { 
-    opacity: 1, 
-    height: 40
+    opacity: 1
   },
   hidden: { 
-    opacity: 0,
-    height: 0
+    opacity: 0
   }
 };
 
@@ -38,7 +35,8 @@ const SearchPanel = props => {
     search, 
     changeSearchQuery, 
     fitMap, 
-    toggleFilter, 
+    toggleFilter,
+    clearFilter, 
     setCategoryFacet,
     availableFacets
   } = useSearch();
@@ -63,13 +61,6 @@ const SearchPanel = props => {
       fitMap();
   }
 
-  const onToggleFacetsList = () => {
-    if (search.facet)
-      setCategoryFacet(null);
-    else
-      setCategoryFacet(availableFacets[0]);
-  }
-
   const onChangeFacet = inc => () => {
     const { length } = availableFacets;
     const currentIdx = availableFacets.indexOf(search.facet);
@@ -79,6 +70,9 @@ const SearchPanel = props => {
 
   const onToggleFilter = value =>
     toggleFilter(search.facet, value);
+
+  const onClearFilter = () => 
+    clearFilter(search.facet);
 
   return (
     <motion.div 
@@ -93,6 +87,7 @@ const SearchPanel = props => {
       <div className="p6o-hud-searchinput">
         <input 
           tabIndex={2}
+          placeholder="Enter your search"
           aria-label="Enter search"
           value={query} 
           onKeyDown={onKeyDown}
@@ -105,28 +100,17 @@ const SearchPanel = props => {
         initial="hidden"
         animate="visible"
         exit="hidden">
-        
-        <div className="p6o-hud-searchtoolbar-wrapper">
-          <h2 
-            className="p6o-hud-searchtoolbar-resultcount"
-            aria-live="polite">
-            {search.total.toLocaleString('en')} Result{search.total !== 1 && 's'}
-          </h2>
-          
-          <button 
-            className="p6o-hud-searchtoolbar-btn p6o-hud-searchtoolbar-btn-list"
-            tabIndex={2}
-            aria-label="List search results">
-            <VscListUnordered />
-          </button>
 
-          <button 
-            className="p6o-hud-searchtoolbar-btn p6o-hud-searchtoolbar-btn-dig"
-            tabIndex={3}
-            aria-label="Filter your search"
-            onClick={onToggleFacetsList}>
-            <RiFilter2Line />
-          </button>
+        <div className="p6o-hud-searchtoolbar-body">
+          <Filters />
+          
+          <div className="p6o-hud-searchtoolbar-footer">
+            <h2 
+              className="p6o-hud-searchtoolbar-resultcount"
+              aria-live="polite">
+              {search.total.toLocaleString('en')} Result{search.total !== 1 && 's'}
+            </h2>
+          </div>
         </div>
       </motion.div>
 
@@ -136,7 +120,8 @@ const SearchPanel = props => {
             search={search} 
             onNextFacet={onChangeFacet(1)}
             onPreviousFacet={onChangeFacet(-1)}
-            onToggleFilter={onToggleFilter} /> 
+            onToggleFilter={onToggleFilter} 
+            onClearFilter={onClearFilter} /> 
         }
       </AnimatePresence>
     </motion.div>

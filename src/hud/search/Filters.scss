@@ -1,0 +1,50 @@
+.p6o-hud-filters-container {
+  background-color:#f2f2f2;
+  position:relative;
+
+  ul {
+    margin:0;
+    padding:0;
+    list-style-type:none;
+  }
+
+  li {
+    position:relative;
+    overflow:hidden;
+    border-bottom:1px solid #dfdfdf;
+
+    .p6o-hud-filter-group {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:10px;
+
+      span {
+        font-weight:bold;
+        text-transform:capitalize;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+
+        svg {
+          padding:0 5px 0 0;
+        }
+      }
+
+      svg {
+        padding-left:5px;
+        font-size:20px;
+        flex-shrink:0;
+        cursor:pointer;
+        vertical-align:text-bottom;
+      }
+
+    }
+  
+  }
+
+  li:last-child {
+    border-bottom:none;
+  }
+
+}

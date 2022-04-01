@@ -6,7 +6,7 @@ import Search from './search/Search';
 const { hash } = window.location;
 
 /** Map state (first three args) **/
-const initialMapState = (hash.match(/\//g) || []).length < 3 ?
+const initialMapViewState = (hash.match(/\//g) || []).length < 3 ?
   {} : {
     zoom: parseFloat(hash.split('/')[1]),
     longitude: parseFloat(hash.split('/')[2]), 
@@ -20,10 +20,16 @@ const initialParams = (hash.match(/\//g) || []).length !== 4 ?
     .split('&')
     .map(t => t.split('=')));
 
-/** Current map state: zoom, longitude, latitude **/
-export const mapState = atom({
-  key: 'map',
-  default: initialMapState
+/** Current map view state: zoom, longitude, latitude **/
+export const mapViewState = atom({
+  key: 'mapView',
+  default: initialMapViewState
+});
+
+/** Map mode state: points, clusters, heatmap **/
+export const mapModeState = atom({
+  key: 'mapMode',
+  default: 'points'
 });
 
 /** Current search (query, filter, facet) + search results **/

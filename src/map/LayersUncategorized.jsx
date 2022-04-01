@@ -1,9 +1,9 @@
 import React from 'react';
 import { Source, Layer } from 'react-map-gl';
 
-import { pointStyle } from './styles/point';
-import { clusterPointStyle, clusterLabelStyle } from './styles/cluster';
-import { heatmapCoverageStyle, heatmapPointStyle } from './styles/heatmap';
+import { pointStyle } from './styles/Point';
+import { clusterPointStyle, clusterLabelStyle } from './styles/Clusters';
+import { heatmapCoverage, heatmapPoint } from './styles/Heatmap';
 
 const toFeatureCollection = features => 
   ({ type: 'FeatureCollection', features: features || [] });
@@ -12,7 +12,7 @@ const LayersUncategorized = props => {
 
   return (
     <>
-      {props.selectedMode === 'POINTS' &&
+      {props.selectedMode === 'points' &&
         <Source type="geojson" data={toFeatureCollection(props.search.items)}>
           <Layer 
             id="p6o-points"
@@ -20,7 +20,7 @@ const LayersUncategorized = props => {
         </Source>
       } 
 
-      {props.selectedMode === 'CLUSTERS' && 
+      {props.selectedMode === 'clusters' && 
         <Source 
           type="geojson" 
           cluster={true}
@@ -39,15 +39,15 @@ const LayersUncategorized = props => {
         </Source>
       }
 
-      {props.selectedMode === 'HEATMAP' &&
+      {props.selectedMode === 'heatmap' &&
         <Source type="geojson" data={toFeatureCollection(props.search.items)}>
           <Layer
             id="p6o-heatmap"
-            {...heatmapCoverageStyle()} />
+            {...heatmapCoverage()} />
 
           <Layer
             id="p6o-points"
-            {...heatmapPointStyle()} /> 
+            {...heatmapPoint()} /> 
         </Source>
       }
     </>

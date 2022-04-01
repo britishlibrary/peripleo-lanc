@@ -8,12 +8,12 @@ import { CgArrowsExpandRight } from 'react-icons/cg';
 import { SIGNATURE_COLOR } from '../../../Colors';
 
 import { StoreContext } from '../../../store';
-import { formatTime, getPreviewImage, getTypes } from './Utils';
+import { parseWhen } from './When';
+import { getDescription, getPreviewImage, getTypes } from './Utils';
 
 import FullscreenImage from './FullscreenImage';
 
 const ItemCard = props => {
-
   const el = useRef();
 
   const { store } = useContext(StoreContext);
@@ -30,10 +30,12 @@ const ItemCard = props => {
 
   const image = getPreviewImage(node);
 
+  const description = getDescription(node);
+
   const sourceUrl = 
     node.properties?.url || node?.identifier || node.id;
 
-  const when = node.properties?.when;
+  const when = parseWhen(node.properties?.when || node.when);
 
   // Related items includes external + internal links!
   const connected = [
@@ -79,7 +81,13 @@ const ItemCard = props => {
         {image &&
           <div 
             className="p6o-selection-header-image"
-            style={{ backgroundImage: `url("${image}")` }}>   
+            style={{ backgroundImage: `url("${image.src}")` }}>   
+
+            {image.accreditation &&
+              <span 
+                className="p6o-selection-header-image-accreditation" 
+                dangerouslySetInnerHTML={{ __html: image.accreditation }} />
+            }
 
             <button 
               className="p6o-selection-header-image-btn-full"
@@ -112,23 +120,23 @@ const ItemCard = props => {
               className="p6o-new-tab-hint"
               target="_blank">Link opens a new tab</a>
 
-            <ul className="p6o-selection-types">
+            <ul className="p6o-node-types">
               {getTypes(node).map(t => <li key={t}>{t}</li>)}
             </ul>
 
             {when && 
               <p className="when">
-                <BsHourglassSplit /> {formatTime(String(when))}
+                <BsHourglassSplit /> {when.label}
               </p>
             }
           </div>
 
           <div className="p6o-selection-main-flex">
-            {node.properties.description &&
+            {description &&
               <p 
                 className="p6o-selection-description"
                 aria-level={3}>
-                {node.properties.description}
+                {description}
               </p>
             }
           </div>
@@ -152,7 +160,7 @@ const ItemCard = props => {
       </div>
 
       {showLightbox && 
-        <FullscreenImage src={image} onClose={() => setShowLightbox(false)} />
+        <FullscreenImage image={image} onClose={() => setShowLightbox(false)} />
       }
     </div>
   )

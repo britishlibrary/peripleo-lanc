@@ -1,4 +1,5 @@
 import { normalizeURI } from '..';
+
 /**
  * Handles LaNC specific extensions to the Linked Places format. Most importantly: embedded linked records.
  * Example:

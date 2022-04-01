@@ -1,0 +1,47 @@
+.p6o-map-modes-dropdown {
+  position:absolute;
+  top:0;
+  right:0;
+  padding:5px;
+  margin:0 60px 0 0;
+  z-index:1;
+  pointer-events:none;
+  overflow:hidden;
+
+  ul {
+    list-style-type:none;
+    text-align:right;
+    margin:0;
+  }
+
+  h1, li {
+    pointer-events:all;
+    background-color:#fff;
+    margin:4px 0;
+    white-space:nowrap;
+    padding:8px 14px;
+    @include rounded-corners(3px);
+    @include box-shadow(0, 0, 4px, 0.25);
+  }
+
+  h1 {
+    font-size:16px;
+  }
+
+  li.p6o-map-mode-variant {
+    display:inline-block;
+    text-transform:capitalize;
+    cursor:pointer;
+
+    svg {
+      font-size:20px;
+      vertical-align:text-bottom;
+      padding-left:5px;
+    }
+  }
+
+  li.p6o-map-mode-variant:hover {
+    transform:scale(1.04);
+  }
+
+}

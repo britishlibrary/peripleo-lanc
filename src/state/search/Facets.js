@@ -1,22 +1,12 @@
 export class Facet {
 
-  constructor(name, definition) {
+  constructor(name, definition, condition) {
     this.name = name;
     this.definition = definition;
+    this.condition = condition;
   } 
 
 }
-
-export const DEFAULT_FACETS = [
-  // Facet value = value of the top-level 'dataset' field
-  new Facet('dataset', 'dataset'),
-
-  // Facet value is 'With Image' or 'Without Image', based on eval function
-  new Facet('has_image', record => record.depictions?.length > 0 ? 'With Image' : 'Without Image'),
-
-  // Facet value = value of the types > label fields
-  new Facet('type', ['types', 'label'])
-];
 
 const toSortedArray = counts => {
   const entries = Object.entries(counts);
@@ -24,12 +14,12 @@ const toSortedArray = counts => {
   return entries;
 }
 
-const computeFacet = (items, facetName, fn) => {
+const computeFacet = (items, facetName, fn, postFilter) => {
   const counts = {};
 
   const facetedItems = items.map(item => {
     const value = fn(item);
-    
+
     if (value) {
       const values = Array.isArray(value) ? value : [ value ];
 
@@ -51,40 +41,67 @@ const computeFacet = (items, facetName, fn) => {
   return {
     facet: facetName,
     counts: toSortedArray(counts),
-    items: facetedItems
+  
+    // If there is a post-filter, remove all items that don't satisfy 
+    // the filter condition (counts should remain unchanged though!)
+    items: postFilter ? facetedItems.filter(postFilter) : facetedItems
   };
 }
 
-const computeSimpleFieldFacet = (items, facet) =>
-  computeFacet(items, facet.name, item => item[facet.definition]);
+const computeSimpleFieldFacet = (items, facet, postFilter) =>
+  computeFacet(items, facet.name, item => item[facet.definition], postFilter);
 
-const computeCustomFnFacet = (items, facet) => 
-  computeFacet(items, facet.name, facet.definition);
+const computeCustomFnFacet = (items, facet, postFilter) => 
+  computeFacet(items, facet.name, facet.definition, postFilter);
 
-const computeNestedFieldFacet = (items, facet) => {
+const computeNestedFieldFacet = (items, facet, postFilter) => {
 
-  const getValueRecursive = (obj, path) => {
+  const getValueRecursive = (obj, path, condition) => {
     const [ nextSegment, ...pathRest ] = path;
+
+    const meetsCondition = obj => {
+      if (!condition)
+        return true;
+      
+      const [ key, val ] = condition;
+
+      // If obj doesn't have the condition key -> admit
+      if (!obj[key])
+        return true;
+
+      // If obj has the key, and the value matches -> admit
+      if (obj[key] === val)
+        return true;
+
+      return false;
+    }
 
     const value = obj[nextSegment];
     if (pathRest.length === 0 || !value) {
       return value;
     } else {
       return Array.isArray(value) ?
-        value.map(obj => getValueRecursive(obj, pathRest)): 
-        getValueRecursive(value, pathRest);
+
+        value.filter(meetsCondition)
+          .map(obj => getValueRecursive(obj, pathRest, condition))
+          .filter(value => value) // Remove undefined
+
+        :
+        
+        meetsCondition(value) ?
+          getValueRecursive(value, pathRest, condition) : [];       
     }
   };
 
-  return computeFacet(items, facet.name, item => getValueRecursive(item, facet.definition));
+  return computeFacet(items, facet.name, item => getValueRecursive(item, facet.definition, facet.condition), postFilter);
 }
 
-export const computeFacetDistribution = (items, facet) => {
+export const computeFacetDistribution = (items, facet, postFilter) => {
   const { definition } = facet;
   if (Array.isArray(definition))
-    return computeNestedFieldFacet(items, facet);
+    return computeNestedFieldFacet(items, facet, postFilter);
   else if (definition instanceof Function)
-    return computeCustomFnFacet(items, facet);
+    return computeCustomFnFacet(items, facet, postFilter);
   else 
-    return computeSimpleFieldFacet(items, facet);
+    return computeSimpleFieldFacet(items, facet, postFilter);
 }

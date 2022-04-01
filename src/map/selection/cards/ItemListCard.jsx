@@ -1,10 +1,15 @@
 import React from 'react';
+import { AiOutlineInfoCircle } from 'react-icons/ai';
 import { IoArrowBackOutline, IoCloseSharp } from 'react-icons/io5';
 import { SiWikidata } from 'react-icons/si';
 import { VscGlobe } from 'react-icons/vsc';
 import { BiRightArrowAlt } from 'react-icons/bi';
 
+import { getTypes } from './Utils';
 import { SIGNATURE_COLOR } from '../../../Colors';
+
+const sanitizeURL = str => /^http(s?):\/\//.test(str) ?
+  str : 'http://' + str;
 
 // Pre-set link icons
 const ICONS = [
@@ -30,9 +35,12 @@ const InternalLink = props => {
 
   return (
     <div onClick={() => props.onSelect(node)}>
-      <div>
+      <div className="p6o-internal-link-meta">
         <h3>{node.title}</h3>
         <h4>{node.dataset}</h4>
+        <ul className="p6o-node-types">
+          {getTypes(node).map(t => <li key={t}>{t}</li>)}
+        </ul>
       </div>
       <BiRightArrowAlt />
     </div>
@@ -44,7 +52,7 @@ const ExternalLink = props => {
 
   const link = props.node;
 
-  const url = new URL(link.identifier);
+  const url = new URL(sanitizeURL(link.identifier));
   const { host, href } = url;
 
   const customIcon = props.config.link_icons &&
@@ -61,8 +69,22 @@ const ExternalLink = props => {
 
   return (
     <>
-      {icon}
-      <a href={href} target="_blank" title={host}>{host}</a>
+      <div className="p6o-external-link-icon">{icon}</div>
+      <div className="p6o-external-link-meta">
+        {link.label && 
+          <a 
+            className="p6o-external-link-label" 
+            href={href} 
+            target="_blank" 
+            title={link.label}>{link.label}</a>
+        }
+
+        <a 
+          className="p6o-external-link-host" 
+          href={href} 
+          target="_blank" 
+          title={link.label || host}>{host}</a>
+      </div>
     </>
   )
 
@@ -113,6 +135,9 @@ const ItemListCard = props => {
         </li>
       )}
       </ul>
+      <footer aria-live={true}>
+        <AiOutlineInfoCircle />Links open a new tab
+      </footer>
     </div>
   )
 

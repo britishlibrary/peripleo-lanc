@@ -3,10 +3,9 @@ import { Source, Layer } from 'react-map-gl';
 
 import { SIGNATURE_COLOR } from '../Colors';
 
-import { pointStyle, pointCategoryStyle } from './styles/point';
-import { clusterPointStyle, clusterLabelStyle } from './styles/cluster';
-import { heatmapCoverageStyle, heatmapPointStyle } from './styles/heatmap';
-import { colorHeatmapCoverage, colorHeatmapPoint } from './styles/colorHeatmap';
+import { pointStyle, pointCategoryStyle } from './styles/Point';
+import { clusterPointStyle, clusterLabelStyle } from './styles/Clusters';
+import { colorHeatmapCoverage, colorHeatmapPoint } from './styles/Heatmap';
 
 const toFeatureCollection = features => 
   ({ type: 'FeatureCollection', features: features || [] });
@@ -32,12 +31,18 @@ const getLayers = facetDistribution => {
       unassigned.push(item);
   });
 
-  const arr = Object.entries(layers);
-  arr.sort((a, b) => b[1].length - a[1].length);
+  // Map to array of entries + legend color
+  const getColor = label => SIGNATURE_COLOR[topValues.indexOf(label)];
+  
+  const arr = Object.entries(layers)
+    .filter(t => t[1].length > 0)
+    .map(t => [...t, getColor(t[0])]);
+
+  arr.sort((a, b) => a[1].length - b[1].length);
 
   return [
     ...arr,
-    ['__unassigned', unassigned ]
+    ['__unassigned', unassigned, '#a2a2a2' ]
   ].slice().reverse(); // Largest layer at bottom
 }
 
@@ -48,7 +53,7 @@ const LayersCategorized = props => {
   const [ layers, setLayers ] = useState();
 
   useEffect(() => {
-    if (props.selectedMode === 'COLOURED_HEATMAP') {
+    if (props.selectedMode === 'heatmap') {
       setLayers(getLayers(props.search.facetDistribution));       
     } else {
       const { counts, items } = props.search.facetDistribution;
@@ -82,7 +87,7 @@ const LayersCategorized = props => {
 
   return (
     <>
-      {props.selectedMode === 'POINTS' &&
+      {props.selectedMode === 'points' &&
         <Source type="geojson" data={toFeatureCollection(features)}>
           <Layer 
             id="p6o-points"
@@ -90,7 +95,7 @@ const LayersCategorized = props => {
         </Source>
       } 
 
-      {props.selectedMode === 'CLUSTERS' && 
+      {props.selectedMode === 'clusters' && 
         <Source 
           type="geojson" 
           cluster={true}
@@ -109,28 +114,16 @@ const LayersCategorized = props => {
         </Source>
       }
 
-      {props.selectedMode === 'HEATMAP' &&
-        <Source type="geojson" data={toFeatureCollection(features)}>
-          <Layer
-            id="p6o-heatmap"
-            {...heatmapCoverageStyle()} />
-
-          <Layer
-            id="p6o-points"
-            {...heatmapPointStyle()} /> 
-        </Source>
-      }
-
-      {props.selectedMode === 'COLOURED_HEATMAP' &&
-        layers?.map(([layer, features], idx) => 
+      {props.selectedMode === 'heatmap' &&
+        layers?.map(([layer, features, color]) => 
           <Source key={layer} type="geojson" data={toFeatureCollection(features)}>
             <Layer
               id={`p6o-heatmap-${layer}`}
-              {...colorHeatmapCoverage(layers.length - idx - 1)} />
+              {...colorHeatmapCoverage(color)} />
           
             <Layer
               id={`p6o-points-${layer}`}
-              {...colorHeatmapPoint(layers.length - idx - 1)} /> 
+              {...colorHeatmapPoint(color)} /> 
           </Source>
         )
       }

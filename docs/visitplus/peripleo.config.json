@@ -4,6 +4,11 @@
     "data": [
       { "name": "VisitPlus", "format": "LINKED_PLACES", "src": "../data/VisitPlus.lp.json" }
     ],
+    "facets": [
+      { "name": "custodian", "path": ["relations", "label"], "condition": [ "relationType", "http://vocab.getty.edu/page/aat/300160390" ] },
+      "type",
+      "has_image"
+    ],
     "link_icons": {
       "www.nationaltrust.org.uk": "../logos/www.nationaltrust.org.uk.png",
       "www.mola.org.uk": "../logos/www.mola.org.uk.png",

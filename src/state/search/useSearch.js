@@ -2,17 +2,20 @@ import { useContext } from 'react';
 import { useRecoilState } from 'recoil';
 
 import { StoreContext } from '../../store';
+import { FacetsContext } from './FacetsContext';
 
 import Search from './Search';
 import { searchState } from '..';
 
 import Filter from './Filter';
 
-import { DEFAULT_FACETS, computeFacetDistribution } from './Facets';
+import { computeFacetDistribution } from './Facets';
 
 const useSearch = () => {
 
   const { store } = useContext(StoreContext);
+
+  const { availableFacets } = useContext(FacetsContext);
 
   const [ search, setSearchState ] = useRecoilState(searchState);
 
@@ -20,15 +23,33 @@ const useSearch = () => {
    * Executes a new search - warning costly operation!
    */
   const executeSearch = (query, filters, facet, fitMap) => {
-    // TODO handle filters
-    const items = query ?
+    const all = query ?
       store.searchMappable(query) :
       store.getAllLocatedNodes();
 
+    let preFilteredItems, postFilter;
+
+    if (filters?.length > 0) {
+      // All filters except on the current facet
+      const preFilters = filters.filter(f => f.facet !== facet)
+        .map(f => f.executable(availableFacets));
+
+      // The current facet filter (if any)
+      postFilter = filters.find(f => f.facet === facet)?.executable(availableFacets);
+
+      // Step 1: apply pre-filters
+      preFilteredItems = all.filter(item => preFilters.every(fn => fn(item)));
+    } else {
+      preFilteredItems = all;
+    }
+
     const facetDistribution = 
-      facet && 
-      DEFAULT_FACETS.find(f => f.name === facet) &&
-      computeFacetDistribution(items, DEFAULT_FACETS.find(f => f.name === facet));
+      facet &&
+      availableFacets.find(f => f.name === facet) &&
+      computeFacetDistribution(preFilteredItems, availableFacets.find(f => f.name === facet), postFilter);
+
+    const items = facetDistribution ? 
+      facetDistribution.items : preFilteredItems;
 
     setSearchState(new Search(query, filters, facet, fitMap, items, facetDistribution));
   }
@@ -63,7 +84,7 @@ const useSearch = () => {
    * Adds or removes a filter and re-runs the search
    */
   const toggleFilter = (filterFacet, filterValue) => {
-    const { query, filters, facet, fitMap } = search;
+    const { query, filters, facet } = search;
 
     // Is there already a filter on this facet?
     const existingFilter = filters.find(f => f.facet === filterFacet);
@@ -72,7 +93,7 @@ const useSearch = () => {
 
     if (existingFilter?.values.length === 1 && existingFilter?.values[0] === filterValue) {
       // Toggle last remaining value for the existing filter -> remove!
-      updatedFilters = filter.filter(f => f.facet !== filterFacet);
+      updatedFilters = filters.filter(f => f.facet !== filterFacet);
     } else if (existingFilter) {
       // Toggle single value in existing filter
       updatedFilters = filters.map(f => {
@@ -88,14 +109,22 @@ const useSearch = () => {
         }
       });
     } else {
-      // No existing filter on this facet yet
+      // No existing filter on this facet yet - add
       updatedFilters = [
         ...filters,
         new Filter(filterFacet, filterValue)
       ];
     }
       
-    executeSearch(query, updatedFilters, facet, fitMap);
+    executeSearch(query, updatedFilters, facet);
+  }
+
+  const clearFilter = filterFacet => {
+    const { query, filters, facet } = search;
+
+    const updatedFilters = filters.filter(f => f.facet !== filterFacet);
+
+    executeSearch(query, updatedFilters, facet);
   }
 
   /**
@@ -103,19 +132,8 @@ const useSearch = () => {
    * but not the search.
    */
   const setCategoryFacet = facetName => {
-    const updated = search.clone();
-
-    const facet = DEFAULT_FACETS.find(f => f.name === facetName);
-
-    if (facet) {
-      updated.facet = facetName;
-      updated.facetDistribution = computeFacetDistribution(search.items, facet);
-    } else {
-      updated.facet = null;
-      updated.facetDistribution = null;
-    }
-    
-    setSearchState(updated);
+    const { query, filters } = search;
+    executeSearch(query, filters, facetName);
   }
 
   return {
@@ -125,8 +143,9 @@ const useSearch = () => {
     clearSearchQuery,
     fitMap,
     toggleFilter,
+    clearFilter,
     setCategoryFacet,
-    availableFacets: DEFAULT_FACETS.map(f => f.name)
+    availableFacets: availableFacets.map(f => f.name)
   };
 
 }
