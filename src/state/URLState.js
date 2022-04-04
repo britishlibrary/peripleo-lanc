@@ -5,8 +5,6 @@ import { useDebounce } from 'use-debounce';
 import { searchState, mapViewState, mapModeState } from '.';
 
 const toURL = state => {
-  console.log('upadting url', state);
-
   const { 
     zoom,
     longitude, 
@@ -40,9 +38,6 @@ const toURL = state => {
 }
 
 const URLState = props => {
-
-  console.log('URLState', props);
-
   const mapView = useRecoilValue(mapViewState);
 
   const mapMode = useRecoilValue(mapModeState);
