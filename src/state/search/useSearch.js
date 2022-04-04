@@ -116,7 +116,8 @@ const useSearch = () => {
       ];
     }
       
-    executeSearch(query, updatedFilters, facet);
+    // Setting a filter will auto-fit the map
+    executeSearch(query, updatedFilters, facet, true);
   }
 
   const clearFilter = filterFacet => {
