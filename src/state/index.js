@@ -17,7 +17,7 @@ const initialMapViewState = (hash.match(/\//g) || []).length < 3 ?
 const initialParams = (hash.match(/\//g) || []).length !== 4 ?
   {} :
   Object.fromEntries(hash.substring(hash.lastIndexOf('/') + 1)
-    .split('&')
+    .split('+')
     .map(t => t.split('=')));
 
 /** Current map view state: zoom, longitude, latitude **/
@@ -29,7 +29,7 @@ export const mapViewState = atom({
 /** Map mode state: points, clusters, heatmap **/
 export const mapModeState = atom({
   key: 'mapMode',
-  default: 'points'
+  default: initialParams.mode || 'points'
 });
 
 /** Current search (query, filter, facet) + search results **/

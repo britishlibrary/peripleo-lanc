@@ -2,10 +2,18 @@ import { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { useDebounce } from 'use-debounce';
 
-import { searchState, mapViewState } from '.';
+import { searchState, mapViewState, mapModeState } from '.';
 
 const toURL = state => {
-  const { longitude, latitude, zoom, facet } = state;
+  console.log('upadting url', state);
+
+  const { 
+    zoom,
+    longitude, 
+    latitude, 
+    facet, 
+    mode 
+  } = state;
 
   let fragment = '#/';
 
@@ -17,28 +25,36 @@ const toURL = state => {
   else 
     fragment = fragment + '?/?/?';
 
+  // Map mode (unless default)
+  if (mode)
+    params.push(`mode=${mode}`);
+
   // Facet value (if any)
   if (facet)
     params.push(`facet=${facet}`);
   
   const url = params.length > 0 ?
-    fragment + '/' + params.join('&') : fragment;
+    fragment + '/' + params.join('+') : fragment;
 
   history.pushState(state, null, url);
 }
 
 const URLState = props => {
 
-  const map = useRecoilValue(mapViewState);
+  console.log('URLState', props);
+
+  const mapView = useRecoilValue(mapViewState);
+
+  const mapMode = useRecoilValue(mapModeState);
 
   const search = useRecoilValue(searchState)
 
-  const [ mapDebounced ] = useDebounce(map, 500);
+  const [ mapDebounced ] = useDebounce(mapView, 500);
 
-  const [ state, setState ] = useState({ ...map });
+  const [ state, setState ] = useState({ ...mapView });
 
   useEffect(() => {
-    const { longitude, latitude, zoom } = map;
+    const { longitude, latitude, zoom } = mapView;
     setState({
       ...state, 
       longitude, latitude, zoom
@@ -46,7 +62,12 @@ const URLState = props => {
   }, [ mapDebounced ]);
 
   useEffect(() => {
-    setState({...state, facet: search.facet })
+    console.log('mapMode', mapMode);
+    setState(state => ({ ...state, mode: mapMode }));
+  }, [ mapMode ]);
+
+  useEffect(() => {
+    setState(state => ({...state, facet: search.facet }));
   }, [ search ]);
 
   useEffect(() => toURL(state), [ state ]);
