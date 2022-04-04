@@ -7,6 +7,10 @@
       { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "../data/coins/base-byzantine-coins.lp.json" },
       { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "../data/coins/ptolemaic-coins.lp.json" }
     ],
+    "facets": [
+      "dataset",
+      "type"
+    ],
     "layers": [
       { "name": "SW Rivers", "src": "../layers/SW_rivers.geojson", "color": "#5555ff" },
       { "name": "SW Routes", "src": "../layers/SW_Routes.geojson", "color": "#727272" }

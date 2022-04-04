@@ -10,8 +10,7 @@
   "facets": [
     "dataset",
     "type",
-    { "name": "technique", "path": ["relations", "label"], "condition": [ "relationType", "aat:300138082" ] },
-    "has_image"
+    { "name": "technique", "path": ["relations", "label"], "condition": [ "relationType", "aat:300138082" ] }
   ],
   "link_icons": {
     "www.nationaltrust.org.uk": "logos/www.nationaltrust.org.uk.png",

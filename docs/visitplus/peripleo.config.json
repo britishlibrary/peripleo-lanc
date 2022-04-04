@@ -6,8 +6,7 @@
     ],
     "facets": [
       { "name": "custodian", "path": ["relations", "label"], "condition": [ "relationType", "http://vocab.getty.edu/page/aat/300160390" ] },
-      "type",
-      "has_image"
+      "type"
     ],
     "link_icons": {
       "www.nationaltrust.org.uk": "../logos/www.nationaltrust.org.uk.png",

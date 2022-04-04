@@ -4,6 +4,10 @@
   "data": [
     { "name": "Hollar", "format": "LINKED_PLACES", "src": "../data/Hollar-1660.lp.json" }
   ],
+  "facets": [
+    "dataset",
+    "type"
+  ],
   "link_icons": {
     "www.nationaltrust.org.uk": "../logos/www.nationaltrust.org.uk.png",
     "www.mola.org.uk": "../logos/www.mola.org.uk.png",
