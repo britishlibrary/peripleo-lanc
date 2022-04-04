@@ -85,8 +85,7 @@ const ItemCard = props => {
 
             {image.accreditation &&
               <span 
-                className="p6o-selection-header-image-accreditation" 
-                dangerouslySetInnerHTML={{ __html: image.accreditation }} />
+                className="p6o-selection-header-image-accreditation">{image.accreditation}</span> 
             }
 
             <button 
