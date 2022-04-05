@@ -42,7 +42,7 @@ const Map = React.forwardRef((props, ref) => {
     if (fitMap && mapRef.current) {
       const bounds = search.bounds();
       if (bounds)
-        mapRef.current.fitBounds(bounds, { padding: 40 });
+        mapRef.current.fitBounds(bounds, { padding: 40 , maxZoom: 14 });
     }
   }, [ search ]);
 
