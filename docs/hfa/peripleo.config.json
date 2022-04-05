@@ -6,8 +6,7 @@
       { "name": "Heritage for All", "format": "LINKED_PLACES", "src": "../data/hfa.pas.lp.json" }
     ],
     "facets": [
-      { "name": "organisation", "path": ["properties", "organisation" ] },
-      "type"
+      { "name": "organisation", "path": ["properties", "organisation" ] }
     ],
     "link_icons": {
       "www.nationaltrust.org.uk": "../logos/www.nationaltrust.org.uk.png",
