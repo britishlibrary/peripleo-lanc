@@ -1,6 +1,6 @@
 {
     "api_key": "cqqmcLw28krG9Fl7V3kg",
-    "initial_bounds": [-7.9, 49.5, 2.2, 59.4],
+    "initial_bounds": [-10, 41.1, 35.3, 61.0],
     "data": [
       { "name": "Leif's Early Monasteries", "format": "LINKED_PLACES", "src": "../data/early-monasteries.lp.json" },
       { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "../data/coins/alexandrian-tetradrachms.lp.json" },
