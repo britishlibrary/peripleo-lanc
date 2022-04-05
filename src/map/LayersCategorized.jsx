@@ -66,8 +66,17 @@ const LayersCategorized = props => {
         // Facet values assigned to this feature
         const values = feature._facet?.values || [];
         
-        // Color the feature by top facet
-        const topValue = values.find(value => currentFacets.indexOf(value) > -1);
+        // Color the feature by the top facet *that's currently active*!
+        // That means: we need to use different colors depending on whether
+        // there's currently a filter set on this facet
+        const topValue = values.find(value => {
+          const currentFilter = props.search.filters.find(f => 
+            f.facet === props.search.facet);
+          
+          return currentFilter ?
+            currentFilter.values.indexOf(value) > -1 :
+            currentFacets.indexOf(value) > -1;
+        });
 
         const color = topValue ?
           SIGNATURE_COLOR[currentFacets.indexOf(topValue)] : '#a2a2a2';
