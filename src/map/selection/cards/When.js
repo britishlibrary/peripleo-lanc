@@ -1,4 +1,6 @@
-const parseString = str => {
+const parseValue = val => {
+  const str = String(val);
+
   if (str.includes('/')) {
     const [earliest, latest] = str.split('/').map(s => parseInt(s.trim()));
     return { earliest, latest };
@@ -24,8 +26,8 @@ const parseFull = obj => {
   return { earliest, latest };
 }
 
-const isString = arg => 
-  typeof arg === 'string' || arg instanceof String;
+const isValue = arg => 
+  typeof arg === 'string' || arg instanceof String || !isNaN(arg);
 
 export const parseWhen = arg => {
 
@@ -36,7 +38,7 @@ export const parseWhen = arg => {
     earliest,
     latest,
     year
-  } = isString(arg) ? parseString(arg) : parseFull(arg);
+  } = isValue(arg) ? parseValue(arg) : parseFull(arg);
 
   let label;
 
