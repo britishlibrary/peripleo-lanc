@@ -10,21 +10,35 @@ import { colorHeatmapCoverage, colorHeatmapPoint } from './styles/Heatmap';
 const toFeatureCollection = features => 
   ({ type: 'FeatureCollection', features: features || [] });
 
-const getLayers = facetDistribution => {
-  const { counts, items } = facetDistribution;
-
-  const topValues = counts.slice(0, 8).map(t => t[0]);
-
+const getLayers = search => {
   // For every feature, we'll check the facet value, and assign it 
   // to the first layer it matches. In other words: the feature will
-  // get the color of the most common facet value.
-  const layers = Object.fromEntries(topValues.map(label => [ label, [] ]));
+  // get the color of the most common *active* facet value.
+  // (Re "active": that means we need to pick different colors based
+  // on whether there's currently a filter)
+  const currentFilter = search.filters.find(f => 
+    f.facet === search.facet);
+
+  const { counts, items } = search.facetDistribution;
+
+  // All facet values (defines layer colors!)
+  const allFacetValues = counts.slice(0, 8).map(t => t[0]);
+
+  // Just the active values - all, or a subset if filter is enabled
+  const activeValues = currentFilter ?
+    [...currentFilter.values ] : allFacetValues;
+
+  // Re-order active values if necessary
+  if (currentFilter)
+    activeValues.sort((a, b) => allFacetValues.indexOf(a) - allFacetValues.indexOf(b));
+
+  const layers = Object.fromEntries(activeValues.map(label => [ label, [] ]));
   const unassigned = [];
 
   items.forEach(item => {
     const values = item._facet?.values || [];
 
-    const firstMatch = topValues.find(l => values.indexOf(l) > -1);
+    const firstMatch = activeValues.find(l => values.indexOf(l) > -1);
     if (firstMatch)
       layers[firstMatch].push(item);
     else
@@ -32,7 +46,7 @@ const getLayers = facetDistribution => {
   });
 
   // Map to array of entries + legend color
-  const getColor = label => SIGNATURE_COLOR[topValues.indexOf(label)];
+  const getColor = label => SIGNATURE_COLOR[allFacetValues.indexOf(label)];
   
   const arr = Object.entries(layers)
     .filter(t => t[1].length > 0)
@@ -54,12 +68,16 @@ const LayersCategorized = props => {
 
   useEffect(() => {
     if (props.selectedMode === 'heatmap') {
-      setLayers(getLayers(props.search.facetDistribution));       
+      setLayers(getLayers(props.search));       
     } else {
       const { counts, items } = props.search.facetDistribution;
 
       // Just the facet value labels, in order of the legend
       const currentFacets = counts.map(c => c[0]);
+      
+      // Current filter on this facet, if any
+      const currentFilter = props.search.filters.find(f => 
+        f.facet === props.search.facet);
 
       // Colorize the features according to their facet values
       const colorized = items.map(feature => {
@@ -69,14 +87,10 @@ const LayersCategorized = props => {
         // Color the feature by the top facet *that's currently active*!
         // That means: we need to use different colors depending on whether
         // there's currently a filter set on this facet
-        const topValue = values.find(value => {
-          const currentFilter = props.search.filters.find(f => 
-            f.facet === props.search.facet);
-          
-          return currentFilter ?
+        const topValue = values.find(value =>     
+          currentFilter ?
             currentFilter.values.indexOf(value) > -1 :
-            currentFacets.indexOf(value) > -1;
-        });
+            currentFacets.indexOf(value) > -1);
 
         const color = topValue ?
           SIGNATURE_COLOR[currentFacets.indexOf(topValue)] : '#a2a2a2';
