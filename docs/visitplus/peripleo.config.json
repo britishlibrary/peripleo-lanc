@@ -2,7 +2,9 @@
     "api_key": "cqqmcLw28krG9Fl7V3kg",
     "initial_bounds": [-7.9, 49.5, 2.2, 59.4],
     "data": [
-      { "name": "VisitPlus", "format": "LINKED_PLACES", "src": "../data/VisitPlus.lp.json" }
+      { "name": "VisitPlus", "format": "LINKED_PLACES", "src": "../data/VisitPlus.lp.json" },
+      { "name": "VisitPlus", "format": "LINKED_PLACES", "src": "../data/Mapping-Museums.lp.json" },
+      { "name": "VisitPlus", "format": "LINKED_PLACES", "src": "../data/ArtUK.lp.json" }
     ],
     "facets": [
       { "name": "custodian", "path": ["relations", "label"], "condition": [ "relationType", "http://vocab.getty.edu/page/aat/300160390" ] },
