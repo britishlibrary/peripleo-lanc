@@ -84,7 +84,7 @@ const Facets = props => {
       className="p6o-facets-container">
       <div className="p6o-facets">
         <motion.div
-          className="p6o-facets-carousel"
+          className={props.arrows ? 'p6o-facets-carousel' : 'p6o-facets-carousel centered'}
           variants={parentAnimation}
           initial="hidden"
           animate="visible"
