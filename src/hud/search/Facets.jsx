@@ -90,12 +90,14 @@ const Facets = props => {
           animate="visible"
           exit="hidden">
 
-          <button 
-            tabIndex={4}
-            aria-label="Previous filter category"
-            onClick={props.onPreviousFacet}>
-            <HiOutlineChevronLeft />
-          </button>
+          {props.arrows &&
+            <button 
+              tabIndex={4}
+              aria-label="Previous filter category"
+              onClick={props.onPreviousFacet}>
+              <HiOutlineChevronLeft />
+            </button>
+          }
           
           <h3 
             aria-live="polite"
@@ -103,12 +105,14 @@ const Facets = props => {
             {props.search.facet.replace('_', ' ')}
           </h3>
           
-          <button
-            tabIndex={5}
-            aria-label="Next filter category" 
-            onClick={props.onNextFacet}>
-            <HiOutlineChevronRight />
-          </button>
+          {props.arrows && 
+            <button
+              tabIndex={5}
+              aria-label="Next filter category" 
+              onClick={props.onNextFacet}>
+              <HiOutlineChevronRight />
+            </button>
+          }
         </motion.div>
 
         <motion.ul 

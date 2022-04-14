@@ -117,6 +117,7 @@ const SearchPanel = props => {
       <AnimatePresence>
         {search.facet && 
           <Facets 
+            arrows={availableFacets.length > 1}
             search={search} 
             onNextFacet={onChangeFacet(1)}
             onPreviousFacet={onChangeFacet(-1)}
