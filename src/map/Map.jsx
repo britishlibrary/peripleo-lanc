@@ -1,19 +1,18 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import ReactMapGL, { Source, Layer } from 'react-map-gl';
+import ReactMapGL from 'react-map-gl';
 import { useRecoilState, useRecoilValue } from 'recoil';
 
 import useSearch from '../state/search/useSearch';
 import { StoreContext } from '../store';
 import { mapViewState, mapModeState } from '../state';
 
+import { parseLayerConfig } from './BaseLayers';
 import LayersCategorized from './LayersCategorized';
 import LayersUncategorized from './LayersUncategorized';
 
 import Controls from './controls/Controls';
 import HoverBubble from './HoverBubble';
 import SelectionPreview from './selection/SelectionPreview';
-
-import { geojsonLineStyle } from './styles/BackgroundLayers';
 
 const Map = React.forwardRef((props, ref) => {
 
@@ -32,8 +31,6 @@ const Map = React.forwardRef((props, ref) => {
   const [ hover, setHover ] = useState();
 
   const [ selection, setSelection ] = useState();
-
-  const style = `https://api.maptiler.com/maps/outdoor/style.json?key=${config.api_key}`;
 
   useEffect(() => {
     setSelection(null);
@@ -109,18 +106,13 @@ const Map = React.forwardRef((props, ref) => {
         initialViewState={viewstate.latitude && viewstate.longitude && viewstate.zoom ? viewstate : {
           bounds: config.initial_bounds
         }}
-        mapStyle={style}
+        mapStyle={config.map_style}
         onLoad={props.onLoad}
         onMove={onMapChange}
         onClick={onClick}
         onMouseMove={onMouseMove}>
 
-        {props.config.layers && props.config.layers.map(layer =>
-          <Source key={layer.name} type="geojson" data={layer.src}>
-            <Layer
-              {...geojsonLineStyle(layer.color)} />
-          </Source>
-        )}
+        {props.config.layers && props.config.layers.map(layer => parseLayerConfig(layer))}
 
         {search.facetDistribution ?
           <LayersCategorized 
