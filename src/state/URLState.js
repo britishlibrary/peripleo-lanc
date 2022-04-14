@@ -57,7 +57,6 @@ const URLState = props => {
   }, [ mapDebounced ]);
 
   useEffect(() => {
-    console.log('mapMode', mapMode);
     setState(state => ({ ...state, mode: mapMode }));
   }, [ mapMode ]);
 
