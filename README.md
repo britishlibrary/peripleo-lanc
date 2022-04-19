@@ -30,3 +30,7 @@ To run Peripleo in development mode:
 ## Site Preview
 
 The project web site can be found [here](https://britishlibrary.github.io/locating-a-national-collection/home.html), and includes several examples of geospatial datasets rendered as maps using *Peripleo*.
+
+## Quick Setup
+
+You can quickly deploy *Peripleo* for the visualisation of your own geospatial data. Follow the instructions given [here](https://github.com/britishlibrary/peripleo-lanc/blob/main/Quick-Setup.md).
