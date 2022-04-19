@@ -13,24 +13,70 @@ These are the configuration settings for the example map [here](https://descarte
 
 ```json
 {
-  "initial_bounds": [-5.5, 49.5, 2.2, 55.8],
-  "map_style": "https://api.maptiler.com/maps/outdoor/style.json?key=MY_API_KEY",
-  "data": [
-    { "name": "VCH Places", "format": "LINKED_PLACES", "src": "https://docuracy.github.io/Locolligo/datasets/VCH-Places.lp.json" }
+  "initial_bounds":[
+    -5.5,
+    49.5,
+    2.2,
+    55.8
   ],
-  "facets": [
-	  { "name": "County", "path": ["properties", "county"] },
-	  { "name": "Schools", "path": ["properties", "schools"] },
+  "map_style":"https://api.maptiler.com/maps/outdoor/style.json?key=kqQCjfFMEWhLGBLyMnwW",
+  "layers":[
+    {
+      "name":"Ordnance Survey 6-inch (1888-1913)",
+      "type":"raster",
+      "tiles":[
+        "https://nls-1.tileserver.com/fpsUZbULUtp1/{z}/{x}/{y}.png"
+      ],
+      "tileSize":256,
+      "attribution":"Historical OS 6-inch Map Layer, 1888-1913, by National Library of Scotland",
+      "minzoom":15,
+      "maxzoom":22
+    },
+    {
+      "name":"Ordnance Survey 1-inch (1885-1900)",
+      "type":"raster",
+      "tiles":[
+        "https://geo.nls.uk/maps/os/1inch_2nd_ed/{z}/{x}/{y}.png"
+      ],
+      "tileSize":256,
+      "attribution":"Historical OS 1-inch Map Layer, 1885-1900, by National Library of Scotland",
+      "minzoom":0,
+      "maxzoom":15
+    }
+  ],
+  "data":[
+    {
+      "name":"VCH Places",
+      "format":"LINKED_PLACES",
+      "src":"https://docuracy.github.io/Locolligo/datasets/VCH-Places.lp.json"
+    }
+  ],
+  "facets":[
+    {
+      "name":"County",
+      "path":[
+        "properties",
+        "county"
+      ]
+    },
+    {
+      "name":"Schools",
+      "path":[
+        "properties",
+        "schools"
+      ]
+    },
     "type"
   ],
-  "link_icons": {
-    "www.british-history.ac.uk": "https://raw.githubusercontent.com/britishlibrary/peripleo-lanc/main/logos/bho.png"
+  "link_icons":{
+    "www.british-history.ac.uk":"https://raw.githubusercontent.com/britishlibrary/peripleo-lanc/main/logos/bho.png"
   }
 }
 ```
 
 * `initial_bounds`: Here you specify the coordinates (in degrees of longitude and latitude) of the bottom left and top right corners of your map, in the format `[bottom-left-longitude, bottom-left-latitude, top-right-longitude, top-right-latitude]`.
 * `map_style` (optional): the URL to a vector basemap style, e.g. from MapBox or MapTiler. If left out, Peripleo will load with an empty background
+* `layers` (optional): You can configure additional base layers. Peripleo currently supports GeoJSON and raster tile sources.
 * `data`: This is where your put information about each of your datasets, enclosed in {curly brackets}. You can use multiple datasets, separating them with a comma. 
 * `layers` (optional): You can configure additional base layers. Peripleo currently supports GeoJSON and raster tile sources.
 * `facets`: If you want your dataset to be filtered, this is where you specify how.
