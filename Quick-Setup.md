@@ -75,7 +75,7 @@ These are the configuration settings for the example map [here](https://descarte
 ```
 
 * `initial_bounds`: Here you specify the coordinates (in degrees of longitude and latitude) of the bottom left and top right corners of your map, in the format `[bottom-left-longitude, bottom-left-latitude, top-right-longitude, top-right-latitude]`.
-* `map_style` (optional): the URL to a vector basemap style, e.g. from MapBox or MapTiler. If left out, Peripleo will load with an empty background
+* `map_style` (optional): the URL to a vector basemap style, e.g. from [MapBox](https://docs.mapbox.com/api/maps/styles/) or [MapTiler](https://www.maptiler.com/cloud/). If left out, Peripleo will load with an empty background
 * `layers` (optional): You can configure additional base layers. Peripleo currently supports GeoJSON and raster tile sources.
 * `data`: This is where your put information about each of your datasets, enclosed in {curly brackets}. You can use multiple datasets, separating them with a comma. 
 * `layers` (optional): You can configure additional base layers. Peripleo currently supports GeoJSON and raster tile sources.
