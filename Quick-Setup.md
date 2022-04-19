@@ -86,10 +86,14 @@ These are the configuration settings for the example map [here](https://descarte
 * Upload your `index.html` and configuration settings (in a file named `peripleo.config.json`) to the web server of your choice. These files must both sit in the same directory.
 * **That's it !!!** Point your browser to the URL of your `index.html` file and wait for it to load.
 
+____
+
+## Further Configuration
+
 ### About Additional Baselayers
 
-In the `layers` array, Peripleo supports GeoJSON and raster tile sources. Each layer configuration object __must__
-have a `name` field, and a `type` field with a value of either `geojson` or `raster`. Examples:
+In the `layers` array, *Peripleo* supports GeoJSON and raster tile sources. Each layer configuration object __must__
+have a `name` field, and a `type` field with a value of either `geojson` or `raster`. For example:
 
 ```json
 { 
@@ -117,15 +121,15 @@ have a `name` field, and a `type` field with a value of either `geojson` or `ras
 ### About Facets
 
 Every custom facet configuration __must__ have a `name` and a `path` field. The name will be shown (capitalized)
-as a title in the filter legend. The `path` defines from which part of the record Peripleo will aggregate 
+as a title in the filter legend. The `path` defines from which part of the record *Peripleo* will aggregate 
 result counts.
 
-For example, if you set `path: 'category'`, Peripleo will aggregate the values found in the `category` field at 
+For example, if you set `path: 'category'`, *Peripleo* will aggregate the values found in the `category` field at 
 the top of each data record. If you want to aggregate the values found in `properties.category` of each record,
 set the path to `path: [ 'properties', 'category' ]`.
 
-Peripleo supports multi-value aggregation as well as paths with list structures. I.e. if you set 
-`path: [ 'types', 'label' ]`, Peripleo will be able to aggregate from the following record data structures:
+*Peripleo* supports multi-value aggregation as well as paths with list structures. I.e. if you set 
+`path: [ 'types', 'label' ]`, *Peripleo* will be able to aggregate from the following record data structures:
 
 ```json
 {
@@ -164,7 +168,7 @@ Peripleo supports multi-value aggregation as well as paths with list structures.
 }
 ```
 
-Additionally, you can add a `condition` that Peripleo will look for while aggregating results. For example,
+Additionally, you can add a `condition` that *Peripleo* will look for while aggregating results. For example,
 if you set `condition: [ "relationType", "aat:300138082" ]`, Peripleo will count the first match, but not the second.
 
 ```json
