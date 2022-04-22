@@ -1,5 +1,5 @@
 {
-  "initial_bounds": [-0.8, 51.1, 0.8, 51.95],
+  "initial_bounds": [-0.08, 51.45, 0.08, 51.55],
   "map_style": "https://api.maptiler.com/maps/outdoor/style.json?key=cqqmcLw28krG9Fl7V3kg",
   "data": [
     { "name": "Heritage for All", "format": "LINKED_PLACES", "src": "../data/hfa.lp.json" }, 
