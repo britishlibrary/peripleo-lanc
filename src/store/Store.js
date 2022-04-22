@@ -2,7 +2,7 @@ import createGraph from 'ngraph.graph';
 import RBush from 'rbush';
 import FlexSearch from 'flexsearch';
 
-import { getDescription } from '.';
+import { getDescriptions } from '.';
 import { loadLinkedPlaces } from './loaders/LinkedPlacesLoader';
 
 
@@ -14,7 +14,7 @@ const nodeToDocument = node => ({
   id: node.id,
   dataset: node.dataset,
   title: node.title,
-  description: getDescription(node),
+  description: getDescriptions(node).join(' '),
   names: node.name ? [ node.name ] : node.names?.map(n => n.toponym)
 });
 

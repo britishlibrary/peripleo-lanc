@@ -25,13 +25,15 @@ export const getBounds = node => {
  } 
 }
 
-export const getDescription = node => {
+export const getDescriptions = node => {
   if (node.descriptions) {
     const descriptions = Array.isArray(node.descriptions) ? node.descriptions : [ node. descriptions ];
     if (descriptions.length > 0)
-      return descriptions.map(d => d.value).join(' ');
+      return descriptions.map(d => d.value)
+  } else if (node.properties?.description) {
+    return [ node.properties.description ];
   } else {
-    return node.properties?.description;
+    return [];
   }
 }
 

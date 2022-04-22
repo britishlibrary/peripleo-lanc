@@ -9,7 +9,7 @@ import { SIGNATURE_COLOR } from '../../../Colors';
 
 import { StoreContext } from '../../../store';
 import { parseWhen } from './When';
-import { getDescription } from '../../../store';
+import { getDescriptions } from '../../../store';
 import { getPreviewImage, getTypes } from './Utils';
 import useSearch from '../../../state/search/useSearch';
 
@@ -42,7 +42,7 @@ const ItemCard = props => {
 
   const image = getPreviewImage(node);
 
-  const description = getDescription(node);
+  const descriptions = getDescriptions(node);
 
   const sourceUrl = 
     node.properties?.url || node?.identifier || node.id;
@@ -145,13 +145,13 @@ const ItemCard = props => {
           </div>
 
           <div className="p6o-selection-main-flex">
-            {description &&
-              <p 
+            {descriptions.map((d, idx) => 
+              <p key={idx} 
                 className="p6o-selection-description"
                 aria-level={3}>
-                {highlight(description, search?.query)}
+                {highlight(d, search?.query)}
               </p>
-            }
+            )}
           </div>
         </main>
 
