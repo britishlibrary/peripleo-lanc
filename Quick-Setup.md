@@ -1,13 +1,13 @@
-# Peripleo: Quick Setup #
+# Peripleo: Quick Setup
 
-### What you need to get started ###
+## What you need to get started
 
 * Dataset(s) formatted as [Linked Places Format (LPF)](https://github.com/LinkedPasts/linked-places-format/blob/master/README.md) or GeoJSON. 
     * You can use any such dataset if it is accessible via a URL.
     * If your data is in a spreadsheet or delimited text (for example CSV), you will need to convert it using a tool such as [Locolligo](https://github.com/docuracy/Locolligo/blob/main/README.md).
 * Somewhere to host and serve a simple HTML file, together with any datasets not hosted elsewhere.
 
-### Configuring your map ###
+## Configuring your map
 
 These are the configuration settings for the example map [here](https://descartes.emew.io/VCH/): 
 
@@ -81,16 +81,16 @@ These are the configuration settings for the example map [here](https://descarte
 * `facets`: If you want your dataset to be filtered, this is where you specify how (more details [below](#about-facets)).
 * `link_icons`: These are used to prettify external links in your dataset, and are defined by the link's domain name and a URL pointing to an icon (ideally 100px square).
 
-### Publishing your map ###
+## Publishing your map
 
 * Upload your `index.html` and configuration settings (in a file named `peripleo.config.json`) to the web server of your choice. These files must both sit in the same directory.
 * **That's it !!!** Point your browser to the URL of your `index.html` file and wait for it to load.
 
 ____
 
-## Further Configuration
+# Further Configuration
 
-### About Additional Baselayers
+## Additional Baselayers
 
 In the `layers` array, *Peripleo* supports GeoJSON and raster tile sources. Each layer configuration object __must__
 have a `name` field, and a `type` field with a value of either `geojson` or `raster`. For example:
@@ -118,7 +118,7 @@ have a `name` field, and a `type` field with a value of either `geojson` or `ras
 }
 ```
 
-### About Facets
+## Facets
 
 Every custom facet configuration __must__ have a `name` and a `path` field. The name will be shown (capitalized)
 as a title in the filter legend. The `path` defines from which part of the record *Peripleo* will aggregate 
@@ -182,5 +182,15 @@ if you set the condition `[ "relationType", "aat:300138082" ]`, Peripleo will co
   }]
 }
 ```
+## Initial View
 
+By default, Peripleo will open a map with all of the loaded dataset(s) in view, with plain markers and without any facet(s) selected. You can change this default behaviour by adding parameters to the URL following the model given below:
+
+https:// `your-url` /#/ `zoom` / `longitude` / `latitude` /mode= `points|clusters|heatmap` +facet= `type`
+
+For example:
+
+https://britishlibrary.github.io/peripleo-lanc/leifuss/#/8.16/-3.3969/50.6397/mode=points+facet=type
+
+*Peripleo* updates the window URL automatically whenever you change the visualisation mode, facet selection, or move/zoom the map, so you can simply copy the URL to share a particular map view. Note, however, that the updated URL is not visible when *Peripleo* is loaded in an iframe.
 
