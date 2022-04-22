@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useRecoilValue } from 'recoil';
 import { HiOutlineChevronLeft, HiOutlineChevronRight, HiOutlinePlusCircle } from 'react-icons/hi';
 
 import { SIGNATURE_COLOR } from '../../Colors';
+import { mapModeState } from '../../state';
 
 const formatNumber = num => {
   if (num > 1000)
@@ -55,6 +57,8 @@ const equivalentFilters = (a, b) => {
 }
 
 const Facets = props => {
+
+  const mapMode = useRecoilValue(mapModeState);
 
   const counts = props.search.facetDistribution?.counts || [];
 
@@ -131,7 +135,9 @@ const Facets = props => {
               <div className="p6o-facet-value-wrapper">
                 <span 
                   className="p6o-facet-value-count"
-                  style={{ backgroundColor: SIGNATURE_COLOR[idx] }}>{formatNumber(count)}</span>
+                  style={{ 
+                    backgroundColor: mapMode === 'clusters' ? '#7a7a7a' : SIGNATURE_COLOR[idx] 
+                  }}>{formatNumber(count)}</span>
 
                 <span className="p6o-facet-value-label">{label}</span>
               </div>

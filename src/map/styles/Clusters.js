@@ -10,8 +10,8 @@ export const clusterPointStyle = args => ({
       300,
       40
     ],
-    'circle-color': args?.fill || 'red',
-    'circle-stroke-color': args?.stroke || '#000',
+    'circle-color': args?.fill || '#a2a2a2',
+    'circle-stroke-color': args?.stroke || '#7a7a7a',
     'circle-stroke-width': args?.strokeWidth || 1
   }
 });
