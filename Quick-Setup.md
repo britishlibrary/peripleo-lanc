@@ -186,15 +186,22 @@ if you set the condition `[ "relationType", "aat:300138082" ]`, Peripleo will co
 
 By default, Peripleo will open a map with all of the loaded dataset(s) in view, with plain markers and without any facet(s) selected. There are two ways to change this default behaviour:
 
-1. Set the initial bounding box for your map in your `peripleo.config.json` file.
+1. Set the initial bounding box for your map in your `peripleo.config.json` file, like this:
+
+         "initial_bounds": [
+             minimum-longitude (left),
+             minimum-latitude (bottom),
+             maximum-longitude (right),
+             maximum-latitude (top)
+         ]
 
 2. Add parameters to the URL following the model given below.
 
-   https:// `your-url` /#/ `zoom` / `longitude` / `latitude` /mode= `points|clusters|heatmap` +facet= `type`
+         https:// `your-url` /#/ `zoom` / `longitude` / `latitude` /mode= `points|clusters|heatmap` +facet= `type`
 
    For example:
 
-   https://britishlibrary.github.io/peripleo-lanc/leifuss/#/8.16/-3.3969/50.6397/mode=points+facet=type
+         https://britishlibrary.github.io/peripleo-lanc/leifuss/#/8.16/-3.3969/50.6397/mode=points+facet=type
    
    If you wish to set only the visualisation mode or facet selection, replace `zoom` / `longitude` / `latitude` with `?/?/?`. You cannot set only `zoom`, `longitude`, or `latitude`: you must provide values either for all three parameters or for none.
 
