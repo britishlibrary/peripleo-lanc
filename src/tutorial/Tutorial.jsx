@@ -7,11 +7,14 @@ import Welcome from './Welcome';
 import useSearch from '../state/search/useSearch';
 import { mapModeState, hudOpenState } from '../state';
 
-const BEEN_HERE_TOKEN = 'p6o-been-here';
+export const BEEN_HERE_TOKEN = 'p6o-been-here';
 
 export const isFirstTimeVisitor =
-  true; // For testing
-  // !localStorage.getItem(BEEN_HERE_TOKEN);
+  !localStorage.getItem(BEEN_HERE_TOKEN);
+
+console.log('first time local', localStorage.getItem(BEEN_HERE_TOKEN));
+console.log('first time local', !localStorage.getItem(BEEN_HERE_TOKEN));
+console.log('first time', isFirstTimeVisitor);
 
 const Tutorial = props => {
 
@@ -32,11 +35,6 @@ const Tutorial = props => {
   const [ isRunning, setIsRunning ] = useState(true);
 
   const [ currentStep, setCurrentStep ] = useState(0);
-
-  useEffect(() => {
-    if (isFirstTimeVisitor)
-      localStorage.setItem(BEEN_HERE_TOKEN, true);
-  }, []);
 
   useEffect(() => {
     if (!isRunning) 
