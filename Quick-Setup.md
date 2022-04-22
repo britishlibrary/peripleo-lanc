@@ -169,7 +169,7 @@ set the path to `path: [ 'properties', 'category' ]`.
 ```
 
 Additionally, you can add a `condition` that *Peripleo* will look for while aggregating results. For example,
-if you set `condition: [ "relationType", "aat:300138082" ]`, Peripleo will count the first match, but not the second.
+if you set the condition `[ "relationType", "aat:300138082" ]`, Peripleo will count the first match, but not the second.
 
 ```json
 {
