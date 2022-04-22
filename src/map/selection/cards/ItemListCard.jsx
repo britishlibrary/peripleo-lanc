@@ -38,9 +38,9 @@ const InternalLink = props => {
       <div className="p6o-internal-link-meta">
         <h3>{node.title}</h3>
         <h4>{node.dataset}</h4>
-        <ul className="p6o-node-types">
-          {getTypes(node).map(t => <li key={t}>{t}</li>)}
-        </ul>
+        <p className="p6o-node-types">
+          {getTypes(node).join(', ')}
+        </p>
       </div>
       <BiRightArrowAlt />
     </div>

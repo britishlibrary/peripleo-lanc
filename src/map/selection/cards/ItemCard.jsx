@@ -108,20 +108,22 @@ const ItemCard = props => {
               </a>
             </h1>
 
-            <h2>
-              <a href={sourceUrl} target="_blank">
-                {node.dataset}<RiExternalLinkLine />
-              </a>
-            </h2>
-            
-            <a 
-              href={sourceUrl}
-              className="p6o-new-tab-hint"
-              target="_blank">Link opens a new tab</a>
+            <p className="p6o-node-types">
+              {getTypes(node).join(', ')}
+            </p>
 
-            <ul className="p6o-node-types">
-              {getTypes(node).map(t => <li key={t}>{t}</li>)}
-            </ul>
+            <div className="p6o-source-link">
+              <h2>
+                <a href={sourceUrl} target="_blank">
+                  View page on {node.dataset}<RiExternalLinkLine />
+                </a>
+              </h2>
+              
+              <a 
+                href={sourceUrl}
+                className="p6o-new-tab-hint"
+                target="_blank">Link opens a new tab</a>
+            </div>
 
             {when && 
               <p className="when">

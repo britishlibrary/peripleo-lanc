@@ -18,26 +18,13 @@
   .card {
     width:440px;
 
-    ul.p6o-node-types {
-      list-style-type:none;
+    .p6o-node-types {
       margin:0;
-      padding:8px 0 4px 0;
-
-      li {
-        display:inline-block;
-        padding:2px 8px;
-        color:#fff;
-        background-color:#858585;
-        border-radius:3px;
-        text-transform:capitalize;
-        font-weight:bold;
-        font-size:12px;
-        margin:0 3px 3px 0;
-      }
-
+      padding:4px 0;
+      text-transform:capitalize;
     }
 
-    ul.p6o-selection-types:empty {
+    .p6o-node-types:empty {
       display:none;
     }
 
@@ -159,13 +146,8 @@
         font-size:14px;
       }
 
-      .p6o-node-types {
-        padding-top:3px;
-
-        li { 
-          display:inline; 
-        }
-        
+      p.p6o-node-types {
+        padding:0;
       }
 
     }
@@ -352,6 +334,21 @@
         top:2px;
       }
 
+    }
+
+    .p6o-source-link {
+      margin-top:8px;
+      padding:2px 8px;
+      background-color:#646464;
+      @include rounded-corners(3px);
+
+      a {
+        color:#fff;
+      }
+
+      h2 a {
+        font-weight:bold;
+      }
     }
 
     p.when {
