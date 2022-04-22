@@ -29,7 +29,7 @@ const tour = [{
   target: 'body',
   placement: 'center',
   title: 'That\'s it!',
-  content: 'Thanks for taking the time. Have fun exploring the map.'
+  content: 'Thanks for taking the time. Have fun exploring our prototype.'
 }];
 
 export default tour;

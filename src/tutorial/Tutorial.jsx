@@ -36,11 +36,6 @@ const Tutorial = props => {
   useEffect(() => {
     if (isFirstTimeVisitor)
       localStorage.setItem(BEEN_HERE_TOKEN, true);
-    
-    // Initial state
-    setCategoryFacet();
-    setIsHudOpen(false);
-    setMapMode('points');
   }, []);
 
   useEffect(() => {
@@ -49,6 +44,11 @@ const Tutorial = props => {
   }, [ isRunning ]);
 
   const onStartTour = () => {
+    // Initial state
+    setCategoryFacet();
+    setIsHudOpen(false);
+    setMapMode('points');
+    
     setShowWelcome(false);
     setShowTour(true);
   }
