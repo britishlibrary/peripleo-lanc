@@ -9,19 +9,31 @@ import { SIGNATURE_COLOR } from '../../../Colors';
 
 import { StoreContext } from '../../../store';
 import { parseWhen } from './When';
-import { getDescription, getPreviewImage, getTypes } from './Utils';
+import { getDescription } from '../../../store';
+import { getPreviewImage, getTypes } from './Utils';
+import useSearch from '../../../state/search/useSearch';
 
 import FullscreenImage from './FullscreenImage';
 
+const highlight = (text, query) => {
+  if (!query)
+    return text;
+
+  const parts = text.split(new RegExp(`(${query})`, 'gi'));
+  return <>{parts.map((part, idx) => part.toLowerCase() === query.toLowerCase() ? <mark key={part + idx}>{part}</mark> : part)}</>;
+}
+
 const ItemCard = props => {
   const el = useRef();
+
+  const { search } = useSearch();
 
   const { store } = useContext(StoreContext);
 
   const [ showLightbox, setShowLightbox ] = useState(false);
 
   const { node } = props;
-
+  
   useEffect(() => {
     if (el.current) {
       el.current.querySelector('header button').blur();
@@ -137,7 +149,7 @@ const ItemCard = props => {
               <p 
                 className="p6o-selection-description"
                 aria-level={3}>
-                {description}
+                {highlight(description, search?.query)}
               </p>
             }
           </div>

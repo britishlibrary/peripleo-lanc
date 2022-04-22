@@ -25,6 +25,16 @@ export const getBounds = node => {
  } 
 }
 
+export const getDescription = node => {
+  if (node.descriptions) {
+    const descriptions = Array.isArray(node.descriptions) ? node.descriptions : [ node. descriptions ];
+    if (descriptions.length > 0)
+      return descriptions.map(d => d.value).join(' ');
+  } else {
+    return node.properties?.description;
+  }
+}
+
 export default Store;
 
 export * from './StoreContext';

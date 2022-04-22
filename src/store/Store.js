@@ -2,7 +2,9 @@ import createGraph from 'ngraph.graph';
 import RBush from 'rbush';
 import FlexSearch from 'flexsearch';
 
+import { getDescription } from '.';
 import { loadLinkedPlaces } from './loaders/LinkedPlacesLoader';
+
 
 /**
  * Converts a network node to a JsSearch
@@ -12,9 +14,9 @@ const nodeToDocument = node => ({
   id: node.id,
   dataset: node.dataset,
   title: node.title,
-  description: node.properties?.description,
+  description: getDescription(node),
   names: node.name ? [ node.name ] : node.names?.map(n => n.toponym)
-})
+});
 
 export default class Store {
 

@@ -41,15 +41,6 @@ export const getPreviewImage = node => {
         accreditation: d.accreditation
       }
     }
-  }}
-
-export const getDescription = node => {
-  if (node.descriptions) {
-    const descriptions = Array.isArray(node.descriptions) ? node.descriptions : [ node. descriptions ];
-    if (descriptions.length > 0)
-      return descriptions[0].value;
-  } else {
-    return node.properties?.description;
   }
 }
 
