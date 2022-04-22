@@ -184,13 +184,19 @@ if you set the condition `[ "relationType", "aat:300138082" ]`, Peripleo will co
 ```
 ## Initial View
 
-By default, Peripleo will open a map with all of the loaded dataset(s) in view, with plain markers and without any facet(s) selected. You can change this default behaviour by adding parameters to the URL following the model given below:
+By default, Peripleo will open a map with all of the loaded dataset(s) in view, with plain markers and without any facet(s) selected. There are two ways to change this default behaviour:
 
-https:// `your-url` /#/ `zoom` / `longitude` / `latitude` /mode= `points|clusters|heatmap` +facet= `type`
+1. Set the initial bounding box for your map in your `peripleo.config.json` file.
 
-For example:
+2. Add parameters to the URL following the model given below.
 
-https://britishlibrary.github.io/peripleo-lanc/leifuss/#/8.16/-3.3969/50.6397/mode=points+facet=type
+   https:// `your-url` /#/ `zoom` / `longitude` / `latitude` /mode= `points|clusters|heatmap` +facet= `type`
 
-*Peripleo* updates the window URL automatically whenever you change the visualisation mode, facet selection, or move/zoom the map, so you can simply copy the URL to share a particular map view. Note, however, that the updated URL is not visible when *Peripleo* is loaded in an iframe.
+   For example:
+
+   https://britishlibrary.github.io/peripleo-lanc/leifuss/#/8.16/-3.3969/50.6397/mode=points+facet=type
+   
+   If you wish to set only the visualisation mode or facet selection, replace `zoom` / `longitude` / `latitude` with `?/?/?`. You cannot set only `zoom`, `longitude`, or `latitude`: you must provide values either for all three parameters or for none.
+
+   *Peripleo* updates the window URL automatically whenever you change the visualisation mode, facet selection, or move the map, so you can simply copy the URL to share a particular map view. Note, however, that the updated URL is not visible when *Peripleo* is loaded in an iframe.
 
