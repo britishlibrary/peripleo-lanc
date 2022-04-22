@@ -48,7 +48,7 @@ const App = () => {
       setTimeout(() => 
         setLoadState({ ...loadState, stage: 'CLOSE' }), 2000);
     }
-  }, [loadState])
+  }, [loadState]);
 
   const onMapLoaded = () => {
     const { data } = config;

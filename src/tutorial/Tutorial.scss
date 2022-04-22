@@ -8,7 +8,7 @@
   display:flex;
   justify-content:center;
   align-items:center;
-  background-color:transparent;
+  background-color:rgba(0,0,0,0.5);
   z-index:99;
 
   .p6o-welcome {
@@ -17,7 +17,7 @@
     pointer-events:all;
     width:440px;
     line-height:160%;
-    @include rounded-corners(2px);
+    @include rounded-corners(5px);
     @include box-shadow(2px, 2px, 18px, 0.4);
 
     h1 {
@@ -29,6 +29,8 @@
     p {
       padding:20px 0 40px 0;
       margin:0;
+      line-height:160%;
+      font-size:16px;
     }
 
     .p6o-welcome-buttons {
@@ -45,6 +47,7 @@
       }
 
       button.p6o-no-thanks {
+        color:$bl-red;
         margin-right:15px;
       }
 
@@ -65,4 +68,25 @@
 
   }
 
+}
+
+.react-joyride__tooltip {
+
+  button[data-action="primary"] {
+    background-color:$bl-red !important;
+    border-radius: 4px !important;
+  }
+
+  button[data-action="primary"]:hover {
+    background-color:$bl-red-hover !important;
+  }
+
+  button[data-action="back"] {
+    color:$bl-red !important;
+  }
+
+}
+
+.__floater {
+  transition:none !important;
 }

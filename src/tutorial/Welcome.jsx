@@ -6,14 +6,12 @@ const Welcome = props => {
   return ReactDOM.createPortal(
     <div className="p6o-welcome-wrapper">
       <div className="p6o-welcome">
-        <h1>
-          Locating a National Collection
-        </h1>
+        <h1>Welcome!</h1>
 
         <p>
-          Welcome to the visualization prototype for the 
-          Locating a National Collection project. 
-          To learn more, take the tour.
+          Welcome to the map prototype for 
+          the <strong>Locating a National Collection</strong> project. 
+          Take the tour to learn about the main user interface elements.
         </p>
         
         <div className="p6o-welcome-buttons">

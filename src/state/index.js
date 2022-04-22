@@ -32,6 +32,12 @@ export const mapModeState = atom({
   default: initialParams.mode || 'points'
 });
 
+/** Whether the HUD is currently open **/
+export const hudOpenState = atom({
+  key: 'hudOpen',
+  default: false
+});
+
 /** Current search (query, filter, facet) + search results **/
 export const searchState = atom({
   key: 'search',
