@@ -184,26 +184,7 @@ if you set the condition `[ "relationType", "aat:300138082" ]`, Peripleo will co
 ```
 ## Initial View
 
-By default, *Peripleo* will open a map with all of the loaded dataset(s) in view, with plain markers and without any facet(s) selected. There are two ways to change this default behaviour:
-
-1. Set the initial bounding box for your map in your `peripleo.config.json` file, like this:
-
-         "initial_bounds": [
-             minimum-longitude (left),
-             minimum-latitude (bottom),
-             maximum-longitude (right),
-             maximum-latitude (top)
-         ]
-   For example:
-   
-         "initial_bounds": [
-             -5.5,
-             49.5,
-             2.2,
-             55.8
-         ]
-
-2. Add parameters to the URL following the model given below.
+By default, *Peripleo* will open a map with preset bounds (described [above](#configuring-your-map)), with plain markers and without any facet(s) selected. You can change this default behaviour by adding parameters to the URL following the model given below.
 
          https:// `your-url` /#/ `zoom` / `longitude` / `latitude` /mode= `points|clusters|heatmap` +facet= `type`
 
