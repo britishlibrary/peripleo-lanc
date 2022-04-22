@@ -12,10 +12,6 @@ export const BEEN_HERE_TOKEN = 'p6o-been-here';
 export const isFirstTimeVisitor =
   !localStorage.getItem(BEEN_HERE_TOKEN);
 
-console.log('first time local', localStorage.getItem(BEEN_HERE_TOKEN));
-console.log('first time local', !localStorage.getItem(BEEN_HERE_TOKEN));
-console.log('first time', isFirstTimeVisitor);
-
 const Tutorial = props => {
 
   const { 
