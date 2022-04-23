@@ -33,7 +33,7 @@ const ItemCard = props => {
   const [ showLightbox, setShowLightbox ] = useState(false);
 
   const { node } = props;
-  
+
   useEffect(() => {
     if (el.current) {
       el.current.querySelector('header button').blur();

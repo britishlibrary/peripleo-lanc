@@ -13,6 +13,19 @@
     border-left:6px solid #c3c3c3;
     @include rounded-corners(2px);
     @include box-shadow(2px, 2px, 14px, 0.4);
+
+    .p6o-map-hover-granularity {
+      color:#6c6c6c;
+      font-size:13px;
+      padding-top:10px;
+ 
+      svg {
+        font-size:16px;
+        vertical-align:text-bottom;
+      }
+
+    }
+    
   }
 
 }
