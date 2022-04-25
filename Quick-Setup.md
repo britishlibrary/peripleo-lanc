@@ -99,7 +99,7 @@ Maps made using *Peripleo* can be embedded in other web sites, wikis, and blogs 
       wfLoadExtension( 'HTMLTags' );
       $wgHTMLTagsAttributes['iframe'] = ['src','height','width','allowfullscreen','loading','name','referrerpolicy','srcdoc'];
       
-And on the page where you want the iframe to appear, something like:
+   And on the page where you want the iframe to appear, something like:
       
       <htmltag tagname="iframe" src="https://britishlibrary.github.io/peripleo-lanc/hollar/#/?/?/?/facet=type" width="100%" height="800px" allowfullscreen=true></htmltag>
 
