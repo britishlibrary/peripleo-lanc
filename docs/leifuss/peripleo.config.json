@@ -7,7 +7,6 @@
     { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "../data/coins/ptolemaic-coins.lp.json" }
   ],
   "facets": [
-    "dataset",
     "type"
   ],
   "layers": [
