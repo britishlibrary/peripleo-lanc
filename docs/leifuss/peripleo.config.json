@@ -2,7 +2,6 @@
   "initial_bounds": [-5.75, 49.91, -3.18, 51.28],
   "map_style": "https://api.maptiler.com/maps/outdoor/style.json?key=cqqmcLw28krG9Fl7V3kg",
   "data": [
-    { "name": "Leif's Early Monasteries", "format": "LINKED_PLACES", "src": "../data/early-monasteries.lp.json" },
     { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "../data/coins/alexandrian-tetradrachms.lp.json" },
     { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "../data/coins/base-byzantine-coins.lp.json" },
     { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "../data/coins/ptolemaic-coins.lp.json" }
@@ -12,7 +11,6 @@
     "type"
   ],
   "layers": [
-    { "name": "SW Rivers", "type": "geojson", "src": "../layers/SW_rivers.geojson", "color": "#5555ff" },
     { "name": "SW Routes", "type": "geojson", "src": "../layers/SW_Routes.geojson", "color": "#727272" }
   ],
   "link_icons": {
