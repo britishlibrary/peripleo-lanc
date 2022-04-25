@@ -76,7 +76,7 @@ const Map = React.forwardRef((props, ref) => {
   
       setHover(updated);
     } else {
-      // setHover(null);
+      setHover(null);
     }
   }, []);
 
