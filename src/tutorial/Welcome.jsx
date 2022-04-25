@@ -23,7 +23,7 @@ const Welcome = props => {
         <h1>Welcome!</h1>
 
         <p>
-          Welcome to the map prototype for 
+          Welcome Peripleo, the map prototype for 
           the <strong>Locating a National Collection</strong> project. 
           Take the tour to learn about the main user interface elements.
         </p>

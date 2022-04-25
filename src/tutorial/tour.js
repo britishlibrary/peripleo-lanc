@@ -1,7 +1,9 @@
+import React from 'react';
+
 const tour = [{
   target: '.p6o-search-button',
   title: 'Your journey starts here',
-  content: 'Click the spyglass button to enter a text search.',
+  content: 'Click the spyglass button to enter a text search of the loaded map data.',
   disableBeacon: true
 }, {
   target: '.p6o-filters-button',
@@ -29,7 +31,11 @@ const tour = [{
   target: 'body',
   placement: 'center',
   title: 'That\'s it!',
-  content: 'Thanks for taking the time. Have fun exploring our prototype.'
+  content: 
+    <span>
+      Thanks for taking the time. Have fun exploring our Peripleo mapping prototype.
+      If you want to know more about the software, <a href="https://github.com/britishlibrary/peripleo-lanc" target="_blank">click here</a>.
+    </span>
 }];
 
 export default tour;

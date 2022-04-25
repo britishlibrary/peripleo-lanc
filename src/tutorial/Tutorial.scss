@@ -88,6 +88,10 @@
 
 .react-joyride__tooltip {
 
+  a {
+    color:#c61327 !important;  
+  }
+
   button[data-action="primary"] {
     background-color:$bl-red !important;
     border-radius: 4px !important;
