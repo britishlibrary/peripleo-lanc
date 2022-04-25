@@ -86,6 +86,23 @@ These are the configuration settings for the example map [here](https://descarte
 * Upload your `index.html` and configuration settings (in a file named `peripleo.config.json`) to the web server of your choice. These files must both sit in the same directory.
 * **That's it !!!** Point your browser to the URL of your `index.html` file and wait for it to load.
 
+## Embedding your map
+
+Maps made using *Peripleo* can be embedded in other web sites, wikis, and blogs using IFrames.
+
+* To embed in WordPress blogs, simply insert an HTML block something like this:
+
+      <iframe src="https://britishlibrary.github.io/peripleo-lanc/hollar/#/?/?/?/facet=type" title="Hollar 1660" width="100%" height="800px" allowfullscreen="true"></iframe>
+      
+* To embed in a Mediawiki site, you will need to install the [HTMLTags extension](https://www.mediawiki.org/wiki/Extension:HTML_Tags), and include the following in your `LocalSettings.php` file:
+
+      wfLoadExtension( 'HTMLTags' );
+      $wgHTMLTagsAttributes['iframe'] = ['src','height','width','allowfullscreen','loading','name','referrerpolicy','srcdoc'];
+      
+And on the page where you want the iframe to appear, something like:
+      
+      <htmltag tagname="iframe" src="https://britishlibrary.github.io/peripleo-lanc/hollar/#/?/?/?/facet=type" width="100%" height="800px" allowfullscreen=true></htmltag>
+
 ____
 
 # Further Configuration
