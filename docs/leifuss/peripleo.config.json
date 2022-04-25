@@ -11,6 +11,7 @@
     "type"
   ],
   "layers": [
+    { "name": "SW Rivers", "type": "geojson", "src": "../layers/SW_rivers.geojson", "color": "#5555ff" },
     { "name": "SW Routes", "type": "geojson", "src": "../layers/SW_Routes.geojson", "color": "#727272" }
   ],
   "link_icons": {
