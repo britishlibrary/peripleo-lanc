@@ -19,7 +19,7 @@ const Hover = props => {
       className="p6o-map-hover"
       style={style}>
       {node.title}
-      {node.geometry.granularity &&
+      {node.geometry?.granularity &&
         <div className="p6o-map-hover-granularity">
           <MdOutlineMyLocation /> Location with intentionally reduced precision
         </div>
