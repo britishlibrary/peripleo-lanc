@@ -2,7 +2,7 @@
   "initial_bounds": [-5.75, 49.91, -3.18, 51.28],
   "map_style": "https://api.maptiler.com/maps/outdoor/style.json?key=cqqmcLw28krG9Fl7V3kg",
   "data": [
-    { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "../data/coins/alexandrian-tetradrachms.lp.json" },
+    { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "../data/coins/alexandrian-tetradrachms.lp.json", "attribution":"Datasets: Leif Isaksen" },
     { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "../data/coins/base-byzantine-coins.lp.json" },
     { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "../data/coins/ptolemaic-coins.lp.json" }
   ],

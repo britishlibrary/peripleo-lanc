@@ -2,7 +2,7 @@
   "initial_bounds": [-5.5, 49.5, 2.2, 55.8],
   "map_style": "https://api.maptiler.com/maps/outdoor/style.json?key=cqqmcLw28krG9Fl7V3kg",
   "data": [
-    { "name": "Hollar", "format": "LINKED_PLACES", "src": "../data/Hollar-1660.lp.json" }
+    { "name": "Hollar", "format": "LINKED_PLACES", "src": "../data/Hollar-1660.lp.json", "attribution":"Hollar 1660 © <a href=\"https://viaeregiae.org/\" target=\"_blank\"><i>Viae Regiae</i> Contributors</a>" }
   ],
   "facets": [
     "dataset",

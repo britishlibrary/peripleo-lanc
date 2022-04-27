@@ -2,7 +2,7 @@
   "initial_bounds": [-0.08, 51.45, 0.08, 51.55],
   "map_style": "https://api.maptiler.com/maps/outdoor/style.json?key=cqqmcLw28krG9Fl7V3kg",
   "data": [
-    { "name": "Heritage for All", "format": "LINKED_PLACES", "src": "../data/hfa.lp.json" }, 
+    { "name": "Heritage for All", "format": "LINKED_PLACES", "src": "../data/hfa.lp.json", "attribution":"Heritage for All © <a href=\"https://britishlibrary.github.io/locating-a-national-collection/\" target=\"_blank\"><i>Locating a National Collection</i> Partners & Contributors</a>" }, 
     { "name": "Heritage for All", "format": "LINKED_PLACES", "src": "../data/hfa.pas.lp.json" }
   ],
   "facets": [
