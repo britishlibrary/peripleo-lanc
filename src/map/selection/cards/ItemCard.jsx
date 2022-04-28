@@ -114,17 +114,14 @@ const ItemCard = props => {
           
           <div
             className="p6o-selection-main-fixed">
-            <h1>
-              <a href={sourceUrl} target="_blank">
-                {node.title}
-              </a>
-            </h1>
-
-            <p className="p6o-node-types">
-              {getTypes(node).join(', ')}
-            </p>
 
             <div className="p6o-source-link">
+              <h1>
+                <a href={sourceUrl} target="_blank">
+                  {node.title}
+                </a>
+              </h1>
+
               <h2>
                 <a href={sourceUrl} target="_blank">
                   View page on {node.dataset}<RiExternalLinkLine />
@@ -136,6 +133,10 @@ const ItemCard = props => {
                 className="p6o-new-tab-hint"
                 target="_blank">Link opens a new tab</a>
             </div>
+
+            <p className="p6o-node-types">
+              {getTypes(node).join(', ')}
+            </p>
 
             {when && 
               <p className="when">
