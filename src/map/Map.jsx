@@ -1,5 +1,5 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import ReactMapGL from 'react-map-gl';
+import ReactMapGL, { AttributionControl } from 'react-map-gl';
 import { useRecoilState, useRecoilValue } from 'recoil';
 
 import useSearch from '../state/search/useSearch';
@@ -31,6 +31,9 @@ const Map = React.forwardRef((props, ref) => {
   const [ hover, setHover ] = useState();
 
   const [ selection, setSelection ] = useState();
+
+  const customAttribution = config.data.reduce((attr, dataset) =>
+    dataset.attribution ? [ ...attr, dataset.attribution ] : attr, []);
 
   useEffect(() => {
     setSelection(null);
@@ -102,6 +105,7 @@ const Map = React.forwardRef((props, ref) => {
   return (  
     <div className="p6o-map-container" ref={ref}>
       <ReactMapGL
+        attributionControl={false}
         ref={mapRef}
         initialViewState={viewstate.latitude && viewstate.longitude && viewstate.zoom ? viewstate : {
           bounds: config.initial_bounds
@@ -132,6 +136,9 @@ const Map = React.forwardRef((props, ref) => {
             config={props.config} 
             onClose={onClosePopup} />
         }
+
+        {customAttribution.length > 0 &&
+           <AttributionControl compact customAttribution={customAttribution} /> }
       </ReactMapGL>
 
       <Controls 
