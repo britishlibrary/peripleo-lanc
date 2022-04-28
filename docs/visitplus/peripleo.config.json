@@ -2,7 +2,7 @@
   "initial_bounds": [-7.9, 49.5, 2.2, 59.4],
   "map_style": "https://api.maptiler.com/maps/outdoor/style.json?key=cqqmcLw28krG9Fl7V3kg",
   "data": [
-    { "name": "VisitPlus", "format": "LINKED_PLACES", "src": "../data/VisitPlus.lp.json", "attribution":"VisitPlus © <a href=\"https://britishlibrary.github.io/locating-a-national-collection/\" target=\"_blank\"><i>Locating a National Collection</i> Partners & Contributors</a>" }
+    { "name": "VisitPlus", "format": "LINKED_PLACES", "src": "../data/VisitPlus.lp.json", "attribution":"VisitPlus Â© <a href=\"https://britishlibrary.github.io/locating-a-national-collection/\" target=\"_blank\"><i>Locating a National Collection</i> Partners & Contributors</a>" }
   ],
   "facets": [
     { "name": "custodian", "path": ["relations", "label"], "condition": [ "relationType", "http://vocab.getty.edu/page/aat/300160390" ] },

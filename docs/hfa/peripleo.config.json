@@ -11,7 +11,7 @@
       "name": "Heritage for All",
       "format": "LINKED_PLACES",
       "src": "../data/hfa.lp.json",
-      "attribution": "Heritage for All © <a href=\"https://britishlibrary.github.io/locating-a-national-collection/\" target=\"_blank\"><i>Locating a National Collection</i> Partners & Contributors</a>"
+      "attribution": "Heritage for All Â© <a href=\"https://britishlibrary.github.io/locating-a-national-collection/\" target=\"_blank\"><i>Locating a National Collection</i> Partners & Contributors</a>"
     },
     {
       "name": "Heritage for All",
@@ -22,7 +22,7 @@
       "name": "Tower Hamlets ArtUK",
       "format": "LINKED_PLACES",
       "src": "../data/Tower_Hamlets_ArtUK.lp.json",
-      "attribution": "Tower Hamlets Art UK © <a href=\"https://artuk.org//\" target=\"_blank\">Art UK</a>"
+      "attribution": "Tower Hamlets Art UK ï¿½ <a href=\"https://artuk.org//\" target=\"_blank\">Art UK</a>"
     }
   ],
   "facets": [
