@@ -4,7 +4,7 @@ import { useRecoilState, useRecoilValue } from 'recoil';
 
 import useSearch from '../state/search/useSearch';
 import { StoreContext } from '../store';
-import { mapViewState, mapModeState } from '../state';
+import { mapViewState, mapModeState, deviceState } from '../state';
 
 import { parseLayerConfig } from './BaseLayers';
 import LayersCategorized from './LayersCategorized';
@@ -27,6 +27,8 @@ const Map = React.forwardRef((props, ref) => {
   const [ viewstate, setViewstate ] = useRecoilState(mapViewState);
 
   const modeState = useRecoilValue(mapModeState);
+
+  const device = useRecoilValue(deviceState);
 
   const [ hover, setHover ] = useState();
 
@@ -103,7 +105,9 @@ const Map = React.forwardRef((props, ref) => {
     setSelection(null);
   
   return (  
-    <div className="p6o-map-container" ref={ref}>
+    <div 
+      ref={ref}
+      className={device === 'MOBILE' ? 'p6o-map-container mobile' : 'p6o-map-container'} >
       <ReactMapGL
         attributionControl={false}
         ref={mapRef}
