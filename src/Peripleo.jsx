@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useRecoilValue } from 'recoil';
 
 import useSearch from './state/search/useSearch'
 
 import HUD from './hud/HUD';
+import MobileHUD from './hud/MobileHUD';
 import Map from './map/Map';
+import { deviceState } from './state';
 
 /**
  * Test if Peripleo is running in an <iframe>
@@ -19,6 +22,8 @@ import Map from './map/Map';
 const Peripleo = props => {
 
   const el = useRef();
+
+  const device = useRecoilValue(deviceState);
 
   const [ isFullscreen, setIsFullscreen ] = useState(false);
 
@@ -73,8 +78,13 @@ const Peripleo = props => {
       onToggleFullscreen={toggleFullScreen}
       onLoad={props.onMapLoaded}>
       
-      <HUD 
-        config={props.config} />
+      {device === 'MOBILE' ? 
+        <MobileHUD 
+          config={props.config} /> :
+
+        <HUD 
+          config={props.config} />
+      }
     </Map>
   )
 

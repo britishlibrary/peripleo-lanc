@@ -81,6 +81,7 @@ $bl-red-hover:#e55767;
 }
 
 @import './hud/HUD';
+@import './hud/MobileHUD';
 @import './loading/Loading';
 @import './map/Map';
 @import './map/selection/SelectionPreview.scss';
