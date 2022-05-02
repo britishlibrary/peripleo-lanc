@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Popup } from 'react-map-gl';
+import { useRecoilValue } from 'recoil';
+
+import { deviceState } from '../../state';
 
 import CardStack from './cards/CardStack';
 import ItemCard from './cards/ItemCard';
 import ItemListCard from './cards/ItemListCard';
+import MobilePreview from './MobilePreview';
 
 const SelectionPreview = props => {
+
+  const device = useRecoilValue(deviceState);
 
   const [ cards, setCards ] = useState([ props ]); 
 
@@ -46,8 +52,10 @@ const SelectionPreview = props => {
       setCards(cards.slice(0, cards.length - 1));
   }
 
+  const Preview = device === 'MOBILE' ? MobilePreview : Popup;
+
   return (
-    <Popup
+    <Preview
       longitude={coordinates[0]} 
       latitude={coordinates[1]}
       maxWidth={440}
@@ -73,7 +81,7 @@ const SelectionPreview = props => {
           onGoBack={onGoBack} /> 
         }
       />
-    </Popup>
+    </Preview>
   )
 
 }
