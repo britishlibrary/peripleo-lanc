@@ -24,7 +24,8 @@ const MobileHUD = props => {
     setQuery(evt.target.value);
 
   const onKeyDown = evt => { 
-    if (evt.code === 'Enter')
+    const keycode = evt.keyCode || evt.which;
+    if (keycode === 13)
      fitMap();
   }
 
