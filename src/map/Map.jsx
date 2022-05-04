@@ -1,6 +1,7 @@
 import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import ReactMapGL, { AttributionControl } from 'react-map-gl';
 import { useRecoilState, useRecoilValue } from 'recoil';
+import { AnimatePresence } from 'framer-motion';
 
 import useSearch from '../state/search/useSearch';
 import { StoreContext } from '../store';
@@ -134,12 +135,14 @@ const Map = React.forwardRef((props, ref) => {
             search={search} />
         }
 
-        {selection && 
-          <SelectionPreview 
-            {...selection}
-            config={props.config} 
-            onClose={onClosePopup} />
-        }
+        <AnimatePresence>
+          {selection && 
+            <SelectionPreview 
+              {...selection}
+              config={props.config} 
+              onClose={onClosePopup} />
+          }
+        </AnimatePresence>
 
         {customAttribution.length > 0 &&
            <AttributionControl compact customAttribution={customAttribution} /> }
