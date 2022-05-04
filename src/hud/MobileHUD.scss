@@ -1,3 +1,16 @@
+.mobile .p6o-hud-button {
+  border:1px solid rgba(0,0,0,0.2);
+  z-index:98;
+  cursor:pointer;
+  background-color:#fafafa;
+  box-shadow:0 0 6px rgba(0,0,0,0.2);
+}
+
+.mobile .p6o-hud-button:hover {
+  background-color:#fff;
+  box-shadow:0 0 6px rgba(0,0,0,0.2);
+}
+
 .p6o-mobile-hud {
   position:absolute;
   top:-40px;
@@ -6,14 +19,13 @@
   background-color:#fff;
   display:flex;
   align-items:stretch;
-  @include box-shadow(2px, 2px, 6px, 0.2);
+  @include box-shadow(0, 0, 6px, 0.2);
 
   button.p6o-mobile-hud-filter-toggle {
     display:inline-block;
     padding:14px;
     border:none;
     outline:none;
-    box-shadow:inset 0 -3px 3px rgb(0, 0, 0, 0.08);
 
     .p6o-mobile-hud-filter-toggle-icon {
       font-size:22px;
@@ -42,7 +54,6 @@
       font-size: 18px;
       outline: none;
       border: none;
-      box-shadow: inset 1px -3px 3px rgb(0, 0, 0, 0.08);
     }
 
   }
