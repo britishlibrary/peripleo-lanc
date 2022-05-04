@@ -87,8 +87,8 @@ const SearchPanel = props => {
       <div className="p6o-hud-searchinput">
         <input 
           tabIndex={2}
-          placeholder="Enter your search"
-          aria-label="Enter search"
+          placeholder="Search within dataset"
+          aria-label="Search within dataset"
           value={query} 
           onKeyDown={onKeyDown}
           onChange={onChange} />
