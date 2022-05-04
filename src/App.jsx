@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useRecoilValue } from 'recoil';
 import { AnimatePresence } from 'framer-motion';
 
 import { StoreContext } from './store';
 import { FacetsContext } from './state/search/FacetsContext';
+import { deviceState } from './state';
 
 import Loading from './loading/Loading';
 import Peripleo from './Peripleo';
@@ -13,6 +15,8 @@ import Tutorial, { isFirstTimeVisitor } from './tutorial/Tutorial';
  * before the actual UI becomes fully operational.
  */
 const App = () => {
+
+  const device = useRecoilValue(deviceState);
 
   const { store } = useContext(StoreContext);
 
@@ -114,7 +118,7 @@ const App = () => {
           onMapLoaded={onMapLoaded} />
       }
 
-      {isFirstTimeVisitor && loadState.stage === 'CLOSE' &&
+      {isFirstTimeVisitor && loadState.stage === 'CLOSE' && device === 'DESKTOP' &&
         <Tutorial />
       }
     </>
