@@ -16,12 +16,10 @@
       @include rounded-corners(0);
   
       header {
-        height:36px;
         @include rounded-corners(0);
       }
 
       .p6o-selection-content {
-        max-height: calc(100vh - 36px);
         overflow-y: auto;
       }
 

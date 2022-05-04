@@ -89,7 +89,8 @@ const ItemCard = props => {
         </button>
       </header>
       <div 
-        className="p6o-selection-content">
+        className="p6o-selection-content"
+        style={{ maxHeight: `${window.innerHeight - 46}px` }}>
         {image &&
           <div 
             className="p6o-selection-header-image"
