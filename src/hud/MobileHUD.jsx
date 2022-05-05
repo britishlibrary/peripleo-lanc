@@ -48,6 +48,11 @@ const MobileHUD = props => {
     }
   }, [filtersOpen]);
 
+  useEffect(() => {
+    if (search?.facet && !filtersOpen)
+      setFiltersOpen(true);
+  }, [ search?.facet ]);
+
   const onChange = evt =>
     setQuery(evt.target.value);
 

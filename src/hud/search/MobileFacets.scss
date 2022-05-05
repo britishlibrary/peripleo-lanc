@@ -4,12 +4,13 @@
   background-color:#fbfbfb;
   border-radius:0 6px 6px 0;
   overflow:hidden;
+  z-index:98;
   box-shadow:0 0 6px rgba(0,0,0,0.2);
 
   ul {
     list-style-type:none;
     margin:0;
-    padding:10px 10px 10px 5px;
+    padding:10px 15px 10px 0;
   }
 
   li {
@@ -24,7 +25,7 @@
     display:inline-block;
     overflow:hidden;
     text-align:right;
-    margin-right:5px;
+    margin:0 5px 0 10px;
     box-sizing:border-box;
     text-transform:capitalize;
     transition:all 0.2s;
@@ -38,15 +39,16 @@
     display:flex;
     width:34px;
     height:34px;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    font-size:12px;
     color: #fff;
     @include rounded-corners(50%);
   }
 
   .p6o-facet-toggle-button {
-    padding:10px 14px 5px 10px;
+    padding:10px 19px 5px 10px;
     background-color:#f4f4f4;
     border-top:1px solid #ebebeb;
     text-align:right;
@@ -66,7 +68,7 @@
 
     svg.close {
       position:absolute;
-      right:14px;
+      right:20px;
       opacity:1;
     }
 
