@@ -4,6 +4,7 @@ import { BsHourglassSplit } from 'react-icons/bs';
 import { IoArrowBackOutline, IoCloseSharp } from 'react-icons/io5';
 import { RiExternalLinkLine } from 'react-icons/ri';
 import { CgArrowsExpandRight } from 'react-icons/cg';
+import * as sanitize from 'sanitize-html';
 
 import { SIGNATURE_COLOR } from '../../../Colors';
 
@@ -20,7 +21,7 @@ const highlight = (text, query) => {
     return text;
 
   const parts = text.split(new RegExp(`(${query})`, 'gi'));
-  return <>{parts.map((part, idx) => part.toLowerCase() === query.toLowerCase() ? <mark key={part + idx}>{part}</mark> : part)}</>;
+  return parts.map((part, idx) => part.toLowerCase() === query.toLowerCase() ? `<mark>${part}</mark>` : part).join('');
 }
 
 const ItemCard = props => {
@@ -150,8 +151,11 @@ const ItemCard = props => {
             {descriptions.map((d, idx) => 
               <p key={idx} 
                 className="p6o-selection-description"
-                aria-level={3}>
-                {highlight(d, search?.query)}
+                aria-level={3}
+                dangerouslySetInnerHTML={{
+                  __html: highlight(sanitize(d), search?.query)
+                }}>
+                {}
               </p>
             )}
           </div>
