@@ -33,6 +33,7 @@
 .p6o-map-container .p6o-controls.mobile {
   top:30px;
   right:15px;
+  transition:all 0.25s;
 
   .p6o-controls-btn {
     width:50px;
@@ -40,4 +41,8 @@
     font-size:25px;
   }
   
+}
+
+.p6o-map-container.filters-open .p6o-controls.mobile {
+  top:70px;
 }
