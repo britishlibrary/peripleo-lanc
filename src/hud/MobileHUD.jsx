@@ -7,6 +7,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import useSearch from '../state/search/useSearch';
 
+import MobileFacets from './search/MobileFacets';
+
 const animation = {
   closed: { 
     maxHeight: 0 
@@ -30,6 +32,9 @@ const MobileHUD = props => {
 
   const [ query, setQuery ] = useState(search?.query || '');
   const [ debouncedQuery ] = useDebounce(query, 250);
+
+  // Shorthand
+  const arrows = availableFacets.length > 1;
 
   useEffect(() => {
     changeSearchQuery(debouncedQuery);
@@ -91,32 +96,40 @@ const MobileHUD = props => {
 
       <AnimatePresence>
         {filtersOpen &&
-          <motion.div className="p6o-mobile-hud-bottom"
-            variants={animation}
-            initial="closed"
-            animate="open"
-            exit="closed">
+          <>
+            <motion.div className="p6o-mobile-hud-bottom"
+              variants={animation}
+              initial="closed"
+              animate="open"
+              exit="closed">
 
-            <button 
-              tabIndex={4}
-              aria-label="Previous filter category"
-              onClick={onChangeFacet(-1)}>
-              <HiOutlineChevronLeft />
-            </button>
-          
-            <h3 
-              aria-live="polite"
-              aria-atomic={true}>
-              {search.facet.replace('_', ' ')}
-            </h3>
-          
-            <button
-              tabIndex={5}
-              aria-label="Next filter category" 
-              onClick={onChangeFacet(+1)}>
-              <HiOutlineChevronRight />
-            </button>
-          </motion.div>
+              {arrows &&
+                <button 
+                  tabIndex={4}
+                  aria-label="Previous filter category"
+                  onClick={onChangeFacet(-1)}>
+                  <HiOutlineChevronLeft />
+                </button>
+              }
+            
+              <h3 
+                aria-live="polite"
+                aria-atomic={true}>
+                {search.facet.replace('_', ' ')}
+              </h3>
+            
+              {arrows &&
+                <button
+                  tabIndex={5}
+                  aria-label="Next filter category" 
+                  onClick={onChangeFacet(+1)}>
+                  <HiOutlineChevronRight />
+                </button>
+              }
+            </motion.div>
+
+            <MobileFacets search={search} />
+          </>
         }
       </AnimatePresence>
     </div>

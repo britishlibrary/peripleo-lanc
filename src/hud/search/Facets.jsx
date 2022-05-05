@@ -6,7 +6,7 @@ import { HiOutlineChevronLeft, HiOutlineChevronRight, HiOutlinePlusCircle } from
 import { SIGNATURE_COLOR } from '../../Colors';
 import { mapModeState } from '../../state';
 
-const formatNumber = num => {
+export const formatNumber = num => {
   if (num > 1000)
     return (num / 1000).toFixed(1) + 'k';
   else if (num > 1000000)
