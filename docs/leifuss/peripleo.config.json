@@ -5,7 +5,7 @@
     { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "../data/coins/alexandrian-tetradrachms.lp.json", "attribution":"Datasets: Leif Isaksen" },
     { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "../data/coins/base-byzantine-coins.lp.json" },
     { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "../data/coins/ptolemaic-coins.lp.json" },
-    { "name": "MonasteryQuest", "format": "LINKED_PLACES", "src": "../data/MonasteryQuest.lp.json" }
+    { "name": "MonasteryQuest", "format": "LINKED_PLACES", "src": "../data/MonasteryQuest.lp.json", "attribution":"<a href=\"https://stainedglassattitudes.wordpress.com/2020/11/30/monasteryquest-pt-3-the-map/\" target=\"_blank\">MonasteryQuest™</a> © Dr J.A. Cameron" }
   ],
   "facets": [
     "type",
