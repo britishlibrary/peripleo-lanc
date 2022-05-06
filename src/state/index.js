@@ -48,6 +48,11 @@ export const searchState = atom({
   )
 });
 
+export const deviceState = atom({
+  key: 'device',
+  default: window.screen.availWidth <= 800 ? 'MOBILE' : 'DESKTOP'
+});
+
 /**
  * TODO
  * Current selection

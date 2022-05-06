@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Popup } from 'react-map-gl';
+import { useRecoilValue } from 'recoil';
+
+import { deviceState } from '../../state';
 
 import CardStack from './cards/CardStack';
 import ItemCard from './cards/ItemCard';
 import ItemListCard from './cards/ItemListCard';
+import MobilePreview from './MobilePreview';
 
 const SelectionPreview = props => {
+
+  const device = useRecoilValue(deviceState);
 
   const [ cards, setCards ] = useState([ props ]); 
 
@@ -27,8 +33,13 @@ const SelectionPreview = props => {
       { ...arg, nodeList: arg.nodeList.map(node => ({...props, node }))} :
       { ...props, node: arg };
 
+
     const isList = data.nodeList?.length > 1;
     if (isList) {
+      // TODO a tempory hack
+      data.nodeList.sort((a, b) =>
+        a.node.identifier.includes('bl.uk') ? -1 : 1);
+      
       setCards([ ...cards, data ]);
     } else {
       // Single link
@@ -46,8 +57,10 @@ const SelectionPreview = props => {
       setCards(cards.slice(0, cards.length - 1));
   }
 
+  const Preview = device === 'MOBILE' ? MobilePreview : Popup;
+
   return (
-    <Popup
+    <Preview
       longitude={coordinates[0]} 
       latitude={coordinates[1]}
       maxWidth={440}
@@ -73,7 +86,7 @@ const SelectionPreview = props => {
           onGoBack={onGoBack} /> 
         }
       />
-    </Popup>
+    </Preview>
   )
 
 }

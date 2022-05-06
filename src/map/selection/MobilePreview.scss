@@ -1,0 +1,36 @@
+.p6o-mobile-selection-preview {
+  position:fixed;
+  bottom:0;
+  width:100%;
+  z-index: 99;
+
+  .cardstack {
+    width:100%;
+    @include rounded-corners(0);
+
+    .card {
+      width:100%;
+    }
+
+    .card .p6o-selection-card {
+      @include rounded-corners(0);
+  
+      header {
+        @include rounded-corners(0);
+      }
+
+      .p6o-selection-content {
+        overflow-y: auto;
+      }
+
+      .p6o-selection-main-flex {
+        max-height:none;
+        overflow-y:auto;
+      }
+ 
+    }
+
+
+  }
+
+}
