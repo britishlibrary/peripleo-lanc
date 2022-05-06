@@ -33,8 +33,13 @@ const SelectionPreview = props => {
       { ...arg, nodeList: arg.nodeList.map(node => ({...props, node }))} :
       { ...props, node: arg };
 
+
     const isList = data.nodeList?.length > 1;
     if (isList) {
+      // TODO a tempory hack
+      data.nodeList.sort((a, b) =>
+        a.node.identifier.includes('bl.uk') ? -1 : 1);
+      
       setCards([ ...cards, data ]);
     } else {
       // Single link
