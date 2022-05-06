@@ -8,7 +8,8 @@
     { "name": "MonasteryQuest", "format": "LINKED_PLACES", "src": "../data/MonasteryQuest.lp.json" }
   ],
   "facets": [
-    "type"
+    "type",
+    { "name": "order", "path": ["properties", "Order"] }
   ],
   "layers": [
     { "name": "SW Rivers", "type": "geojson", "src": "../layers/SW_rivers.geojson", "color": "#5555ff" },
