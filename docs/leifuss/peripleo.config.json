@@ -4,7 +4,8 @@
   "data": [
     { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "../data/coins/alexandrian-tetradrachms.lp.json", "attribution":"Datasets: Leif Isaksen" },
     { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "../data/coins/base-byzantine-coins.lp.json" },
-    { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "../data/coins/ptolemaic-coins.lp.json" }
+    { "name": "Leif's Coins", "format": "LINKED_PLACES", "src": "../data/coins/ptolemaic-coins.lp.json" },
+    { "name": "MonasteryQuest", "format": "LINKED_PLACES", "src": "../data/MonasteryQuest.lp.json" }
   ],
   "facets": [
     "type"
