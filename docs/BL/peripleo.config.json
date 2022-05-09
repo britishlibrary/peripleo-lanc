@@ -1,0 +1,32 @@
+{
+  "initial_bounds": [-7.9, 49.5, 2.2, 59.4],
+  "map_style": "https://api.maptiler.com/maps/outdoor/style.json?key=cqqmcLw28krG9Fl7V3kg",
+  "data": [
+    { "name": "VisitPlus", "format": "LINKED_PLACES", "src": "../data/BL-Collections-Geospatial-(Victoria-Morris).lp.json", "attribution":"BL Collections: Victoria Morris" }
+  ],
+  "facets": [
+    { "name": "type", "path": ["properties", "_properties_type"] }
+  ],
+  "link_icons": {
+    "www.nationaltrust.org.uk": "../logos/www.nationaltrust.org.uk.png",
+    "www.nationaltrustcollections.org.uk": "../logos/www.nationaltrustcollections.org.uk.svg",
+    "www.mola.org.uk": "../logos/www.mola.org.uk.png",
+    "www.historicenvironment.scot": "../logos/www.historicenvironment.scot.png",
+    "www.english-heritage.org.uk": "../logos/www.english-heritage.org.uk.png",
+    "www.britishmuseum.org": "../logos/www.britishmuseum.org.png",
+    "www.flickr.com": "../logos/www.bl.uk.png",
+    "www.bl.uk": "../logos/www.bl.uk.png",
+    "access.bl.uk": "../logos/www.bl.uk.png",
+    "sounds.bl.uk": "../logos/www.bl.uk.png",
+    "britishlibrary.georeferencer.com": "../logos/www.bl.uk.png",
+    "hrp.org.uk": "../logos/hrp.org.uk.png",
+    "historicengland.org.uk": "../logos/historicengland.org.uk.png",
+    "finds.org.uk": "../logos/finds.org.uk.png",
+    "cadw.gov.wales": "../logos/cadw.gov.wales.png",
+    "cadwpublic-api.azurewebsites.net": "../logos/cadw.gov.wales.png",
+    "www.geograph.org.uk": "../logos/geograph.org.png",
+    "w3id.org": "../logos/w3id.org.png",
+    "openplaques.org": "../logos/openplaques.png",
+    "artuk.org": "../logos/ArtUK.org.png"
+  }
+}
