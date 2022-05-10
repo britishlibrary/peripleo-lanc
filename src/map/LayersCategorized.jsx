@@ -23,11 +23,12 @@ const getLayers = search => {
   const { counts, items } = search.facetDistribution;
 
   // All facet values (defines layer colors!)
-  const allFacetValues = counts.slice(0, 8).map(t => t[0]);
+  const allFacetValues = getTopEight(counts, currentFilter?.values).map(t => t[0]);
 
   // Just the active values - all, or a subset if filter is enabled
   const activeValues = currentFilter ?
-    [...currentFilter.values ] : allFacetValues;
+    allFacetValues.filter(value => currentFilter?.values.includes(value)) :
+    allFacetValues;
 
   // Re-order active values if necessary
   if (currentFilter)
