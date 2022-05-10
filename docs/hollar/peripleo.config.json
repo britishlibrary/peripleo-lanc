@@ -32,6 +32,8 @@
     "en.wikipedia.org": "../logos/en.wikipedia.org.png",
     "www.pastplace.org": "../logos/broken-link.png",
     "emew.io": "../logos/broken-link.png",
-    "whgazetteer.org": "../logos/whgazetteer.org.svg"
+    "whgazetteer.org": "../logos/whgazetteer.org.svg",
+    "www.geonames.org": "../logos/www.geonames.org.svg",
+    "sws.geonames.org": "../logos/www.geonames.org.svg"
   }
 }
