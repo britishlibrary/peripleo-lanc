@@ -33,11 +33,19 @@ const InternalLink = props => {
 
   const { node } = props;
 
+  let source;
+  try {
+    const url = new URL(sanitizeURL(node.id));
+    source = url.host;
+  } catch {
+    source = node.dataset;
+  }
+
   return (
     <div onClick={() => props.onSelect(node)}>
       <div className="p6o-internal-link-meta">
         <h3>{node.title}</h3>
-        <h4>{node.dataset}</h4>
+        <h4>{source}</h4>
         <p className="p6o-node-types">
           {getTypes(node).join(', ')}
         </p>
