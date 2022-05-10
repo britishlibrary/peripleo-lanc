@@ -30,6 +30,8 @@
     "w3id.org/locolligo/Mapping-Museums": "../logos/museums.png",
     "w3id.org": "../logos/w3id.org.png",
     "openplaques.org": "../logos/openplaques.png",
-    "artuk.org": "../logos/ArtUK.org.png"
+    "artuk.org": "../logos/ArtUK.org.png",
+    "en.wikipedia.org": "../logos/en.wikipedia.org.png",
+    "www.pastplace.org": "../logos/broken-link.png"
   }
 }
