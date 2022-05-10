@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { IoCloseOutline } from 'react-icons/io5';
 
 import { formatNumber } from './Facets';
 
@@ -10,6 +11,10 @@ const More = props => {
   return ReactDOM.createPortal(
     <div className="p6o-facets-container p6o-more-facet-values-container">
       <div className="p6o-facets">
+        <h1>{props.search.facet}</h1>
+        <button onClick={props.onClose}>
+          <IoCloseOutline />
+        </button>
         <ul>
           {counts.map(([label, count], idx) => 
             <li 

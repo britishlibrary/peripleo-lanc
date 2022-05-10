@@ -5,13 +5,30 @@
   bottom:0;
   right:0;
   background-color:rgba(0,0,0,0.9);
-  padding:30px 0;
+  padding:40px 0;
   overflow-y:scroll;
   z-index:99;
 
   .p6o-facets {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width:800px;
+    margin:0 auto;
+
+    h1 {
+      text-transform:capitalize;
+      color:#fff;
+      font-weight:normal;
+      font-size:22px;
+      padding-bottom:10px;
+    }
+
+    button {
+      position:fixed;
+      color:#fff;
+      font-size:38px;
+      top:10px;
+      right:25px;
+    }
+
   }
 
 }

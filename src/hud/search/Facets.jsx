@@ -162,7 +162,9 @@ const Facets = props => {
       </div>
 
       {showMore &&
-        <More search={props.search} />
+        <More 
+          search={props.search} 
+          onClose={() => setShowMore(false)}/>
       }
     </motion.div>
   )
