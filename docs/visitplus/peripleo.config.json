@@ -26,9 +26,9 @@
     "cadw.gov.wales": "../logos/cadw.gov.wales.png",
     "cadwpublic-api.azurewebsites.net": "../logos/cadw.gov.wales.png",
     "www.geograph.org.uk": "../logos/geograph.org.png",
-    "w3id.org": "../logos/w3id.org.png",
-    "w3id.org/locolligo/Mapping-Museums": "../logos/museums.png",
     "w3id.org/locolligo/VCH-Places": "../logos/VCH.jpg",
+    "w3id.org/locolligo/Mapping-Museums": "../logos/museums.png",
+    "w3id.org": "../logos/w3id.org.png",
     "openplaques.org": "../logos/openplaques.png",
     "artuk.org": "../logos/ArtUK.org.png"
   }
