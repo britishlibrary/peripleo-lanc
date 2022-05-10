@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { BiNetworkChart } from 'react-icons/bi';
-import { BsHourglassSplit } from 'react-icons/bs';
 import { IoArrowBackOutline, IoCloseSharp } from 'react-icons/io5';
 import { RiExternalLinkLine } from 'react-icons/ri';
 import { CgArrowsExpandRight } from 'react-icons/cg';
@@ -142,7 +141,7 @@ const ItemCard = props => {
 
             {when && 
               <p className="when">
-                <BsHourglassSplit /> {when.label}
+                <strong>Timespan:</strong> {when.label}
               </p>
             }
           </div>
