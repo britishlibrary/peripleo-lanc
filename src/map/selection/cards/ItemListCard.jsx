@@ -56,7 +56,7 @@ const ExternalLink = props => {
   const { host, href } = url;
 
   const customIcon = props.config.link_icons &&
-    Object.entries(props.config.link_icons).find(t => host.includes(t[0]));
+    Object.entries(props.config.link_icons).find(t => link.identifier.includes(t[0]));
 
   const icon  = customIcon ?
     <img src={customIcon[1]} /> :
