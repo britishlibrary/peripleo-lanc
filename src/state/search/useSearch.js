@@ -120,6 +120,24 @@ const useSearch = () => {
     executeSearch(query, updatedFilters, facet, true);
   }
 
+  const setFilters = (filterFacet, filterValues) => {
+    if (filterValues?.length === 0)
+      return clearFilter(filterFacet);
+
+    const { query, filters, facet } = search;
+
+    if (filters.find(f => f.facet === filterFacet)) {
+      // Update existing filter
+      const updatedFilters = filters.map(f => f.facet === filterFacet ?
+        new Filter(filterFacet, filterValues) : f);
+  
+      executeSearch(query, updatedFilters, facet);  
+    } else {
+      // Append new filter
+      executeSearch(query, [...filters, new Filter(filterFacet, filterValues)], facet);
+    }
+  }
+
   const clearFilter = filterFacet => {
     const { query, filters, facet } = search;
 
@@ -144,6 +162,7 @@ const useSearch = () => {
     clearSearchQuery,
     fitMap,
     toggleFilter,
+    setFilters,
     clearFilter,
     setCategoryFacet,
     availableFacets: availableFacets.map(f => f.name)

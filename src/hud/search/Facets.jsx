@@ -85,6 +85,11 @@ const Facets = props => {
       props.onToggleFilter(label);
   }
 
+  const onSetMoreFilters = values => {
+    props.onSetFilters(values);
+    setShowMore(false);
+  }
+
   return (
     <motion.div 
       key="facets-container"
@@ -164,7 +169,8 @@ const Facets = props => {
       {showMore &&
         <More 
           search={props.search} 
-          onClose={() => setShowMore(false)}/>
+          onSet={onSetMoreFilters}
+          onCancel={() => setShowMore(false)}/>
       }
     </motion.div>
   )

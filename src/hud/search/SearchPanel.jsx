@@ -35,6 +35,7 @@ const SearchPanel = props => {
     search, 
     changeSearchQuery, 
     fitMap, 
+    setFilters,
     toggleFilter,
     clearFilter, 
     setCategoryFacet,
@@ -73,6 +74,9 @@ const SearchPanel = props => {
 
   const onClearFilter = () => 
     clearFilter(search.facet);
+
+  const onSetFilters = values =>    
+    setFilters(search.facet, values);
 
   return (
     <motion.div 
@@ -121,6 +125,7 @@ const SearchPanel = props => {
             search={search} 
             onNextFacet={onChangeFacet(1)}
             onPreviousFacet={onChangeFacet(-1)}
+            onSetFilters={onSetFilters}
             onToggleFilter={onToggleFilter} 
             onClearFilter={onClearFilter} /> 
         }

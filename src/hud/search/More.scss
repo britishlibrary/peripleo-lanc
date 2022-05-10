@@ -21,12 +21,23 @@
       padding-bottom:10px;
     }
 
-    button {
+    .p6o-more-facet-values-buttons {
       position:fixed;
-      color:#fff;
-      font-size:38px;
       top:10px;
       right:25px;
+
+      button {
+        color:#fff;
+        font-size:17px;
+        margin-left:20px;
+
+        svg {
+          font-size:35px;
+          vertical-align:middle;
+        }
+
+      }
+  
     }
 
   }
