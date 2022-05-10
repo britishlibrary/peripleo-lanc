@@ -111,6 +111,9 @@ const Map = React.forwardRef((props, ref) => {
       className={device === 'MOBILE' ? 'p6o-map-container mobile' : 'p6o-map-container'} >
       <ReactMapGL
         attributionControl={false}
+        pitchWithRotate={false}
+        dragRotate={false}
+        clickTolerance={device === 'MOBILE' ? 10 : 3}
         ref={mapRef}
         initialViewState={viewstate.latitude && viewstate.longitude && viewstate.zoom ? viewstate : {
           bounds: config.initial_bounds
