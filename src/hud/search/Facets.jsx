@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useRecoilValue } from 'recoil';
 import { HiOutlineChevronLeft, HiOutlineChevronRight, HiOutlinePlusCircle } from 'react-icons/hi';
 
+import More from './More';
 import { SIGNATURE_COLOR } from '../../Colors';
 import { mapModeState } from '../../state';
 
@@ -59,6 +60,8 @@ const equivalentFilters = (a, b) => {
 const Facets = props => {
 
   const mapMode = useRecoilValue(mapModeState);
+
+  const [ showMore, setShowMore ] = useState(false);
 
   const counts = props.search.facetDistribution?.counts || [];
 
@@ -148,15 +151,19 @@ const Facets = props => {
             <motion.li
               key="p6o-remaining"
               variants={childAnimation}
-              className="p6o-facet-values-remaining">
+              className="p6o-facet-values-remaining"
+              onClick={() => setShowMore(true)}>
               <div className="p6o-facet-value-wrapper">
                 <span><HiOutlinePlusCircle /> {remaining} more</span>
               </div>
             </motion.li>
           }
         </motion.ul>
-
       </div>
+
+      {showMore &&
+        <More search={props.search} />
+      }
     </motion.div>
   )
 
