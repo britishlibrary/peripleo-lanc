@@ -6,6 +6,7 @@ import { SIGNATURE_COLOR } from '../Colors';
 import { pointStyle, pointCategoryStyle } from './styles/Point';
 import { clusterPointStyle, clusterLabelStyle } from './styles/Clusters';
 import { colorHeatmapCoverage, colorHeatmapPoint } from './styles/Heatmap';
+import { getTopEight } from '../hud/search/Facets';
 
 const toFeatureCollection = features => 
   ({ type: 'FeatureCollection', features: features || [] });
@@ -73,24 +74,29 @@ const LayersCategorized = props => {
       const { counts, items } = props.search.facetDistribution;
 
       // Just the facet value labels, in order of the legend
-      const currentFacets = counts.map(c => c[0]);
-      
+      const currentFacets = 
+        getTopEight(counts, props.search.filters.find(f => f.facet === props.search.facet)?.values)
+          .map(t => t[0]);
+            
       // Current filter on this facet, if any
       const currentFilter = props.search.filters.find(f => 
         f.facet === props.search.facet);
-
+      
       // Colorize the features according to their facet values
       const colorized = items.map(feature => {
         // Facet values assigned to this feature
         const values = feature._facet?.values || [];
-        
+
         // Color the feature by the top facet *that's currently active*!
         // That means: we need to use different colors depending on whether
         // there's currently a filter set on this facet
-        const topValue = values.find(value =>     
-          currentFilter ?
-            currentFilter.values.indexOf(value) > -1 :
-            currentFacets.indexOf(value) > -1);
+        const topValue = values.find(value => {
+          if (currentFilter) {
+            return currentFacets.indexOf(value) > -1 && currentFilter.values.includes(value);
+          } else {
+            return currentFacets.indexOf(value) > -1;
+          }
+        });
 
         const color = topValue ?
           SIGNATURE_COLOR[currentFacets.indexOf(topValue)] : '#a2a2a2';
