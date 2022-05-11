@@ -16,6 +16,30 @@ export const formatNumber = num => {
     return num;
 }
 
+export const getTopEight = (facetCounts, filterValues) => {
+  let topEight = [];
+
+  const filterCounts = filterValues ?
+    filterValues.map(label => facetCounts.find(c => c[0] === label)) : [];
+  
+  filterCounts.sort((a, b) => b[1] - a[1]);
+
+  if (filterCounts.length > 7) {
+    // More than 7 current filters -> display top 8
+    topEight = filterCounts.slice(0, 8);
+  } else if (filterCounts.length > 0) {
+    // Less than 8 filer values -> fill up the rest with top counts
+    const unselected = facetCounts.filter(c => !filterCounts.find(s => s[0] === c[0]));
+    topEight = [...filterCounts, ...unselected.slice(0, 8 - filterCounts.length)];
+    topEight.sort((a, b) => b[1] - a[1]);
+  } else {
+    // No filters - just display top 8
+    topEight = facetCounts.slice(0, 8);
+  }
+
+  return topEight;
+}
+
 const parentAnimation = {
   hidden: { 
     opacity: 0,
@@ -65,11 +89,14 @@ const Facets = props => {
 
   const counts = props.search.facetDistribution?.counts || [];
 
-  const displayed = counts.slice(0, 8);
-  const remaining = counts.length - displayed.length;
+  // Display up to 8 current filters + fill the rest
+  // with the top facets
 
   // Filter values on the current facet (if any)
   const currentFacetFilter = props.search.filters.find(f => f.facet === props.search.facet);
+
+  const displayed = getTopEight(counts, currentFacetFilter?.values);
+  const remaining = counts.length - displayed.length;
 
   const onToggleFilter = label => () => {
     const allDisplayed = displayed.map(t => t[0]);

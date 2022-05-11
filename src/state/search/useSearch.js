@@ -131,10 +131,10 @@ const useSearch = () => {
       const updatedFilters = filters.map(f => f.facet === filterFacet ?
         new Filter(filterFacet, filterValues) : f);
   
-      executeSearch(query, updatedFilters, facet);  
+      executeSearch(query, updatedFilters, facet, true);  
     } else {
       // Append new filter
-      executeSearch(query, [...filters, new Filter(filterFacet, filterValues)], facet);
+      executeSearch(query, [...filters, new Filter(filterFacet, filterValues)], facet, true);
     }
   }
 
