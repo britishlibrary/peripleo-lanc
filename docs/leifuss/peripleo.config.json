@@ -8,8 +8,7 @@
     { "name": "MonasteryQuest", "format": "LINKED_PLACES", "src": "../data/MonasteryQuest.lp.json", "attribution":"<a href=\"https://stainedglassattitudes.wordpress.com/2020/11/30/monasteryquest-pt-3-the-map/\" target=\"_blank\">MonasteryQuest™</a> © Dr J.A. Cameron" }
   ],
   "facets": [
-    "type",
-    { "name": "order", "path": ["properties", "Order"] }
+    "type"
   ],
   "layers": [
     { "name": "SW Rivers", "type": "geojson", "src": "../layers/SW_rivers.geojson", "color": "#5555ff" },
