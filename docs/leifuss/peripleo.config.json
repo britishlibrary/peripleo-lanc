@@ -185,7 +185,7 @@
     },
     {
       "pattern": "www.wikidata.org",
-      "img": "../logos/www.wikidata.org.svg",
+      "img": null,
       "label": "Wikidata"
     }
   ]
