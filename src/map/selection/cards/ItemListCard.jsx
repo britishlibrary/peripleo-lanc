@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiOutlineInfoCircle } from 'react-icons/ai';
 import { IoArrowBackOutline, IoCloseSharp } from 'react-icons/io5';
 import { SiWikidata } from 'react-icons/si';
 import { VscGlobe } from 'react-icons/vsc';
 import { BiRightArrowAlt } from 'react-icons/bi';
+import { HiPlus, HiMinus } from 'react-icons/hi';
 
 import { getTypes } from './Utils';
 import { SIGNATURE_COLOR } from '../../../Colors';
@@ -44,7 +45,19 @@ const groupByIdPattern = (nodeList, patterns) => {
     grouped[matchingPattern ? matchingPattern : '__ungrouped'].push(obj);
   });
 
-  return Object.entries(grouped);
+  // Sort according to pattern order
+  const unsorted = Object.entries(grouped);
+  const sorted = patterns.reduce((groups, pattern) => {
+    const group = unsorted.find(t => t[0] === pattern);
+    if (group) 
+      groups.push(group);
+
+    return groups;
+  }, []);
+
+  return grouped['__ungrouped'] ?
+    [ ...sorted, ['__ungrouped', grouped['__ungrouped']] ] : 
+    sorted;
 }
 
 const InternalLink = props => {
@@ -74,17 +87,14 @@ const InternalLink = props => {
 
 }
 
-const ExternalLink = props => {
-
-  const link = props.node;
-
-  const url = new URL(sanitizeURL(link.identifier));
+const getLinkMeta = (node, config) => {
+  const url = new URL(sanitizeURL(node.identifier));
   const { host, href } = url;
 
-  const customIcon = props.config.link_icons &&
-    Object.entries(props.config.link_icons).find(t => link.identifier.includes(t[0]));
+  const customIcon = config.link_icons &&
+    Object.entries(config.link_icons).find(t => node.identifier.includes(t[0]));
 
-  const icon  = customIcon ?
+  const icon = customIcon ?
     <img src={customIcon[1]} /> :
 
     (() => {
@@ -93,9 +103,17 @@ const ExternalLink = props => {
         builtInIcon[1] : placeholderIcon(host);
     })();
 
+  return { icon, host, href };
+}
+
+const ExternalLink = props => {
+
+  const link = props.node;
+  const { icon, host, href } = getLinkMeta(props.node, props.config);
+
   return (
     <>
-      <div className="p6o-external-link-icon">{icon}</div>
+      {props.icon && <div className="p6o-link-icon">{icon}</div> }
       <div className="p6o-external-link-meta">
         {link.label && 
           <a 
@@ -118,26 +136,55 @@ const ExternalLink = props => {
 
 const LinkGroup = props => {
 
-  return (
-    <li>
-      <h2>{props.pattern}</h2>
-      <ul>
-        {props.nodes.map(selection => selection.node.properties ?
-          <li 
-            key={selection.node.identifier}
-            className="p6o-link-internal">
-              <InternalLink 
-                {...selection } 
-                onSelect={node => props.onGoTo(node)} /> 
-          </li> :
+  const [isOpen, setOpen] = useState(false);
 
-          <li
-            key={selection.node.identifier}
-            className="p6o-link-external">
-            <ExternalLink  {...selection } />
-          </li>
-        )}
-      </ul>
+  const { config } = props.nodes[0];
+
+  const customIcon = config.link_icons &&
+    Object.entries(config.link_icons).find(t => props.pattern == t[0]);
+
+  const icon = customIcon ?
+    <img src={customIcon[1]} /> : placeholderIcon(props.pattern);
+
+  const onToggle = () => setOpen(!isOpen);
+
+  console.log(props);
+
+  return (
+    <li className={isOpen ? "p6o-link-group open" : "p6o-link-group closed"}>
+      <h2 onClick={onToggle}>
+        {props.pattern !== '__ungrouped' && <div className="p6o-link-icon">{icon}</div> }
+
+        {props.pattern === '__ungrouped' ?
+          <div className="p6o-link-group-label">Other ({props.nodes.length})</div> :
+          <div className="p6o-link-group-label">{props.nodes.length} Records</div>
+        }
+        
+        <button 
+          className="p6o-link-group-toggle">
+          {isOpen ? <HiMinus /> : <HiPlus />}
+        </button>
+      </h2>
+
+      {isOpen &&
+        <ul>
+          {props.nodes.map(selection => selection.node.properties ?
+            <li 
+              key={selection.node.identifier}
+              className="p6o-link p6o-link-internal">
+                <InternalLink 
+                  {...selection } 
+                  onSelect={node => props.onGoTo(node)} /> 
+            </li> :
+
+            <li
+              key={selection.node.identifier}
+              className="p6o-link p6o-link-external">
+              <ExternalLink  {...selection } />
+            </li>
+          )}
+        </ul>
+      }
     </li>
   )
 
@@ -175,7 +222,7 @@ const ItemListCard = props => {
           <IoCloseSharp />
         </button>
       </header>
-      <ul>
+      <ul className="p6o-link-groups-container">
         {grouped.map(([pattern, nodes]) => 
           <LinkGroup key={pattern} pattern={pattern} nodes={nodes} />
         )}
@@ -189,21 +236,3 @@ const ItemListCard = props => {
 }
 
 export default ItemListCard;
-
-/*
-      {props.nodeList.map(selection => selection.node.properties ?
-        <li 
-          key={selection.node.identifier}
-          className="p6o-link-internal">
-            <InternalLink 
-              {...selection } 
-              onSelect={node => props.onGoTo(node)} /> 
-        </li> :
-
-        <li
-          key={selection.node.identifier}
-          className="p6o-link-external">
-          <ExternalLink  {...selection } />
-        </li>
-      )}
-*/

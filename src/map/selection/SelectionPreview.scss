@@ -105,23 +105,111 @@
     list-style-type:none;
     margin:0;
     padding:0; 
+    position:relative;
+  }
+
+  ul.p6o-link-groups-container {
     max-height:400px;
     overflow-y:auto;
     max-width:100%;
     overflow-x:hidden;
-    position:relative;
     min-height:100px;
   }
 
-  li:first-child {
+  li.p6o-link-group {
+
+    h2 {
+      font-weight:normal;
+      padding:15px 10px;
+      font-size:16px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      border-bottom:1px solid #e9e9e9;
+    }
+
+    ul {
+      background-color:#f7f7f7;
+      border-bottom:1px solid #e9e9e9;
+    }
+
+    .p6o-link-group-label {
+      margin-left:8px;
+      flex:1;
+      font-size:15px;
+    }
+
+    svg {
+      color:#4f4f4f;
+      font-size:20px;
+    }
+
+  }
+
+  li.p6o-link-group.closed:last-child {
+
+    h2 {
+      border:none;
+    }
+
+  }
+
+  li.p6o-link-group.open:last-child {
+
+    ul {
+      border:none;
+    }
+
+  }
+
+  li.p6o-link:first-child {
     border-top:none;
   }
 
-  li {
+  li.p6o-link {
     padding:15px;
     border-top:1px solid #e9e9e9;
     width:100%;
-    box-sizing:border-box;
+    box-sizing:border-box;    
+  }
+
+  .p6o-link-icon {
+    flex-basis:40px;
+    flex-shrink:0;
+    text-align:center;
+
+    img {
+      max-width:25px;
+      max-height:25px;
+      vertical-align:middle;
+      @include rounded-corners(3px);
+    }
+
+    svg {
+      color:#626262;
+      font-size:25px;
+      vertical-align:middle;
+      padding:0 4px;
+    }
+
+    .p6o-link-placeholder {
+      display:inline-block;
+    }
+
+    .p6o-link-placeholder-inner {
+      padding:5px;
+      background-color:#858585;
+      font-size:16px;
+      font-weight:bold;
+      height:1em;
+      width:1em;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:#fff;
+      @include rounded-corners(2px);
+    }
+
   }
 
   li.p6o-link-internal {
@@ -172,45 +260,6 @@
   li.p6o-link-external {
     display:flex;
     align-items:center;
-
-    .p6o-external-link-icon {
-      flex-basis:40px;
-      flex-shrink:0;
-      text-align:center;
-
-      img {
-        max-width:25px;
-        max-height:25px;
-        vertical-align:middle;
-        @include rounded-corners(3px);
-      }
-  
-      svg {
-        color:#626262;
-        font-size:25px;
-        vertical-align:middle;
-        padding:0 4px;
-      }
-
-      .p6o-link-placeholder {
-        display:inline-block;
-      }
-  
-      .p6o-link-placeholder-inner {
-        padding:5px;
-        background-color:#858585;
-        font-size:16px;
-        font-weight:bold;
-        height:1em;
-        width:1em;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        color:#fff;
-        @include rounded-corners(2px);
-      }
-  
-    }
 
     .p6o-external-link-meta {
       overflow:hidden;

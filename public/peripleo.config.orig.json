@@ -1,0 +1,43 @@
+{
+  "initial_bounds": [-7.9, 49.5, 2.2, 59.4],
+  "data": [
+    { "name": "Portable Antiquities Scheme", "format": "LINKED_PLACES", "src": "data/PAS_Warwickshire.lp.json", "logo": "logos/finds.org.uk.png", "attribution":"Findspot Data � <a href=\"https://finds.org.uk/\" target=\"_blank\">Portable Antiquities Scheme</a>" },
+    { "name": "Hollar", "format": "LINKED_PLACES", "src": "data/Hollar-1660.lp.json", "attribution":"Hollar 1660 � <a href=\"https://viaeregiae.org/\" target=\"_blank\"><i>Viae Regiae</i> Contributors</a>" },
+    { "name": "VisitPlus", "format": "LINKED_PLACES", "src": "data/VisitPlus.lp.json", "attribution":"VisitPlus � <a href=\"https://britishlibrary.github.io/locating-a-national-collection/\" target=\"_blank\"><i>Locating a National Collection</i> Partners & Contributors</a>" },
+    { "name": "Heritage for All", "format": "LINKED_PLACES", "src": "data/hfa.lp.json" }, 
+    { "name": "Heritage for All", "format": "LINKED_PLACES", "src": "data/hfa.pas.lp.json" }
+  ],
+  "map_style": "https://api.maptiler.com/maps/outdoor/style.json?key=cqqmcLw28krG9Fl7V3kg",
+  "facets": [
+    "dataset",
+    { "name": "organisation", "path": ["properties", "organisation" ] },
+    { "name": "custodian", "path": ["relations", "label"], "condition": [ "relationType", "http://vocab.getty.edu/page/aat/300160390" ] },
+    "type",
+    { "name": "technique", "path": ["relations", "label"], "condition": [ "relationType", "aat:300138082" ] },
+    "has_image"
+  ],
+  "link_icons": {
+    "www.nationaltrust.org.uk": "../logos/www.nationaltrust.org.uk.png",
+    "www.nationaltrustcollections.org.uk": "../logos/www.nationaltrustcollections.org.uk.svg",
+    "www.mola.org.uk": "../logos/www.mola.org.uk.png",
+    "www.historicenvironment.scot": "../logos/www.historicenvironment.scot.png",
+    "www.english-heritage.org.uk": "../logos/www.english-heritage.org.uk.png",
+    "www.britishmuseum.org": "../logos/www.britishmuseum.org.png",
+    "www.flickr.com": "../logos/www.bl.uk.png",
+    "www.bl.uk": "../logos/www.bl.uk.png",
+    "access.bl.uk": "../logos/www.bl.uk.png",
+    "sounds.bl.uk": "../logos/www.bl.uk.png",
+    "britishlibrary.georeferencer.com": "../logos/www.bl.uk.png",
+    "hrp.org.uk": "../logos/hrp.org.uk.png",
+    "historicengland.org.uk": "../logos/historicengland.org.uk.png",
+    "finds.org.uk": "../logos/finds.org.uk.png",
+    "cadw.gov.wales": "../logos/cadw.gov.wales.png",
+    "cadwpublic-api.azurewebsites.net": "../logos/cadw.gov.wales.png",
+    "www.geograph.org.uk": "../logos/geograph.org.png",
+    "w3id.org/locolligo/Mapping-Museums": "../logos/museums.png",
+    "w3id.org/locolligo/VCH-Places": "../logos/VCH.jpg",
+    "w3id.org": "../logos/w3id.org.png",
+    "openplaques.org": "../logos/openplaques.png",
+    "artuk.org": "../logos/ArtUK.org.png"
+  }
+}
