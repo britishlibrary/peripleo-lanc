@@ -36,19 +36,24 @@ const groupByIdPattern = (nodeList, patterns) => {
   nodeList.forEach(obj => {
     const id = obj.node.id || obj.node.identifier;
 
-    const matchingPattern = patterns.find(pattern => id.includes(pattern));
+    const matchingPattern = patterns.find(p => id.includes(p.pattern));
     if (matchingPattern)
-      grouped[matchingPattern] = grouped[matchingPattern] || [];
+      grouped[matchingPattern.label] = grouped[matchingPattern.label] || [];
     else
       grouped['__ungrouped'] = grouped['__ungrouped'] || [];
 
-    grouped[matchingPattern ? matchingPattern : '__ungrouped'].push(obj);
+    grouped[matchingPattern ? matchingPattern.label : '__ungrouped'].push(obj);
   });
 
   // Sort according to pattern order
   const unsorted = Object.entries(grouped);
-  const sorted = patterns.reduce((groups, pattern) => {
-    const group = unsorted.find(t => t[0] === pattern);
+
+  const labelOrder = patterns.reduce((labels, pattern) =>
+    labels.indexOf(pattern.label) === -1 ?
+      [ ...labels, pattern.label ] : labels, []);
+
+  const sorted = labelOrder.reduce((groups, label) => {
+    const group = unsorted.find(t => t[0] === label);
     if (group) 
       groups.push(group);
 
@@ -140,24 +145,20 @@ const LinkGroup = props => {
 
   const { config } = props.nodes[0];
 
-  const customIcon = config.link_icons &&
-    Object.entries(config.link_icons).find(t => props.pattern == t[0]);
+  const customIcon = config.link_icons?.find(p => props.label == p.label);
 
-  const icon = customIcon ?
-    <img src={customIcon[1]} /> : placeholderIcon(props.pattern);
+  const icon = customIcon && <img src={customIcon.img} />;
 
   const onToggle = () => setOpen(!isOpen);
-
-  console.log(props);
 
   return (
     <li className={isOpen ? "p6o-link-group open" : "p6o-link-group closed"}>
       <h2 onClick={onToggle}>
-        {props.pattern !== '__ungrouped' && <div className="p6o-link-icon">{icon}</div> }
+        {props.label !== '__ungrouped' && <div className="p6o-link-icon">{icon}</div> }
 
-        {props.pattern === '__ungrouped' ?
+        {props.label === '__ungrouped' ?
           <div className="p6o-link-group-label">Other ({props.nodes.length})</div> :
-          <div className="p6o-link-group-label">{props.nodes.length} Records</div>
+          <div className="p6o-link-group-label">{props.label} ({props.nodes.length})</div>
         }
         
         <button 
@@ -199,7 +200,7 @@ const ItemListCard = props => {
   // Temporary hack!
   const color = SIGNATURE_COLOR[3]; 
 
-  const grouped = groupByIdPattern(props.nodeList, Object.keys(config.link_icons));
+  const grouped = groupByIdPattern(props.nodeList, config.link_icons);
 
   return (
     <div className="p6o-selection-card p6o-selection-itemlistcard">
@@ -223,8 +224,8 @@ const ItemListCard = props => {
         </button>
       </header>
       <ul className="p6o-link-groups-container">
-        {grouped.map(([pattern, nodes]) => 
-          <LinkGroup key={pattern} pattern={pattern} nodes={nodes} />
+        {grouped.map(([label, nodes]) => 
+          <LinkGroup key={label} label={label} nodes={nodes} />
         )}
       </ul>
       <footer aria-live={true}>
