@@ -29,6 +29,24 @@ const placeholderIcon = host => {
   )
 }
 
+const groupByIdPattern = (nodeList, patterns) => {
+  const grouped = {};
+
+  nodeList.forEach(obj => {
+    const id = obj.node.id || obj.node.identifier;
+
+    const matchingPattern = patterns.find(pattern => id.includes(pattern));
+    if (matchingPattern)
+      grouped[matchingPattern] = grouped[matchingPattern] || [];
+    else
+      grouped['__ungrouped'] = grouped['__ungrouped'] || [];
+
+    grouped[matchingPattern ? matchingPattern : '__ungrouped'].push(obj);
+  });
+
+  return Object.entries(grouped);
+}
+
 const InternalLink = props => {
 
   const { node } = props;
@@ -98,12 +116,43 @@ const ExternalLink = props => {
 
 }
 
+const LinkGroup = props => {
+
+  return (
+    <li>
+      <h2>{props.pattern}</h2>
+      <ul>
+        {props.nodes.map(selection => selection.node.properties ?
+          <li 
+            key={selection.node.identifier}
+            className="p6o-link-internal">
+              <InternalLink 
+                {...selection } 
+                onSelect={node => props.onGoTo(node)} /> 
+          </li> :
+
+          <li
+            key={selection.node.identifier}
+            className="p6o-link-external">
+            <ExternalLink  {...selection } />
+          </li>
+        )}
+      </ul>
+    </li>
+  )
+
+}
+
 const ItemListCard = props => {
 
   const { referrer } = props;
 
+  const config = props.nodeList[0].config;
+
   // Temporary hack!
   const color = SIGNATURE_COLOR[3]; 
+
+  const grouped = groupByIdPattern(props.nodeList, Object.keys(config.link_icons));
 
   return (
     <div className="p6o-selection-card p6o-selection-itemlistcard">
@@ -127,6 +176,21 @@ const ItemListCard = props => {
         </button>
       </header>
       <ul>
+        {grouped.map(([pattern, nodes]) => 
+          <LinkGroup key={pattern} pattern={pattern} nodes={nodes} />
+        )}
+      </ul>
+      <footer aria-live={true}>
+        <AiOutlineInfoCircle />Links open a new tab
+      </footer>
+    </div>
+  )
+
+}
+
+export default ItemListCard;
+
+/*
       {props.nodeList.map(selection => selection.node.properties ?
         <li 
           key={selection.node.identifier}
@@ -142,13 +206,4 @@ const ItemListCard = props => {
           <ExternalLink  {...selection } />
         </li>
       )}
-      </ul>
-      <footer aria-live={true}>
-        <AiOutlineInfoCircle />Links open a new tab
-      </footer>
-    </div>
-  )
-
-}
-
-export default ItemListCard;
+*/

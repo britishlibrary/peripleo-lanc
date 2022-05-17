@@ -1,21 +1,9 @@
 {
   "initial_bounds": [-7.9, 49.5, 2.2, 59.4],
   "data": [
-    { "name": "Portable Antiquities Scheme", "format": "LINKED_PLACES", "src": "data/PAS_Warwickshire.lp.json", "logo": "logos/finds.org.uk.png", "attribution":"Findspot Data � <a href=\"https://finds.org.uk/\" target=\"_blank\">Portable Antiquities Scheme</a>" },
-    { "name": "Hollar", "format": "LINKED_PLACES", "src": "data/Hollar-1660.lp.json", "attribution":"Hollar 1660 � <a href=\"https://viaeregiae.org/\" target=\"_blank\"><i>Viae Regiae</i> Contributors</a>" },
-    { "name": "VisitPlus", "format": "LINKED_PLACES", "src": "data/VisitPlus.lp.json", "attribution":"VisitPlus � <a href=\"https://britishlibrary.github.io/locating-a-national-collection/\" target=\"_blank\"><i>Locating a National Collection</i> Partners & Contributors</a>" },
-    { "name": "Heritage for All", "format": "LINKED_PLACES", "src": "data/hfa.lp.json" }, 
-    { "name": "Heritage for All", "format": "LINKED_PLACES", "src": "data/hfa.pas.lp.json" }
+    { "name": "Hollar", "format": "LINKED_PLACES", "src": "data/Hollar-1660.lp.json", "attribution":"Hollar 1660 � <a href=\"https://viaeregiae.org/\" target=\"_blank\"><i>Viae Regiae</i> Contributors</a>" }
   ],
   "map_style": "https://api.maptiler.com/maps/outdoor/style.json?key=cqqmcLw28krG9Fl7V3kg",
-  "facets": [
-    "dataset",
-    { "name": "organisation", "path": ["properties", "organisation" ] },
-    { "name": "custodian", "path": ["relations", "label"], "condition": [ "relationType", "http://vocab.getty.edu/page/aat/300160390" ] },
-    "type",
-    { "name": "technique", "path": ["relations", "label"], "condition": [ "relationType", "aat:300138082" ] },
-    "has_image"
-  ],
   "link_icons": {
     "www.nationaltrust.org.uk": "../logos/www.nationaltrust.org.uk.png",
     "www.nationaltrustcollections.org.uk": "../logos/www.nationaltrustcollections.org.uk.svg",

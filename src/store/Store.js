@@ -162,6 +162,19 @@ export default class Store {
     }
   }
 
+  suggest = query => {
+    const response = this.searchIndex.search(query, { limit: 3, suggest: true });
+    console.log(response);
+    
+    // Collapse FlexSearch results
+    const results = response.reduce((ids, r) =>
+      [...ids, ...r.result], []);
+
+    const hits = results.map(id => this.getNode(id));
+
+    console.log(hits);
+  }
+
   searchMappable = query => {
     // FlexSearch result format is horrible and creates duplicates!
     const response = this.searchIndex.search(query, { limit: 100000 });

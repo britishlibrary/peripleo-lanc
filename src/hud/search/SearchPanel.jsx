@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useDebounce } from 'use-debounce';
 
+import { StoreContext } from '../../store/StoreContext';
 import useSearch from '../../state/search/useSearch';
 
 import Facets from './Facets';
@@ -31,6 +32,8 @@ const SearchPanel = props => {
 
   const el = useRef();
 
+  const { store } = useContext(StoreContext);
+
   const { 
     search, 
     changeSearchQuery, 
@@ -54,8 +57,11 @@ const SearchPanel = props => {
       el.current.querySelector('input').focus();
   }, [ el.current ]);
 
-  const onChange = evt =>
-    setQuery(evt.target.value);
+  const onChange = evt => {
+    const { value } = evt.target;
+    // store.suggest(value)
+    setQuery(value);
+  }
 
   const onKeyDown = evt => { 
     if (evt.code === 'Enter')
