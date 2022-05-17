@@ -13,21 +13,21 @@
     { "name": "technique", "path": ["relations", "label"], "condition": [ "relationType", "aat:300138082" ] }
   ],
   "link_icons": [
-    { "pattern": "www.nationaltrust.org.uk", "img": "../logos/www.nationaltrust.org.uk.png", "label": "National Trust" },
-    { "pattern": "www.mola.org.uk", "img": "../logos/www.mola.org.uk.png", "label": "MOLA" },
-    { "pattern": "www.historicenvironment.scot", "img": "../logos/www.historicenvironment.scot.png", "label": "Historic Environment Scotland" },
-    { "pattern": "www.english-heritage.org.uk", "img": "../logos/www.english-heritage.org.uk.png", "label": "English Heritage" },
-    { "pattern": "www.britishmuseum.org", "img": "../logos/www.britishmuseum.org.png", "label": "British Museum" },
-    { "pattern": "www.bl.uk", "img": "../logos/www.bl.uk.png", "label": "British Library" },
-    { "pattern": "sounds.bl.uk", "img": "../logos/www.bl.uk.png", "label": "British Library" },
-    { "pattern": "britishlibrary.georeferencer.com", "img": "../logos/www.bl.uk.png", "label": "British Library" },
-    { "pattern": "hrp.org.uk", "img": "../logos/hrp.org.uk.png", "label": "Historic Royal Palaces" },
-    { "pattern": "historicengland.org.uk", "img": "../logos/historicengland.org.uk.png", "label": "Historic England" },
-    { "pattern": "finds.org.uk", "img": "../logos/finds.org.uk.png", "label": "Portable Antiquities Scheme" },
-    { "pattern": "cadw.gov.wales", "img": "../logos/cadw.gov.wales.png", "label": "CADW" },
-    { "pattern": "www.geograph.org.uk", "img": "../logos/geograph.org.png", "label": "Geograph" },
-    { "pattern": "w3id.org", "img": "../logos/w3id.org.png", "label": "W3ID" },
-    { "pattern": "openplaques.org", "img": "../logos/openplaques.png", "label": "Open Plaques" },
-    { "pattern": "artuk.org", "img": "../logos/ArtUK.org.png", "label": "Art UK" }
+    { "pattern": "www.nationaltrust.org.uk", "img": "logos/www.nationaltrust.org.uk.png", "label": "National Trust" },
+    { "pattern": "www.mola.org.uk", "img": "logos/www.mola.org.uk.png", "label": "MOLA" },
+    { "pattern": "www.historicenvironment.scot", "img": "logos/www.historicenvironment.scot.png", "label": "Historic Environment Scotland" },
+    { "pattern": "www.english-heritage.org.uk", "img": "logos/www.english-heritage.org.uk.png", "label": "English Heritage" },
+    { "pattern": "www.britishmuseum.org", "img": "logos/www.britishmuseum.org.png", "label": "British Museum" },
+    { "pattern": "www.bl.uk", "img": "logos/www.bl.uk.png", "label": "British Library" },
+    { "pattern": "sounds.bl.uk", "img": "logos/www.bl.uk.png", "label": "British Library" },
+    { "pattern": "britishlibrary.georeferencer.com", "img": "logos/www.bl.uk.png", "label": "British Library" },
+    { "pattern": "hrp.org.uk", "img": "logos/hrp.org.uk.png", "label": "Historic Royal Palaces" },
+    { "pattern": "historicengland.org.uk", "img": "logos/historicengland.org.uk.png", "label": "Historic England" },
+    { "pattern": "finds.org.uk", "img": "logos/finds.org.uk.png", "label": "Portable Antiquities Scheme" },
+    { "pattern": "cadw.gov.wales", "img": "logos/cadw.gov.wales.png", "label": "CADW" },
+    { "pattern": "www.geograph.org.uk", "img": "logos/geograph.org.png", "label": "Geograph" },
+    { "pattern": "w3id.org", "img": "logos/w3id.org.png", "label": "W3ID" },
+    { "pattern": "openplaques.org", "img": "logos/openplaques.png", "label": "Open Plaques" },
+    { "pattern": "artuk.org", "img": "logos/ArtUK.org.png", "label": "Art UK" }
   ]
 }
