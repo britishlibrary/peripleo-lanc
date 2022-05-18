@@ -104,6 +104,34 @@ const Map = React.forwardRef((props, ref) => {
 
   const onClosePopup = () =>
     setSelection(null);
+
+  const moveIntoView = (coord, bounds) => {
+    const PADDING = 30;
+
+    const map = mapRef.current;
+    const { width, height } = map.getCanvas();
+    const point = map.project(coord);
+
+    let dx, dy;
+
+    if (bounds.top < 0) {
+      dy = point.y - bounds.height - PADDING;
+    } else if ((height - bounds.top - bounds.height) < 0) {
+      dy = point.y + bounds.height - height + PADDING; 
+    } else {
+      dy = 0;
+    }
+
+    if (bounds.left < 0){ 
+      dx = bounds.width - point.x + PADDING;
+    } else if ((width - bounds.left - bounds.width) < 0) {
+      dx = width - point.x - bounds.width - PADDING;
+    } else {
+      dx = 0;
+    }
+
+    map.panBy([dx, dy]);
+  }
   
   return (  
     <div 
@@ -143,6 +171,7 @@ const Map = React.forwardRef((props, ref) => {
             <SelectionPreview 
               {...selection}
               config={props.config} 
+              moveIntoView={moveIntoView}
               onClose={onClosePopup} />
           }
         </AnimatePresence>

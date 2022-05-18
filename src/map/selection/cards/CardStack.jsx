@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const ANIMATION_DURATION = 0.2;
 
-const CardStack = props => {
+const CardStack = forwardRef((props, ref) => {
 
   const [ next, setNext ] = useState();
   const [ current, setCurrent ] = useState(props.cards[props.cards.length - 1]);
@@ -54,7 +54,7 @@ const CardStack = props => {
   }
 
   return (
-    <div className="cardstack">
+    <div ref={ref} className="cardstack">
       <AnimatePresence initial={false}>
         {previous && 
           <motion.div 
@@ -104,6 +104,6 @@ const CardStack = props => {
     </div>
   )
 
-}
+})
 
 export default CardStack;

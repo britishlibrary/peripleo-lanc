@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { useDebounce } from 'use-debounce';
 import { Popup } from 'react-map-gl';
 import { useRecoilValue } from 'recoil';
 
 import { deviceState } from '../../state';
+import { isInViewport } from './isInViewport';
 
 import CardStack from './cards/CardStack';
 import ItemCard from './cards/ItemCard';
@@ -11,11 +13,13 @@ import MobilePreview from './MobilePreview';
 
 const SelectionPreview = props => {
 
+  const elem = useRef();
+
   const device = useRecoilValue(deviceState);
 
-  const [ cards, setCards ] = useState([ props ]); 
+  const [ cards, setCards ] = useState([props]); 
 
-  const [ reset, setReset ] = useState(props.feature) 
+  const [ reset, setReset ] = useState(props.feature); 
 
   const { node, feature } = props;
 
@@ -25,6 +29,13 @@ const SelectionPreview = props => {
     setCards([ props ]);
     setReset(true);
   }, [ props.feature ]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (!isInViewport(elem.current))
+        props.moveIntoView(coordinates, elem.current.getBoundingClientRect());
+    }, 300);
+  }, [ node ]);
 
   const onGoTo = arg => {
     setReset(false);
@@ -60,7 +71,7 @@ const SelectionPreview = props => {
   const Preview = device === 'MOBILE' ? MobilePreview : Popup;
 
   return (
-    <Preview
+    <Preview      
       longitude={coordinates[0]} 
       latitude={coordinates[1]}
       maxWidth={440}
@@ -68,6 +79,7 @@ const SelectionPreview = props => {
       closeOnClick={false}>
       
       <CardStack 
+        ref={elem}
         reset={reset}
         cards={cards} 
         render={data => data.nodeList ?
