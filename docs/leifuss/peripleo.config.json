@@ -143,11 +143,11 @@
       "img": "../logos/geograph.org.png",
       "label": "Geograph"
     },
-    {
-      "pattern": "w3id.org",
-      "img": "../logos/w3id.org.png",
-      "label": "W3ID"
-    },
+    { "pattern": "w3id.org/locolligo/VCH-Places", "img": "../logos/VCH.jpg", "label": "VCH" },
+    { "pattern": "w3id.org/locolligo/Mapping-Museums", "img": "../logos/museums.png", "label": "Mapping Museums" },
+    { "pattern": "w3id.org/locolligo/MonasteryQuest", "img": "../logos/w3id.org.png", "label": "W3ID" },
+    { "pattern": "w3id.org/locolligo/Hollar-1660", "img": "../logos/w3id.org.png", "label": "W3ID" },
+    { "pattern": "w3id.org", "img": null, "label": "W3ID" },
     {
       "pattern": "openplaques.org",
       "img": "../logos/openplaques.png",
@@ -165,7 +165,7 @@
     },
     {
       "pattern": "www.pastplace.org",
-      "img": "../logos/broken-link.png",
+      "img": null,
       "label": "PastPlace"
     },
     {
@@ -175,7 +175,7 @@
     },
     {
       "pattern": "emew.io",
-      "img": "../logos/broken-link.png",
+      "img": null,
       "label": "EMEW"
     },
     {
@@ -185,12 +185,12 @@
     },
     {
       "pattern": "www.geonames.org",
-      "img": "../logos/www.geonames.org.svg",
+      "img": null,
       "label": "GeoNames"
     },
     {
       "pattern": "sws.geonames.org",
-      "img": "../logos/www.geonames.org.svg",
+      "img": null,
       "label": "GeoNames"
     },
     {

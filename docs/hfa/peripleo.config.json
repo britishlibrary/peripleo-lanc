@@ -58,12 +58,16 @@
     { "pattern": "cadw.gov.wales", "img": "../logos/cadw.gov.wales.png", "label": "CADW" },
     { "pattern": "cadwpublic-api.azurewebsites.net", "img": "../logos/cadw.gov.wales.png", "label": "CADW" },
     { "pattern": "www.geograph.org.uk", "img": "../logos/geograph.org.png", "label": "Geograph" },
-    { "pattern": "w3id.org", "img": "../logos/w3id.org.png", "label": "W3ID" },
+    { "pattern": "w3id.org/locolligo/VCH-Places", "img": "../logos/VCH.jpg", "label": "VCH" },
+    { "pattern": "w3id.org/locolligo/Mapping-Museums", "img": "../logos/museums.png", "label": "Mapping Museums" },
+    { "pattern": "w3id.org/locolligo/MonasteryQuest", "img": "../logos/w3id.org.png", "label": "W3ID" },
+    { "pattern": "w3id.org/locolligo/Hollar-1660", "img": "../logos/w3id.org.png", "label": "W3ID" },
+    { "pattern": "w3id.org", "img": null, "label": "W3ID" },
     { "pattern": "openplaques.org", "img": "../logos/openplaques.png", "label": "Open Plaques" },
     { "pattern": "artuk.org", "img": "../logos/ArtUK.org.png", "label": "Art UK" }, 
     { "pattern": "en.wikipedia.org", "img": "../logos/en.wikipedia.org.png", "label": "Wikipedia" },
-    { "pattern": "www.pastplace.org", "img": "../logos/broken-link.png", "label": "PastPlace" },
-    { "pattern": "www.geonames.org", "img": "../logos/www.geonames.org.svg", "label": "GeoNames" },
-    { "pattern": "www.wikidata.org", "img": "../logos/www.wikidata.org.svg", "label": "Wikidata" }
+    { "pattern": "www.pastplace.org", "img": null, "label": "PastPlace" },
+    { "pattern": "www.geonames.org", "img": null, "label": "GeoNames" },
+    { "pattern": "www.wikidata.org", "img": null, "label": "Wikidata" }
   ]
 }
