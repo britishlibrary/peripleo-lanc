@@ -28,10 +28,10 @@
       ]
     },
     {
-      "name": "art type",
+      "name": "type",
       "path": [
         "properties",
-        "artworkType"
+        "facet"
       ]
     }
   ],
