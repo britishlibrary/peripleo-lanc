@@ -1,0 +1,67 @@
+{
+  "initial_bounds": [
+    -0.08,
+    51.45,
+    0.08,
+    51.55
+  ],
+  "map_style": "https://api.maptiler.com/maps/outdoor/style.json?key=cqqmcLw28krG9Fl7V3kg",
+  "data": [
+    {
+      "name": "Heritage for All",
+      "format": "LINKED_PLACES",
+      "src": "../data/hfa_exeter.lp.json",
+      "attribution": "Heritage for All © <a href=\"https://britishlibrary.github.io/locating-a-national-collection/\" target=\"_blank\"><i>Locating a National Collection</i> Partners & Contributors</a>"
+    },
+    {
+      "name": "Heritage for All",
+      "format": "LINKED_PLACES",
+      "src": "../data/hfa_exeter.pas.lp.json"
+    }
+  ],
+  "facets": [
+    {
+      "name": "organisation",
+      "path": [
+        "properties",
+        "organisation"
+      ]
+    },
+    {
+      "name": "Type",
+      "path": [
+        "properties",
+        "facet"
+      ]
+    }
+  ],
+  "link_icons": [
+    { "pattern": "www.nationaltrust.org.uk", "img": "../logos/www.nationaltrust.org.uk.png", "label": "National Trust" },
+    { "pattern": "www.mola.org.uk", "img": "../logos/www.mola.org.uk.png", "label": "MOLA" },
+    { "pattern": "www.historicenvironment.scot", "img": "../logos/www.historicenvironment.scot.png", "label": "Historic Environment Scotland" },
+    { "pattern": "www.english-heritage.org.uk", "img": "../logos/www.english-heritage.org.uk.png", "label": "English Heritage" },
+    { "pattern": "www.britishmuseum.org", "img": "../logos/www.britishmuseum.org.png", "label": "British Museum" },
+    { "pattern": "www.flickr.com", "img": "../logos/www.bl.uk.png", "label": "Flickr" },
+    { "pattern": "www.bl.uk", "img": "../logos/www.bl.uk.png", "label": "British Library" },
+    { "pattern": "access.bl.uk", "img": "../logos/www.bl.uk.png", "label": "British Library" },
+    { "pattern": "sounds.bl.uk", "img": "../logos/www.bl.uk.png", "label": "British Library" },
+    { "pattern": "britishlibrary.georeferencer.com", "img": "../logos/www.bl.uk.png", "label": "British Library" },
+    { "pattern": "hrp.org.uk", "img": "../logos/hrp.org.uk.png", "label": "Historic Royal Palaces" },
+    { "pattern": "historicengland.org.uk", "img": "../logos/historicengland.org.uk.png", "label": "Historic England" },
+    { "pattern": "finds.org.uk", "img": "../logos/finds.org.uk.png", "label": "Portable Antiquities Scheme" },
+    { "pattern": "cadw.gov.wales", "img": "../logos/cadw.gov.wales.png", "label": "CADW" },
+    { "pattern": "cadwpublic-api.azurewebsites.net", "img": "../logos/cadw.gov.wales.png", "label": "CADW" },
+    { "pattern": "www.geograph.org.uk", "img": "../logos/geograph.org.png", "label": "Geograph" },
+    { "pattern": "w3id.org/locolligo/VCH-Places", "img": "../logos/VCH.jpg", "label": "VCH" },
+    { "pattern": "w3id.org/locolligo/Mapping-Museums", "img": "../logos/museums.png", "label": "Mapping Museums" },
+    { "pattern": "w3id.org/locolligo/MonasteryQuest", "img": "../logos/w3id.org.png", "label": "W3ID" },
+    { "pattern": "w3id.org/locolligo/Hollar-1660", "img": "../logos/w3id.org.png", "label": "W3ID" },
+    { "pattern": "w3id.org", "img": null, "label": "W3ID" },
+    { "pattern": "openplaques.org", "img": "../logos/openplaques.png", "label": "Open Plaques" },
+    { "pattern": "artuk.org", "img": "../logos/ArtUK.org.png", "label": "Art UK" },
+    { "pattern": "en.wikipedia.org", "img": "../logos/en.wikipedia.org.png", "label": "Wikipedia" },
+    { "pattern": "www.pastplace.org", "img": null, "label": "PastPlace" },
+    { "pattern": "www.geonames.org", "img": null, "label": "GeoNames" },
+    { "pattern": "www.wikidata.org", "img": null, "label": "Wikidata" }
+  ]
+}
