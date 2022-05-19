@@ -24,6 +24,16 @@
       "src": "../data/coins/ptolemaic-coins.lp.json"
     },
     {
+      "name": "Leif's Ampullae",
+      "format": "LINKED_PLACES",
+      "src": "../data/coins/Ampullae.lp.json"
+    },
+    {
+      "name": "Leif's Osiris Figurines",
+      "format": "LINKED_PLACES",
+      "src": "../data/coins/Osiris.lp.json"
+    },
+    {
       "name": "MonasteryQuest",
       "format": "LINKED_PLACES",
       "src": "../data/MonasteryQuest.lp.json",
@@ -31,7 +41,7 @@
     }
   ],
   "facets": [
-    "type"
+      "type"
   ],
   "layers": [
     {
