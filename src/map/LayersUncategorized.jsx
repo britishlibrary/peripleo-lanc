@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Source, Layer } from 'react-map-gl';
 
 import { pointStyle } from './styles/Point';
 import { clusterPointStyle, clusterLabelStyle } from './styles/Clusters';
 import { heatmapCoverage, heatmapPoint } from './styles/Heatmap';
+import { collapseColocatedFeatures } from './Utils';
 
 const toFeatureCollection = features => 
   ({ type: 'FeatureCollection', features: features || [] });
 
 const LayersUncategorized = props => {
 
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    setItems(collapseColocatedFeatures(props.search.items));
+  }, [ props.search.items ]);
+
   return (
     <>
       {props.selectedMode === 'points' &&
-        <Source type="geojson" data={toFeatureCollection(props.search.items)}>
+        <Source type="geojson" data={toFeatureCollection(items)}>
           <Layer 
             id="p6o-points"
             {...pointStyle({ fill: 'red', radius: 5 })} />
@@ -24,7 +31,7 @@ const LayersUncategorized = props => {
         <Source 
           type="geojson" 
           cluster={true}
-          data={toFeatureCollection(props.search.items)}>
+          data={toFeatureCollection(items)}>
 
           <Layer 
             {...clusterPointStyle()} />
@@ -40,7 +47,7 @@ const LayersUncategorized = props => {
       }
 
       {props.selectedMode === 'heatmap' &&
-        <Source type="geojson" data={toFeatureCollection(props.search.items)}>
+        <Source type="geojson" data={toFeatureCollection(items)}>
           <Layer
             id="p6o-heatmap"
             {...heatmapCoverage()} />

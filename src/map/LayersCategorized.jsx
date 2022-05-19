@@ -7,6 +7,7 @@ import { pointStyle, pointCategoryStyle } from './styles/Point';
 import { clusterPointStyle, clusterLabelStyle } from './styles/Clusters';
 import { colorHeatmapCoverage, colorHeatmapPoint } from './styles/Heatmap';
 import { getTopEight } from '../hud/search/Facets';
+import { collapseColocatedFeatures } from './Utils';
 
 const toFeatureCollection = features => 
   ({ type: 'FeatureCollection', features: features || [] });
@@ -21,6 +22,9 @@ const getLayers = search => {
     f.facet === search.facet);
 
   const { counts, items } = search.facetDistribution;
+
+  // Items with co-locations removed
+  const deduplicatedItems = collapseColocatedFeatures(items);
 
   // All facet values (defines layer colors!)
   const allFacetValues = getTopEight(counts, currentFilter?.values).map(t => t[0]);
@@ -37,7 +41,7 @@ const getLayers = search => {
   const layers = Object.fromEntries(activeValues.map(label => [ label, [] ]));
   const unassigned = [];
 
-  items.forEach(item => {
+  deduplicatedItems.forEach(item => {
     const values = item._facet?.values || [];
 
     const firstMatch = activeValues.find(l => values.indexOf(l) > -1);
@@ -74,6 +78,9 @@ const LayersCategorized = props => {
     } else {
       const { counts, items } = props.search.facetDistribution;
 
+      // Items with co-locations removed
+      const deduplicatedItems = collapseColocatedFeatures(items);
+
       // Just the facet value labels, in order of the legend
       const currentFacets = 
         getTopEight(counts, props.search.filters.find(f => f.facet === props.search.facet)?.values)
@@ -84,7 +91,7 @@ const LayersCategorized = props => {
         f.facet === props.search.facet);
       
       // Colorize the features according to their facet values
-      const colorized = items.map(feature => {
+      const colorized = deduplicatedItems.map(feature => {
         // Facet values assigned to this feature
         const values = feature._facet?.values || [];
 

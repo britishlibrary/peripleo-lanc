@@ -2,9 +2,8 @@ import createGraph from 'ngraph.graph';
 import RBush from 'rbush';
 import FlexSearch from 'flexsearch';
 
-import { getDescriptions } from '.';
+import { getDescriptions, groupByCentroid } from '.';
 import { loadLinkedPlaces } from './loaders/LinkedPlacesLoader';
-
 
 /**
  * Converts a network node to a JsSearch
@@ -137,7 +136,7 @@ export default class Store {
 
   getAllLocatedNodes = () =>
     this.getNodesInBounds([-180,-90,180,90]);
-
+    
   fetchGeometryRecursive = (node, maxHops, spentHops = 0) => {
     if (spentHops >= maxHops)
       return;

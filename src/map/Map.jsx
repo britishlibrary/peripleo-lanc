@@ -89,6 +89,7 @@ const Map = React.forwardRef((props, ref) => {
   const onClick = () => {
     if (hover) {
       const { node, feature } = hover;
+      console.log(node, feature);
       setHover(null);
       setSelection({ node, feature });
     } else {
