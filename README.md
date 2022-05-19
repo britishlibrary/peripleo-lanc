@@ -35,4 +35,4 @@ The project web site can be found [here](https://britishlibrary.github.io/locati
 
 You can quickly deploy *Peripleo* for the visualisation of your own geospatial data. Follow the instructions given in:
 1. the [Installation Guide](https://github.com/britishlibrary/peripleo/blob/main/README.md), and
-2. the [Configuration Guide](https://github.com/britishlibrary/peripleo-lanc/blob/main/Configuration-Guide.md).
+2. the [Configuration Guide](https://github.com/britishlibrary/peripleo/blob/main/Configuration-Guide.md).
