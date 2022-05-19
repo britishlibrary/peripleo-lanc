@@ -22,7 +22,7 @@
       "name": "Tower Hamlets ArtUK",
       "format": "LINKED_PLACES",
       "src": "../data/Tower_Hamlets_ArtUK.lp.json",
-      "attribution": "Tower Hamlets Art UK � <a href=\"https://artuk.org//\" target=\"_blank\">Art UK</a>"
+      "attribution": "Tower Hamlets Art UK © <a href=\"https://artuk.org//\" target=\"_blank\">Art UK</a>"
     }
   ],
   "facets": [
