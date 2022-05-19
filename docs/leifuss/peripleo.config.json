@@ -8,28 +8,28 @@
   "map_style": "https://api.maptiler.com/maps/outdoor/style.json?key=cqqmcLw28krG9Fl7V3kg",
   "data": [
     {
-      "name": "Leif's Coins",
+      "name": "Alexandrian Tetradrachms",
       "format": "LINKED_PLACES",
       "src": "../data/coins/alexandrian-tetradrachms.lp.json",
       "attribution": "Datasets: Leif Isaksen"
     },
     {
-      "name": "Leif's Coins",
+      "name": "Base Byzantine Coins",
       "format": "LINKED_PLACES",
       "src": "../data/coins/base-byzantine-coins.lp.json"
     },
     {
-      "name": "Leif's Coins",
+      "name": "Ptolomaic Coins",
       "format": "LINKED_PLACES",
       "src": "../data/coins/ptolemaic-coins.lp.json"
     },
     {
-      "name": "Leif's Ampullae",
+      "name": "St Menas Ampullae",
       "format": "LINKED_PLACES",
       "src": "../data/coins/Ampullae.lp.json"
     },
     {
-      "name": "Leif's Osiris Figurines",
+      "name": "Osiris Figurines",
       "format": "LINKED_PLACES",
       "src": "../data/coins/Osiris.lp.json"
     },
