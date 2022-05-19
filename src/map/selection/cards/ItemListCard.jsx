@@ -141,7 +141,7 @@ const ExternalLink = props => {
 
 const LinkGroup = props => {
 
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState(props.open);
 
   const { config } = props.nodes[0];
 
@@ -171,7 +171,7 @@ const LinkGroup = props => {
         <ul>
           {props.nodes.map(selection => selection.node.properties ?
             <li 
-              key={selection.node.identifier}
+              key={selection.node.id || selection.node.identifier}
               className="p6o-link p6o-link-internal">
                 <InternalLink 
                   {...selection } 
@@ -179,7 +179,7 @@ const LinkGroup = props => {
             </li> :
 
             <li
-              key={selection.node.identifier}
+              key={selection.node.id || selection.node.identifier}
               className="p6o-link p6o-link-external">
               <ExternalLink  {...selection } />
             </li>
@@ -207,11 +207,13 @@ const ItemListCard = props => {
       <header 
         style={{ backgroundColor: color }}>
         
-        <button 
-          aria-label="Go Back"
-          onClick={props.onGoBack}>
-          <IoArrowBackOutline />
-        </button>
+        {referrer &&
+          <button 
+            aria-label="Go Back"
+            onClick={props.onGoBack}>
+            <IoArrowBackOutline />
+          </button>
+        }
 
         {referrer && 
           <h1>{referrer.node.title}</h1>
@@ -225,7 +227,12 @@ const ItemListCard = props => {
       </header>
       <ul className="p6o-link-groups-container">
         {grouped.map(([label, nodes]) => 
-          <LinkGroup key={label} label={label} nodes={nodes} />
+          <LinkGroup 
+            key={label} 
+            open={grouped.length == 1}
+            label={label} 
+            nodes={nodes} 
+            onGoTo={props.onGoTo} />
         )}
       </ul>
       <footer aria-live={true}>

@@ -1,8 +1,10 @@
 import createGraph from 'ngraph.graph';
 import RBush from 'rbush';
+import knn from 'rbush-knn';
+import centroid from '@turf/centroid';
 import FlexSearch from 'flexsearch';
 
-import { getDescriptions, groupByCentroid } from '.';
+import { getDescriptions } from '.';
 import { loadLinkedPlaces } from './loaders/LinkedPlacesLoader';
 
 /**
@@ -109,6 +111,20 @@ export default class Store {
     });
 
     return linkedNodes.map(t => t.link.data);
+  }
+
+  getNearestNeighbours = (feature, n) => {
+    const [x, y] = centroid(feature)?.geometry.coordinates;
+    const neighbours = knn(this.spatialIndex, x, y, n + 1);
+
+    // Neighbours will include the feature itself, but we can't be sure
+    // about the order (locations might be identical!)
+    const featureId = feature.id || feature.identifier;
+
+    return neighbours.map(n => n.node).filter(node => { 
+      const id = node.id || node.identifier;
+      return id !== featureId;
+    });
   }
 
   getNodesInBounds = (bounds, optDataset) => {
