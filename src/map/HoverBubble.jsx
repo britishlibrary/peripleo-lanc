@@ -14,11 +14,15 @@ const Hover = props => {
     borderColor: feature.properties.color
   }
 
+  const colocated = feature.properties.colocated_records || 0;
+
   return (  
     <div
       className="p6o-map-hover"
       style={style}>
-      {node.title}
+      {colocated > 0 ?
+        <>{node.title} <span className="p6o-map-hover-colocated">+ {colocated} more</span></> : <>{node.title}</> 
+      }
       {node.geometry?.granularity &&
         <div className="p6o-map-hover-granularity">
           <MdOutlineMyLocation /> Location with intentionally reduced precision

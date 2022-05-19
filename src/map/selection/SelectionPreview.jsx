@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useDebounce } from 'use-debounce';
 import { Popup } from 'react-map-gl';
 import { useRecoilValue } from 'recoil';
 
@@ -17,16 +16,26 @@ const SelectionPreview = props => {
 
   const device = useRecoilValue(deviceState);
 
-  const [ cards, setCards ] = useState([props]); 
+  const { node, nodeList, feature } = props;
+
+  const initial = node ? 
+    [ props ] :  [{
+      nodeList: nodeList.map(node => ({ ...props, nodeList: null, node }))
+    }];
+
+  const [ cards, setCards ] = useState(initial); 
 
   const [ reset, setReset ] = useState(props.feature); 
 
-  const { node, feature } = props;
-
-  const { coordinates } = (node.geometry || feature.geometry);
+  const { coordinates } = node ? (node.geometry || feature.geometry) : feature.geometry;
 
   useEffect(() => {
-    setCards([ props ]);
+    const cards = props.node ? 
+      [ props ] : [{
+        nodeList: props.nodeList.map(node => ({...props, nodeList:null, node }))
+      }];
+
+    setCards(cards);
     setReset(true);
   }, [ props.feature ]);
 
@@ -41,16 +50,11 @@ const SelectionPreview = props => {
     setReset(false);
 
     const data = arg.nodeList ?
-      { ...arg, nodeList: arg.nodeList.map(node => ({...props, node }))} :
-      { ...props, node: arg };
-
+      { ...arg, nodeList: arg.nodeList.map(node => ({ config: props.config, node }))} :
+      { config: props.config, node: arg };
 
     const isList = data.nodeList?.length > 1;
-    if (isList) {
-      // TODO a tempory hack
-      data.nodeList.sort((a, b) =>
-        a.node.identifier.includes('bl.uk') ? -1 : 1);
-      
+    if (isList) {      
       setCards([ ...cards, data ]);
     } else {
       // Single link

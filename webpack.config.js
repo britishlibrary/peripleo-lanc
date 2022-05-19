@@ -11,7 +11,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
-      'mapbox-gl': 'maplibre-gl'
+      'mapbox-gl': 'maplibre-gl',
+      'tinyqueue': __dirname + "/node_modules/tinyqueue/tinyqueue.js"
     }
   },
   optimization: {

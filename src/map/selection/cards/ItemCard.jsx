@@ -49,10 +49,19 @@ const ItemCard = props => {
 
   const when = parseWhen(node.properties?.when || node.when);
 
+  const connectedNodes = store.getConnectedNodes(node.id);
+
+  const blockList = props.config.link_icons?.filter(p => !p.img).map(p => p.pattern);
+
+  const externalLinks = store.getExternalLinks(node.id).filter(l => {
+    const id = l.identifier || l.id;
+    return !blockList.find(pattern => id.includes(pattern));
+  });
+
   // Related items includes external + internal links!
   const connected = [
-    ...store.getConnectedNodes(node.id),
-    ...store.getExternalLinks(node.id)
+    ...connectedNodes,
+    ...externalLinks
   ];
 
   const goTo = () => props.onGoTo({

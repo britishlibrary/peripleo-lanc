@@ -88,9 +88,17 @@ const Map = React.forwardRef((props, ref) => {
 
   const onClick = () => {
     if (hover) {
-      const { node, feature } = hover;
       setHover(null);
-      setSelection({ node, feature });
+
+      const { node, feature } = hover;
+      const colocated = feature.properties.colocated_records || 0;
+
+      if (colocated) {
+        const neighbours = store.getNearestNeighbours(node, colocated);
+        setSelection({ nodeList: [ node, ...neighbours ], feature });
+      } else {
+        setSelection({ node, feature });
+      }
     } else {
       setSelection(null);
     }

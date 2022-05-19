@@ -8,20 +8,30 @@
   "map_style": "https://api.maptiler.com/maps/outdoor/style.json?key=cqqmcLw28krG9Fl7V3kg",
   "data": [
     {
-      "name": "Leif's Coins",
+      "name": "Alexandrian Tetradrachms",
       "format": "LINKED_PLACES",
       "src": "../data/coins/alexandrian-tetradrachms.lp.json",
       "attribution": "Datasets: Leif Isaksen"
     },
     {
-      "name": "Leif's Coins",
+      "name": "Base Byzantine Coins",
       "format": "LINKED_PLACES",
       "src": "../data/coins/base-byzantine-coins.lp.json"
     },
     {
-      "name": "Leif's Coins",
+      "name": "Ptolomaic Coins",
       "format": "LINKED_PLACES",
       "src": "../data/coins/ptolemaic-coins.lp.json"
+    },
+    {
+      "name": "St Menas Ampullae",
+      "format": "LINKED_PLACES",
+      "src": "../data/coins/Ampullae.lp.json"
+    },
+    {
+      "name": "Osiris Figurines",
+      "format": "LINKED_PLACES",
+      "src": "../data/coins/Osiris.lp.json"
     },
     {
       "name": "MonasteryQuest",
@@ -31,7 +41,7 @@
     }
   ],
   "facets": [
-    "type"
+      "type"
   ],
   "layers": [
     {
@@ -133,11 +143,11 @@
       "img": "../logos/geograph.org.png",
       "label": "Geograph"
     },
-    {
-      "pattern": "w3id.org",
-      "img": "../logos/w3id.org.png",
-      "label": "W3ID"
-    },
+    { "pattern": "w3id.org/locolligo/VCH-Places", "img": "../logos/VCH.jpg", "label": "VCH" },
+    { "pattern": "w3id.org/locolligo/Mapping-Museums", "img": "../logos/museums.png", "label": "Mapping Museums" },
+    { "pattern": "w3id.org/locolligo/MonasteryQuest", "img": "../logos/w3id.org.png", "label": "W3ID" },
+    { "pattern": "w3id.org/locolligo/Hollar-1660", "img": "../logos/w3id.org.png", "label": "W3ID" },
+    { "pattern": "w3id.org", "img": null, "label": "W3ID" },
     {
       "pattern": "openplaques.org",
       "img": "../logos/openplaques.png",
@@ -155,7 +165,7 @@
     },
     {
       "pattern": "www.pastplace.org",
-      "img": "../logos/broken-link.png",
+      "img": null,
       "label": "PastPlace"
     },
     {
@@ -165,7 +175,7 @@
     },
     {
       "pattern": "emew.io",
-      "img": "../logos/broken-link.png",
+      "img": null,
       "label": "EMEW"
     },
     {
@@ -175,12 +185,12 @@
     },
     {
       "pattern": "www.geonames.org",
-      "img": "../logos/www.geonames.org.svg",
+      "img": null,
       "label": "GeoNames"
     },
     {
       "pattern": "sws.geonames.org",
-      "img": "../logos/www.geonames.org.svg",
+      "img": null,
       "label": "GeoNames"
     },
     {
