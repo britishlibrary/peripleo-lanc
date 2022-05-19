@@ -73,7 +73,13 @@ export const colorHeatmapPoint = color => ({
   'type': 'circle',
   'minzoom': 6,
   'paint': {
-    'circle-radius': 5,
+    'circle-radius': [
+      'interpolate', 
+      ['linear'],
+      ['number', ['get','colocated_records'], 0 ],
+      0, 5,
+      10, 30
+    ],
     'circle-color': color,
     'circle-stroke-color': 'white',
     'circle-stroke-width': 1,
@@ -162,7 +168,13 @@ export const heatmapPoint = args => ({
   'type': 'circle',
   'minzoom': 6,
   'paint': {
-    'circle-radius': args?.radius || 5,
+    'circle-radius': [
+      'interpolate', 
+      ['linear'],
+      ['number', ['get','colocated_records'], 0 ],
+      0, 5,
+      10, 30
+    ],
     'circle-color': 'red',
     'circle-stroke-color': 'white',
     'circle-stroke-width': 1,
