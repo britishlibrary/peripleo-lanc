@@ -8,16 +8,16 @@
     "type",
     "has_image"
   ],
-  "link_icons": {
-    "www.nationaltrust.org.uk": "logos/www.nationaltrust.org.uk.png",
-    "www.mola.org.uk": "logos/www.mola.org.uk.png",
-    "www.historicenvironment.scot": "logos/www.historicenvironment.scot.png",
-    "www.english-heritage.org.uk": "logos/www.english-heritage.org.uk.png",
-    "www.britishmuseum.org": "logos/www.britishmuseum.org.png",
-    "www.bl.uk": "logos/www.bl.uk.png",
-    "hrp.org.uk": "logos/hrp.org.uk.png",
-    "historicengland.org.uk": "logos/historicengland.org.uk.png",
-    "finds.org.uk": "logos/finds.org.uk.png",
-    "cadw.gov.wales": "logos/cadw.gov.wales.png"
-  }
+  "link_icons": [
+    { "pattern": "www.nationaltrust.org.uk", "img": "logos/www.nationaltrust.org.uk.png", "label": "National Trust" },
+    { "pattern": "www.mola.org.uk", "img": "logos/www.mola.org.uk.png", "label": "MOLA" },
+    { "pattern": "www.historicenvironment.scot", "img": "logos/www.historicenvironment.scot.png", "label": "Historic Environment Scotland" },
+    { "pattern": "www.english-heritage.org.uk", "img": "logos/www.english-heritage.org.uk.png", "label": "English Heritage" },
+    { "pattern": "www.britishmuseum.org", "img": "logos/www.britishmuseum.org.png", "label": "British Museum" },
+    { "pattern": "www.bl.uk", "img": "logos/www.bl.uk.png", "label": "British Library" },
+    { "pattern": "hrp.org.uk", "img": "logos/hrp.org.uk.png", "label": "HRP" },
+    { "pattern": "historicengland.org.uk", "img": "logos/historicengland.org.uk.png", "label": "Historic England" },
+    { "pattern": "finds.org.uk", "img": "logos/finds.org.uk.png", "label": "PAS" },
+    { "pattern": "cadw.gov.wales", "img": "logos/cadw.gov.wales.png", "label": "CADW" }
+  ]
 }
