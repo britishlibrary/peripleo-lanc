@@ -28,7 +28,7 @@
       ]
     },
     {
-      "name": "type",
+      "name": "Type",
       "path": [
         "properties",
         "facet"
