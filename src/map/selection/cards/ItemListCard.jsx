@@ -200,7 +200,8 @@ const ItemListCard = props => {
   // Temporary hack!
   const color = SIGNATURE_COLOR[3]; 
 
-  const grouped = groupByIdPattern(props.nodeList, config.link_icons);
+  const grouped = config.link_icons ? 
+    groupByIdPattern(props.nodeList, config.link_icons) : null;
 
   return (
     <div className="p6o-selection-card p6o-selection-itemlistcard">
@@ -225,16 +226,38 @@ const ItemListCard = props => {
           <IoCloseSharp />
         </button>
       </header>
-      <ul className="p6o-link-groups-container">
-        {grouped.map(([label, nodes]) => 
-          <LinkGroup 
-            key={label} 
-            open={grouped.length == 1}
-            label={label} 
-            nodes={nodes} 
-            onGoTo={props.onGoTo} />
-        )}
-      </ul>
+      {config.link_icons ?
+        <ul className="p6o-link-groups-container">
+          {grouped.map(([label, nodes]) => 
+            <LinkGroup 
+              key={label} 
+              open={grouped.length == 1}
+              label={label} 
+              nodes={nodes} 
+              onGoTo={props.onGoTo} />
+          )}
+        </ul>
+       
+        :
+
+        <ul>
+          {props.nodeList.map(selection => selection.node.properties ?
+            <li 
+              key={selection.node.identifier}
+              className="p6o-link-internal p6o-link">
+                <InternalLink 
+                  {...selection } 
+                  onSelect={node => props.onGoTo(node)} /> 
+            </li> :
+
+            <li
+              key={selection.node.identifier}
+              className="p6o-link-external p6o-link">
+              <ExternalLink  {...selection } />
+            </li>
+          )}
+        </ul>
+      }
       <footer aria-live={true}>
         <AiOutlineInfoCircle />Links open a new tab
       </footer>

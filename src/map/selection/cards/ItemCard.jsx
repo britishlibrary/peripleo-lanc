@@ -53,10 +53,11 @@ const ItemCard = props => {
 
   const blockList = props.config.link_icons?.filter(p => !p.img).map(p => p.pattern);
 
-  const externalLinks = store.getExternalLinks(node.id).filter(l => {
-    const id = l.identifier || l.id;
-    return !blockList.find(pattern => id.includes(pattern));
-  });
+  const externalLinks = blockList ? 
+    store.getExternalLinks(node.id).filter(l => {
+      const id = l.identifier || l.id;
+      return !blockList.find(pattern => id.includes(pattern));
+    }) : store.getExternalLinks(node.id);
 
   // Related items includes external + internal links!
   const connected = [
