@@ -7,7 +7,7 @@
 [<img src="https://britishlibrary.github.io/locating-a-national-collection/graphics/TaNC-logo.png" height="100" align="left">](https://www.nationalcollection.org.uk/)
 [<img src="https://britishlibrary.github.io/locating-a-national-collection/graphics/UKRI-logo.png" height="100">](https://www.ukri.org/)
 
-LaNC has investigated how creating links between locations in different collections might open up new forms of research, engagement and interaction for different audiences. Project partners include: [The National Trust](https://www.nationaltrust.org.uk/), [Historic Royal Palaces](https://www.hrp.org.uk/), [Historic England](http://www.HistoricEngland.org.uk), [Historic Environment Scotland](https://www.historicenvironment.scot/), [Museum of London Archaeology](https://www.mola.org.uk/), [The Portable Antiquities Scheme](https://finds.org.uk/), and [English Heritage](https://www.english-heritage.org.uk/).
+LaNC has investigated how creating links between locations in different collections might open up new forms of research, engagement and interaction for different audiences. Project partners included: [The National Trust](https://www.nationaltrust.org.uk/), [Historic Royal Palaces](https://www.hrp.org.uk/), [Historic England](http://www.HistoricEngland.org.uk), [Historic Environment Scotland](https://www.historicenvironment.scot/), [Museum of London Archaeology](https://www.mola.org.uk/), [The Portable Antiquities Scheme](https://finds.org.uk/), and [English Heritage](https://www.english-heritage.org.uk/).
 
 [<img src="./logos/www.nationaltrust.org.uk.png" height="50" align="left">](https://www.nationaltrust.org.uk/)
 [<img src="./logos/hrp.org.uk.png" height="50" align="left">](https://www.hrp.org.uk/)
