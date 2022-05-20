@@ -6,6 +6,7 @@ import FlexSearch from 'flexsearch';
 
 import { getDescriptions } from '.';
 import { loadLinkedPlaces } from './loaders/LinkedPlacesLoader';
+import { getSuggestedTerms } from './Suggestions';
 
 /**
  * Converts a network node to a JsSearch
@@ -178,16 +179,14 @@ export default class Store {
   }
 
   suggest = query => {
-    const response = this.searchIndex.search(query, { limit: 3, suggest: true });
-    console.log(response);
+    const response = this.searchIndex.search(query, { limit: 5 });
     
     // Collapse FlexSearch results
     const results = response.reduce((ids, r) =>
       [...ids, ...r.result], []);
 
-    const hits = results.map(id => this.getNode(id));
-
-    console.log(hits);
+    const hits = new Set(results.map(id => this.getNode(id)));
+    return getSuggestedTerms(query, Array.from(hits));
   }
 
   searchMappable = query => {
