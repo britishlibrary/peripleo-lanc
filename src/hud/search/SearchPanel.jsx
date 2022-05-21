@@ -49,6 +49,8 @@ const SearchPanel = props => {
   const [ debouncedQuery ] = useDebounce(query, 250);
 
   useEffect(() => {
+    const suggestions = store.suggest(debouncedQuery);
+    console.log(suggestions);
     changeSearchQuery(debouncedQuery);
   }, [ debouncedQuery ]);
 
@@ -57,11 +59,8 @@ const SearchPanel = props => {
       el.current.querySelector('input').focus();
   }, [ el.current ]);
 
-  const onChange = evt => {
-    const { value } = evt.target;
-    // store.suggest(value)
-    setQuery(value);
-  }
+  const onChange = evt =>
+    setQuery(evt.target.value);
 
   const onKeyDown = evt => { 
     if (evt.code === 'Enter')
