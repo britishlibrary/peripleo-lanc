@@ -1,12 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useDebounce } from 'use-debounce';
 
 import useSearch from '../../state/search/useSearch';
 
 import Facets from './Facets';
 import Filters from './Filters';
-import Suggestions from './Suggestions';
+import Autosuggest from './Autosuggest';
 
 const parentAnimation = {
   visible: { 
@@ -43,25 +42,8 @@ const SearchPanel = props => {
     availableFacets
   } = useSearch();
 
-  const [ query, setQuery ] = useState(search?.query || '');
-  const [ debouncedQuery ] = useDebounce(query, 250);
-
-  useEffect(() => {
-    changeSearchQuery(debouncedQuery);
-  }, [ debouncedQuery ]);
-
-  useEffect(() => {
-    if (el.current)
-      el.current.querySelector('input').focus();
-  }, [ el.current ]);
-
-  const onChange = evt =>
-    setQuery(evt.target.value);
-
-  const onKeyDown = evt => { 
-    if (evt.code === 'Enter')
-      fitMap();
-  }
+  const onEnter = () =>
+    fitMap();
 
   const onChangeFacet = inc => () => {
     const { length } = availableFacets;
@@ -89,17 +71,10 @@ const SearchPanel = props => {
       animate="visible"
       exit="hidden">
 
-      <div className="p6o-hud-searchinput">
-        <input 
-          tabIndex={2}
-          placeholder="Search within dataset"
-          aria-label="Search within dataset"
-          value={query} 
-          onKeyDown={onKeyDown}
-          onChange={onChange} />
-      </div>
-
-      <Suggestions query={debouncedQuery} />
+      <Autosuggest 
+        search={search}
+        onChange={changeSearchQuery} 
+        onEnter={onEnter} />
 
       <motion.div
         className="p6o-hud-searchtoolbar"

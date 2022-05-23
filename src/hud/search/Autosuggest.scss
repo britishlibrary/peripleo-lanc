@@ -17,6 +17,16 @@
   li {
     padding: 12px 10px 12px 30px;
     border-bottom: 1px solid #dfdfdf;
+
+    em {
+      font-weight: bold;
+      font-style: normal;
+      color: #000;
+    }
+  }
+
+  li.selected {
+    background-color: #f8f8f8;
   }
 
   li:last-child {
