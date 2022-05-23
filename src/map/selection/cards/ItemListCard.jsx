@@ -217,7 +217,7 @@ const ItemListCard = props => {
         }
 
         {referrer && 
-          <h1>{referrer.node.title}</h1>
+          <h1>Related to: {referrer.node.title}</h1>
         }
         
         <button
