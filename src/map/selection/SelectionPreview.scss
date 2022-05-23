@@ -428,8 +428,14 @@
     .p6o-selection-related-records {
 
       button {
-        color:#626262;
+        color:#fff;
         font-size:15px;
+        padding:8px;
+        background-color:#646464;
+        width: 100%;
+        text-align: left;
+        box-sizing: border-box;
+        @include rounded-corners(3px);
       }
 
       span:hover {
