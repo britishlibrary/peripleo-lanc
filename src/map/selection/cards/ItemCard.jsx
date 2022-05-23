@@ -175,13 +175,13 @@ const ItemCard = props => {
             <div
               className="p6o-selection-related-records">
               <button onClick={goTo} >
-                <BiNetworkChart /> <span>{connected.length} Related Records</span>
+                <BiNetworkChart /> <span>{connected.length} Related Web Resources</span>
               </button>
             </div> :
 
             <div
               className="p6o-selection-related-records disabled">
-              <BiNetworkChart /> <span>No Related Records</span>
+              <BiNetworkChart /> <span>No Related Web Resources</span>
             </div>
           }
         </footer>
