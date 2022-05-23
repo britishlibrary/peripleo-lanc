@@ -15,13 +15,14 @@ export const collapseColocatedFeatures = (features, precision = 5) => {
 
     if (grouped[key]) {
       // Exists already - modify feature!
-      const { colocated_records } = f.properties;
+      const existing = grouped[key];
+      const { colocated_records } = existing.properties;
       const count = colocated_records ? colocated_records + 1 : 1;
 
       grouped[key] = {
-        ...f,
+        ...existing,
         properties: {
-          ...f.properties,
+          ...existing.properties,
           colocated_records: count
         }
       }

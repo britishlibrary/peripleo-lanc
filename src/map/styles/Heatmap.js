@@ -78,7 +78,7 @@ export const colorHeatmapPoint = color => ({
       ['linear'],
       ['number', ['get','colocated_records'], 0 ],
       0, 5,
-      10, 30
+      30, 24
     ],
     'circle-color': color,
     'circle-stroke-color': 'white',
@@ -173,7 +173,7 @@ export const heatmapPoint = args => ({
       ['linear'],
       ['number', ['get','colocated_records'], 0 ],
       0, 5,
-      10, 30
+      30, 24
     ],
     'circle-color': 'red',
     'circle-stroke-color': 'white',

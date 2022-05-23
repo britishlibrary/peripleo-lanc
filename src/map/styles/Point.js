@@ -6,7 +6,7 @@ export const pointStyle = args => ({
       ['linear'],
       ['number', ['get','colocated_records'], 0 ],
       0, 5,
-      10, 30
+      30, 24
     ],
     'circle-color': args?.fill || '#fff',
     'circle-stroke-color': args?.stroke || '#000',
@@ -22,7 +22,7 @@ export const pointCategoryStyle = args => ({
       ['linear'],
       ['number', ['get','colocated_records'], 0 ],
       0, 5,
-      10, 30
+      30, 24
     ],
     'circle-color': [ 'get', 'color' ],
     'circle-stroke-color': args?.stroke || '#000',
