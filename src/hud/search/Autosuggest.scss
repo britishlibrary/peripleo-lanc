@@ -17,6 +17,8 @@
   li {
     padding: 12px 10px 12px 30px;
     border-bottom: 1px solid #dfdfdf;
+    pointer-events: all;
+    cursor: pointer;
 
     em {
       font-weight: bold;
@@ -25,12 +27,14 @@
     }
   }
 
+  li:hover,
   li.selected {
-    background-color: #f8f8f8;
+    background-color: #ededed;
   }
 
   li:last-child {
     border-bottom: none;
+    @include rounded-corners-bottom(3px);
   }
 
 }

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useDebounce } from 'use-debounce';
 
+import useClickOutside from '../../useClickoutside';
 import { StoreContext } from '../../store/StoreContext';
 
 const Autosuggest = props => {
@@ -14,6 +15,9 @@ const Autosuggest = props => {
 
   const [ query, setQuery ] = useState(props.search?.query || '');
   const [ debouncedQuery ] = useDebounce(query, 250);
+
+  useClickOutside(el, () => 
+    setTimeout(() => setSuggestions([]), 200));
 
   useEffect(() => {
     if (el.current)
@@ -36,11 +40,6 @@ const Autosuggest = props => {
   const onChange = evt => {
     const { value } = evt.target;   
     setQuery(value);
-  }
-
-  const onBlur = () => {
-    setSuggestions([]);
-    setSelectedSuggestion(null);
   }
 
   const selectSuggestion = inc => {
@@ -74,6 +73,12 @@ const Autosuggest = props => {
     }
   }
 
+  const onClick = suggestion => {
+    setQuery(suggestion);
+    setSuggestions([]);
+    props.onEnter();
+  }
+
   const emphasise = suggestion =>
     <span dangerouslySetInnerHTML={{ 
       __html: suggestion.replaceAll(debouncedQuery.toLowerCase(), `<em>${debouncedQuery}</em>`) 
@@ -88,8 +93,7 @@ const Autosuggest = props => {
           aria-label="Search within dataset"
           value={query} 
           onKeyDown={onKeyDown}
-          onChange={onChange} 
-          onBlur={onBlur} />
+          onChange={onChange} />
       </div>
 
       <div className="p6o-search-autosuggest">
@@ -98,6 +102,7 @@ const Autosuggest = props => {
             {suggestions.map(suggestion =>
               <li
                 key={suggestion}
+                onClick={() => onClick(suggestion)}
                 className={selectedSuggestion === suggestion ? 'selected' : null}>
                 {emphasise(suggestion)}
               </li>

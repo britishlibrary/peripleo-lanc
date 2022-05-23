@@ -9,7 +9,7 @@ import {
   AiOutlineMinus 
 } from 'react-icons/ai';
 
-import useClickOutside from './useClickoutside';
+import useClickOutside from '../../useClickoutside';
 import MapModesDropdown from './MapModesDropdown';
 import { deviceState } from '../../state';
 
