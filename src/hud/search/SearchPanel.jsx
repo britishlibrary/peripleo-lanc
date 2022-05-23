@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useDebounce } from 'use-debounce';
 
-import { StoreContext } from '../../store/StoreContext';
 import useSearch from '../../state/search/useSearch';
 
 import Facets from './Facets';
 import Filters from './Filters';
+import Suggestions from './Suggestions';
 
 const parentAnimation = {
   visible: { 
@@ -32,8 +32,6 @@ const SearchPanel = props => {
 
   const el = useRef();
 
-  const { store } = useContext(StoreContext);
-
   const { 
     search, 
     changeSearchQuery, 
@@ -49,8 +47,6 @@ const SearchPanel = props => {
   const [ debouncedQuery ] = useDebounce(query, 250);
 
   useEffect(() => {
-    const suggestions = store.suggest(debouncedQuery);
-    console.log(suggestions);
     changeSearchQuery(debouncedQuery);
   }, [ debouncedQuery ]);
 
@@ -102,6 +98,8 @@ const SearchPanel = props => {
           onKeyDown={onKeyDown}
           onChange={onChange} />
       </div>
+
+      <Suggestions query={debouncedQuery} />
 
       <motion.div
         className="p6o-hud-searchtoolbar"

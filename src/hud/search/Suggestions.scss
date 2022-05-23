@@ -1,0 +1,26 @@
+.p6o-search-autosuggest {
+  position: absolute;
+  left: 0;
+  right: 3px;
+  margin-left: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  @include rounded-corners-bottom(3px);
+  @include box-shadow(0, 0, 4px, 0.3);
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    padding: 12px 10px 12px 30px;
+    border-bottom: 1px solid #dfdfdf;
+  }
+
+  li:last-child {
+    border-bottom: none;
+  }
+
+}
