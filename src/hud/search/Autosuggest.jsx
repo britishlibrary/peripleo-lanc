@@ -38,6 +38,11 @@ const Autosuggest = props => {
     setQuery(value);
   }
 
+  const onBlur = () => {
+    setSuggestions([]);
+    setSelectedSuggestion(null);
+  }
+
   const selectSuggestion = inc => {
     if (selectSuggestion === null) {
       if (inc > 0) // Select first
@@ -83,7 +88,8 @@ const Autosuggest = props => {
           aria-label="Search within dataset"
           value={query} 
           onKeyDown={onKeyDown}
-          onChange={onChange} />
+          onChange={onChange} 
+          onBlur={onBlur} />
       </div>
 
       <div className="p6o-search-autosuggest">
