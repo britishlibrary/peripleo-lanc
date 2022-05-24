@@ -8,9 +8,15 @@
   "map_style": "https://api.maptiler.com/maps/outdoor/style.json?key=cqqmcLw28krG9Fl7V3kg",
   "data": [
     {
-      "name": "Alexandrian Tetradrachms",
+	    "name": "Alexandrian Tetradrachms",
+	    "format": "LINKED_PLACES",
+	    "src": "../data/coins/alexandrian-tetradrachms.lp.json",
+	    "attribution": "Datasets: Leif Isaksen"
+    },
+    {
+      "name": "Alexandrian Tetradrachms (Non-UK)",
       "format": "LINKED_PLACES",
-      "src": "../data/coins/alexandrian-tetradrachms.lp.json",
+      "src": "../data/coins/alexandrian-tetradrachms-non-uk.lp.json",
       "attribution": "Datasets: Leif Isaksen"
     },
     {
@@ -61,8 +67,9 @@
     {
       "name": "SW Routes",
       "type": "geojson",
-      "src": "../layers/SW_Routes.geojson",
-      "color": "#727272"
+      "src": "../layers/roman_roads.geojson",
+      "color": "#727272",
+      "attribution": "<i><a href=\"https://github.com/johaahlf/dare\" target=\"_blank\">Digital Atlas of the Roman Empire</a></i> © Johan Åhlfeldt"
     }
   ],
   "link_icons": [
