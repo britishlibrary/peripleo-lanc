@@ -47,8 +47,9 @@
     {
       "name": "SW Rivers",
       "type": "geojson",
-      "src": "../layers/SW_rivers.geojson",
-      "color": "#5555ff"
+      "src": "../layers/inland_navigation_1348.geojson",
+      "color": "#5555ff",
+      "attribution": "<a href=\"https://doi.org/10.5284/1057497\" target=\"_blank\">Inland Navigation in England and Wales before 1348</a> © Eljas Oksanen (2019)"
     },
     {
       "name": "SW Routes",
