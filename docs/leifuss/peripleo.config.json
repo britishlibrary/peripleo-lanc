@@ -41,7 +41,14 @@
     }
   ],
   "facets": [
-      "type"
+	  {
+	      "name": "Mint Location",
+	      "path": [
+	        "properties",
+	        "mintName"
+	      ]
+	  },
+	  "type"
   ],
   "layers": [
     {
