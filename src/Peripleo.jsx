@@ -19,6 +19,17 @@ import { deviceState } from './state';
   }
 })();
 
+const FULLSCREEN_STYLE = {
+  width: '100vw',
+  height: '100vh',
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  margin: 0,
+  padding: 0,
+  border: 'none'
+};
+
 const Peripleo = props => {
 
   const el = useRef();
@@ -43,27 +54,15 @@ const Peripleo = props => {
   }, [props.loaded]);
 
   const toggleFullScreen = () => {
+    // iframe container
+    const { frameElement } = window;
+
     if (isFullscreen) {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
-      } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-      } else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
-      }
+      Object.entries(FULLSCREEN_STYLE).forEach(([key, _]) =>
+        frameElement.style[key] = null);
     } else {
-      const element = document.documentElement;
-      if (element.requestFullScreen) {
-        element.requestFullScreen();
-      } else if (element.mozRequestFullScreen) {
-        element.mozRequestFullScreen();
-      } else if (element.webkitRequestFullScreen) {
-        element.webkitRequestFullScreen();
-      } else if (element.msRequestFullScreen) {
-        element.msRequestFullScreen();
-      }
+      Object.entries(FULLSCREEN_STYLE).forEach(([key, value]) =>
+        frameElement.style[key] = value);
     }
 
     setIsFullscreen(!isFullscreen);
