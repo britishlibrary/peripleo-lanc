@@ -1,6 +1,7 @@
 import { atom } from 'recoil';
 
 import Search from './search/Search';
+import Filter, { parseFilterDefinition } from './search/Filter';
 
 /** Parse startup state from URL **/
 const { hash } = window.location;
@@ -44,7 +45,8 @@ export const searchState = atom({
   default: new Search(
     null, // query
     null, // filters,
-    initialParams.facet
+    initialParams.facet,
+    parseFilterDefinition(initialParams.filters).map(f => new Filter(f.name, f.values))
   )
 });
 

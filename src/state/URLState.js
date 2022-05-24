@@ -4,12 +4,19 @@ import { useDebounce } from 'use-debounce';
 
 import { searchState, mapViewState, mapModeState } from '.';
 
+export const serializeFilterDefinition = filters => filters
+  .map(f => `${f.name}[${f.values.map(value =>
+    `(${value})`
+  ).join(',')}]`)
+  .join(',')
+
 const toURL = state => {
   const { 
     zoom,
     longitude, 
     latitude, 
     facet, 
+    filters,
     mode 
   } = state;
 
@@ -30,6 +37,10 @@ const toURL = state => {
   // Facet value (if any)
   if (facet)
     params.push(`facet=${facet}`);
+
+  // Filters (if any)
+  if (filters && filters.length > 0)
+    params.push(`filters=${serializeFilterDefinition(filters)}`);
   
   const url = params.length > 0 ?
     fragment + '/' + params.join('+') : fragment;
@@ -62,7 +73,16 @@ const URLState = props => {
 
   useEffect(() => {
     setState(state => ({...state, facet: search.facet }));
-  }, [ search ]);
+  }, [ search.facet ]);
+
+  useEffect(() => {
+    setState(state => ({
+      ...state, 
+
+      // Clone immutable filters
+      filters: search.filters?.map(f => ({ name: f.facet, values: f.values }))
+    }));
+  }, [ search.filters ]);
 
   useEffect(() => toURL(state), [ state ]);
 

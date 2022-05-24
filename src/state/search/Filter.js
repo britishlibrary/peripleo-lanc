@@ -1,3 +1,20 @@
+export const parseFilterDefinition = str => {
+  if (!str)
+    return [];
+
+  const filters = str.split(/\],/g);
+  
+  return filters.map(f => {
+    const [name, valuesAsString] = f.split(/\[|\]/);
+
+    const values = valuesAsString
+      .substring(1, valuesAsString.length-1) // Remove leading/closing bracket
+      .split(/\),\(/); // Split groups
+
+    return { name, values };
+  });
+}
+
 const evalNestedFieldFilter = (allowedValues, path) => item => {
 
   const getValueRecursive = (obj, p) => {
@@ -35,6 +52,11 @@ export default class Filter {
     this.facet = facet;
     this.values = Array.isArray(arg) ? arg : [ arg ];
   }
+
+  serialize = () => ({
+    name: this.facet,
+    values: this.values
+  })
 
   equals = filter =>
     filter.facet === this.facet && filter.value === this.value;
