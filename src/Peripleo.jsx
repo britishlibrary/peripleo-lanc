@@ -27,7 +27,8 @@ const FULLSCREEN_STYLE = {
   left: 0,
   margin: 0,
   padding: 0,
-  border: 'none'
+  border: 'none',
+  zIndex: 99999
 };
 
 const Peripleo = props => {
