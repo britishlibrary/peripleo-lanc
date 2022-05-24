@@ -44,9 +44,9 @@ export const searchState = atom({
   key: 'search',
   default: new Search(
     null, // query
-    null, // filters,
-    initialParams.facet,
-    parseFilterDefinition(initialParams.filters).map(f => new Filter(f.name, f.values))
+    parseFilterDefinition(initialParams.filters).map(f => 
+      new Filter(f.name, f.values.map(str => decodeURIComponent(str)))),
+    initialParams.facet
   )
 });
 

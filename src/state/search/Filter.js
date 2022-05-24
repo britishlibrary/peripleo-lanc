@@ -62,7 +62,10 @@ export default class Filter {
     filter.facet === this.facet && filter.value === this.value;
 
   executable = facets => {
-    const { definition } = facets.find(f => f.name === this.facet);
+    const definition = facets.find(f => f.name === this.facet)?.definition;
+
+    if (!definition)
+      return;
 
     if (Array.isArray(definition))
       return evalNestedFieldFilter(this.values, definition);

@@ -32,7 +32,8 @@ const useSearch = () => {
     if (filters?.length > 0) {
       // All filters except on the current facet
       const preFilters = filters.filter(f => f.facet !== facet)
-        .map(f => f.executable(availableFacets));
+        .map(f => f.executable(availableFacets)).
+        filter(f => f); // Remove undefined
 
       // The current facet filter (if any)
       postFilter = filters.find(f => f.facet === facet)?.executable(availableFacets);

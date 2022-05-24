@@ -20,7 +20,9 @@ export const getTopEight = (facetCounts, filterValues) => {
   let topEight = [];
 
   const filterCounts = filterValues ?
-    filterValues.map(label => facetCounts.find(c => c[0] === label)) : [];
+    filterValues
+      .map(label => facetCounts.find(c => c[0] === label))
+      .filter(c => c) /* remove undefined */ : [];
   
   filterCounts.sort((a, b) => b[1] - a[1]);
 

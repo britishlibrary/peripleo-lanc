@@ -5,8 +5,8 @@ import { useDebounce } from 'use-debounce';
 import { searchState, mapViewState, mapModeState } from '.';
 
 export const serializeFilterDefinition = filters => filters
-  .map(f => `${f.name}[${f.values.map(value =>
-    `(${value})`
+  .map(f => `${encodeURIComponent(f.name)}[${f.values.map(value =>
+    `(${encodeURIComponent(value)})`
   ).join(',')}]`)
   .join(',')
 
@@ -48,12 +48,12 @@ const toURL = state => {
   history.pushState(state, null, url);
 }
 
-const URLState = props => {
+const URLState = () => {
   const mapView = useRecoilValue(mapViewState);
 
   const mapMode = useRecoilValue(mapModeState);
 
-  const search = useRecoilValue(searchState)
+  const search = useRecoilValue(searchState);
 
   const [ mapDebounced ] = useDebounce(mapView, 500);
 
@@ -72,17 +72,13 @@ const URLState = props => {
   }, [ mapMode ]);
 
   useEffect(() => {
-    setState(state => ({...state, facet: search.facet }));
-  }, [ search.facet ]);
-
-  useEffect(() => {
     setState(state => ({
       ...state, 
-
+      facet: search.facet,
       // Clone immutable filters
       filters: search.filters?.map(f => ({ name: f.facet, values: f.values }))
-    }));
-  }, [ search.filters ]);
+    }))
+  }, [ search ]);
 
   useEffect(() => toURL(state), [ state ]);
 
