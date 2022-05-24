@@ -5,7 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 
 import useSearch from '../state/search/useSearch';
 import { StoreContext } from '../store';
-import { mapViewState, mapModeState, deviceState } from '../state';
+import { selectedState, mapViewState, mapModeState, deviceState } from '../state';
 
 import { parseLayerConfig } from './BaseLayers';
 import LayersCategorized from './LayersCategorized';
@@ -33,6 +33,8 @@ const Map = React.forwardRef((props, ref) => {
 
   const [ hover, setHover ] = useState();
 
+  const [ selectedId, setSelectedId ] = useRecoilState(selectedState);
+
   const [ selection, setSelection ] = useState();
 
   const customAttribution = config.data.reduce((attr, dataset) =>
@@ -48,6 +50,20 @@ const Map = React.forwardRef((props, ref) => {
         mapRef.current.fitBounds(bounds, { padding: 40 , maxZoom: 14 });
     }
   }, [ search ]);
+
+  // Sync selection state downwards
+  useEffect(() => {
+    const currentSelectionId = selection?.nodeList ?
+      selection.nodeList[0].id : selection?.node.id;
+    
+    if (selectedId && currentSelectionId !== selectedId) {
+      const node = store.getNode(selectedId);
+      if (node)
+        setSelection({ node });
+    } else if (!selectedId && selection) {
+      setSelection(null);
+    } 
+  }, [ selectedId, search ]);
 
   useEffect(() => {
     // Map container gets hover element, 
@@ -99,8 +115,14 @@ const Map = React.forwardRef((props, ref) => {
       } else {
         setSelection({ node, feature });
       }
+
+      // Sync state up
+      setSelectedId(node.id);
     } else {
       setSelection(null);
+
+      // Sync state up
+      setSelectedId(null);
     }
   }
 
@@ -110,8 +132,10 @@ const Map = React.forwardRef((props, ref) => {
     map.easeTo({ zoom: z + inc });
   }
 
-  const onClosePopup = () =>
+  const onClosePopup = () => {
     setSelection(null);
+    setSelectedId(null);
+  }
 
   const moveIntoView = (coord, bounds) => {
     const PADDING = 30;
@@ -145,6 +169,7 @@ const Map = React.forwardRef((props, ref) => {
     <div 
       ref={ref}
       className={device === 'MOBILE' ? 'p6o-map-container mobile' : 'p6o-map-container'} >
+
       <ReactMapGL
         attributionControl={false}
         pitchWithRotate={false}

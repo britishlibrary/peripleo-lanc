@@ -55,11 +55,7 @@ export const deviceState = atom({
   default: window.screen.availWidth <= 800 ? 'MOBILE' : 'DESKTOP'
 });
 
-/**
- * TODO
- * Current selection
- */
 export const selectedState = atom({
   key: 'selected',
-  default: null
+  default: initialParams.selected ? decodeURIComponent(initialParams.selected) : null
 });

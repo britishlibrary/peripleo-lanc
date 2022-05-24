@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { useDebounce } from 'use-debounce';
 
-import { searchState, mapViewState, mapModeState } from '.';
+import { searchState, selectedState, mapViewState, mapModeState } from '.';
 
 export const serializeFilterDefinition = filters => filters
   .map(f => `${encodeURIComponent(f.name)}[${f.values.map(value =>
@@ -17,7 +17,8 @@ const toURL = state => {
     latitude, 
     facet, 
     filters,
-    mode 
+    mode,
+    selected
   } = state;
 
   let fragment = '#/';
@@ -41,7 +42,11 @@ const toURL = state => {
   // Filters (if any)
   if (filters && filters.length > 0)
     params.push(`filters=${serializeFilterDefinition(filters)}`);
-  
+
+  // Selected (if any)
+  if (selected)
+    params.push(`selected=${encodeURIComponent(selected)}`);
+
   const url = params.length > 0 ?
     fragment + '/' + params.join('+') : fragment;
 
@@ -54,6 +59,8 @@ const URLState = () => {
   const mapMode = useRecoilValue(mapModeState);
 
   const search = useRecoilValue(searchState);
+
+  const selected = useRecoilValue(selectedState);
 
   const [ mapDebounced ] = useDebounce(mapView, 500);
 
@@ -79,6 +86,10 @@ const URLState = () => {
       filters: search.filters?.map(f => ({ name: f.facet, values: f.values }))
     }))
   }, [ search ]);
+
+  useEffect(() => {
+    setState(state => ({ ...state, selected }));
+  }, [ selected ]);
 
   useEffect(() => toURL(state), [ state ]);
 
