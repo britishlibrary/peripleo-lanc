@@ -38,34 +38,21 @@
       "name": "Osiris Figurines",
       "format": "LINKED_PLACES",
       "src": "../data/coins/Osiris.lp.json"
-    },
-    {
-      "name": "MonasteryQuest",
-      "format": "LINKED_PLACES",
-      "src": "../data/MonasteryQuest.lp.json",
-      "attribution": "<i><a href=\"https://stainedglassattitudes.wordpress.com/2020/11/30/monasteryquest-pt-3-the-map/\" target=\"_blank\">MonasteryQuest™</a></i> © Dr J.A. Cameron"
     }
   ],
   "facets": [
-	  {
-	      "name": "Mint Location",
-	      "path": [
-	        "properties",
-	        "mintName"
-	      ]
-	  },
 	  "type"
   ],
   "layers": [
     {
-      "name": "SW Rivers",
+      "name": "Navigable Rivers",
       "type": "geojson",
       "src": "../layers/inland_navigation_1348.geojson",
       "color": "#5555ff",
       "attribution": "<i><a href=\"https://doi.org/10.5284/1057497\" target=\"_blank\">Inland Navigation in England and Wales before 1348</a></i> © Eljas Oksanen (2019)"
     },
     {
-      "name": "SW Routes",
+      "name": "Roman Routes",
       "type": "geojson",
       "src": "../layers/roman_roads.geojson",
       "color": "#727272",
