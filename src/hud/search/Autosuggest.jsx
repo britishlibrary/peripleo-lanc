@@ -30,15 +30,15 @@ const Autosuggest = props => {
 
       const suggestions = store.suggest(debouncedQuery);
       setSuggestions(suggestions.filter(s => s !== debouncedQuery));
-
-      props.onChange(debouncedQuery);
     } else {
       setSuggestions([]);
     }
+
+    props.onChange(debouncedQuery);
   }, [ debouncedQuery ]);
 
   const onChange = evt => {
-    const { value } = evt.target;   
+    const { value } = evt.target;
     setQuery(value);
   }
 
@@ -68,8 +68,11 @@ const Autosuggest = props => {
       selectSuggestion(1);
     } else if (evt.code === 'Tab') {
       evt.preventDefault();
-      if (selectedSuggestion)
+      if (selectedSuggestion) {
         setQuery(selectedSuggestion);
+      } else if (suggestions.length > 0) {
+        setQuery(suggestions[0]);
+      }
     }
   }
 
