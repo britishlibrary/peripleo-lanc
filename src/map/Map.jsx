@@ -42,6 +42,7 @@ const Map = React.forwardRef((props, ref) => {
 
   useEffect(() => {
     setSelection(null);
+    setSelectedId(null);
 
     const fitMap = search?.fitMap;
     if (fitMap && mapRef.current) {
