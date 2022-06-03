@@ -2,7 +2,7 @@
   position: absolute;
   left: 0;
   right: 3px;
-  margin-left: 20px;
+  margin-left: 40px;
   box-sizing: border-box;
   background-color: #fff;
   @include rounded-corners-bottom(3px);
@@ -15,7 +15,7 @@
   }
 
   li {
-    padding: 12px 10px 12px 30px;
+    padding: 12px 10px 12px 12px;
     border-bottom: 1px solid #dfdfdf;
     pointer-events: all;
     cursor: pointer;
