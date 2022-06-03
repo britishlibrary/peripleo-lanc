@@ -88,9 +88,16 @@ const SearchPanel = props => {
           
           <div className="p6o-hud-searchtoolbar-footer">
             <h2 
-              className="p6o-hud-searchtoolbar-resultcount"
+              className={search.total > 0 ? 'p6o-hud-searchtoolbar-resultcount' : 'p6o-hud-searchtoolbar-resultcount none'} 
               aria-live="polite">
-              {search.total.toLocaleString('en')} Result{search.total !== 1 && 's'}
+              {search.total > 0 ?
+                <>
+                  {search.total.toLocaleString('en')} Result{search.total !== 1 && 's'}
+                </> :
+                <>
+                  No results found for this search
+                </>
+              }
             </h2>
           </div>
         </div>

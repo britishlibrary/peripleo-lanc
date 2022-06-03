@@ -67,6 +67,11 @@
       padding:7px 12px;
     }
 
+    .p6o-hud-searchtoolbar-resultcount.none {
+      background-color:#f9e6d3;
+      @include rounded-corners-bottom(3px);
+    }
+
     .p6o-hud-searchtoolbar-btn {
       flex-basis:40px;
       text-align:center;
