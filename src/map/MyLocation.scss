@@ -1,0 +1,20 @@
+.p6o-my-location {
+  position:absolute;
+  top:209px;
+  left:20px;
+  width:60px;
+  height:60px;
+  font-size:26px;
+  background-color:#f7f7f7;
+  box-shadow:0 0 12px rgba(0,0,0,0.35);
+  color:#3e3e3e;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(0,0,0,0.2);
+  @include rounded-corners(50%);
+}
+
+.p6o-my-location:hover {
+  background-color:#fff;
+}
