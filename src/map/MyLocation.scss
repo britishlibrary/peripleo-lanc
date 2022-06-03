@@ -1,5 +1,5 @@
 .p6o-my-location {
-  position:absolute;
+  position:fixed;
   top:209px;
   left:20px;
   width:60px;
@@ -17,4 +17,14 @@
 
 .p6o-my-location:hover {
   background-color:#fff;
+}
+
+.mobile .p6o-my-location {
+  width:50px;
+  height:50px;
+  top:265px;
+  left:auto;
+  right:15px;
+  border:none;
+  @include box-shadow(0, 0, 4px, 0.25);
 }
