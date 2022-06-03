@@ -225,7 +225,7 @@ const Map = React.forwardRef((props, ref) => {
         onZoomOut={onZoom(-1)} 
         onToggleFullscreen={props.onToggleFullscreen} />
 
-      <MyLocation onPanTo={panTo} />
+      {!config.disableMyLocation && <MyLocation onPanTo={panTo} /> }
 
       {props.children}
 
