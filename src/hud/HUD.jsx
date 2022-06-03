@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { BiSearchAlt2 } from 'react-icons/bi';
-import { ImFilter } from 'react-icons/im';
+import { ImFilter, ImLink } from 'react-icons/im';
 import { useRecoilState } from 'recoil';
 
+import ShareLink from './ShareLink';
 import useSearch from '../state/search/useSearch';
 import SearchPanel from './search/SearchPanel';
 import { hudOpenState } from '../state';
@@ -56,6 +57,8 @@ const HUD = props => {
             <span className="p6o-filters-badge">{search.filters.length}</span>
           }
         </button>
+
+        <ShareLink />
       </div>
 
       <AnimatePresence>

@@ -23,7 +23,8 @@
   }
 
   .p6o-search-button,
-  .p6o-filters-button {
+  .p6o-filters-button,
+  .p6o-share-button {
     position:absolute;
     color:#3e3e3e;
     display:flex;
@@ -78,6 +79,11 @@
       @include rounded-corners(50%);
     }
 
+  }
+
+  .p6o-share-button {
+    top:116px;
+    left:0;
   }
 
   .p6o-filters-button:hover {
