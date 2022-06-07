@@ -87,11 +87,15 @@ const URLState = () => {
       filters: search.filters?.map(f => ({ name: f.facet, values: f.values }))
     }))
 
-    GoogleAnalytics.tag(search);
+    // Tag search action on GA
+    GoogleAnalytics.tagSearch(search);
   }, [ search ]);
 
   useEffect(() => {
     setState(state => ({ ...state, selected }));
+
+    // Tag select action on GA
+    GoogleAnalytics.tagSelection(selected);
   }, [ selected ]);
 
   useEffect(() => toURL(state), [ state ]);
