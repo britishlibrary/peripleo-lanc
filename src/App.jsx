@@ -6,6 +6,8 @@ import { StoreContext } from './store';
 import { FacetsContext } from './state/search/FacetsContext';
 import { deviceState } from './state';
 
+import GoogleAnalytics from './state/GoogleAnalytics';
+
 import Loading from './loading/Loading';
 import Peripleo from './Peripleo';
 import Tutorial, { isFirstTimeVisitor } from './tutorial/Tutorial';
@@ -32,6 +34,9 @@ const App = () => {
 
     if (config.facets)
       setAvailableFacets(config.facets);
+
+    if (config.ga_id)
+      GoogleAnalytics.install(config.ga_id);
   }
 
   // Initial mount: load config

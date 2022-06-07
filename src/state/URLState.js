@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { useDebounce } from 'use-debounce';
 
+import GoogleAnalytics from './GoogleAnalytics';
 import { searchState, selectedState, mapViewState, mapModeState } from '.';
 
 export const serializeFilterDefinition = filters => filters
@@ -85,6 +86,8 @@ const URLState = () => {
       // Clone immutable filters
       filters: search.filters?.map(f => ({ name: f.facet, values: f.values }))
     }))
+
+    GoogleAnalytics.tag(search);
   }, [ search ]);
 
   useEffect(() => {
