@@ -39,7 +39,6 @@
     "@turf/centroid": "^6.5.0",
     "flexsearch": "^0.7.21",
     "framer-motion": "^6.2.6",
-    "ga-gtag": "^1.1.1",
     "maplibre-gl": "^2.1.6",
     "ngraph.graph": "^20.0.0",
     "rbush": "^3.0.1",
