@@ -1,9 +1,13 @@
 import { gtag, install } from 'ga-gtag';
 
 const tag = search => {
-  if (search?.query) {
-    console.log('tagging', search);
-    gtag('event', 'search', { query: search.query });
+  try {
+    if (search?.query) {
+      console.log('tagging', search);
+      gtag('event', 'search', { query: search.query });
+    }
+  } catch (error) {
+    // Just a hack
   }
 };
 
