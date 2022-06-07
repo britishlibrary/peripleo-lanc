@@ -3,6 +3,7 @@ import { Popup } from 'react-map-gl';
 import { useRecoilValue } from 'recoil';
 
 import { deviceState } from '../../state';
+import { insertSeoData } from '../../state/SelectionMetadata';
 import { isInViewport } from './isInViewport';
 
 import CardStack from './cards/CardStack';
@@ -40,6 +41,10 @@ const SelectionPreview = props => {
   }, [ props.feature ]);
 
   useEffect(() => {
+    // Bit of a hack...
+    if (node)
+      insertSeoData(node);
+
     setTimeout(() => {
       if (!isInViewport(elem.current))
         props.moveIntoView(coordinates, elem.current.getBoundingClientRect());
@@ -59,6 +64,10 @@ const SelectionPreview = props => {
     } else {
       // Single link
       const link = data.nodeList ? data.nodeList[0] : data;
+
+      // Bit of a hack...
+      insertSeoData(link.node);
+
       if (link.node.properties) {
         setCards([ ...cards, link ]); // Open internal link directly
       } else { 

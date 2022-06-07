@@ -42,11 +42,11 @@ const Map = React.forwardRef((props, ref) => {
     dataset.attribution ? [ ...attr, dataset.attribution ] : attr, []);
 
   useEffect(() => {
-    setSelection(null);
-    setSelectedId(null);
-
     const fitMap = search?.fitMap;
     if (fitMap && mapRef.current) {
+      setSelection(null);
+      setSelectedId(null);
+
       const bounds = search.bounds();
       if (bounds)
         mapRef.current.fitBounds(bounds, { padding: 40 , maxZoom: 14 });
@@ -54,7 +54,7 @@ const Map = React.forwardRef((props, ref) => {
   }, [ search ]);
 
   // Sync selection state downwards
-  useEffect(() => {
+  useEffect(() => {    
     const currentSelectionId = selection?.nodeList ?
       selection.nodeList[0].id : selection?.node.id;
     

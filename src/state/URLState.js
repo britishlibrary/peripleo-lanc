@@ -3,6 +3,7 @@ import { useRecoilValue } from 'recoil';
 import { useDebounce } from 'use-debounce';
 
 import GoogleAnalytics from './GoogleAnalytics';
+
 import { searchState, selectedState, mapViewState, mapModeState } from '.';
 
 export const serializeFilterDefinition = filters => filters
@@ -65,14 +66,14 @@ const URLState = () => {
 
   const [ mapDebounced ] = useDebounce(mapView, 500);
 
-  const [ state, setState ] = useState({ ...mapView });
+  const [ state, setState ] = useState({ ...mapView, selected });
 
   useEffect(() => {
     const { longitude, latitude, zoom } = mapView;
-    setState({
+    setState(state => ({
       ...state, 
       longitude, latitude, zoom
-    });
+    }));
   }, [ mapDebounced ]);
 
   useEffect(() => {
@@ -85,7 +86,7 @@ const URLState = () => {
       facet: search.facet,
       // Clone immutable filters
       filters: search.filters?.map(f => ({ name: f.facet, values: f.values }))
-    }))
+    }));
 
     // Tag search action on GA
     GoogleAnalytics.tagSearch(search);
