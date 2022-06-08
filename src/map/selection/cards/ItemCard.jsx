@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-import { BiNetworkChart } from 'react-icons/bi';
+import { BiLink } from 'react-icons/bi';
 import { IoArrowBackOutline, IoCloseSharp } from 'react-icons/io5';
 import { RiExternalLinkLine } from 'react-icons/ri';
 import { CgArrowsExpandRight } from 'react-icons/cg';
@@ -175,13 +175,13 @@ const ItemCard = props => {
             <div
               className="p6o-selection-related-records">
               <button onClick={goTo} >
-                <BiNetworkChart /> <span>{connected.length} Related Web Resources</span>
+                <BiLink /> <span>{connected.length} Related Web Resources</span>
               </button>
             </div> :
 
             <div
               className="p6o-selection-related-records disabled">
-              <BiNetworkChart /> <span>No Related Web Resources</span>
+              <BiLink /> <span>No Related Web Resources</span>
             </div>
           }
         </footer>
