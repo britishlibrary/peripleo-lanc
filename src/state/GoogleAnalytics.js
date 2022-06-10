@@ -55,4 +55,10 @@ const tagFilter = (filter, value) => {
   }
 }
 
-export default { install, tagSearch, tagSelection,  tagFilter, install };
+const tagNavigation = destination => {
+  if (trackingEnabled) {
+    gtag('event', 'navigation', { destination });
+  }
+}
+
+export default { install, tagSearch, tagSelection, tagFilter, tagNavigation, install };

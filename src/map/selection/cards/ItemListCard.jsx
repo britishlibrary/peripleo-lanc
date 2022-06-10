@@ -6,6 +6,8 @@ import { VscGlobe } from 'react-icons/vsc';
 import { BiRightArrowAlt } from 'react-icons/bi';
 import { HiPlus, HiMinus } from 'react-icons/hi';
 
+import GoogleAnalytics from '../../../state/GoogleAnalytics';
+
 import { getTypes } from './Utils';
 import { SIGNATURE_COLOR } from '../../../Colors';
 
@@ -123,6 +125,7 @@ const ExternalLink = props => {
         {link.label && 
           <a 
             className="p6o-external-link-label" 
+            onClick={() => GoogleAnalytics.ttagNavigation(href)}
             href={href} 
             target="_blank" 
             title={link.label}>{link.label}</a>
@@ -130,6 +133,7 @@ const ExternalLink = props => {
 
         <a 
           className="p6o-external-link-host" 
+          onClick={() => GoogleAnalytics.ttagNavigation(href)}
           href={href} 
           target="_blank" 
           title={link.label || host}>{host}</a>

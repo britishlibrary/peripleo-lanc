@@ -7,6 +7,8 @@ import * as sanitize from 'sanitize-html';
 
 import { SIGNATURE_COLOR } from '../../../Colors';
 
+import GoogleAnalytics from '../../../state/GoogleAnalytics';
+
 import { StoreContext } from '../../../store';
 import { parseWhen } from './When';
 import { getDescriptions } from '../../../store';
@@ -70,6 +72,9 @@ const ItemCard = props => {
     nodeList: connected
   });
   
+  const tagNav = () => 
+    GoogleAnalytics.tagNavigation(sourceUrl);
+
   // Temporary hack!
   const color = SIGNATURE_COLOR[3]; 
 
@@ -128,13 +133,19 @@ const ItemCard = props => {
 
             <div className="p6o-source-link">
               <h1>
-                <a href={sourceUrl} target="_blank">
+                <a 
+                  href={sourceUrl} 
+                  target="_blank"
+                  onClick={tagNav}>
                   {node.title}
                 </a>
               </h1>
 
               <h2>
-                <a href={sourceUrl} target="_blank">
+                <a 
+                  href={sourceUrl} 
+                  target="_blank"
+                  onClick={tagNav}>
                   View page on {node.dataset}<RiExternalLinkLine />
                 </a>
               </h2>
@@ -142,6 +153,7 @@ const ItemCard = props => {
               <a 
                 href={sourceUrl}
                 className="p6o-new-tab-hint"
+                onClick={tagNav}
                 target="_blank">Link opens a new tab</a>
             </div>
 
