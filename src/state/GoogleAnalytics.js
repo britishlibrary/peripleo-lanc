@@ -22,7 +22,7 @@ const install = trackingId => {
 
     const randomId = (Math.random() + 1).toString(36).substring(7);
     console.log('Privacy-compliant tracking enabled. Random user id: ' + randomId);
-    
+
     trackingEnabled = true;
 
     gtag('js',new Date());
@@ -36,8 +36,6 @@ const install = trackingId => {
 
 const tagSearch = search => {
   if (trackingEnabled) {
-    console.log('Tagging search', search);
-
     const { query, filters, facet, total } = search;
 
     if (query || filters?.length > 0 || facet)
@@ -47,8 +45,6 @@ const tagSearch = search => {
 
 const tagSelection = id => {
   if (trackingEnabled) {
-    console.log('Tagging selection', id);
-    
     gtag('event', 'selection', { id });
   }
 }
