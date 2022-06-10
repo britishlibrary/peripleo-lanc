@@ -9,6 +9,8 @@ import { searchState } from '..';
 
 import Filter from './Filter';
 
+import GoogleAnalytics from '../GoogleAnalytics';
+
 import { computeFacetDistribution } from './Facets';
 
 const useSearch = () => {
@@ -85,6 +87,8 @@ const useSearch = () => {
    * Adds or removes a filter and re-runs the search
    */
   const toggleFilter = (filterFacet, filterValue) => {
+    GoogleAnalytics.tagFilter(filterFacet, filterValue);
+    
     const { query, filters, facet } = search;
 
     // Is there already a filter on this facet?

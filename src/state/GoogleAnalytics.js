@@ -49,4 +49,10 @@ const tagSelection = id => {
   }
 }
 
-export default { tagSearch, tagSelection, install };
+const tagFilter = (filter, value) => {
+  if (trackingEnabled) {
+    gtag('event', 'filter', { filter: filter, filter_value: value });
+  }
+}
+
+export default { install, tagSearch, tagSelection,  tagFilter, install };
