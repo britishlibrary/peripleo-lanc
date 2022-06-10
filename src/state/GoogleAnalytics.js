@@ -20,11 +20,17 @@ const install = trackingId => {
   script.onload = () => {
     window.dataLayer = window.dataLayer || [];
 
-    console.log('Traffic insight enabled');
+    const randomId = (Math.random() + 1).toString(36).substring(7);
+    console.log('Privacy-compliant tracking enabled. Random user id: ' + randomId);
+    
     trackingEnabled = true;
 
     gtag('js',new Date());
-    gtag('config', trackingId, { client_storage: 'none', anonymize_ip: true });      
+    gtag('config', trackingId, { 
+      client_storage: 'none', 
+      anonymize_ip: true,
+      client_id: randomId
+    });      
   }
 }
 
