@@ -28,6 +28,7 @@ const install = trackingId => {
     gtag('js',new Date());
     gtag('config', trackingId, { 
       client_storage: 'none', 
+      storage: 'none', 
       anonymize_ip: true,
       client_id: randomId
     });      
