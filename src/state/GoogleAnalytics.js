@@ -26,12 +26,18 @@ const install = trackingId => {
     trackingEnabled = true;
 
     gtag('js',new Date());
+    
     gtag('config', trackingId, { 
       client_storage: 'none', 
       storage: 'none', 
       anonymize_ip: true,
       client_id: randomId
-    });      
+    });
+
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      analytics_storage: 'denied'
+    });  
   }
 }
 
