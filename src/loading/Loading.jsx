@@ -10,7 +10,7 @@ const Loading = props => {
 
   const { stage } = props.state;
 
-  const [ welcome, setWelcome ] = useState(0);
+  const [ welcome, setWelcome ] = useState();
 
   useEffect(() => {
     const welcome = config?.welcome_message;
@@ -19,6 +19,12 @@ const Loading = props => {
         .then(response => response.text())
         .then(setWelcome);
   }, [ config?.welcome_message]);
+
+  useEffect(() => {
+    // Without welcome message, splash screen should close automatically
+    if (stage === 'LOADED' && !config?.welcome_message)
+      setTimeout(() => props.onClose(), 2000);
+  }, [stage])
 
   let label;
 
@@ -31,7 +37,7 @@ const Loading = props => {
   } else if (stage === 'ERROR') {
     label = `An error occurred (${props.state.cause})`;
   } else {
-    label = 'Ready!'
+    label = config?.welcome_message ? 'Ready!' : 'Almost ready!';
   }
 
   const nodes = props.state.nodes || 0;
@@ -58,10 +64,6 @@ const Loading = props => {
           </ReactMarkdown>
         }
 
-        <button 
-          disabled={stage !== 'LOADED'}
-          onClick={props.onClose}>Ok</button>
-
         <ProgressBar progress={props.state.progress} />        
         
         <p className="p6o-loading-stage">
@@ -71,6 +73,13 @@ const Loading = props => {
             </> : <>&nbsp;</>
           } 
         </p>
+
+        {welcome && 
+          <button 
+            className="p6o-loading-welcome-close"
+            disabled={stage !== 'LOADED'}
+            onClick={props.onClose}>Ok</button>
+        }
       </div>
     </motion.div>
   )
