@@ -52,12 +52,18 @@ const App = () => {
       });
   }, []);
 
+  /*
   useEffect(() => {
     if (loadState.stage === 'LOADED') {
       setTimeout(() => 
         setLoadState({ ...loadState, stage: 'CLOSE' }), 2000);
     }
   }, [loadState]);
+  */
+
+  const onCloseSplashScreen = () => {
+    setLoadState({ ...loadState, stage: 'CLOSE' })
+  }
 
   const onMapLoaded = () => {
     const { data } = config;
@@ -110,7 +116,8 @@ const App = () => {
         {loadState.stage !== 'CLOSE' &&
           <Loading
             state={loadState} 
-            config={config} />
+            config={config} 
+            onClose={onCloseSplashScreen} />
         }
       </AnimatePresence>
 

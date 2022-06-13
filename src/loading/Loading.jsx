@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import ReactMarkdown from 'react-markdown';
 
 import ProgressBar from './ProgressBar';
 
 const Loading = props => {
 
+  const { config } = props;
+
   const { stage } = props.state;
+
+  const [ welcome, setWelcome ] = useState(0);
+
+  useEffect(() => {
+    const welcome = config?.welcome_message;
+    if (welcome) 
+      fetch(welcome)
+        .then(response => response.text())
+        .then(setWelcome);
+  }, [ config?.welcome_message]);
 
   let label;
 
@@ -18,7 +31,7 @@ const Loading = props => {
   } else if (stage === 'ERROR') {
     label = `An error occurred (${props.state.cause})`;
   } else {
-    label = 'Almost ready!';
+    label = 'Ready!'
   }
 
   const nodes = props.state.nodes || 0;
@@ -33,9 +46,21 @@ const Loading = props => {
       exit={{ opacity: 0 }}>
 
       <div className="p6o-loading-center">
-        <img 
-          className="logo-image" 
-          src="startup-logo.svg" />
+        {config && !config.welcome_message &&
+          <img 
+            className="logo-image"
+            src="startup-logo.svg" />
+        }
+        
+        {welcome && 
+          <ReactMarkdown className="p6o-loading-welcome-message">
+            {welcome}
+          </ReactMarkdown>
+        }
+
+        <button 
+          disabled={stage !== 'LOADED'}
+          onClick={props.onClose}>Ok</button>
 
         <ProgressBar progress={props.state.progress} />        
         
