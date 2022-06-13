@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
 
 import ProgressBar from './ProgressBar';
+import DatasetDetails from './DatasetDetails';
 
 const Loading = props => {
 
@@ -11,6 +12,11 @@ const Loading = props => {
   const { stage } = props.state;
 
   const [ welcome, setWelcome ] = useState();
+
+  const [ showDetails, setShowDetails ] = useState(false);
+
+  // Show OK button only in loaded state, and if there's a welcome message or dataset details
+  const showOkButton = stage === 'LOADED' && (welcome || props.datasetMetadata.length > 0);
 
   useEffect(() => {
     const welcome = config?.welcome_message;
@@ -21,8 +27,8 @@ const Loading = props => {
   }, [ config?.welcome_message]);
 
   useEffect(() => {
-    // Without welcome message, splash screen should close automatically
-    if (stage === 'LOADED' && !config?.welcome_message)
+    // Without welcome message or dataset details, splash screen should close automatically
+    if (stage === 'LOADED' && !showOkButton)
       setTimeout(() => props.onClose(), 2000);
   }, [stage])
 
@@ -42,6 +48,7 @@ const Loading = props => {
 
   const nodes = props.state.nodes || 0;
   const edges = props.state.edges || 0;
+
 
   return (
     <motion.div 
@@ -71,16 +78,26 @@ const Loading = props => {
             <>
               ({(props.state.nodes || 0).toLocaleString('en')} nodes/{(props.state.edges || 0).toLocaleString('en')} edges)
             </> : <>&nbsp;</>
-          } 
+          } {stage === 'LOADED' && props.datasetMetadata.length > 0 &&
+            <button 
+              className="p6o-show-dataset-metadata"
+              onClick={() => setShowDetails(true)}>
+              Show details
+            </button>
+          }
         </p>
 
-        {welcome && 
-          <button 
-            className="p6o-loading-welcome-close"
-            disabled={stage !== 'LOADED'}
-            onClick={props.onClose}>Ok</button>
-        }
+        <button 
+          className="p6o-loading-welcome-close"
+          disabled={!showOkButton}
+          onClick={props.onClose}>Ok</button>
       </div>
+
+      {showDetails &&
+        <DatasetDetails 
+          data={props.datasetMetadata} 
+          onClose={() => setShowDetails(false)} />
+      }
     </motion.div>
   )
 

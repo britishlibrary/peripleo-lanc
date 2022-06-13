@@ -52,8 +52,8 @@
       color:#fff;
       font-size:16px;
       border:2px solid #fff;
-      padding:8px 14px;
-      margin-top:30px;
+      padding:6px 20px;
+      margin:30px;
       border-radius:4px
     }
 
@@ -84,6 +84,11 @@
 
     .p6o-loading-stage {
       padding-top:14px;      
+    }
+
+    .p6o-show-dataset-metadata {
+      color: #fff;
+      text-decoration: underline;
     }
 
   }
@@ -136,3 +141,5 @@
   }
 
 }
+
+@import './DatasetDetails';

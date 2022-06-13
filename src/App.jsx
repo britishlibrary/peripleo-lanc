@@ -26,6 +26,8 @@ const App = () => {
 
   const [ config, setConfig ] = useState();
 
+  const [ datasetMetadata, setDatasetMetadata ] = useState([]);
+
   const [ loadState, setLoadState ] = useState({ stage: 'LOADING_CONFIG' });
 
   const onConfigLoaded = config => {
@@ -81,8 +83,11 @@ const App = () => {
           });
 
           return store.loadDataset(nextConfig)
-            .then(() =>
-              setLoadState({...loadState, progress: (idx + 1) / data.length }))
+            .then(({ metadata }) => {
+              setLoadState({...loadState, progress: (idx + 1) / data.length });
+              if (metadata)
+                setDatasetMetadata(previous => ([...previous, [ name, metadata ]]));
+            })
             .catch(error => {
               setLoadState({ stage: 'ERROR', cause: 'Dataset: ' + name });
               throw error;
@@ -108,6 +113,7 @@ const App = () => {
           <Loading
             state={loadState} 
             config={config} 
+            datasetMetadata={datasetMetadata}
             onClose={onCloseSplashScreen} />
         }
       </AnimatePresence>

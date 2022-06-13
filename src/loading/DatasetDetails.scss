@@ -1,0 +1,49 @@
+.p6o-loading-dataset-details-container {
+  position:fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  background-color:rgba(0,0,0,0.9);
+  z-index:99999;
+  color:#fff;
+  overflow-y:auto;
+
+  .p6o-loading-dataset-details-close {
+    position:fixed;
+    top:20px;
+    right:20px;
+    font-size:38px;
+    color:#fff;
+  }
+
+  .p6o-loading-dataset-details {
+    font-size: 16px;
+    padding:60px;
+    max-width:1000px;
+    margin:0 auto;
+
+    ul {
+      list-style-type:none;
+      margin:0;
+      padding:0;
+    }
+
+    li {
+      margin-bottom:40px;
+      padding-bottom:20px;
+      border-bottom:1px solid rgba(255, 255, 255, 0.45);
+    }
+
+    p {
+      padding:0;
+      margin:10px 0;
+    }
+
+    a {
+      color:#fff;
+    }
+
+  }
+
+}

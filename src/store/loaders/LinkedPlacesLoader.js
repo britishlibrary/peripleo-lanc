@@ -114,6 +114,18 @@ export const loadLinkedPlaces = (name, url, store) =>
       store.index([...nodes, ...embeddedNodes ]);
       console.timeEnd('Took');
 
-      return { nodes: nodes.length + embeddedNodes.length, edges: edgeCount };
+      return { 
+        // Dataset name,
+        name,
+
+        // Dataset node count
+        nodes: nodes.length + embeddedNodes.length, 
+
+        // Dataset edge count
+        edges: edgeCount,
+
+        // Dataset structured metadata, if any
+        metadata: data.indexing
+      };
     });
 
