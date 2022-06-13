@@ -52,15 +52,6 @@ const App = () => {
       });
   }, []);
 
-  /*
-  useEffect(() => {
-    if (loadState.stage === 'LOADED') {
-      setTimeout(() => 
-        setLoadState({ ...loadState, stage: 'CLOSE' }), 2000);
-    }
-  }, [loadState]);
-  */
-
   const onCloseSplashScreen = () => {
     setLoadState({ ...loadState, stage: 'CLOSE' })
   }

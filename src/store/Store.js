@@ -39,13 +39,6 @@ export default class Store {
         ],
         store: ['dataset']
       },
-      /*
-      tokenize: function(text) {
-        return text
-          .replace(/[.,'"#!$%^&*;:{}=\-_`~()]/g, '')
-          .split(/[\s,-]+/)
-      },
-      */
       tokenize: 'full'
     });
   }
