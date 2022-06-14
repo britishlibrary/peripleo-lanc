@@ -12,6 +12,10 @@ const annotationToNode = (annotation, name) => {
   const geometry = 
     annotation.body.find(b => b.purpose === 'georeferencing')?.geometry;
 
+  const depictions = [{
+    '@id': `${id}.jpg`.replace('/annotation', '/api/annotation')
+  }];
+
   return { 
     id, 
     title,
@@ -20,11 +24,12 @@ const annotationToNode = (annotation, name) => {
       id,
       dataset: name  
     },
-    geometry
+    geometry,
+    depictions
   };
 }
 
-export const loadWebAnnotations = (name, url, store) => 
+export const loadImageAnnotations = (name, url, store) => 
   fetch(url)    
     .then(response => response.json())
     .then(data => {
