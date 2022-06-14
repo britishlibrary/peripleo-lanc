@@ -1,23 +1,7 @@
 {
   "initial_bounds": [-7.9, 49.5, 2.2, 59.4],
   "data": [
-    { "name": "Hollar", "format": "LINKED_PLACES", "src": "data/Hollar-1660.lp.json", "attribution":"Hollar 1660 � <a href=\"https://viaeregiae.org/\" target=\"_blank\"><i>Viae Regiae</i> Contributors</a>" }
+    { "name": "Islandia, Abraham Ortelius", "format": "WEB_ANNOTATION", "src": "data/recogito-sample.jsonld" }
   ],
-  "map_style": "https://api.maptiler.com/maps/outdoor/style.json?key=cqqmcLw28krG9Fl7V3kg",
-  "facets": [
-    "type",
-    "has_image"
-  ],
-  "link_icons": [
-    { "pattern": "www.nationaltrust.org.uk", "img": "logos/www.nationaltrust.org.uk.png", "label": "National Trust" },
-    { "pattern": "www.mola.org.uk", "img": "logos/www.mola.org.uk.png", "label": "MOLA" },
-    { "pattern": "www.historicenvironment.scot", "img": "logos/www.historicenvironment.scot.png", "label": "Historic Environment Scotland" },
-    { "pattern": "www.english-heritage.org.uk", "img": "logos/www.english-heritage.org.uk.png", "label": "English Heritage" },
-    { "pattern": "www.britishmuseum.org", "img": "logos/www.britishmuseum.org.png", "label": "British Museum" },
-    { "pattern": "www.bl.uk", "img": "logos/www.bl.uk.png", "label": "British Library" },
-    { "pattern": "hrp.org.uk", "img": "logos/hrp.org.uk.png", "label": "HRP" },
-    { "pattern": "historicengland.org.uk", "img": "logos/historicengland.org.uk.png", "label": "Historic England" },
-    { "pattern": "finds.org.uk", "img": "logos/finds.org.uk.png", "label": "PAS" },
-    { "pattern": "cadw.gov.wales", "img": "logos/cadw.gov.wales.png", "label": "CADW" }
-  ]
+  "map_style": "https://api.maptiler.com/maps/outdoor/style.json?key=cqqmcLw28krG9Fl7V3kg"
 }

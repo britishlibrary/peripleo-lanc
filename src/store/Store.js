@@ -6,6 +6,7 @@ import FlexSearch from 'flexsearch';
 
 import { getDescriptions } from '.';
 import { loadLinkedPlaces } from './loaders/LinkedPlacesLoader';
+import { loadWebAnnotations } from './loaders/WebAnnotationLoader';
 import { getSuggestedTerms } from './Suggestions';
 
 /**
@@ -43,11 +44,13 @@ export default class Store {
     });
   }
 
-  loadDataset = (config, afterLoad) => {
+  loadDataset = config => {
     const { name, format, src } = config;
 
     if (format === 'LINKED_PLACES') {
-      return loadLinkedPlaces(name, src, this, afterLoad);
+      return loadLinkedPlaces(name, src, this);
+    } else if (format === 'WEB_ANNOTATION') {
+      return loadWebAnnotations(name, src, this);
     } else {
       return new Promise((_, reject) => 
         reject(new Error('Unsupported format: ' + format)));

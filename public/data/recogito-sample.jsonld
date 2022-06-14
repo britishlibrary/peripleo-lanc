@@ -1,0 +1,87 @@
+[ {
+  "@context" : "http://www.w3.org/ns/anno.jsonld",
+  "id" : "https://recogito.pelagios.org/annotation/56ff533f-2978-4b2d-8c88-12648f1c2ad3",
+  "type" : "Annotation",
+  "generator" : {
+    "id" : "https://recogito.pelagios.org/",
+    "type" : "Software",
+    "name" : "Recogito",
+    "homepage" : "https://recogito.pelagios.org/"
+  },
+  "generated" : "2022-06-14T06:30:08+00:00",
+  "body" : [ {
+    "type" : "TextualBody",
+    "value" : "Keflavig",
+    "creator" : "https://recogito.pelagios.org/rainer",
+    "modified" : "2022-06-14T06:29:28+00:00",
+    "purpose" : "transcribing"
+  }, {
+    "type" : "SpecificResource",
+    "value" : "http://sws.geonames.org/3415496",
+    "creator" : "https://recogito.pelagios.org/rainer",
+    "modified" : "2022-06-14T06:29:28+00:00",
+    "purpose" : "identifying"
+  }, {
+    "type" : "Feature",
+    "creator" : "https://recogito.pelagios.org/rainer",
+    "modified" : "2022-06-14T06:29:28+00:00",
+    "purpose" : "georeferencing",
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ -22.56242, 64.00492 ]
+    }
+  } ],
+  "target" : {
+    "source" : "https://recogito.pelagios.org/part/46c9126b-6904-4229-bfc3-06b40d1834f1",
+    "type" : "Image",
+    "label" : "Islandia",
+    "selector" : [ {
+      "type" : "FragmentSelector",
+      "conformsTo" : "http://www.w3.org/TR/media-frags/",
+      "value" : "xywh=pixel:2948,4087,197,173"
+    } ]
+  }
+}, {
+  "@context" : "http://www.w3.org/ns/anno.jsonld",
+  "id" : "https://recogito.pelagios.org/annotation/6855d17f-3465-49e6-afa3-f187546045d8",
+  "type" : "Annotation",
+  "generator" : {
+    "id" : "https://recogito.pelagios.org/",
+    "type" : "Software",
+    "name" : "Recogito",
+    "homepage" : "https://recogito.pelagios.org/"
+  },
+  "generated" : "2022-06-14T06:30:08+00:00",
+  "body" : [ {
+    "type" : "TextualBody",
+    "value" : "Husevig",
+    "creator" : "https://recogito.pelagios.org/rainer",
+    "modified" : "2022-06-14T06:30:01+00:00",
+    "purpose" : "transcribing"
+  }, {
+    "type" : "SpecificResource",
+    "value" : "http://sws.geonames.org/2629833",
+    "creator" : "https://recogito.pelagios.org/rainer",
+    "modified" : "2022-06-14T06:30:01+00:00",
+    "purpose" : "identifying"
+  }, {
+    "type" : "Feature",
+    "creator" : "https://recogito.pelagios.org/rainer",
+    "modified" : "2022-06-14T06:30:01+00:00",
+    "purpose" : "georeferencing",
+    "geometry" : {
+      "type" : "Point",
+      "coordinates" : [ -17.33834, 66.04148 ]
+    }
+  } ],
+  "target" : {
+    "source" : "https://recogito.pelagios.org/part/46c9126b-6904-4229-bfc3-06b40d1834f1",
+    "type" : "Image",
+    "label" : "Islandia",
+    "selector" : [ {
+      "type" : "FragmentSelector",
+      "conformsTo" : "http://www.w3.org/TR/media-frags/",
+      "value" : "xywh=pixel:5600,1413,271,171"
+    } ]
+  }
+} ]
