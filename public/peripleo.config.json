@@ -1,6 +1,6 @@
 {
   "initial_bounds": [-7.9, 49.5, 2.2, 59.4],
-  "ga_id": "G-2HSSF48HYH",
+  "ga_id": "G-XXXXXXXXXX",
   "welcome_message": "welcome.md",
   "data": [
     { "name": "Portable Antiquities Scheme", "format": "LINKED_PLACES", "src": "data/PAS_Warwickshire.lp.json", "logo": "logos/finds.org.uk.png", "attribution":"Findspot Data � <a href=\"https://finds.org.uk/\" target=\"_blank\">Portable Antiquities Scheme</a>" },
