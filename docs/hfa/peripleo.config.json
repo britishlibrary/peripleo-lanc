@@ -64,5 +64,6 @@
     { "pattern": "www.pastplace.org", "img": null, "label": "PastPlace" },
     { "pattern": "www.geonames.org", "img": null, "label": "GeoNames" },
     { "pattern": "www.wikidata.org", "img": null, "label": "Wikidata" }
-  ]
+  ],
+  "welcome_message": "hfa_welcome.md"
 }
