@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Popup } from 'react-map-gl';
+import centroid from '@turf/centroid';
 import { useRecoilValue } from 'recoil';
 
 import { deviceState } from '../../state';
@@ -28,7 +29,8 @@ const SelectionPreview = props => {
 
   const [ reset, setReset ] = useState(props.feature); 
 
-  const { coordinates } = node ? (node.geometry || feature.geometry) : feature.geometry;
+  const geometry = node ? (node.geometry || feature.geometry) : feature.geometry;
+  const { coordinates } = geometry && centroid({ type: 'Feature', geometry }).geometry;
 
   useEffect(() => {
     const cards = props.node ? 

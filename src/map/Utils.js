@@ -1,3 +1,5 @@
+import centroid from '@turf/centroid';
+
 /**
  * TEMPORARY HACK!
  *
@@ -9,8 +11,9 @@ export const collapseColocatedFeatures = (features, precision = 5) => {
   const grouped = {};
 
   features.forEach(f => {
-    // Just a hack for now
-    const [lon, lat] = f.geometry.coordinates;
+    const c = centroid({ ...f, type: 'Feature' });
+
+    const [lon, lat] = c.geometry.coordinates;
     const key = lon.toFixed(precision) + ',' + lat.toFixed(precision);
 
     if (grouped[key]) {

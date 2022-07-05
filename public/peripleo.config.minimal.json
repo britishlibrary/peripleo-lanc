@@ -1,7 +1,7 @@
 {
   "initial_bounds": [-25.98, 63.0, -12.6, 66.9],
   "data": [
-    { "name": "Islandia, Abraham Ortelius", "format": "RECOGITO_IMAGE", "src": "data/recogito-sample.jsonld" }
+    { "name": "Islandia, Abraham Ortelius", "format": "RECOGITO_IMAGE", "src": "data/jmrrtxrsjxplog.jsonld" }
   ],
   "map_style": "https://api.maptiler.com/maps/outdoor/style.json?key=cqqmcLw28krG9Fl7V3kg"
 }
