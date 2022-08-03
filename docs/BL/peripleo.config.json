@@ -7,6 +7,7 @@
   "facets": [
     { "name": "type", "path": ["properties", "_properties_type"] }
   ],
+  "ga_id": "G-7SC1SE9DCY",
   "link_icons": [
     { "pattern": "www.nationaltrust.org.uk", "img": "../logos/www.nationaltrust.org.uk.png", "label": "National Trust" },
     { "pattern": "www.nationaltrustcollections.org.uk", "img": "../logos/www.nationaltrustcollections.org.uk.svg", "label": "National Trust Collections" },
@@ -27,7 +28,7 @@
     { "pattern": "www.geograph.org.uk", "img": "../logos/geograph.org.png", "label": "Geograph" },
     { "pattern": "w3id.org", "img": "../logos/w3id.org.png", "label": "W3ID" },
     { "pattern": "openplaques.org", "img": "../logos/openplaques.png", "label": "Open Plaques" },
-    { "pattern": "artuk.org", "img": "../logos/ArtUK.org.png", "label": "Art UK" }, 
+    { "pattern": "artuk.org", "img": "../logos/ArtUK.org.png", "label": "Art UK" },
     { "pattern": "en.wikipedia.org", "img": "../logos/en.wikipedia.org.png", "label": "Wikipedia" },
     { "pattern": "www.pastplace.org", "img": "../logos/broken-link.png", "label": "PastPlace" },
     { "pattern": "www.geonames.org", "img": "../logos/www.geonames.org.svg", "label": "GeoNames" },
