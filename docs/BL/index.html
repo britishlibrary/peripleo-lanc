@@ -36,6 +36,7 @@
         bottom: 20px;
         box-shadow: 0px 0px 15px #cccccc;
         padding: 5px 10px;
+        visibility: hidden;
       }
         #cookiePopup p{
         text-align: left;
@@ -109,5 +110,10 @@
       }
     }
     checkCookie();
+    const timeout = document.getElementById('cookiePopup')
+    setTimeout(hideElement, 3000) //milliseconds until timeout//
+    function hideElement() {
+      timeout.style.visibility = 'visible'
+    }
   </script>
 </html>
