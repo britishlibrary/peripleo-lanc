@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head> 
+  <head>
     <title>Peripleo LaNC</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -26,10 +26,94 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
     <script defer="defer" src="../peripleo-lanc.js"></script>
-  </head>
 
+    <style>
+     #cookiePopup {
+        background: #fff;
+        width: 25%;
+        position: fixed;
+        left: 10px;
+        bottom: 20px;
+        box-shadow: 0px 0px 15px #cccccc;
+        padding: 5px 10px;
+        visibility: hidden;
+      }
+        #cookiePopup p{
+        text-align: left;
+        font-size: 15px;
+        color: #5c5c5c;
+      }
+      #cookiePopup button{
+        width: 100%;
+        border: navajowhite;
+        background: #5c5c5c;
+        padding: 5px;
+        border-radius: 10px;
+        color: #fff;
+      }
+    </style>
+  </head>
 
   <body>
     <div id="app"></div>
+    <div id="cookiePopup">
+      <h4>Cookie Consent</h4>
+      <p>We use cookies to enhance your browsing experience and analyse traffic. By clicking accept you consent to our use of cookies.</p>
+      <button id="acceptCookie">Accept</button>
+    </div>
   </body>
+  <script type="text/javascript">
+    // set cookie according to you
+    var cookieName= "peripleoAnalytics";
+    var cookieValue="analyticsConsent";
+    var cookieExpireDays= 400;
+    // when users click accept button
+    let acceptCookie= document.getElementById("acceptCookie");
+    acceptCookie.onclick= function(){
+      createCookie(cookieName, cookieValue, cookieExpireDays);
+    }
+    // function to set cookie in web browser
+    let createCookie= function(cookieName, cookieValue, cookieExpireDays){
+      let currentDate = new Date();
+      currentDate.setTime(currentDate.getTime() + (cookieExpireDays*24*60*60*1000));
+      let expires = "expires=" + currentDate.toGMTString();
+      document.cookie = cookieName + "=" + cookieValue + ";" + expires + ";path=/";
+      if(document.cookie) {
+        document.getElementById("cookiePopup").style.display = "none";
+      } else {
+        alert("Unable to set cookie. Please allow all cookies site from cookie setting of your browser");
+      }
+    }
+    // get cookie from the web browser
+    let getCookie = function(cookieName){
+      let name = cookieName + "=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(';');
+      for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+    // check cookie is set or not
+    let checkCookie= function(){
+      let check=getCookie(cookieName);
+      if (check=="") {
+        document.getElementById("cookiePopup").style.display = "block";
+      } else {
+        document.getElementById("cookiePopup").style.display = "none";
+      }
+    }
+    checkCookie();
+    const timeout = document.getElementById('cookiePopup')
+    setTimeout(hideElement, 3000) //milliseconds until timeout//
+    function hideElement() {
+      timeout.style.visibility = 'visible'
+    }
+  </script>
 </html>
