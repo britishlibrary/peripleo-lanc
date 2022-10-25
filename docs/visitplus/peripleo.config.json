@@ -8,6 +8,7 @@
     { "name": "custodian", "path": ["relations", "label"], "condition": [ "relationType", "http://vocab.getty.edu/page/aat/300160390" ] },
     "type"
   ],
+  "ga_id": "G-PKRP6SQKYW",
   "link_icons": [
     { "pattern": "www.nationaltrust.org.uk", "img": "../logos/www.nationaltrust.org.uk.png", "label": "National Trust" },
     { "pattern": "www.nationaltrustcollections.org.uk", "img": "../logos/www.nationaltrustcollections.org.uk.svg", "Label": "National Trust" },
@@ -32,7 +33,7 @@
     { "pattern": "w3id.org/locolligo/Hollar-1660", "img": "../logos/w3id.org.png", "label": "W3ID" },
     { "pattern": "w3id.org", "img": null, "label": "W3ID" },
     { "pattern": "openplaques.org", "img": "../logos/openplaques.png", "label": "Open Plaques" },
-    { "pattern": "artuk.org", "img": "../logos/ArtUK.org.png", "label": "Art UK" }, 
+    { "pattern": "artuk.org", "img": "../logos/ArtUK.org.png", "label": "Art UK" },
     { "pattern": "en.wikipedia.org", "img": "../logos/en.wikipedia.org.png", "label": "Wikipedia" },
     { "pattern": "www.pastplace.org", "img": null, "label": "PastPlace" },
     { "pattern": "emew.io", "img": null, "label": "EMEW" },
