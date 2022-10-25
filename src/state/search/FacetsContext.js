@@ -28,7 +28,7 @@ export const FacetsContextProvider = props => {
         // Built-in facet
         return DEFAULT_FACETS.find(f => f.name === definition);
       } else if (definition.name && definition.path) {
-        return new Facet(definition.name, definition.path, definition.condition);
+        return new Facet(definition.name, definition.path, definition.condition, definition.dynamicCondition);
       }
     }));
   }
