@@ -1,0 +1,2991 @@
+{
+    "@id": "https://mark16.sib.swiss",
+    "type": "FeatureCollection",
+    "@context": "https://raw.githubusercontent.com/LinkedPasts/linked-places/master/linkedplaces-context-v1.1.jsonld",
+    "features": [
+        {
+            "@id": "https://www.wikidata.org/wiki/Q185362",
+            "uuid": "Q185362",
+            "type": "Feature",
+            "properties": {
+                "title": "Saint Catherine Monastery",
+                "ccodes": ["EG"],
+                "country": "Egypt"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    33.975561,
+                    28.555831
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Greek Orthodox monastery at the foot of Mount Sinai, Egypt",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Saint Catherine's Monastery, Mount Sinai",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300000641",
+                    "sourceLabel": "monasteries (built complexes)",
+                    "label": "monastery"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "http://www.geonames.org/350564/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://pleiades.stoa.org/places/746826"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.a46c8kd3",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=U1lT",
+                    "title": "syS",
+                    "content": "f.23v",
+                    "lang": "Syriac (Classical)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "300",
+                                    "latest": "499"
+                                }
+                            }
+                        ],
+                        "label": "4th-5th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/11280/10361034",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0ExMjEw",
+                    "title": "GA 1210",
+                    "content": "f.104v, f.105r and f.105v",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "1000",
+                                    "latest": "1099"
+                                }
+                            }
+                        ],
+                        "label": "11th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/11280/8980d2164",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0ExMTky",
+                    "title": "GA 1192",
+                    "content": "f.128r, f.128v and f.129r ",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "1000",
+                                    "latest": "1099"
+                                }
+                            }
+                        ],
+                        "label": "11th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/11280/aed3c04e",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0EwODM=",
+                    "title": "GA 083",
+                    "content": "page 70 and page 71",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "500",
+                                    "latest": "699"
+                                }
+                            }
+                        ],
+                        "label": "6th-7th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/11280/9506e5dc",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0ExMjMw",
+                    "title": "GA 1230",
+                    "content": "f.146v, f.147r, f.147v and f.148r",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {"in": "1124"}
+                            }
+                        ],
+                        "label": "1124 CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q81164649",
+            "uuid": "Q81164649",
+            "type": "Feature",
+            "properties": {
+                "title": "Universitätsbibliothek Basel",
+                "ccodes": ["CH"],
+                "country": "Switzerland"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.58082,
+                    47.55977
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Archival institution in Switzerland",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Basel University Library",
+                    "lang": "en"
+                },
+                {
+                    "toponym": "Universitätsbibliothek Basel",
+                    "lang": "de"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300343392",
+                    "sourceLabel": "academic libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.442azp39",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0ExNDIw",
+                    "title": "GA 1420",
+                    "content": "f. 47r and f. 47v",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "1200",
+                                    "latest": "1299"
+                                }
+                            }
+                        ],
+                        "label": "13th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.41643ld6",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0Ey",
+                    "title": "GA 2",
+                    "content": "f.117v, f.118r and f.118v",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "1000",
+                                    "latest": "1199"
+                                }
+                            }
+                        ],
+                        "label": "11th-12th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/11280/e795e203",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0Ex",
+                    "title": "GA 1",
+                    "content": "f.220r and f.220v",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "900",
+                                    "latest": "999"
+                                }
+                            }
+                        ],
+                        "label": "10th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q578460",
+            "uuid": "Q578460",
+            "type": "Feature",
+            "properties": {
+                "title": "Biblioteca Nazionale Marciana",
+                "ccodes": ["IT"],
+                "country": "Italy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.339167,
+                    45.433333
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "library in Venice, Italy",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Biblioteca Nazionale Marciana",
+                    "lang": "en"
+                },
+                {
+                    "toponym": "Biblioteca nazionale Marciana",
+                    "lang": "it"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300343387",
+                    "sourceLabel": "national libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://www.geonames.org/7910626"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/156622926/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/names/n80040307.html"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/11280/f936e1cc",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0E4ODg=",
+                    "title": "GA 888",
+                    "content": "f. 230v, f.231r and f.231v",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "1300",
+                                    "latest": "1399"
+                                }
+                            }
+                        ],
+                        "label": "14th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q2201144",
+            "uuid": "Q2201144",
+            "type": "Feature",
+            "properties": {
+                "title": "Biblioteca nazionale universitaria di Torino",
+                "ccodes": ["IT"],
+                "country": "Italy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.68633,
+                    45.068684
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Library",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "National University Library of Turin",
+                    "lang": "en"
+                },
+                {
+                    "toponym": "Biblioteca nazionale universitaria di Torino",
+                    "lang": "it"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300343387",
+                    "sourceLabel": "national libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://www.geonames.org/6697883"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/135605580/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n82059101"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/11280/d49ec78a",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=Vkwx",
+                    "title": "VL 1",
+                    "content": "f.40r, f.40v and f.41r",
+                    "lang": "Latin",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "380",
+                                    "latest": "420"
+                                }
+                            }
+                        ],
+                        "label": "380-420 CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q193563",
+            "uuid": "Q193563",
+            "type": "Feature",
+            "properties": {
+                "title": "Bibliothèque nationale de France",
+                "ccodes": ["FR"],
+                "country": "France"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.375833,
+                    48.833611
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "National Library of France",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Bibliothèque nationale de France",
+                    "lang": "en"
+                },
+                {
+                    "toponym": "Bibliothèque nationale de France",
+                    "lang": "fr"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300343387",
+                    "sourceLabel": "national libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://www.geonames.org/6452876"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/137156173/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/no95028191"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.04dbyiri",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=U0E0NzQ=",
+                    "title": "sa 474",
+                    "content": "f.26hr and f.26hv",
+                    "lang": "Coptic",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "800",
+                                    "latest": "999"
+                                }
+                            }
+                        ],
+                        "label": "9th-10th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.d3d1coro",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0EwOTk=",
+                    "title": "GA 099",
+                    "content": "page 161 and page 162",
+                    "lang": [
+                        "Coptic",
+                        "Greek (Ancient)"
+                    ],
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "600",
+                                    "latest": "699"
+                                }
+                            }
+                        ],
+                        "label": "7th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.7fdcvw5z",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0EyNzQ=",
+                    "title": "GA 274",
+                    "content": "f.103v, f.104r and f.104v",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "900",
+                                    "latest": "999"
+                                }
+                            }
+                        ],
+                        "label": "10th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.540bgjjd",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=RVRIMg==",
+                    "title": "Eth 2",
+                    "content": "f.100v, f.101r, f.101v and f.102r",
+                    "lang": "Ethiopic (Classical)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "1300",
+                                    "latest": "1399"
+                                }
+                            }
+                        ],
+                        "label": "14th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/11280/aae91e3f",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0E1Nzk=",
+                    "title": "GA 579",
+                    "content": "f.69v, f.70r and f.70v",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "1200",
+                                    "latest": "1299"
+                                }
+                            }
+                        ],
+                        "label": "13th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/11280/4242f209",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0EwMTk=",
+                    "title": "GA 019",
+                    "content": "f.112v, f.113r, f.113v and f.114r",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "700",
+                                    "latest": "799"
+                                }
+                            }
+                        ],
+                        "label": "8th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/11280/fd73c95e",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0EwNA==",
+                    "title": "GA 04",
+                    "content": "f.151v and f.148r",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "400",
+                                    "latest": "499"
+                                }
+                            }
+                        ],
+                        "label": "5th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/11280/0eb228ed",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0EzMDQ=",
+                    "title": "GA 304",
+                    "content": "f.240r, f.240v and f.241r",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "1100",
+                                    "latest": "1199"
+                                }
+                            }
+                        ],
+                        "label": "12th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q82133",
+            "uuid": "Q82133",
+            "type": "Feature",
+            "properties": {
+                "title": "Bodleian Library",
+                "ccodes": ["UK"],
+                "country": "United Kingdom"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -1.255139,
+                    51.753972
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Main research library of the University of Oxford",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Bodleian Library",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300343396",
+                    "sourceLabel": "research libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/129788129/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n80020306"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.25fcevj8",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=Qk8y",
+                    "title": "bo 2",
+                    "content": "f.193v, f.194r, f.194v, f.195r, f.195v and f.196r",
+                    "lang": [
+                        "Arabic",
+                        "Coptic"
+                    ],
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {"in": "1174"}
+                            }
+                        ],
+                        "label": "1174 CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q23308",
+            "uuid": "Q23308",
+            "type": "Feature",
+            "properties": {
+                "title": "British Library",
+                "ccodes": ["UK"],
+                "country": "United Kingdom"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -0.126944,
+                    51.529444
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "National library of the United Kingdom",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "British Library",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300343387",
+                    "sourceLabel": "national libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://www.geonames.org/6944331"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/121814978/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n81139951"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.23b72o82",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=Qk8xMw==",
+                    "title": "bo 13",
+                    "content": "f.212r, f.212v, f.213r, f.213v, f.214r",
+                    "lang": [
+                        "Arabic",
+                        "Coptic"
+                    ],
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {"in": "1208"}
+                            }
+                        ],
+                        "label": "1208 CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.2dfa3k8i",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=U1lD",
+                    "title": "syC",
+                    "content": "f.39r",
+                    "lang": "Syriac (Classical)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "400",
+                                    "latest": "499"
+                                }
+                            }
+                        ],
+                        "label": "5th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.f87asw9i",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=RVRIMQ==",
+                    "title": "Eth 1",
+                    "content": "f.68r, f.68v and f.69r",
+                    "lang": "Ethiopic (Classical)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "1700",
+                                    "latest": "1799"
+                                }
+                            }
+                        ],
+                        "label": "18th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/11280/0091fbae",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0EwMg==",
+                    "title": "GA 02",
+                    "content": "f.42r and f.42v",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "400",
+                                    "latest": "499"
+                                }
+                            }
+                        ],
+                        "label": "5th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/11280/97f4cc8a",
+                    "@id": "https://mr-mark16.sib.swiss/show?id=R0EwMQ==",
+                    "title": "GA 01",
+                    "content": "f. 227v and f. 228r",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "300",
+                                    "latest": "399"
+                                }
+                            }
+                        ],
+                        "label": "4th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q1028334",
+            "uuid": "Q1028334",
+            "type": "Feature",
+            "properties": {
+                "title": "Cambridge University Library",
+                "ccodes": ["UK"],
+                "country": "United Kingdom"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    0.108056,
+                    52.205167
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Main research library of the University of Cambridge in England",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Cambridge University Library",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300343392",
+                    "sourceLabel": "academic libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/140790558/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n81070793"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.5508o345",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0EwNQ==",
+                    "title": "GA 05",
+                    "content": "f.346v, f.347r, f.347v, f.348r and f.348v",
+                    "lang": [
+                        "Greek (Ancient)",
+                        "Latin"
+                    ],
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "400",
+                                    "latest": "499"
+                                }
+                            }
+                        ],
+                        "label": "5th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q1475704",
+            "uuid": "Q1475704",
+            "type": "Feature",
+            "properties": {
+                "title": "Rabban Hormizd Monastery",
+                "ccodes": ["IQ"],
+                "country": "Iraq"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    43.114444,
+                    36.749167
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Chaldean Antonian Order Library, St. Hormizd Monastery (Alqosh, Irak)",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Chaldean Antonian Order Library, St. Hormizd Monastery (Alqosh, Irak)",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300000641",
+                    "sourceLabel": "monasteries (built complexes)",
+                    "label": "monastery"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/128078186/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n2010006076"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.b93c5jf3",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=U1lINg==",
+                    "title": "syH6",
+                    "content": "f.98r and f.98v",
+                    "lang": "Syriac (Classical)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "800",
+                                    "latest": "1099"
+                                }
+                            }
+                        ],
+                        "label": "9th-10th or 10th-11th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q391976",
+            "uuid": "Q391976",
+            "type": "Feature",
+            "properties": {
+                "title": "Chester Beatty Library",
+                "ccodes": ["IE"],
+                "country": "Ireland"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -6.267,
+                    53.342
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Archive in Dublin, Ireland",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Chester Beatty Library",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300312241",
+                    "sourceLabel": "libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/127596636/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n80050107"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.cfac1n0c",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0EyNjA0",
+                    "title": "GA 2604",
+                    "content": "f.176v, f.177r, f.177v and f.178r",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "1100",
+                                    "latest": "1199"
+                                }
+                            }
+                        ],
+                        "label": "12th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.69c54gki",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=QVJNMjUy",
+                    "title": "arm 252",
+                    "content": "f.120v and f.121r",
+                    "lang": "Armenian (Classical)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {"in": "1174"}
+                            }
+                        ],
+                        "label": "1174 CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.f3f87nzv",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=U1lINQ==",
+                    "title": "syH5",
+                    "content": "f.113v, f.114r and f.114v",
+                    "lang": "Syriac (Classical)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {"in": "1177"}
+                            }
+                        ],
+                        "label": "1177 CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q5312898",
+            "uuid": "Q5312898",
+            "type": "Feature",
+            "properties": {
+                "title": "Duke University Libraries",
+                "ccodes": ["US"],
+                "country": "United States"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -78.938356,
+                    36.003104
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Academic library system of Duke University, North Carolina",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Duke University Libraries",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300343392",
+                    "sourceLabel": "academic libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/159382949/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n85007446"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.602289z8",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=U0EzNjY=",
+                    "title": "sa 366",
+                    "content": "f.814r and f.814v (top fragment)",
+                    "lang": "Coptic",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {"earliest": "600"}
+                            }
+                        ],
+                        "label": "not before 600 CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q1075126",
+            "uuid": "Q1075126",
+            "type": "Feature",
+            "properties": {
+                "title": "Freer Gallery of Art",
+                "ccodes": ["US"],
+                "country": "United States"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -77.026446,
+                    38.887983
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Art museum in Washington, D.C.",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Freer Gallery of Art",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300264847",
+                    "sourceLabel": "art museums (buildings)",
+                    "label": "art museum"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/159382949/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n85007446"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.4ffaz7d0",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0EwMzI=",
+                    "title": "GA 032",
+                    "content": "page 369, page 370, page 371 and page 372",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "375",
+                                    "latest": "425"
+                                }
+                            }
+                        ],
+                        "label": "late 4th-early 5th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q1273306",
+            "uuid": "Q1273306",
+            "type": "Feature",
+            "properties": {
+                "title": "E-codices",
+                "ccodes": ["CH"],
+                "country": "Switzerland"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.15,
+                    46.8
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Virtual library of manuscripts in Switzerland",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "E-codices",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300391336",
+                    "sourceLabel": "digital libraries",
+                    "label": "library"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.ba7e19yf",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=QVJCMw==",
+                    "title": "arb 3",
+                    "content": "page 115 and page 116",
+                    "lang": "Arabic",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {"in": "1723"}
+                            }
+                        ],
+                        "label": "1723 CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q5762205",
+            "uuid": "Q5762205",
+            "type": "Feature",
+            "properties": {
+                "title": "Hill Museum & Manuscript Library (Collegeville, Minnesota)",
+                "ccodes": ["US"],
+                "country": "United States"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -94.3925,
+                    45.5815
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "HMML is a museum and manuscript library located at Saint John's University, Minnesota that holds the world\u2019s largest archive of manuscript photographs in both microfilm and digital format",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Hill Museum & Manuscript Library (Collegeville, Minnesota)",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300312241",
+                    "sourceLabel": "libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/130545939/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/no2005044796"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.daba634n",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=RVRIMw==",
+                    "title": "Eth 3",
+                    "content": "f. 179r, f. 179v, f. 180r and f. 180v",
+                    "lang": "Ethiopic (Classical)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "1280",
+                                    "latest": "1281"
+                                }
+                            }
+                        ],
+                        "label": "1280-1281 CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "virtual",
+                    "relationTo": "https://nakala.fr/10.34847/nkl.afbci193",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=RVRINA==",
+                    "title": "Eth 4",
+                    "content": "f.168v, f.169r, f.169v and f. 170r",
+                    "lang": "Ethiopic (Classical)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "1339",
+                                    "latest": "1350"
+                                }
+                            }
+                        ],
+                        "label": "1339-1350 CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q2567785",
+            "uuid": "Q2567785",
+            "type": "Feature",
+            "properties": {
+                "title": "National Archives and Library of Ethiopia",
+                "ccodes": ["ET"],
+                "country": "Ethiopia"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    38.75,
+                    9.01806
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "National archive and library",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "National Archives and Library of Ethiopia",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300343387",
+                    "sourceLabel": "national libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/143340671/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/no00074874"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical",
+                    "relationTo": "https://nakala.fr/10.34847/nkl.afbci193",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=RVRINA==",
+                    "title": "Eth 4",
+                    "content": "f.168v, f.169r, f.169v and f. 170r",
+                    "lang": "Ethiopic (Classical)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "1339",
+                                    "latest": "1350"
+                                }
+                            }
+                        ],
+                        "label": "1339-1350 CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q6088902",
+            "uuid": "Q6088902",
+            "type": "Feature",
+            "properties": {
+                "title": "Istifanos Monastery",
+                "ccodes": ["ET"],
+                "country": "Ethipoia"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    39.6975,
+                    11.3387
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Church Monastery in Ethiopia. Also known as: Hayq St.Estefanos Abune Iyasus Mo'a Monastery. Ḥayq Esṭifānos Monastery, Wallo province, Ethiopia ",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Istifanos Monastery",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300000641",
+                    "sourceLabel": "monasteries (built complexes)",
+                    "label": "monastery"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://www.geonames.org/334824"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical",
+                    "relationTo": "https://doi.org/10.34847/nkl.daba634n",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=RVRIMw==",
+                    "title": "Eth 3",
+                    "content": "f. 179r, f. 179v, f. 180r and f. 180v",
+                    "lang": "Ethiopic (Classical)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "1280",
+                                    "latest": "1281"
+                                }
+                            }
+                        ],
+                        "label": "1280-1281 CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q22720",
+            "uuid": "Q22720",
+            "type": "Feature",
+            "properties": {
+                "title": "Speyer Cathedral",
+                "ccodes": ["DE"],
+                "country": "Germany"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.4425,
+                    49.317222
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Cathedral in Speyer, Germany",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Speyer Cathedral",
+                    "lang": "en"
+                },
+                {
+                    "toponym": "Speyer Dom",
+                    "lang": "de"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300007501",
+                    "sourceLabel": "cathedrals (works by context)",
+                    "label": "cathedral"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://www.geonames.org/334824"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "wd:P1830",
+                    "label": "ownership",
+                    "relationTo": "https://nakala.fr/10.34847/nkl.3068hb8i",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R09UMQ==",
+                    "content": "f.188v",
+                    "title": "Got 1",
+                    "lang": "Gothic",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "500",
+                                    "latest": "599"
+                                }
+                            }
+                        ],
+                        "label": "6th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q1325163",
+            "uuid": "Q1325163",
+            "type": "Feature",
+            "properties": {
+                "title": "Historical Museum of the Palatinate",
+                "ccodes": ["DE"],
+                "country": "Germany"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.44157,
+                    49.3157
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Museum in SPeyer, Germany (Historisches Museum der Pfalz)",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Historical Museum of the Palatinate",
+                    "lang": "en"
+                },
+                {
+                    "toponym": "Historisches Museum der Pfalz",
+                    "lang": "de"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300312304",
+                    "sourceLabel": "history museums (institutions)",
+                    "label": "museum"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/122897337/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n86067531"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical",
+                    "relationTo": "https://nakala.fr/10.34847/nkl.3068hb8i",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R09UMQ==",
+                    "content": "f.188v",
+                    "title": "Got 1",
+                    "lang": "Gothic",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "500",
+                                    "latest": "599"
+                                }
+                            }
+                        ],
+                        "label": "6th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q2901382",
+            "uuid": "Q2901382",
+            "type": "Feature",
+            "properties": {
+                "title": "Uppsala University Library",
+                "ccodes": ["SE"],
+                "country": "Sweden"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    17.6323,
+                    59.8558
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Academic library at Uppsala University in Uppsala, Sweden",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Uppsala University Library",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300343392",
+                    "sourceLabel": "academic libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/139714542/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n50060405"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://nakala.fr/10.34847/nkl.3068hb8i",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R09UMQ==",
+                    "content": "f.187r, f.187v, f.188r",
+                    "title": "Got 1",
+                    "lang": "Gothic",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "500",
+                                    "latest": "599"
+                                }
+                            }
+                        ],
+                        "label": "6th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q3152521",
+            "uuid": "Q3152521",
+            "type": "Feature",
+            "properties": {
+                "title": "MARK16",
+                "ccodes": ["CH"],
+                "country": "Switzerland"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    6.575103,
+                    46.52226
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "test",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "MARK16",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300391336",
+                    "sourceLabel": "digital libraries",
+                    "label": "library"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "virtual",
+                    "relationTo": "https://nakala.fr/10.34847/nkl.3068hb8i",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R09UMQ==",
+                    "content": "f.188v",
+                    "title": "Got 1",
+                    "lang": "Gothic",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "500",
+                                    "latest": "599"
+                                }
+                            }
+                        ],
+                        "label": "6th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "virtual",
+                    "relationTo": "https://doi.org/11280/e55e51a5",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0EyOTM3",
+                    "content": "f.94v and f.95r",
+                    "title": "GA 2937",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "900",
+                                    "latest": "999"
+                                }
+                            }
+                        ],
+                        "label": "10th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q213678",
+            "uuid": "Q213678",
+            "type": "Feature",
+            "properties": {
+                "title": "Vatican Library",
+                "ccodes": ["IT"],
+                "country": "Italy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.454444,
+                    41.904722
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Library of the Holy See",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Vatican Library",
+                    "lang": "en"
+                },
+                {
+                    "toponym": "Biblioteca Apostolica Vaticana",
+                    "lang": "it"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300343387",
+                    "sourceLabel": "national libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/146085455/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n80050101"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/11280/1d77ee0b",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0EwMw==",
+                    "content": "page 1303",
+                    "title": "GA 03",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "300",
+                                    "latest": "399"
+                                }
+                            }
+                        ],
+                        "label": "4th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.0eedelvl",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=U1lINA==",
+                    "content": "f.80r and f.80v",
+                    "title": "syH4",
+                    "lang": "Syriac (Classical)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {"in": "858"}
+                            }
+                        ],
+                        "label": "858 CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.0eedelvl",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=QVJCMg==",
+                    "content": "f.74v",
+                    "title": "arb 2",
+                    "lang": "Arabic",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "800",
+                                    "latest": "1199"
+                                }
+                            }
+                        ],
+                        "label": "9th-12th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q1967876",
+            "uuid": "Q1967876",
+            "type": "Feature",
+            "properties": {
+                "title": "National Library of the Czech Republic",
+                "ccodes": ["CZ"],
+                "country": "Czech Republic"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    14.415833,
+                    50.086667
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Central library of the Czech Republic (Národní knihovna České republiky)",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "National Library of the Czech Republic",
+                    "lang": "en"
+                },
+                {
+                    "toponym": "Národní knihovna České republiky",
+                    "lang": "cz"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300343387",
+                    "sourceLabel": "national libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/265219579/"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.eecb9te7",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0ExNDIy",
+                    "content": "f.177v, f.178r, f.178v, f.179r and f.179v",
+                    "title": "GA 1422",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "900",
+                                    "latest": "1099"
+                                }
+                            }
+                        ],
+                        "label": "10th-11th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q267566",
+            "uuid": "Q267566",
+            "type": "Feature",
+            "properties": {
+                "title": "National Library of Russia",
+                "ccodes": ["RU"],
+                "country": "Russia"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    30.335611,
+                    59.9335
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "One of the national libraries in Saint Petersburg, Russia",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "National Library of Russia",
+                    "lang": "en"
+                },
+                {
+                    "toponym": "Saltykov-Shchedrin Library",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300343387",
+                    "sourceLabel": "national libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/127114742/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/nr93024024"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.cc57xr94",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=U0xBVjE=",
+                    "content": "f.128r and f.128v",
+                    "title": "Slav 1",
+                    "lang": "Glagolitic",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": 900,
+                                    "latest": 1099
+                                }
+                            }
+                        ],
+                        "label": "10th-11th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.5fac11f0",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=RkEzMg==",
+                    "content": "f.4r, f.4v and f.5r",
+                    "title": "fa 32",
+                    "lang": "Coptic",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": 800,
+                                    "latest": 999
+                                }
+                            }
+                        ],
+                        "label": "9th-10th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q1467610",
+            "uuid": "Q1467610",
+            "type": "Feature",
+            "properties": {
+                "title": "National Library of Greece",
+                "ccodes": ["GR"],
+                "country": "Greece"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.692222,
+                    37.941389
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Library in Athens",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "National Library of Greece",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300343387",
+                    "sourceLabel": "national libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/136996034/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n85048742"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.cb56206p",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0E4MDA=",
+                    "content": "f.104v, f.105r and f.105v",
+                    "title": "GA 800",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": 1100,
+                                    "latest": 1199
+                                }
+                            }
+                        ],
+                        "label": "12th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q16532475",
+            "uuid": "Q16532475",
+            "type": "Feature",
+            "properties": {
+                "title": "Capitular Library of Vercelli",
+                "ccodes": ["IT"],
+                "country": "Italy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.423029,
+                    45.329716
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Research library in Vercelli, Italy (Biblioteca e Archivio Capitolare di Vercelli)",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Capitular Library of Vercelli",
+                    "lang": "en"
+                },
+                {
+                    "toponym": "Biblioteca e Archivio Capitolare di Vercelli",
+                    "lang": "it"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300312242",
+                    "sourceLabel": "archives (institutions)",
+                    "label": "archive"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/124052626/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/names/no2004004627.html"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.56c08668",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=Vkwz",
+                    "content": "f.633 and f.634",
+                    "title": "VL 3",
+                    "lang": "Latin",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "300",
+                                    "latest": "399"
+                                }
+                            }
+                        ],
+                        "label": "4th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q689896",
+            "uuid": "Q689896",
+            "type": "Feature",
+            "properties": {
+                "title": "Abbey library of St. Gallen",
+                "ccodes": ["CH"],
+                "country": "Switzerland"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    9.3764,
+                    47.4228
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Monastery library in St. Gallen, Switzerland",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Abbey library of St. Gallen",
+                    "lang": "en"
+                },
+                {
+                    "toponym": "Stiftsbibliothek St. Gallen",
+                    "lang": "de"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300312241",
+                    "sourceLabel": "libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/133462571/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n80104321"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.0a12ue14",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=VkwxNg==",
+                    "content": "p.87, p.88 and p.91",
+                    "title": "VL 16",
+                    "lang": "Latin",
+                    "when": [
+                        {
+                            "timespans": [
+                                {
+                                    "start": {
+                                        "earliest": "400",
+                                        "latest": "499"
+                                    }
+                                },
+                                {
+                                    "start": {
+                                        "earliest": "600",
+                                        "latest": "699"
+                                    }
+                                }
+                            ],
+                            "label": "5th century CE (p.87 and p.88) and 7th century CE (p.91)"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q546516",
+            "uuid": "Q546516",
+            "type": "Feature",
+            "properties": {
+                "title": "Great Lavra",
+                "ccodes": ["GR"],
+                "country": "Greece"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    24.382728,
+                    40.170876
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Monastery at Mount Athos",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Great Lavra",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300000641",
+                    "sourceLabel": "monasteries (built complexes)",
+                    "label": "monastery"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/122904704/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n82028238"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://nakala.fr/10.34847/nkl.3068hb8i",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0EwNDQ=",
+                    "content": "f.14r, f.14v and f.15r",
+                    "title": "GA 044",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "700",
+                                    "latest": "899"
+                                }
+                            }
+                        ],
+                        "label": "8th-9th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q1322278",
+            "uuid": "Q1322278",
+            "type": "Feature",
+            "properties": {
+                "title": "Matenadaran",
+                "ccodes": ["ARM"],
+                "country": "Armenia"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    44.52113,
+                    40.19207
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Repository of ancient manuscripts and documents in Armenia",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Matenadaran",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300312241",
+                    "sourceLabel": "libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/153334639/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n80144915"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.895ag279",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=QVJNNzI0",
+                    "content": "f.110r, f.110v, f.111r and f.111v",
+                    "title": "arm 724",
+                    "lang": "Armenian (Classical)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {"in": 989}
+                            }
+                        ],
+                        "label": "989 CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q2496326",
+            "uuid": "Q2496326",
+            "type": "Feature",
+            "properties": {
+                "title": "University Library of the LMU Munich",
+                "ccodes": ["DE"],
+                "country": "Germany"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    11.5807,
+                    48.15
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Building in Maxvorstadt, Upper Bavaria, Germany",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "University Library of the LMU Munich",
+                    "lang": "en"
+                },
+                {
+                    "toponym": "Universitätsbibliothek der LMU München",
+                    "lang": "de"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300343392",
+                    "sourceLabel": "academic libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/146551110/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n50064504"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.e1e1j658",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0EwMzM=",
+                    "content": "f.109v",
+                    "title": "GA 033",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "900",
+                                    "latest": "999"
+                                }
+                            }
+                        ],
+                        "label": "10th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q2496308",
+            "uuid": "Q2496308",
+            "type": "Feature",
+            "properties": {
+                "title": "University Library Freiburg",
+                "ccodes": ["DE"],
+                "country": "Germany"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.845278,
+                    47.993889
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Library in the University of Freiburg, Germany",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "University Library Freiburg",
+                    "lang": "en"
+                },
+                {
+                    "toponym": "Universitätsbibliothek Freiburg",
+                    "lang": "de"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300343392",
+                    "sourceLabel": "academic libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/143595522/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n50061011"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.3410m8px",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=U0ExNEw=",
+                    "content": "f.4r, f.4v, f.5r and f.5v",
+                    "title": "sa 14L",
+                    "lang": "Coptic",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "600",
+                                    "latest": "799"
+                                }
+                            }
+                        ],
+                        "label": "7th-8th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/11280/99d3b2ea",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0FMMTYwMg==",
+                    "content": "f.2r, f.2v, f.3r, f.3v and f.4r",
+                    "title": "GA l 1602",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "700",
+                                    "latest": "799"
+                                }
+                            }
+                        ],
+                        "label": "8th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q853354",
+            "uuid": "Q853354",
+            "type": "Feature",
+            "properties": {
+                "title": "Iviron Monastery",
+                "ccodes": ["GR"],
+                "country": "Greece"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    24.284888,
+                    40.245515
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Eastern Orthodox monastery on Mount Athos, Greece",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Iviron Monastery",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300000641",
+                    "sourceLabel": "monasteries (built complexes)",
+                    "label": "monastery"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/144318811/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n85264344"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.3ba82t98",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0VPMw==",
+                    "content": "f.112v and f.113r",
+                    "title": "geo 3",
+                    "lang": "Georgian (old)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {"in": 913}
+                            }
+                        ],
+                        "label": "913 CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q679493",
+            "uuid": "Q679493",
+            "type": "Feature",
+            "properties": {
+                "title": "Bible and Orient Museum",
+                "ccodes": ["CH"],
+                "country": "Switzerland"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    7.152778,
+                    46.806389
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Historical museum in Fribourg (Switzerland)",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Bible and Orient Museum",
+                    "lang": "en"
+                },
+                {
+                    "toponym": "Museum Bibel+Orient",
+                    "lang": "de"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300312304",
+                    "sourceLabel": "history museums (institutions)",
+                    "label": "museum"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/121766750/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/no2005046428"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/11280/76f6a40d",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=U0EzOTNWQVI=",
+                    "content": "",
+                    "title": "sa 393var",
+                    "lang": "Coptic",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "600",
+                                    "latest": "899"
+                                }
+                            }
+                        ],
+                        "label": "7th-9th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q2586798",
+            "uuid": "Q2586798",
+            "type": "Feature",
+            "properties": {
+                "title": "Georgian National Museum",
+                "ccodes": ["GE"],
+                "country": "Georgia"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    44.800255,
+                    41.696046
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Unified national museum in Tbilisi, Georgia",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Georgian National Museum",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300312321",
+                    "sourceLabel": "national museums (institutions)",
+                    "label": "museum"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/138403606/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n82165223"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.aea2yhd5",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0VPMg==",
+                    "content": "f.269r, f.269v and f.270r",
+                    "title": "geo 2",
+                    "lang": "Georgian (old)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {"in": 897}
+                            }
+                        ],
+                        "label": "897 CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q251268",
+            "uuid": "Q251268",
+            "type": "Feature",
+            "properties": {
+                "title": "Greek Orthodox Church of Alexandria",
+                "ccodes": ["EG"],
+                "country": "Egypt"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    29.89595,
+                    31.195278
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Autocephalous Eastern Orthodox Church based in Africa; one of the original Churches of the Pentarchy",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "Greek Orthodox Church of Alexandria",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300007466",
+                    "sourceLabel": "churches (buildings)",
+                    "label": "church"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/131950324/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/ n83032369\n"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical",
+                    "relationTo": "https://doi.org/11280/e55e51a5",
+                    "content": "f.93r, f.93v and f.94r",
+                    "title": "GA 2937",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "900",
+                                    "latest": "999"
+                                }
+                            }
+                        ],
+                        "label": "10th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q1478423",
+            "uuid": "Q1478423",
+            "type": "Feature",
+            "properties": {
+                "title": "The Morgan Library & Museum",
+                "ccodes": ["US"],
+                "country": "United States"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.981556,
+                    40.748803
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Library and museum in New York, New York",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "The Morgan Library & Museum",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300312241",
+                    "sourceLabel": "libraries (institutions)",
+                    "label": "library"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/140782799/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n78095799"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.77c36ef8",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=R0EyMzg2",
+                    "content": "f.92v",
+                    "title": "GA 2386",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": 1000,
+                                    "latest": 1099
+                                }
+                            }
+                        ],
+                        "label": "11th century CE"
+                    }
+                },
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "physical and virtual",
+                    "relationTo": "https://doi.org/10.34847/nkl.6f83096n",
+                    "@id": "http://mr-mark16.sib.swiss/show?id=U0E5",
+                    "content": "f.59v and f.60r",
+                    "title": "sa 9",
+                    "lang": "Coptic",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": 800,
+                                    "latest": 999
+                                }
+                            }
+                        ],
+                        "label": "9th-10th century CE"
+                    }
+                }
+            ]
+        },
+        {
+            "@id": "https://www.wikidata.org/wiki/Q1816028",
+            "uuid": "Q1816028",
+            "type": "Feature",
+            "properties": {
+                "title": "National Bank of Greece",
+                "ccodes": ["GR"],
+                "country": "Greece"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    23.729028,
+                    37.981
+                ]
+            },
+            "descriptions": [
+                {
+                    "value": "Global Greek banking and financial services company",
+                    "source": "https://mr-mark16.sib.swiss/show?id=Qk8y"
+                }
+            ],
+            "names": [
+                {
+                    "toponym": "National Bank of Greece",
+                    "lang": "en"
+                }
+            ],
+            "types": [
+                {
+                    "identifier": "aat:300410327",
+                    "sourceLabel": "banks (institutions)",
+                    "label": "bank"
+                }
+            ],
+            "links": [
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://viaf.org/viaf/146085455/"
+                },
+                {
+                    "type": "closeMatch",
+                    "identifier": "https://id.loc.gov/authorities/n84082847"
+                }
+            ],
+            "relations": [
+                {
+                    "relationType": "gvp:aat2208_locus-setting_for",
+                    "label": "virtual",
+                    "relationTo": "https://doi.org/11280/e55e51a5",
+                    "content": "f.93r, f.93v and f.94r",
+                    "title": "GA 2937",
+                    "lang": "Greek (Ancient)",
+                    "when": {
+                        "timespans": [
+                            {
+                                "start": {
+                                    "earliest": "900",
+                                    "latest": "999"
+                                }
+                            }
+                        ],
+                        "label": "10th century CE"
+                    }
+                }
+            ]
+        }
+    ]
+}

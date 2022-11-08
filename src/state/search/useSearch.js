@@ -49,7 +49,7 @@ const useSearch = () => {
     const facetDistribution = 
       facet &&
       availableFacets.find(f => f.name === facet) &&
-      computeFacetDistribution(preFilteredItems, availableFacets.find(f => f.name === facet), postFilter);
+      computeFacetDistribution(preFilteredItems, availableFacets.find(f => f.name === facet), postFilter, filters);
 
     const items = facetDistribution ? 
       facetDistribution.items : preFilteredItems;
