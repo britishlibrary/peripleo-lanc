@@ -17,6 +17,8 @@ LaNC has investigated how creating links between locations in different collecti
 [<img src="./logos/finds.org.uk.png" height="50" align="left">](https://finds.org.uk/)
 [<img src="./logos/www.english-heritage.org.uk.png" height="50">](https://www.english-heritage.org.uk/)
 
+Peripleo grew out of an earlier [Peripleo version](https://github.com/pelagios/peripleo2), developed by Pelagios, and [Peripleo-lite](https://github.com/pelagios/peripleo-lite), a TEI visualisation tool developed with funding from the Open University.
+
 ## Demonstration
 
 Several examples of geospatial datasets rendered as maps using *Peripleo* can be seen on the project web site at https://britishlibrary.github.io/locating-a-national-collection/. 
